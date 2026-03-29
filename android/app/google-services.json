@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "803332171686",
+    "project_id": "gamebox-a9c34",
+    "storage_bucket": "gamebox-a9c34.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803332171686:android:dff1f4bd944cad2d08d167",
+        "android_client_info": {
+          "package_name": "com.qtilabs.gamebox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "803332171686-ddmlt7t47i8iai5dvkeg3p644cnpvnga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qtilabs.gamebox",
+            "certificate_hash": "6268fb35af94dc2b342976a2e4c3b36f395f3b10"
+          }
+        },
+        {
+          "client_id": "803332171686-g4lbrocksb79fisnhkla3pemp3s204di.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.qtilabs.gamebox",
+            "certificate_hash": "34bb33d9f5705805a7be6077436af240fca4bf1b"
+          }
+        },
+        {
+          "client_id": "803332171686-aept8r8pli731802i60770dmcm6hkbtf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA07Eb4JMMbmrJOq8l2I0Bw8tTwFN5Gl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "803332171686-aept8r8pli731802i60770dmcm6hkbtf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "803332171686-3mqkc91bo786esan1bui4b5lvtfmt31p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.qtilabs.gamebox"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
