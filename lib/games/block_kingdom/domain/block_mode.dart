@@ -1,0 +1,4 @@
+enum BlockMode {
+  kingdom,
+  endless,
+}

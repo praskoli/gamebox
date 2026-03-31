@@ -9,9 +9,7 @@ class SoundService {
   final Random _random = Random();
 
   final List<String> _matchSounds = const [
-    'sounds/achievement2.mp3',
-    'sounds/bonus1.mp3',
-    'sounds/freesound_community-game-creature-90736.mp3',
+    'sounds/winner2.mp3',
   ];
 
   final List<String> _failSounds = const [
@@ -21,16 +19,20 @@ class SoundService {
 
   final List<String> _winSounds = const [
     'sounds/levelcomplete1.mp3',
-    'sounds/levelcomplete2.mp3',
-    'sounds/winner1.mp3',
   ];
 
-  Future<void> _playRandom(List<String> files) async {
+  Future<void> _playRandom(
+      List<String> files, {
+        double volume = 0.75,
+      }) async {
     final file = files[_random.nextInt(files.length)];
     final player = AudioPlayer();
 
     try {
-      await player.play(AssetSource(file));
+      await player.play(
+        AssetSource(file),
+        volume: volume,
+      );
     } catch (_) {
       // Never break gameplay because of sound issues.
     } finally {
@@ -42,9 +44,45 @@ class SoundService {
     }
   }
 
-  Future<void> playMatch() => _playRandom(_matchSounds);
+  Future<void> _playSingle(
+      String file, {
+        double volume = 0.75,
+      }) async {
+    final player = AudioPlayer();
 
-  Future<void> playFail() => _playRandom(_failSounds);
+    try {
+      await player.play(
+        AssetSource(file),
+        volume: volume,
+      );
+    } catch (_) {
+      // Never break gameplay because of sound issues.
+    } finally {
+      Future.delayed(const Duration(seconds: 2), () async {
+        try {
+          await player.dispose();
+        } catch (_) {}
+      });
+    }
+  }
 
-  Future<void> playWin() => _playRandom(_winSounds);
+  Future<void> playMatch() => _playRandom(_matchSounds, volume: 0.72);
+
+  Future<void> playFail() => _playRandom(_failSounds, volume: 0.55);
+
+  Future<void> playWin() => _playRandom(_winSounds, volume: 0.85);
+
+  Future<void> playBlockPlace() =>
+      _playSingle('sounds/blockPlace.mp3', volume: 0.68);
+
+  Future<void> playBonus() => _playSingle('sounds/bonus.mp3', volume: 0.8);
+
+  Future<void> playGameStart() =>
+      _playSingle('sounds/gameStart.mp3', volume: 0.72);
+
+  Future<void> playLineClear() =>
+      _playSingle('sounds/lineClear.mp3', volume: 0.8);
+
+  Future<void> playLevelComplete() =>
+      _playSingle('sounds/levelcomplete1.mp3', volume: 0.9);
 }
