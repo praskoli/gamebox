@@ -1,0 +1,143 @@
+Folder PATH listing for volume Workspace
+Volume serial number is 896A-3290
+D:\PRASANTH\FLUTTERPROJECTS\GAMEBOX\LIB
+|   firebase_options.dart
+|   main.dart
+|   
++---app
+|   |   app.dart
+|   |   
+|   +---home
+|   |       home_screen.dart
+|   |       home_tab_screen.dart
+|   |       home_view_model.dart
+|   |       
+|   +---models
+|   |       app_mode.dart
+|   |       
+|   +---navigation
+|   |       main_bottom_nav_screen.dart
+|   |       
+|   \---routing
+|           app_router.dart
+|           route_names.dart
+|           
++---core
+|   +---enums
+|   \---models
++---features
+|   +---games
+|   |   \---world_map
+|   |       \---presentation
+|   +---memory
+|   |   \---domain
+|   |           memory_level.dart
+|   |           
+|   \---stats
+|           player_stats_screen.dart
+|           
++---games
+|   \---memory_match
+|       +---config
+|       |       difficulty_config.dart
+|       |       
+|       +---data
+|       |       memory_map_section_registry.dart
+|       |       memory_progress_repository.dart
+|       |       memory_world_config_repository.dart
+|       |       memory_world_registry.dart
+|       |       parent_unlock_repository.dart
+|       |       
+|       +---domain
+|       |       memory_card_model.dart
+|       |       memory_gameplay_defaults.dart
+|       |       memory_game_engine.dart
+|       |       memory_level.dart
+|       |       memory_progress.dart
+|       |       memory_theme_pack.dart
+|       |       memory_world_bundle.dart
+|       |       memory_world_config.dart
+|       |       memory_world_sequence_config.dart
+|       |       parent_unlock_config.dart
+|       |       parent_unlock_request.dart
+|       |       parent_unlock_state.dart
+|       |       
+|       +---integration
+|       |       memory_match_screen.dart
+|       |       
+|       \---presentation
+|           |   memory_game_screen.dart
+|           |   memory_game_view_model.dart
+|           |   memory_world_map_screen.dart
+|           |   memory_world_map_view_model.dart
+|           |   parent_unlock_screen.dart
+|           |   parent_unlock_view_model.dart
+|           |   
+|           \---widgets
+|                   animated_counter.dart
+|                   floating_fruit_widget.dart
+|                   memory_tile.dart
+|                   world_map_painter.dart
+|                   
++---game_engine
+|   +---catalog
+|   |   |   featured_games_screen.dart
+|   |   |   game_routes.dart
+|   |   |   
+|   |   \---models
+|   |           game_tile_model.dart
+|   |           
+|   \---map_engine
+|       |   world_map_section_data.dart
+|       |   world_map_section_theme.dart
+|       |   
+|       \---widgets
+|               progress_path_painter.dart
+|               segmented_world_map_background.dart
+|               world_map_landmark_widget.dart
+|               
+\---platform
+    +---audio
+    |       sound_service.dart
+    |       
+    +---auth
+    |       auth_gate.dart
+    |       auth_service.dart
+    |       google_sign_in_service.dart
+    |       login_screen.dart
+    |       
+    +---player
+    |       player_profile.dart
+    |       
+    +---play_access
+    |   +---data
+    |   |       play_access_repository.dart
+    |   |       play_access_service.dart
+    |   |       play_pause_message_library.dart
+    |   |       
+    |   +---domain
+    |   |       play_access_approval_request.dart
+    |   |       play_access_config.dart
+    |   |       play_access_daily_state.dart
+    |   |       play_access_guard_result.dart
+    |   |       play_pause_message.dart
+    |   |       
+    |   \---presentation
+    |       \---widgets
+    |               animated_play_pause_message_card.dart
+    |               game_break_overlay.dart
+    |               
+    +---profile
+    |   |   edit_player_profile_screen.dart
+    |   |   player_profile_tab_screen.dart
+    |   |   
+    |   \---services
+    |           profile_service.dart
+    |           
+    \---rewards
+        +---models
+        |       daily_mission.dart
+        |       
+        \---services
+                home_gamification_service.dart
+                
