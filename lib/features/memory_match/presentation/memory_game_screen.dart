@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../play_access/presentation/widgets/animated_play_pause_message_card.dart';
+import '../../play_access/presentation/widgets/game_break_overlay.dart';
 import 'memory_game_view_model.dart';
 import 'widgets/animated_counter.dart';
 import 'widgets/memory_tile.dart';
@@ -131,6 +133,35 @@ class _MemoryGameView extends StatelessWidget {
                     ],
                   ),
                 ),
+                if (vm.isParentControlEnabled)
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 10,
+                    ),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF3F4F6),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.lock_clock_rounded,
+                          color: Color(0xFF5B67F1),
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            'Parent mode: ${vm.tokensRemaining} token${vm.tokensRemaining == 1 ? '' : 's'} available',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 if (vm.isPreviewing)
                   Container(
                     margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
@@ -226,6 +257,26 @@ class _MemoryGameView extends StatelessWidget {
                 reaction: vm.reaction,
               ),
             ),
+            if (vm.showSoftPauseReminder && vm.softPauseMessage != null)
+              Positioned(
+                left: 16,
+                right: 16,
+                top: 110,
+                child: AnimatedPlayPauseMessageCard(
+                  message: vm.softPauseMessage!,
+                  primaryActionLabel: 'Got it',
+                  onPrimaryAction: vm.dismissSoftPauseReminder,
+                  showClose: true,
+                  onClose: vm.dismissSoftPauseReminder,
+                ),
+              ),
+            if (vm.isLevelLocked)
+              GameBreakOverlay(
+                seed: vm.pauseMessageSeed,
+                isBreakRequired: false,
+                onPrimaryAction: () => vm.requestUnlockFromParent(),
+                onSecondaryAction: () => Navigator.of(context).pop(),
+              ),
             if (vm.isCompleted)
               _CelebrationOverlay(
                 playerName: vm.playerProfile?.displayName ?? 'Champion',
@@ -708,7 +759,8 @@ class _CelebrationOverlayState extends State<_CelebrationOverlay>
                               return Transform.scale(
                                 scale: value,
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                                  padding:
+                                  const EdgeInsets.symmetric(horizontal: 2),
                                   child: Icon(
                                     index < widget.stars
                                         ? Icons.star_rounded
@@ -888,8 +940,8 @@ class _ConfettiDot {
     return _ConfettiDot(
       left: 40 + ((i * 17) % 280).toDouble(),
       top: 100 + ((i * 13) % 180).toDouble(),
-      dx: ((i % 5) - 2) * 18,
-      dy: 160 + ((i % 4) * 24),
+      dx: ((i % 5) - 2) * 18.0,
+      dy: 160 + ((i % 4) * 24).toDouble(),
       size: 8 + (i % 5).toDouble(),
       color: colors[i % colors.length],
     );

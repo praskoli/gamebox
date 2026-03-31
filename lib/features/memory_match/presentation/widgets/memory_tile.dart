@@ -1,4 +1,6 @@
+// lib/features/memory_match/presentation/widgets/memory_tile.dart
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../domain/memory_card_model.dart';
@@ -22,14 +24,15 @@ class MemoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showFront = card.isFaceUp || card.isMatched;
+    final bool showFront = card.isFaceUp || card.isMatched;
 
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 0, end: showFront ? 1 : 0),
-      duration: const Duration(milliseconds: 250),
-      builder: (context, value, child) {
-        final angle = value * math.pi;
-        final isFrontVisible = value >= 0.5;
+      duration: const Duration(milliseconds: 260),
+      curve: Curves.easeInOutBack,
+      builder: (BuildContext context, double value, Widget? child) {
+        final double angle = value * math.pi;
+        final bool isFrontVisible = value >= 0.5;
 
         return _ShakeWrapper(
           active: isWrong,
@@ -38,11 +41,12 @@ class MemoryTile extends StatelessWidget {
             behavior: HitTestBehavior.opaque,
             child: AnimatedScale(
               duration: const Duration(milliseconds: 220),
+              curve: Curves.easeOutBack,
               scale: isJustMatched || card.isMatched ? 1.08 : 1,
               child: Transform(
                 alignment: Alignment.center,
                 transform: Matrix4.identity()
-                  ..setEntry(3, 2, 0.001)
+                  ..setEntry(3, 2, 0.0012)
                   ..rotateY(angle),
                 child: isFrontVisible
                     ? Transform(
@@ -79,8 +83,8 @@ class _ShakeWrapper extends StatelessWidget {
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 0, end: active ? 1 : 0),
       duration: const Duration(milliseconds: 360),
-      builder: (context, value, _) {
-        final dx = active ? math.sin(value * math.pi * 6) * 8 : 0.0;
+      builder: (BuildContext context, double value, Widget? _) {
+        final double dx = active ? math.sin(value * math.pi * 6) * 8 : 0.0;
         return Transform.translate(
           offset: Offset(dx, 0),
           child: child,
@@ -105,11 +109,11 @@ class _FrontFace extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final gradientColors = wrong
-        ? const [Color(0xFFFCA5A5), Color(0xFFEF4444)]
+    final List<Color> gradientColors = wrong
+        ? const <Color>[Color(0xFFFCA5A5), Color(0xFFEF4444)]
         : matched
-        ? const [Color(0xFFBBF7D0), Color(0xFF86EFAC)]
-        : [themePack.tileGradientStart, themePack.tileGradientEnd];
+        ? const <Color>[Color(0xFFBBF7D0), Color(0xFF86EFAC)]
+        : <Color>[themePack.tileGradientStart, themePack.tileGradientEnd];
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 220),
@@ -119,31 +123,40 @@ class _FrontFace extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(18),
-        boxShadow: [
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: matched
+              ? const Color(0xFF16A34A).withOpacity(0.50)
+              : themePack.nodeColor.withOpacity(0.18),
+          width: matched ? 2 : 1.2,
+        ),
+        boxShadow: <BoxShadow>[
           if (matched)
             const BoxShadow(
               color: Color(0x3322C55E),
-              blurRadius: 16,
+              blurRadius: 18,
               spreadRadius: 2,
             ),
           if (wrong)
             const BoxShadow(
               color: Color(0x33EF4444),
-              blurRadius: 16,
+              blurRadius: 18,
               spreadRadius: 2,
             ),
-          const BoxShadow(
-            color: Color(0x12000000),
-            blurRadius: 8,
-            offset: Offset(0, 4),
+          BoxShadow(
+            color: themePack.glowColor.withOpacity(0.14),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
       child: Center(
         child: Text(
           symbol,
-          style: const TextStyle(fontSize: 34),
+          style: const TextStyle(
+            fontSize: 34,
+            height: 1,
+          ),
         ),
       ),
     );
@@ -162,26 +175,52 @@ class _BackFace extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 220),
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(18),
-        border: Border.all(
-          color: themePack.nodeColor.withOpacity(0.22),
-          width: 1.2,
+        gradient: LinearGradient(
+          colors: <Color>[
+            Colors.white.withOpacity(0.96),
+            Colors.white.withOpacity(0.88),
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
         ),
-        boxShadow: const [
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: themePack.nodeColor.withOpacity(0.24),
+          width: 1.4,
+        ),
+        boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Color(0x12000000),
-            blurRadius: 8,
-            offset: Offset(0, 4),
+            color: themePack.glowColor.withOpacity(0.18),
+            blurRadius: 12,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
-      child: Center(
-        child: Icon(
-          Icons.question_mark_rounded,
-          color: themePack.nodeColor,
-          size: 32,
-        ),
+      child: Stack(
+        children: <Widget>[
+          Positioned.fill(
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: LinearGradient(
+                  colors: <Color>[
+                    themePack.tileGradientStart.withOpacity(0.16),
+                    Colors.transparent,
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Icon(
+              Icons.question_mark_rounded,
+              color: themePack.nodeColor,
+              size: 32,
+            ),
+          ),
+        ],
       ),
     );
   }

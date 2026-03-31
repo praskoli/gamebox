@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../data/memory_progress_repository.dart';
@@ -5,6 +7,7 @@ import '../data/memory_world_registry.dart';
 import '../domain/memory_level.dart';
 import '../domain/memory_progress.dart';
 import '../domain/memory_theme_pack.dart';
+import '../domain/memory_world_bundle.dart';
 
 class MemoryWorldMapViewModel extends ChangeNotifier {
   MemoryWorldMapViewModel({
@@ -23,6 +26,8 @@ class MemoryWorldMapViewModel extends ChangeNotifier {
   int _windowCount = 120;
   int? _highlightLevel;
 
+  StreamSubscription<MemoryWorldBundle>? _bundleUpdatesSub;
+
   bool get isLoading => _isLoading;
   String? get error => _error;
   MemoryThemePack? get theme => _theme;
@@ -36,19 +41,10 @@ class MemoryWorldMapViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _theme = MemoryWorldRegistry.byWorldId(worldId);
-      _progress = await MemoryProgressRepository.instance.getProgress(worldId);
+      await MemoryWorldRegistry.ensureInitialized();
+      _bindLiveUpdates();
 
-      final unlocked = _progress?.unlockedLevel ?? 1;
-
-      _windowStart = 1;
-      _levels = MemoryWorldRegistry.generateLevelWindow(
-        worldId: worldId,
-        startLevel: _windowStart,
-        count: _windowCount,
-      );
-
-      _highlightLevel = unlocked;
+      await _reloadFromRegistry();
     } catch (e) {
       _error = 'Failed to load memory world: $e';
     } finally {
@@ -57,18 +53,39 @@ class MemoryWorldMapViewModel extends ChangeNotifier {
     }
   }
 
-  Future<void> refreshAfterLevelComplete() async {
-    _progress = await MemoryProgressRepository.instance.getProgress(worldId);
+  void _bindLiveUpdates() {
+    _bundleUpdatesSub?.cancel();
+    _bundleUpdatesSub = MemoryWorldRegistry.updates.listen((_) async {
+      try {
+        await _reloadFromRegistry();
+        notifyListeners();
+      } catch (_) {}
+    });
+  }
+
+  Future<void> _reloadFromRegistry() async {
+    final String resolvedWorldId = MemoryWorldRegistry.resolveWorldId(
+      requestedWorldId: worldId,
+      levelNumber: 1,
+    );
+
+    _theme = MemoryWorldRegistry.byWorldId(resolvedWorldId);
+    _progress = await MemoryProgressRepository.instance.getProgress(resolvedWorldId);
+
     final unlocked = _progress?.unlockedLevel ?? 1;
 
     _windowStart = 1;
     _levels = MemoryWorldRegistry.generateLevelWindow(
-      worldId: worldId,
+      worldId: resolvedWorldId,
       startLevel: _windowStart,
       count: _windowCount,
     );
 
     _highlightLevel = unlocked;
+  }
+
+  Future<void> refreshAfterLevelComplete() async {
+    await _reloadFromRegistry();
     notifyListeners();
   }
 
@@ -88,5 +105,11 @@ class MemoryWorldMapViewModel extends ChangeNotifier {
     final currentProgress = _progress;
     if (currentProgress == null) return 0;
     return currentProgress.starsByLevel[levelNumber] ?? 0;
+  }
+
+  @override
+  void dispose() {
+    _bundleUpdatesSub?.cancel();
+    super.dispose();
   }
 }

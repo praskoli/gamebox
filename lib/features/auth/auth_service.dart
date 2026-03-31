@@ -13,6 +13,12 @@ class AuthService {
 
   bool get isLoggedIn => currentUser != null;
 
+  bool get isAnonymous => currentUser?.isAnonymous ?? false;
+
+  Future<UserCredential> signInAsGuest() async {
+    return await _auth.signInAnonymously();
+  }
+
   Future<void> signOut() async {
     await _auth.signOut();
   }

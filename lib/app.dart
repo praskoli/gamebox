@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'app_router.dart';
+import 'route_names.dart';
 
 class GameBoxApp extends StatelessWidget {
   const GameBoxApp({super.key});
@@ -19,12 +21,4 @@ class GameBoxApp extends StatelessWidget {
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
-}
-
-class RouteNames {
-  const RouteNames._();
-
-  static const String authGate = '/';
-  static const String login = '/login';
-  static const String home = '/home';
 }

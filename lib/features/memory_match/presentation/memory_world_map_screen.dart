@@ -1,13 +1,21 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
+import '../../navigation/main_bottom_nav_screen.dart';
 import '../../games/game_routes.dart';
 import '../../games/world_map/domain/world_map_section_data.dart';
 import '../../games/world_map/presentation/widgets/progress_path_painter.dart';
 import '../../games/world_map/presentation/widgets/segmented_world_map_background.dart';
+import '../../play_access/data/play_access_repository.dart';
+import '../../play_access/data/play_access_service.dart';
+import '../../play_access/data/play_pause_message_library.dart';
+import '../../play_access/domain/play_access_approval_request.dart';
+import '../../play_access/domain/play_access_guard_result.dart';
+import '../../play_access/presentation/widgets/animated_play_pause_message_card.dart';
 import '../data/memory_map_section_registry.dart';
 import '../data/memory_world_registry.dart';
 import '../domain/memory_level.dart';
@@ -37,6 +45,8 @@ class _MemoryWorldMapView extends StatefulWidget {
 class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
     with TickerProviderStateMixin {
   final ScrollController _scrollController = ScrollController();
+  final PlayAccessService _playAccessService = PlayAccessService.instance;
+
   int? _lastScrolledHighlight;
 
   static const double _topPaddingForNodes = 180;
@@ -45,9 +55,6 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
   static const double _sectionTopInset = 30.0;
   static const double _sectionBottomInset = 88.0;
 
-  // ============================================================
-  // TRAIN LOGIC ADDED START
-  // ============================================================
   static const double _trainVisualWidth = 132;
   static const double _trainVisualHeight = 92;
 
@@ -67,9 +74,12 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
   double _trainProgress = 0.0;
   int _lastTrainTargetIndex = 0;
   bool _trainInitialized = false;
-  // ============================================================
-  // TRAIN LOGIC ADDED END
-  // ============================================================
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_playAccessService.initialize());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +105,8 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
 
     final theme = vm.theme!;
     final levels = vm.levels;
-    final totalHeight = _topPaddingForNodes + (levels.length * _nodeSpacing) + 340;
+    final totalHeight =
+        _topPaddingForNodes + (levels.length * _nodeSpacing) + 340;
     final sections = _buildSections(levels);
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -134,17 +145,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
                             ),
                           ),
                         ),
-
-                        // ============================================================
-                        // TRAIN LOGIC ADDED START
-                        // Large moving train overlay rendered on the path.
-                        // ============================================================
-                        if (pathPoints.isNotEmpty)
-                          ..._buildTrain(pathPoints),
-                        // ============================================================
-                        // TRAIN LOGIC ADDED END
-                        // ============================================================
-
+                        if (pathPoints.isNotEmpty) ..._buildTrain(pathPoints),
                         ..._buildNodes(context, vm),
                       ],
                     ),
@@ -180,11 +181,15 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
 
     final sections = <WorldMapSectionData>[];
     final totalSections =
-        ((levels.last.levelNumber - 1) ~/ MemoryMapSectionRegistry.levelsPerSection) + 1;
+        ((levels.last.levelNumber - 1) ~/
+            MemoryMapSectionRegistry.levelsPerSection) +
+            1;
 
     for (var sectionIndex = 0; sectionIndex < totalSections; sectionIndex++) {
-      final startLevel = (sectionIndex * MemoryMapSectionRegistry.levelsPerSection) + 1;
-      final endLevel = startLevel + MemoryMapSectionRegistry.levelsPerSection - 1;
+      final startLevel =
+          (sectionIndex * MemoryMapSectionRegistry.levelsPerSection) + 1;
+      final endLevel =
+          startLevel + MemoryMapSectionRegistry.levelsPerSection - 1;
 
       final firstIndex = levels.indexWhere((e) => e.levelNumber == startLevel);
       if (firstIndex == -1) continue;
@@ -195,8 +200,10 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
 
       if (visible.isEmpty) continue;
 
-      final top = (_yForIndex(firstIndex) - _sectionTopInset).clamp(0.0, double.infinity);
-      final bottom = _yForIndex(firstIndex + visible.length - 1) + _sectionBottomInset;
+      final top =
+      (_yForIndex(firstIndex) - _sectionTopInset).clamp(0.0, double.infinity);
+      final bottom = _yForIndex(firstIndex + visible.length - 1) +
+          _sectionBottomInset;
 
       sections.add(
         WorldMapSectionData(
@@ -266,10 +273,12 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
       final completed = vm.isCompleted(level.levelNumber);
       final stars = vm.starsFor(level.levelNumber);
       final isHighlighted = vm.highlightLevel == level.levelNumber;
-      final isMilestone = level.levelNumber % MemoryMapSectionRegistry.levelsPerSection == 0;
+      final isMilestone =
+          level.levelNumber % MemoryMapSectionRegistry.levelsPerSection == 0;
 
-      final sectionTheme = MemoryMapSectionRegistry
-          .themeForSection((level.levelNumber - 1) ~/ MemoryMapSectionRegistry.levelsPerSection);
+      final sectionTheme = MemoryMapSectionRegistry.themeForSection(
+        (level.levelNumber - 1) ~/ MemoryMapSectionRegistry.levelsPerSection,
+      );
 
       items.add(
         Positioned(
@@ -286,17 +295,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
             nodeAccentColor: sectionTheme.nodeAccentColor,
             onTap: unlocked
                 ? () async {
-              final result = await Navigator.of(context).pushNamed(
-                GameRoutes.memoryGame,
-                arguments: {
-                  'worldId': vm.worldId,
-                  'levelNumber': level.levelNumber,
-                },
-              );
-
-              if (result == true) {
-                await vm.refreshAfterLevelComplete();
-              }
+              await _handleLevelTap(context, vm, level);
             }
                 : null,
           ),
@@ -305,6 +304,99 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
     }
 
     return items;
+  }
+
+  Future<void> _handleLevelTap(
+      BuildContext context,
+      MemoryWorldMapViewModel vm,
+      MemoryLevel level,
+      ) async {
+    var guard = await _playAccessService.canStartPlay(
+      gameId: 'memory_match',
+    );
+
+    if (!guard.canStart) {
+      final unlocked = await showDialog<bool>(
+        context: context,
+        barrierDismissible: true,
+        builder: (_) => _PlayAccessBlockedDialog(
+          level: level,
+          guard: guard,
+          playAccessService: _playAccessService,
+        ),
+      );
+
+      if (unlocked != true || !context.mounted) {
+        return;
+      }
+
+      guard = await _playAccessService.canStartPlay(
+        gameId: 'memory_match',
+      );
+
+      if (!guard.canStart) {
+        return;
+      }
+    }
+
+    if (guard.shouldWarn) {
+      final proceed = await _showPlayAccessWarningDialog(context, guard);
+      if (proceed != true || !context.mounted) {
+        return;
+      }
+    }
+
+    final result = await Navigator.of(context).pushNamed(
+      GameRoutes.memoryGame,
+      arguments: {
+        'worldId': vm.worldId,
+        'levelNumber': level.levelNumber,
+      },
+    );
+
+    if (result == true) {
+      await vm.refreshAfterLevelComplete();
+    }
+  }
+
+  Future<bool?> _showPlayAccessWarningDialog(
+      BuildContext context,
+      PlayAccessGuardResult guard,
+      ) {
+    final message =
+    PlayPauseMessageLibrary.pickBreakMessage(
+      guard.minutesRemaining + guard.levelsRemaining,
+    );
+
+    return showDialog<bool>(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+          child: AnimatedPlayPauseMessageCard(
+            message: message,
+            primaryActionLabel: 'Play Now',
+            secondaryActionLabel: 'Take a Break',
+            onPrimaryAction: () => Navigator.of(context).pop(true),
+            onSecondaryAction: () => Navigator.of(context).pop(false),
+          ),
+        );
+      },
+    );
+  }
+
+  String _blockedReasonText(PlayAccessGuardResult guard) {
+    switch (guard.reason) {
+      case PlayAccessBlockReason.dailyMinutesReached:
+        return 'Today’s play time is complete. Take a healthy break or ask for bonus time.';
+      case PlayAccessBlockReason.dailyLevelsReached:
+        return 'You’ve completed today’s free levels. Ask for bonus time if needed.';
+      case PlayAccessBlockReason.approvalsExhausted:
+        return 'No more approvals available for today.';
+      case PlayAccessBlockReason.none:
+        return 'Play is currently available.';
+    }
   }
 
   double _nodeSizeForLevel(int levelNumber) {
@@ -319,10 +411,6 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
   double _yForIndex(int index) {
     return _topPaddingForNodes + (index * _nodeSpacing);
   }
-
-  // ============================================================
-  // TRAIN LOGIC ADDED START
-  // ============================================================
 
   void _syncTrainWithProgress(
       MemoryWorldMapViewModel vm,
@@ -419,9 +507,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
         AssetSource('sounds/trainwhistle.mp3'),
         volume: 1.0,
       );
-    } catch (_) {
-      // Keep UI safe even if asset/audio setup has a temporary issue.
-    }
+    } catch (_) {}
   }
 
   List<Widget> _buildTrain(List<Offset> pathPoints) {
@@ -519,25 +605,378 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
     );
   }
 
-  // ============================================================
-  // TRAIN LOGIC ADDED END
-  // ============================================================
-
   @override
   void dispose() {
     _scrollController.dispose();
-
-    // ============================================================
-    // TRAIN LOGIC ADDED START
-    // ============================================================
     _trainMoveController.dispose();
     _trainBounceController.dispose();
     _trainAudioPlayer.dispose();
-    // ============================================================
-    // TRAIN LOGIC ADDED END
-    // ============================================================
-
     super.dispose();
+  }
+}
+
+class _PlayAccessBlockedDialog extends StatefulWidget {
+  const _PlayAccessBlockedDialog({
+    required this.level,
+    required this.guard,
+    required this.playAccessService,
+  });
+
+  final MemoryLevel level;
+  final PlayAccessGuardResult guard;
+  final PlayAccessService playAccessService;
+
+  @override
+  State<_PlayAccessBlockedDialog> createState() =>
+      _PlayAccessBlockedDialogState();
+}
+
+class _PlayAccessBlockedDialogState extends State<_PlayAccessBlockedDialog> {
+  final TextEditingController _otpController = TextEditingController();
+  Timer? _cooldownTicker;
+
+  bool _isRequesting = false;
+  bool _isVerifying = false;
+  bool _needsProfileSetup = false;
+
+  String? _validationText;
+  late String _statusText;
+
+  PlayAccessApprovalRequest? _currentRequest;
+  int _cooldownSeconds = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _statusText = _blockedReasonText(widget.guard);
+    unawaited(_loadPendingIfAny());
+  }
+
+  @override
+  void dispose() {
+    _cooldownTicker?.cancel();
+    _otpController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _loadPendingIfAny() async {
+    final latest = await widget.playAccessService.getLatestPendingRequest();
+    if (!mounted) return;
+
+    if (latest != null && latest.isPending && !latest.isExpired) {
+      setState(() {
+        _currentRequest = latest;
+        _cooldownSeconds = latest.resendRemainingSeconds;
+        _statusText =
+        'Approval code will be sent to ${latest.destinationMasked}.';
+      });
+
+      if (_cooldownSeconds > 0) {
+        _startCooldown();
+      }
+    }
+  }
+
+  void _startCooldown() {
+    _cooldownTicker?.cancel();
+
+    _cooldownTicker = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+
+      int remaining = _currentRequest?.resendRemainingSeconds ?? _cooldownSeconds;
+
+      if (remaining <= 0 && _cooldownSeconds > 0) {
+        remaining = _cooldownSeconds - 1;
+      }
+
+      setState(() {
+        _cooldownSeconds = remaining < 0 ? 0 : remaining;
+      });
+
+      if (_cooldownSeconds <= 0) {
+        timer.cancel();
+      }
+    });
+  }
+
+  void _goToProfile() {
+    final navigator = Navigator.of(context);
+    navigator.pop(false);
+    navigator.push(
+      MaterialPageRoute(
+        builder: (_) => const MainBottomNavScreen(initialIndex: 3),
+      ),
+    );
+  }
+
+  Future<void> _handleRequestMorePlay() async {
+    if (_needsProfileSetup) {
+      _goToProfile();
+      return;
+    }
+
+    if (_isRequesting) return;
+
+    final hasActivePendingRequest = _currentRequest != null &&
+        !_currentRequest!.isExpired &&
+        _currentRequest!.isPending;
+
+    if (hasActivePendingRequest && _cooldownSeconds > 0) {
+      return;
+    }
+
+    setState(() {
+      _isRequesting = true;
+      _validationText = null;
+      _statusText = 'Preparing approval request...';
+      _needsProfileSetup = false;
+    });
+
+    try {
+      final request = await widget.playAccessService.requestExtraPlay(
+        gameId: 'memory_match',
+        levelNumber: widget.level.levelNumber,
+      );
+
+      if (!mounted) return;
+
+      setState(() {
+        _isRequesting = false;
+        _currentRequest = request;
+        _cooldownSeconds = request.resendRemainingSeconds;
+        _statusText =
+        'Approval code will be sent to ${request.destinationMasked}. Check email and enter the 6-digit OTP.';
+      });
+
+      if (_cooldownSeconds > 0) {
+        _startCooldown();
+      }
+    } on PlayAccessRequestException catch (e) {
+      if (!mounted) return;
+
+      setState(() {
+        _isRequesting = false;
+        _validationText = null;
+        _needsProfileSetup = e.code == 'missing_parent_email';
+        _statusText = e.code == 'missing_parent_email'
+            ? 'No approval email is configured. Go to Profile and add Parent Approval Email or Temporary Email.'
+            : e.message;
+      });
+    } catch (_) {
+      if (!mounted) return;
+
+      setState(() {
+        _isRequesting = false;
+        _statusText = 'Failed to send approval request. Please try again.';
+        _validationText = null;
+      });
+    }
+  }
+
+  Future<void> _handleVerifyOtp() async {
+    final cleanOtp = _otpController.text.trim();
+
+    if (!RegExp(r'^\d{6}$').hasMatch(cleanOtp)) {
+      setState(() {
+        _validationText = 'Enter a valid 6-digit OTP.';
+      });
+      return;
+    }
+
+    final request = _currentRequest;
+    if (request == null || !request.isPending || request.isExpired) {
+      setState(() {
+        _validationText = 'Request expired. Please request a new OTP.';
+      });
+      return;
+    }
+
+    setState(() {
+      _isVerifying = true;
+      _validationText = null;
+    });
+
+    try {
+      final ok = await widget.playAccessService.verifyOtpForRequest(
+        requestId: request.requestId,
+        otp: cleanOtp,
+      );
+
+      if (!mounted) return;
+
+      if (ok) {
+        _cooldownTicker?.cancel();
+        Navigator.of(context).pop(true);
+        return;
+      }
+
+      setState(() {
+        _isVerifying = false;
+        _validationText = 'Invalid or expired OTP.';
+      });
+    } catch (_) {
+      if (!mounted) return;
+
+      setState(() {
+        _isVerifying = false;
+        _validationText = 'Verification failed. Please try again.';
+      });
+    }
+  }
+
+  String _blockedReasonText(PlayAccessGuardResult guard) {
+    switch (guard.reason) {
+      case PlayAccessBlockReason.dailyMinutesReached:
+        return 'Today’s play time is complete. Take a healthy break or ask for bonus time.';
+      case PlayAccessBlockReason.dailyLevelsReached:
+        return 'You’ve completed today’s free levels. Ask for bonus time if needed.';
+      case PlayAccessBlockReason.approvalsExhausted:
+        return 'No more approvals available for today.';
+      case PlayAccessBlockReason.none:
+        return 'Play is currently available.';
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final message =
+    PlayPauseMessageLibrary.pickBonusMessage(widget.level.levelNumber);
+
+    final otp = _otpController.text.trim();
+    final canVerify = !_isVerifying && RegExp(r'^\d{6}$').hasMatch(otp);
+
+    final hasActivePendingRequest = _currentRequest != null &&
+        !_currentRequest!.isExpired &&
+        _currentRequest!.isPending;
+
+    final canRequest = !_isRequesting &&
+        (!hasActivePendingRequest || _cooldownSeconds <= 0 || _needsProfileSetup);
+
+    final String primaryButtonLabel = _isRequesting
+        ? 'Requesting...'
+        : _needsProfileSetup
+        ? 'Go to Profile'
+        : canRequest
+        ? 'Request More Play'
+        : 'Resend in ${_cooldownSeconds}s';
+
+    return Dialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedPlayPauseMessageCard(
+              message: message,
+              primaryActionLabel: primaryButtonLabel,
+              secondaryActionLabel: 'Not Now',
+              onPrimaryAction: canRequest ? _handleRequestMorePlay : null,
+              onSecondaryAction: () => Navigator.of(context).pop(false),
+            ),
+            const SizedBox(height: 14),
+            Container(
+              padding: const EdgeInsets.all(18),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0x12000000),
+                    blurRadius: 14,
+                    offset: Offset(0, 6),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    _statusText,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w700,
+                      height: 1.4,
+                      color: Color(0xFF4B5563),
+                    ),
+                  ),
+                  if (_currentRequest != null) ...[
+                    const SizedBox(height: 8),
+                    const Text(
+                      'OTP valid for 10 minutes.',
+                      style: TextStyle(
+                        color: Color(0xFF6B7280),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    TextButton(
+                      onPressed: _goToProfile,
+                      child: const Text('Change email in Profile'),
+                    ),
+                  ],
+                  if (_needsProfileSetup) ...[
+                    const SizedBox(height: 10),
+                    OutlinedButton(
+                      onPressed: _goToProfile,
+                      child: const Text('Open Profile'),
+                    ),
+                  ],
+                  const SizedBox(height: 14),
+                  TextField(
+                    controller: _otpController,
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(6),
+                    ],
+                    onChanged: (_) {
+                      if (_validationText != null) {
+                        setState(() {
+                          _validationText = null;
+                        });
+                      } else {
+                        setState(() {});
+                      }
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Enter OTP',
+                      border: const OutlineInputBorder(),
+                      errorText: _validationText,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: canVerify ? _handleVerifyOtp : null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF5B67F1),
+                        foregroundColor: Colors.white,
+                        disabledBackgroundColor: const Color(0xFFE5E7EB),
+                        disabledForegroundColor: const Color(0xFF9CA3AF),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                      ),
+                      child: Text(
+                        _isVerifying ? 'Verifying...' : 'Verify OTP',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -816,10 +1255,6 @@ class _LevelNodeState extends State<_LevelNode>
   }
 }
 
-// ============================================================
-// TRAIN LOGIC ADDED START
-// ============================================================
-
 class _TrainMetrics {
   const _TrainMetrics({
     required this.position,
@@ -907,8 +1342,8 @@ class _TrainMarker extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
-                borderRadius: BorderRadius.circular(18),
                 border: Border.all(color: Colors.white, width: 3),
+                borderRadius: BorderRadius.circular(18),
                 boxShadow: const [
                   BoxShadow(
                     color: Color(0x22000000),
@@ -1019,7 +1454,3 @@ class _TrainWheel extends StatelessWidget {
     );
   }
 }
-
-// ============================================================
-// TRAIN LOGIC ADDED END
-// ============================================================

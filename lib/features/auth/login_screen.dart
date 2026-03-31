@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../home/home_screen.dart';
-import 'google_sign_in_service.dart';
 
+import '../navigation/main_bottom_nav_screen.dart';
+import 'google_sign_in_service.dart';
+import 'auth_service.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -32,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
       if (credential?.user != null) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (_) => const HomeScreen(),
+            builder: (_) => const MainBottomNavScreen(),
           ),
         );
       }
@@ -53,7 +54,32 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
   }
+  Future<void> _handleGuestLogin() async {
+    try {
+      final credential = await AuthService.instance.signInAsGuest();
 
+      if (!mounted) return;
+
+      if (credential.user != null) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (_) => const MainBottomNavScreen(),
+          ),
+        );
+      }
+    } catch (e) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            content: Text('Guest login failed: $e'),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,8 +192,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         const SizedBox(height: 14),
+
+// GUEST LOGIN BUTTON
+                        SizedBox(
+                          width: double.infinity,
+                          height: 54,
+                          child: ElevatedButton(
+                            onPressed: _handleGuestLogin,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: LoginScreen.primary.withOpacity(0.12),
+                              foregroundColor: LoginScreen.primary,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                            ),
+                            child: const Text(
+                              'Continue as Guest',
+                              style: TextStyle(
+                                fontSize: 15.5,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        const SizedBox(height: 10),
+
                         const Text(
-                          'Apple Sign-In will be added next when your Apple side is ready.',
+                          'You can upgrade your account later.',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 12.5,

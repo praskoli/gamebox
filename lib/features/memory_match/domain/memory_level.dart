@@ -1,107 +1,78 @@
-import '../config/difficulty_config.dart';
+// lib/features/memory_match/domain/memory_level.dart
+import 'memory_theme_pack.dart';
 
 class MemoryLevel {
   const MemoryLevel({
-    required this.id,
-    required this.worldId,
     required this.levelNumber,
-    required this.unlocksAtLevel,
-    required this.rows,
-    required this.columns,
-    required this.previewMs,
+    required this.worldIndex,
+    required this.theme,
+    required this.gridColumns,
+    required this.gridRows,
+    required this.previewDurationMs,
     required this.flipBackDelayMs,
-    required this.matchPoints,
-    required this.mismatchPenalty,
-    required this.completionBonus,
-    required this.timeBonusFast,
-    required this.timeBonusSlow,
-    required this.baseCoins,
-    required this.baseXp,
-    required this.targetStarsMoves,
-    required this.specialType,
-    required this.enableDistractors,
-    required this.boardSeed,
-    required this.tileValues,
+    required this.rewardCoins,
+    required this.isRewardLevel,
+    required this.isSpeedLevel,
+    required this.isMemoryProLevel,
   });
 
-  final String id;
-  final String worldId;
   final int levelNumber;
-  final int unlocksAtLevel;
-
-  final int rows;
-  final int columns;
-  final int previewMs;
+  final int worldIndex;
+  final MemoryThemePack theme;
+  final int gridColumns;
+  final int gridRows;
+  final int previewDurationMs;
   final int flipBackDelayMs;
+  final int rewardCoins;
+  final bool isRewardLevel;
+  final bool isSpeedLevel;
+  final bool isMemoryProLevel;
 
-  final int matchPoints;
-  final int mismatchPenalty;
-  final int completionBonus;
-  final int timeBonusFast;
-  final int timeBonusSlow;
+  int get columns => gridColumns;
+  int get rows => gridRows;
+  String get worldId => theme.id;
 
-  final int baseCoins;
-  final int baseXp;
-  final int targetStarsMoves;
+  int get totalCards => gridColumns * gridRows;
+  int get totalPairs => totalCards ~/ 2;
 
-  final MemorySpecialLevelType specialType;
-  final bool enableDistractors;
-  final int boardSeed;
-  final List<String> tileValues;
+  bool get isEvenGrid => totalCards.isEven;
 
-  int get totalTiles => rows * columns;
-  int get totalPairs => totalTiles ~/ 2;
+  String get levelTitle => 'Level $levelNumber';
 
-  bool get hasPreview =>
-      specialType != MemorySpecialLevelType.speed && previewMs > 0;
+  String get stageBadge {
+    if (isSpeedLevel) return 'Speed';
+    if (isMemoryProLevel) return 'Memory Pro';
+    if (isRewardLevel) return 'Reward';
+    return 'Classic';
+  }
 
-  bool get isRewardLevel => specialType == MemorySpecialLevelType.reward;
-  bool get isSpeedLevel => specialType == MemorySpecialLevelType.speed;
-  bool get isMemoryProLevel => specialType == MemorySpecialLevelType.memoryPro;
+  String get worldLabel => '${theme.emoji} ${theme.worldTitle}';
 
   MemoryLevel copyWith({
-    String? id,
-    String? worldId,
     int? levelNumber,
-    int? unlocksAtLevel,
-    int? rows,
-    int? columns,
-    int? previewMs,
+    int? worldIndex,
+    MemoryThemePack? theme,
+    int? gridColumns,
+    int? gridRows,
+    int? previewDurationMs,
     int? flipBackDelayMs,
-    int? matchPoints,
-    int? mismatchPenalty,
-    int? completionBonus,
-    int? timeBonusFast,
-    int? timeBonusSlow,
-    int? baseCoins,
-    int? baseXp,
-    int? targetStarsMoves,
-    MemorySpecialLevelType? specialType,
-    bool? enableDistractors,
-    int? boardSeed,
-    List<String>? tileValues,
+    int? rewardCoins,
+    bool? isRewardLevel,
+    bool? isSpeedLevel,
+    bool? isMemoryProLevel,
   }) {
     return MemoryLevel(
-      id: id ?? this.id,
-      worldId: worldId ?? this.worldId,
       levelNumber: levelNumber ?? this.levelNumber,
-      unlocksAtLevel: unlocksAtLevel ?? this.unlocksAtLevel,
-      rows: rows ?? this.rows,
-      columns: columns ?? this.columns,
-      previewMs: previewMs ?? this.previewMs,
+      worldIndex: worldIndex ?? this.worldIndex,
+      theme: theme ?? this.theme,
+      gridColumns: gridColumns ?? this.gridColumns,
+      gridRows: gridRows ?? this.gridRows,
+      previewDurationMs: previewDurationMs ?? this.previewDurationMs,
       flipBackDelayMs: flipBackDelayMs ?? this.flipBackDelayMs,
-      matchPoints: matchPoints ?? this.matchPoints,
-      mismatchPenalty: mismatchPenalty ?? this.mismatchPenalty,
-      completionBonus: completionBonus ?? this.completionBonus,
-      timeBonusFast: timeBonusFast ?? this.timeBonusFast,
-      timeBonusSlow: timeBonusSlow ?? this.timeBonusSlow,
-      baseCoins: baseCoins ?? this.baseCoins,
-      baseXp: baseXp ?? this.baseXp,
-      targetStarsMoves: targetStarsMoves ?? this.targetStarsMoves,
-      specialType: specialType ?? this.specialType,
-      enableDistractors: enableDistractors ?? this.enableDistractors,
-      boardSeed: boardSeed ?? this.boardSeed,
-      tileValues: tileValues ?? this.tileValues,
+      rewardCoins: rewardCoins ?? this.rewardCoins,
+      isRewardLevel: isRewardLevel ?? this.isRewardLevel,
+      isSpeedLevel: isSpeedLevel ?? this.isSpeedLevel,
+      isMemoryProLevel: isMemoryProLevel ?? this.isMemoryProLevel,
     );
   }
 }
