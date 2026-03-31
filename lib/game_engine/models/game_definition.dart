@@ -1,13 +1,18 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class GameDefinition {
   final String id;
   final String title;
-  final Widget Function(BuildContext context) builder;
+  final WidgetBuilder builder;
+
+  final IconData icon;
+  final Color color;
 
   const GameDefinition({
     required this.id,
     required this.title,
     required this.builder,
+    required this.icon,
+    required this.color,
   });
 }

@@ -9,12 +9,13 @@ import 'package:provider/provider.dart';
 import '../../../app/navigation/main_bottom_nav_screen.dart';
 import '../../../game_engine/catalog/game_routes.dart';
 import '../../../game_engine/map_engine/world_map_section_data.dart';
-import '../../../platform/play_access/data/play_access_repository.dart';
+import '../../../game_engine/map_engine/world_map_section_theme.dart';
 import '../../../game_engine/map_engine/widgets/progress_path_painter.dart';
 import '../../../game_engine/map_engine/widgets/segmented_world_map_background.dart';
 import '../../../platform/play_access/data/play_access_service.dart';
 import '../../../platform/play_access/data/play_pause_message_library.dart';
 import '../../../platform/play_access/domain/play_access_approval_request.dart';
+import '../../../platform/play_access/data/play_access_repository.dart';
 import '../../../platform/play_access/domain/play_access_guard_result.dart';
 import '../../../platform/play_access/presentation/widgets/animated_play_pause_message_card.dart';
 import '../data/memory_map_section_registry.dart';
@@ -49,6 +50,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
   final PlayAccessService _playAccessService = PlayAccessService.instance;
 
   int? _lastScrolledHighlight;
+  bool _didCompleteAnyLevel = false;
 
   static const double _topPaddingForNodes = 180;
   static const double _nodeSpacing = 102.0;
@@ -120,57 +122,63 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
       _syncTrainWithProgress(vm, pathPoints);
     });
 
-    return Scaffold(
-      body: Container(
-        color: theme.backgroundBottom,
-        child: SafeArea(
-          child: Stack(
-            children: [
-              Positioned.fill(
-                child: SingleChildScrollView(
-                  controller: _scrollController,
-                  physics: const BouncingScrollPhysics(),
-                  child: SizedBox(
-                    height: totalHeight,
-                    child: Stack(
-                      children: [
-                        Positioned.fill(
-                          child: SegmentedWorldMapBackground(
-                            sections: sections,
-                          ),
-                        ),
-                        Positioned.fill(
-                          child: IgnorePointer(
-                            child: CustomPaint(
-                              painter: ProgressPathPainter(points: pathPoints),
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.of(context).pop(_didCompleteAnyLevel);
+        return false;
+      },
+      child: Scaffold(
+        body: Container(
+          color: theme.backgroundBottom,
+          child: SafeArea(
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: SingleChildScrollView(
+                    controller: _scrollController,
+                    physics: const BouncingScrollPhysics(),
+                    child: SizedBox(
+                      height: totalHeight,
+                      child: Stack(
+                        children: [
+                          Positioned.fill(
+                            child: SegmentedWorldMapBackground(
+                              sections: sections,
                             ),
                           ),
-                        ),
-                        if (pathPoints.isNotEmpty) ..._buildTrain(pathPoints),
-                        ..._buildNodes(context, vm),
-                      ],
+                          Positioned.fill(
+                            child: IgnorePointer(
+                              child: CustomPaint(
+                                painter: ProgressPathPainter(points: pathPoints),
+                              ),
+                            ),
+                          ),
+                          if (pathPoints.isNotEmpty) ..._buildTrain(pathPoints),
+                          ..._buildNodes(context, vm),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                left: 16,
-                right: 16,
-                top: 10,
-                child: _TopWorldCard(
-                  title: theme.worldTitle,
-                  emoji: theme.worldEmoji,
-                  unlockedLevel: vm.progress!.unlockedLevel,
+                Positioned(
+                  left: 16,
+                  right: 16,
+                  top: 10,
+                  child: _TopWorldCard(
+                    title: theme.worldTitle,
+                    emoji: theme.worldEmoji,
+                    unlockedLevel: vm.progress!.unlockedLevel,
+                  ),
                 ),
-              ),
-              Positioned(
-                left: 16,
-                top: 22,
-                child: _RoundBackButton(
-                  onTap: () => Navigator.of(context).pop(),
+                Positioned(
+                  left: 16,
+                  top: 22,
+                  child: _RoundBackButton(
+                    onTap: () => Navigator.of(context).pop(_didCompleteAnyLevel),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -203,8 +211,8 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
 
       final top =
       (_yForIndex(firstIndex) - _sectionTopInset).clamp(0.0, double.infinity);
-      final bottom = _yForIndex(firstIndex + visible.length - 1) +
-          _sectionBottomInset;
+      final bottom =
+          _yForIndex(firstIndex + visible.length - 1) + _sectionBottomInset;
 
       sections.add(
         WorldMapSectionData(
@@ -356,6 +364,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
     );
 
     if (result == true) {
+      _didCompleteAnyLevel = true;
       await vm.refreshAfterLevelComplete();
     }
   }
@@ -364,8 +373,7 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
       BuildContext context,
       PlayAccessGuardResult guard,
       ) {
-    final message =
-    PlayPauseMessageLibrary.pickBreakMessage(
+    final message = PlayPauseMessageLibrary.pickBreakMessage(
       guard.minutesRemaining + guard.levelsRemaining,
     );
 
@@ -522,9 +530,11 @@ class _MemoryWorldMapViewState extends State<_MemoryWorldMapView>
             ]),
             builder: (context, child) {
               final metrics = _trainMetrics(pathPoints);
-              final bounceY = -5.0 * math.sin(_trainBounceController.value * math.pi);
+              final bounceY =
+                  -5.0 * math.sin(_trainBounceController.value * math.pi);
               final trainX = metrics.position.dx - (_trainVisualWidth / 2);
-              final trainY = metrics.position.dy - (_trainVisualHeight / 2) + bounceY;
+              final trainY =
+                  metrics.position.dy - (_trainVisualHeight / 2) + bounceY;
 
               return Stack(
                 clipBehavior: Clip.none,
@@ -687,7 +697,8 @@ class _PlayAccessBlockedDialogState extends State<_PlayAccessBlockedDialog> {
         return;
       }
 
-      int remaining = _currentRequest?.resendRemainingSeconds ?? _cooldownSeconds;
+      int remaining =
+          _currentRequest?.resendRemainingSeconds ?? _cooldownSeconds;
 
       if (remaining <= 0 && _cooldownSeconds > 0) {
         remaining = _cooldownSeconds - 1;
@@ -854,7 +865,9 @@ class _PlayAccessBlockedDialogState extends State<_PlayAccessBlockedDialog> {
         _currentRequest!.isPending;
 
     final canRequest = !_isRequesting &&
-        (!hasActivePendingRequest || _cooldownSeconds <= 0 || _needsProfileSetup);
+        (!hasActivePendingRequest ||
+            _cooldownSeconds <= 0 ||
+            _needsProfileSetup);
 
     final String primaryButtonLabel = _isRequesting
         ? 'Requesting...'
@@ -1085,14 +1098,18 @@ class _LevelNode extends StatefulWidget {
 
 class _LevelNodeState extends State<_LevelNode>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller =
-  AnimationController(vsync: this, duration: const Duration(milliseconds: 950));
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 950),
+  );
 
-  late final Animation<double> _pulse = Tween<double>(begin: 1, end: 1.10).animate(
+  late final Animation<double> _pulse =
+  Tween<double>(begin: 1, end: 1.10).animate(
     CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
   );
 
-  late final Animation<double> _burst = Tween<double>(begin: 0.0, end: 1.0).animate(
+  late final Animation<double> _burst =
+  Tween<double>(begin: 0.0, end: 1.0).animate(
     CurvedAnimation(parent: _controller, curve: Curves.easeOut),
   );
 
@@ -1163,7 +1180,10 @@ class _LevelNodeState extends State<_LevelNode>
                         gradient: LinearGradient(
                           colors: widget.unlocked
                               ? [color, color.withOpacity(0.86)]
-                              : [const Color(0xFFBDBDBD), const Color(0xFF9CA3AF)],
+                              : const [
+                            Color(0xFFBDBDBD),
+                            Color(0xFF9CA3AF),
+                          ],
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                         ),
@@ -1209,7 +1229,8 @@ class _LevelNodeState extends State<_LevelNode>
                                 '${widget.level.levelNumber}',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: widget.isMilestone ? 18 : 20,
+                                  fontSize:
+                                  widget.isMilestone ? 18 : 20,
                                   fontWeight: FontWeight.w900,
                                 ),
                               ),

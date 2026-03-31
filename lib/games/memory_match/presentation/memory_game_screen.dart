@@ -47,250 +47,265 @@ class _MemoryGameView extends StatelessWidget {
     final level = vm.level;
     final spacing = level.columns >= 8 ? 6.0 : 12.0;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFFF7F8FC),
-      appBar: AppBar(
-        title: Text('${theme.worldTitle} • Level ${level.levelNumber}'),
-      ),
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        theme.tileGradientStart.withOpacity(0.16),
-                        theme.tileGradientEnd.withOpacity(0.16),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(26),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Color(0x12000000),
-                        blurRadius: 10,
-                        offset: Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _HudItem(
-                              label: 'Moves',
-                              value: '${vm.moves}',
-                              icon: Icons.swap_horiz_rounded,
-                              color: const Color(0xFF14B8A6),
-                            ),
-                          ),
-                          Expanded(
-                            child: _HudItem(
-                              label: 'Matches',
-                              value: '${vm.matchesFound}/${vm.totalPairs}',
-                              icon: Icons.favorite_rounded,
-                              color: const Color(0xFFEC4899),
-                            ),
-                          ),
-                          Expanded(
-                            child: _HudItem(
-                              label: 'Time',
-                              value: '${vm.secondsElapsed}s',
-                              icon: Icons.timer_rounded,
-                              color: const Color(0xFFF59E0B),
-                            ),
-                          ),
-                          Expanded(
-                            child: _AnimatedScoreCard(
-                              value: vm.score,
-                            ),
-                          ),
+    return WillPopScope(
+      onWillPop: () async {
+        if (vm.isCompleted) {
+          await vm.persistCompletionRewards();
+          if (!context.mounted) return false;
+          Navigator.of(context).pop(true);
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        backgroundColor: const Color(0xFFF7F8FC),
+        appBar: AppBar(
+          title: Text('${theme.worldTitle} • Level ${level.levelNumber}'),
+        ),
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          theme.tileGradientStart.withOpacity(0.16),
+                          theme.tileGradientEnd.withOpacity(0.16),
                         ],
                       ),
-                      const SizedBox(height: 10),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: _LevelTag(
-                              label: vm.specialLevelLabel,
-                              icon: Icons.auto_awesome_rounded,
+                      borderRadius: BorderRadius.circular(26),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Color(0x12000000),
+                          blurRadius: 10,
+                          offset: Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _HudItem(
+                                label: 'Moves',
+                                value: '${vm.moves}',
+                                icon: Icons.swap_horiz_rounded,
+                                color: const Color(0xFF14B8A6),
+                              ),
                             ),
+                            Expanded(
+                              child: _HudItem(
+                                label: 'Matches',
+                                value: '${vm.matchesFound}/${vm.totalPairs}',
+                                icon: Icons.favorite_rounded,
+                                color: const Color(0xFFEC4899),
+                              ),
+                            ),
+                            Expanded(
+                              child: _HudItem(
+                                label: 'Time',
+                                value: '${vm.secondsElapsed}s',
+                                icon: Icons.timer_rounded,
+                                color: const Color(0xFFF59E0B),
+                              ),
+                            ),
+                            Expanded(
+                              child: _AnimatedScoreCard(
+                                value: vm.score,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: _LevelTag(
+                                label: vm.specialLevelLabel,
+                                icon: Icons.auto_awesome_rounded,
+                              ),
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: _LevelTag(
+                                label: vm.comboCount > 1
+                                    ? 'Combo ${vm.comboCount}x'
+                                    : 'Combo Ready',
+                                icon: Icons.local_fire_department_rounded,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  if (vm.isParentControlEnabled)
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF3F4F6),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.lock_clock_rounded,
+                            color: Color(0xFF5B67F1),
                           ),
                           const SizedBox(width: 8),
                           Expanded(
-                            child: _LevelTag(
-                              label: vm.comboCount > 1
-                                  ? 'Combo ${vm.comboCount}x'
-                                  : 'Combo Ready',
-                              icon: Icons.local_fire_department_rounded,
+                            child: Text(
+                              'Parent mode: ${vm.tokensRemaining} token${vm.tokensRemaining == 1 ? '' : 's'} available',
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                ),
-                if (vm.isParentControlEnabled)
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14,
-                      vertical: 10,
                     ),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF3F4F6),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.lock_clock_rounded,
-                          color: Color(0xFF5B67F1),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            'Parent mode: ${vm.tokensRemaining} token${vm.tokensRemaining == 1 ? '' : 's'} available',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
+                  if (vm.isPreviewing)
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFFFF7D6),
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.visibility_rounded,
+                            color: Color(0xFFF59E0B),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              level.isMemoryProLevel
+                                  ? 'Memory Pro: memorize quickly.'
+                                  : 'Memorize the tiles before they flip back.',
+                              style: const TextStyle(fontWeight: FontWeight.w700),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                if (vm.isPreviewing)
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFFF7D6),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.visibility_rounded,
-                          color: Color(0xFFF59E0B),
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            level.isMemoryProLevel
-                                ? 'Memory Pro: memorize quickly.'
-                                : 'Memorize the tiles before they flip back.',
-                            style: const TextStyle(fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                if (!vm.isPreviewing && level.isSpeedLevel)
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFE0F2FE),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    child: const Row(
-                      children: [
-                        Icon(Icons.bolt_rounded, color: Color(0xFF0284C7)),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            'Speed Level: no preview, trust your memory!',
-                            style: TextStyle(fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: GridView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: vm.cards.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: level.columns,
-                        crossAxisSpacing: spacing,
-                        mainAxisSpacing: spacing,
-                        childAspectRatio: 1,
+                        ],
                       ),
-                      itemBuilder: (context, index) {
-                        final card = vm.cards[index];
-                        return MemoryTile(
-                          key: ValueKey(card.id),
-                          card: card,
-                          themePack: theme,
-                          isWrong: vm.isWrongCard(card.id),
-                          isJustMatched: vm.isJustMatchedCard(card.id),
-                          onTap: () => vm.onTapCard(index),
-                        );
-                      },
+                    ),
+                  if (!vm.isPreviewing && level.isSpeedLevel)
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(16, 10, 16, 0),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFE0F2FE),
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                      child: const Row(
+                        children: [
+                          Icon(Icons.bolt_rounded, color: Color(0xFF0284C7)),
+                          SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              'Speed Level: no preview, trust your memory!',
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: GridView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: vm.cards.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: level.columns,
+                          crossAxisSpacing: spacing,
+                          mainAxisSpacing: spacing,
+                          childAspectRatio: 1,
+                        ),
+                        itemBuilder: (context, index) {
+                          final card = vm.cards[index];
+                          return MemoryTile(
+                            key: ValueKey(card.id),
+                            card: card,
+                            themePack: theme,
+                            isWrong: vm.isWrongCard(card.id),
+                            isJustMatched: vm.isJustMatchedCard(card.id),
+                            onTap: () => vm.onTapCard(index),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              IgnorePointer(
+                ignoring: true,
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 112),
+                    child: _FloatingPoints(
+                      tick: vm.pointsBurstTick,
+                      points: vm.lastPointsAward,
                     ),
                   ),
                 ),
-              ],
-            ),
-            IgnorePointer(
-              ignoring: true,
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 112),
-                  child: _FloatingPoints(
-                    tick: vm.pointsBurstTick,
-                    points: vm.lastPointsAward,
+              ),
+              IgnorePointer(
+                ignoring: true,
+                child: _ReactionOverlay(
+                  tick: vm.reactionTick,
+                  reaction: vm.reaction,
+                ),
+              ),
+              if (vm.showSoftPauseReminder && vm.softPauseMessage != null)
+                Positioned(
+                  left: 16,
+                  right: 16,
+                  top: 110,
+                  child: AnimatedPlayPauseMessageCard(
+                    message: vm.softPauseMessage!,
+                    primaryActionLabel: 'Got it',
+                    onPrimaryAction: vm.dismissSoftPauseReminder,
+                    showClose: true,
+                    onClose: vm.dismissSoftPauseReminder,
                   ),
                 ),
-              ),
-            ),
-            IgnorePointer(
-              ignoring: true,
-              child: _ReactionOverlay(
-                tick: vm.reactionTick,
-                reaction: vm.reaction,
-              ),
-            ),
-            if (vm.showSoftPauseReminder && vm.softPauseMessage != null)
-              Positioned(
-                left: 16,
-                right: 16,
-                top: 110,
-                child: AnimatedPlayPauseMessageCard(
-                  message: vm.softPauseMessage!,
-                  primaryActionLabel: 'Got it',
-                  onPrimaryAction: vm.dismissSoftPauseReminder,
-                  showClose: true,
-                  onClose: vm.dismissSoftPauseReminder,
+              if (vm.isLevelLocked)
+                GameBreakOverlay(
+                  seed: vm.pauseMessageSeed,
+                  isBreakRequired: false,
+                  onPrimaryAction: () => vm.requestUnlockFromParent(),
+                  onSecondaryAction: () => Navigator.of(context).pop(),
                 ),
-              ),
-            if (vm.isLevelLocked)
-              GameBreakOverlay(
-                seed: vm.pauseMessageSeed,
-                isBreakRequired: false,
-                onPrimaryAction: () => vm.requestUnlockFromParent(),
-                onSecondaryAction: () => Navigator.of(context).pop(),
-              ),
-            if (vm.isCompleted)
-              _CelebrationOverlay(
-                playerName: vm.playerProfile?.displayName ?? 'Champion',
-                levelNumber: vm.level.levelNumber,
-                stars: vm.earnedStars,
-                score: vm.score,
-                moves: vm.moves,
-                coins: vm.coinsEarned,
-                xp: vm.xpEarned,
-                rewardAnimationTick: vm.rewardAnimationTick,
-                onContinue: () => Navigator.of(context).pop(true),
-              ),
-          ],
+              if (vm.isCompleted)
+                _CelebrationOverlay(
+                  playerName: vm.playerProfile?.displayName ?? 'Champion',
+                  levelNumber: vm.level.levelNumber,
+                  stars: vm.earnedStars,
+                  score: vm.score,
+                  moves: vm.moves,
+                  coins: vm.coinsEarned,
+                  xp: vm.xpEarned,
+                  rewardAnimationTick: vm.rewardAnimationTick,
+                  onContinue: () async {
+                    await vm.persistCompletionRewards();
+                    if (!context.mounted) return;
+                    Navigator.of(context).pop(true);
+                  },
+                ),
+            ],
+          ),
         ),
       ),
     );

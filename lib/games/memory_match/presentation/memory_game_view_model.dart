@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
+import '../../../platform/profile/services/profile_service.dart';
+import '../../../platform/player/services/player_stats_service.dart';
 import '../../../platform/player/player_profile.dart';
 import '../../../platform/profile/services/profile_service.dart';
 import '../../../platform/audio/sound_service.dart';
@@ -50,7 +51,7 @@ class MemoryGameViewModel extends ChangeNotifier {
   late MemoryThemePack theme;
   late MemoryLevel level;
   late MemoryGameEngine _engine;
-
+  bool _hasPersistedCompletion = false;
   bool _isLoading = true;
   bool _isPreviewing = false;
   bool _isCompleted = false;
@@ -198,7 +199,25 @@ class MemoryGameViewModel extends ChangeNotifier {
     _startTimer();
     _scheduleSoftPauseReminder();
   }
+  Future<void> persistCompletionRewards() async {
+    if (!_isCompleted) return;
+    if (_hasPersistedCompletion) return;
 
+    _hasPersistedCompletion = true;
+
+    await ProfileService.instance.addGameCompletionRewards(
+      coins: coinsEarned,
+      xp: xpEarned,
+    );
+
+    await PlayerStatsService.instance.recordGameCompletion(
+      gameId: 'memory_match',
+      xp: xpEarned,
+      coins: coinsEarned,
+      levelNumber: level.levelNumber,
+      score: score,
+    );
+  }
   Future<void> _beginPlayAccessSessionIfNeeded() async {
     if (_playAccessSessionStarted) return;
     await _playAccessService.beginGameplaySession(
@@ -485,16 +504,6 @@ class MemoryGameViewModel extends ChangeNotifier {
         completedLevel: true,
       );
       _playAccessSessionStarted = false;
-    }
-
-    try {
-      await ProfileService.instance.addGameCompletionRewards(
-        coins: _coinsEarned,
-        xp: _xpEarned,
-      );
-      _playerProfile = await ProfileService.instance.getProfile();
-    } catch (_) {
-      // keep game flow safe even if profile reward update fails
     }
 
     notifyListeners();

@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import '../../../app/models/app_mode.dart';
 import '../player_profile.dart';
 import '../../../app/home/home_view_model.dart';
-
+import '../../../game_engine/catalog/game_registry.dart';
+import 'game_stats_detail_screen.dart';
 class PlayerStatsScreen extends StatelessWidget {
   const PlayerStatsScreen({super.key});
 
@@ -79,6 +80,18 @@ class PlayerStatsScreen extends StatelessWidget {
                 level: profile.level,
                 progress: vm.xpProgress,
               ),
+              const SizedBox(height: 20),
+              const Text(
+                'Games',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              const SizedBox(height: 12),
+              ...GameRegistry.getAll().map((game) {
+                return _GameStatsCard(game: game);
+              }).toList(),
               const SizedBox(height: 16),
               _AccountMetaCard(profile: profile),
             ],
@@ -279,7 +292,51 @@ class _AccountMetaCard extends StatelessWidget {
     );
   }
 }
+class _GameStatsCard extends StatelessWidget {
+  const _GameStatsCard({required this.game});
 
+  final dynamic game;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(22),
+      ),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(22),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => GameStatsDetailScreen(gameId: game.id),
+            ),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
+            children: [
+              Icon(game.icon, color: game.color),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  game.title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+              const Icon(Icons.arrow_forward_ios_rounded, size: 16),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 class _ErrorState extends StatelessWidget {
   const _ErrorState({
     required this.message,
