@@ -84,16 +84,28 @@ class BlockPieceLibrary {
   static List<BlockPiece> generateTray({
     required LevelDefinition levelDefinition,
   }) {
-    return List<BlockPiece>.generate(
-      levelDefinition.difficulty.traySize,
-          (_) => randomWeighted(levelDefinition),
-      growable: true,
-    );
+    final tray = <BlockPiece>[];
+
+    final wantsRecoveryBomb = _shouldInjectRecoveryBomb(levelDefinition);
+
+    if (wantsRecoveryBomb) {
+      tray.add(const BlockPiece(
+        [[1]],
+        specialType: BlockSpecialType.bomb,
+      ));
+    }
+
+    while (tray.length < levelDefinition.difficulty.traySize) {
+      tray.add(randomWeighted(levelDefinition));
+    }
+
+    tray.shuffle(_random);
+    return List<BlockPiece>.from(tray, growable: true);
   }
 
   static BlockPiece randomWeighted(LevelDefinition levelDefinition) {
     if (levelDefinition.allowBomb &&
-       _random.nextDouble() < levelDefinition.bombChance) {
+        _random.nextDouble() < levelDefinition.bombChance) {
       return const BlockPiece(
         [[1]],
         specialType: BlockSpecialType.bomb,
@@ -116,5 +128,28 @@ class BlockPieceLibrary {
     }
 
     return _trickyPieces[_random.nextInt(_trickyPieces.length)];
+  }
+
+  static bool _shouldInjectRecoveryBomb(LevelDefinition levelDefinition) {
+    if (!levelDefinition.allowBomb) return false;
+
+    final level = levelDefinition.levelNumber;
+
+    // Never spam bombs in early unlock range.
+    if (level < 18) {
+      return _random.nextDouble() < 0.10;
+    }
+
+    // Mid levels: occasional controlled recovery.
+    if (level < 40) {
+      return _random.nextDouble() < 0.14;
+    }
+
+    // Late levels: slightly more often, still not guaranteed.
+    if (level < 75) {
+      return _random.nextDouble() < 0.18;
+    }
+
+    return _random.nextDouble() < 0.22;
   }
 }

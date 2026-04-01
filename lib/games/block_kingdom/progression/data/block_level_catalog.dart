@@ -41,26 +41,26 @@ class BlockLevelCatalog {
     final challenge = levelNumber.clamp(1, 10);
 
     final targetScore = switch (challenge) {
-      1 => 260,
-      2 => 320,
-      3 => 380,
-      4 => 450,
-      5 => 520,
-      6 => 600,
-      7 => 680,
-      8 => 760,
-      9 => 840,
-      _ => 920,
+      1 => 240,
+      2 => 300,
+      3 => 360,
+      4 => 430,
+      5 => 500,
+      6 => 580,
+      7 => 660,
+      8 => 740,
+      9 => 820,
+      _ => 900,
     };
 
     final seconds = switch (challenge) {
       1 => 95,
       2 => 90,
-      3 => 85,
-      4 => 80,
-      5 => 75,
-      6 => 72,
-      7 => 69,
+      3 => 86,
+      4 => 82,
+      5 => 78,
+      6 => 74,
+      7 => 70,
       8 => 66,
       9 => 63,
       _ => 60,
@@ -76,13 +76,13 @@ class BlockLevelCatalog {
           : challenge <= 6
           ? const DifficultyConfig.mid()
           : const DifficultyConfig.late(),
-      rewardCoins: 80 + (challenge * 12),
-      rewardXp: 70 + (challenge * 14),
+      rewardCoins: 90 + (challenge * 12),
+      rewardXp: 80 + (challenge * 14),
       timeLimitSeconds: seconds,
       deadZones: _timeTrialDeadZones(challenge),
       blockedCells: _timeTrialBlockedCells(challenge),
-      allowBomb: challenge >= 4,
-      bombChance: challenge >= 7 ? 0.10 : 0.06,
+      allowBomb: challenge >= 5,
+      bombChance: challenge >= 8 ? 0.08 : 0.05,
     );
   }
 
@@ -93,9 +93,9 @@ class BlockLevelCatalog {
       return LevelDefinition(
         levelNumber: level,
         title: 'Kingdom Level $level',
-        subtitle: 'Lay stable foundations with friendly shapes.',
-        objective: LevelObjective.clearLines(2 + level),
-        difficulty: const DifficultyConfig.early(),
+        subtitle: 'Friendly layouts to build confidence and flow.',
+        objective: LevelObjective.clearLines(_earlyTargetLines(level)),
+        difficulty: _earlyDifficulty(level),
         rewardCoins: 24 + (level * 3),
         rewardXp: 18 + (level * 4),
         deadZones: _kingdomDeadZones(level),
@@ -105,55 +105,147 @@ class BlockLevelCatalog {
       );
     }
 
-    if (level <= 25) {
-      final targetScore = 260 + ((level - 10) * 85);
+    if (level <= 30) {
       return LevelDefinition(
         levelNumber: level,
         title: 'Kingdom Level $level',
-        subtitle: 'Build momentum with scoring-focused missions.',
-        objective: LevelObjective.reachScore(targetScore),
-        difficulty: const DifficultyConfig.mid(),
-        rewardCoins: 42 + (level * 4),
-        rewardXp: 34 + (level * 5),
+        subtitle: 'More pressure, tighter boards, and tactical recovery.',
+        objective: LevelObjective.reachScore(_midTargetScore(level)),
+        difficulty: _midDifficulty(level),
+        rewardCoins: 46 + (level * 4),
+        rewardXp: 36 + (level * 5),
         deadZones: _kingdomDeadZones(level),
         blockedCells: _kingdomBlockedCells(level),
         allowBomb: level >= 14,
-        bombChance: level >= 20 ? 0.08 : 0.05,
+        bombChance: _midBombChance(level),
       );
     }
-
-    final hybridScore = 900 + ((level - 25) * 90);
-    final hybridLines = 8 + ((level - 25) ~/ 2);
 
     return LevelDefinition(
       levelNumber: level,
       title: 'Kingdom Level $level',
-      subtitle: 'Master precision with dual objectives and tighter boards.',
+      subtitle: 'Strategic play with dual-objective pressure.',
       objective: LevelObjective.hybrid(
-        targetScore: hybridScore,
-        targetLines: hybridLines,
+        targetScore: _lateTargetScore(level),
+        targetLines: _lateTargetLines(level),
       ),
-      difficulty: const DifficultyConfig.late(),
-      rewardCoins: 70 + (level * 5),
-      rewardXp: 60 + (level * 6),
+      difficulty: _lateDifficulty(level),
+      rewardCoins: 80 + (level * 5),
+      rewardXp: 70 + (level * 6),
       deadZones: _kingdomDeadZones(level),
       blockedCells: _kingdomBlockedCells(level),
       allowBomb: true,
-      bombChance: level >= 60 ? 0.12 : 0.09,
+      bombChance: _lateBombChance(level),
     );
   }
 
-  static List<BlockPosition> _kingdomDeadZones(int level) {
-    if (level < 6) return const <BlockPosition>[];
+  static int _earlyTargetLines(int level) {
+    if (level <= 3) return 3;
+    if (level <= 6) return 4;
+    if (level <= 8) return 5;
+    return 6;
+  }
 
-    if (level < 11) {
+  static int _midTargetScore(int level) {
+    if (level <= 15) return 320 + ((level - 10) * 55);
+    if (level <= 22) return 620 + ((level - 15) * 65);
+    return 1075 + ((level - 22) * 75);
+  }
+
+  static int _lateTargetScore(int level) {
+    if (level <= 45) return 1550 + ((level - 30) * 80);
+    if (level <= 70) return 2750 + ((level - 45) * 90);
+    return 5000 + ((level - 70) * 110);
+  }
+
+  static int _lateTargetLines(int level) {
+    if (level <= 40) return 8;
+    if (level <= 55) return 9;
+    if (level <= 75) return 10;
+    return 11;
+  }
+
+  static DifficultyConfig _earlyDifficulty(int level) {
+    if (level <= 4) return const DifficultyConfig.early();
+    if (level <= 7) return const DifficultyConfig(
+      traySize: 3,
+      friendlyWeight: 68,
+      standardWeight: 28,
+      trickyWeight: 4,
+    );
+    return const DifficultyConfig(
+      traySize: 3,
+      friendlyWeight: 60,
+      standardWeight: 34,
+      trickyWeight: 6,
+    );
+  }
+
+  static DifficultyConfig _midDifficulty(int level) {
+    if (level <= 15) {
+      return const DifficultyConfig(
+        traySize: 3,
+        friendlyWeight: 48,
+        standardWeight: 40,
+        trickyWeight: 12,
+      );
+    }
+    if (level <= 22) {
+      return const DifficultyConfig.mid();
+    }
+    return const DifficultyConfig(
+      traySize: 3,
+      friendlyWeight: 30,
+      standardWeight: 42,
+      trickyWeight: 28,
+    );
+  }
+
+  static DifficultyConfig _lateDifficulty(int level) {
+    if (level <= 45) {
+      return const DifficultyConfig(
+        traySize: 3,
+        friendlyWeight: 22,
+        standardWeight: 44,
+        trickyWeight: 34,
+      );
+    }
+    if (level <= 70) {
+      return const DifficultyConfig(
+        traySize: 3,
+        friendlyWeight: 18,
+        standardWeight: 40,
+        trickyWeight: 42,
+      );
+    }
+    return const DifficultyConfig.late();
+  }
+
+  static double _midBombChance(int level) {
+    if (level < 14) return 0;
+    if (level <= 18) return 0.04;
+    if (level <= 24) return 0.055;
+    return 0.07;
+  }
+
+  static double _lateBombChance(int level) {
+    if (level <= 40) return 0.08;
+    if (level <= 60) return 0.09;
+    if (level <= 80) return 0.10;
+    return 0.11;
+  }
+
+  static List<BlockPosition> _kingdomDeadZones(int level) {
+    if (level <= 5) return const <BlockPosition>[];
+
+    if (level <= 10) {
       return const <BlockPosition>[
         BlockPosition(1, 1),
         BlockPosition(6, 6),
       ];
     }
 
-    if (level < 16) {
+    if (level <= 15) {
       return const <BlockPosition>[
         BlockPosition(0, 3),
         BlockPosition(3, 0),
@@ -162,7 +254,7 @@ class BlockLevelCatalog {
       ];
     }
 
-    if (level < 26) {
+    if (level <= 22) {
       return const <BlockPosition>[
         BlockPosition(1, 5),
         BlockPosition(2, 2),
@@ -171,7 +263,7 @@ class BlockLevelCatalog {
       ];
     }
 
-    if (level < 41) {
+    if (level <= 35) {
       return const <BlockPosition>[
         BlockPosition(1, 1),
         BlockPosition(1, 6),
@@ -182,29 +274,46 @@ class BlockLevelCatalog {
       ];
     }
 
+    if (level <= 55) {
+      return const <BlockPosition>[
+        BlockPosition(0, 2),
+        BlockPosition(0, 5),
+        BlockPosition(2, 0),
+        BlockPosition(2, 7),
+        BlockPosition(5, 0),
+        BlockPosition(5, 7),
+        BlockPosition(7, 2),
+        BlockPosition(7, 5),
+      ];
+    }
+
     return const <BlockPosition>[
-      BlockPosition(0, 2),
-      BlockPosition(0, 5),
-      BlockPosition(2, 0),
-      BlockPosition(2, 7),
-      BlockPosition(5, 0),
-      BlockPosition(5, 7),
-      BlockPosition(7, 2),
-      BlockPosition(7, 5),
+      BlockPosition(1, 2),
+      BlockPosition(1, 5),
+      BlockPosition(2, 1),
+      BlockPosition(2, 6),
+      BlockPosition(3, 3),
+      BlockPosition(3, 4),
+      BlockPosition(4, 3),
+      BlockPosition(4, 4),
+      BlockPosition(5, 1),
+      BlockPosition(5, 6),
+      BlockPosition(6, 2),
+      BlockPosition(6, 5),
     ];
   }
 
   static List<BlockPosition> _kingdomBlockedCells(int level) {
-    if (level < 8) return const <BlockPosition>[];
+    if (level <= 7) return const <BlockPosition>[];
 
-    if (level < 16) {
+    if (level <= 14) {
       return const <BlockPosition>[
         BlockPosition(3, 3),
         BlockPosition(4, 4),
       ];
     }
 
-    if (level < 30) {
+    if (level <= 24) {
       return const <BlockPosition>[
         BlockPosition(2, 4),
         BlockPosition(3, 3),
@@ -213,7 +322,7 @@ class BlockLevelCatalog {
       ];
     }
 
-    if (level < 50) {
+    if (level <= 40) {
       return const <BlockPosition>[
         BlockPosition(0, 0),
         BlockPosition(0, 7),
@@ -224,15 +333,32 @@ class BlockLevelCatalog {
       ];
     }
 
+    if (level <= 65) {
+      return const <BlockPosition>[
+        BlockPosition(1, 3),
+        BlockPosition(1, 4),
+        BlockPosition(3, 1),
+        BlockPosition(4, 1),
+        BlockPosition(3, 6),
+        BlockPosition(4, 6),
+        BlockPosition(6, 3),
+        BlockPosition(6, 4),
+      ];
+    }
+
     return const <BlockPosition>[
-      BlockPosition(1, 3),
-      BlockPosition(1, 4),
-      BlockPosition(3, 1),
-      BlockPosition(4, 1),
-      BlockPosition(3, 6),
-      BlockPosition(4, 6),
-      BlockPosition(6, 3),
-      BlockPosition(6, 4),
+      BlockPosition(0, 1),
+      BlockPosition(0, 6),
+      BlockPosition(1, 0),
+      BlockPosition(1, 7),
+      BlockPosition(3, 3),
+      BlockPosition(3, 4),
+      BlockPosition(4, 3),
+      BlockPosition(4, 4),
+      BlockPosition(6, 0),
+      BlockPosition(6, 7),
+      BlockPosition(7, 1),
+      BlockPosition(7, 6),
     ];
   }
 
