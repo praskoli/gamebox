@@ -72,35 +72,40 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
       _lastFeedbackVersion = 0;
     });
 
-    int startLevel = forceLevelNumber ?? widget.initialLevelNumber;
+    try {
+      //int startLevel = forceLevelNumber ?? widget.initialLevelNumber;
+      int startLevel = 15; // 🔥 test level
+      if (widget.mode == BlockMode.kingdom) {
+        final progress = await BlockProgressionService.instance.getProgress();
+        startLevel = progress.lastPlayedLevel.clamp(
+          1,
+          BlockLevelCatalog.maxKingdomLevel,
+        );
+      }
 
-    if (widget.mode == BlockMode.kingdom) {
-      final progress = await BlockProgressionService.instance.getProgress();
-      startLevel = progress.lastPlayedLevel.clamp(
-        1,
-        BlockLevelCatalog.maxKingdomLevel,
+      final controller = BlockController(
+        mode: widget.mode,
+        initialLevelNumber: startLevel,
+      )..start();
+
+      _controller = controller;
+
+      await PlayAccessService.instance.beginGameplaySession(
+        gameId: 'block_kingdom',
+        levelNumber: controller.currentLevelNumber,
       );
+
+      _configureTimer();
+      SoundService.instance.playGameStart();
+    } catch (e, st) {
+      debugPrint('BLOCK PREPARE ERROR -> $e');
+      debugPrint('$st');
+    } finally {
+      if (!mounted) return;
+      setState(() {
+        _isPreparing = false;
+      });
     }
-
-    final controller = BlockController(
-      mode: widget.mode,
-      initialLevelNumber: startLevel,
-    )..start();
-
-    _controller = controller;
-
-    await PlayAccessService.instance.beginGameplaySession(
-      gameId: 'block_kingdom',
-      levelNumber: controller.currentLevelNumber,
-    );
-
-    _configureTimer();
-    SoundService.instance.playGameStart();
-
-    if (!mounted) return;
-    setState(() {
-      _isPreparing = false;
-    });
   }
 
   void _configureTimer() {

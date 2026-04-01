@@ -29,12 +29,20 @@ class BlockEngine {
   late LevelProgress progress;
 
   void start() {
+    board.reset();
+    board.applyLevelLayout(
+      deadZones: levelDefinition.deadZones,
+      blockedCells: levelDefinition.blockedCells,
+    );
+
     session.reset(
       initialSeconds: levelDefinition.timeLimitSeconds,
     );
+
     tray = BlockPieceLibrary.generateTray(
       difficulty: levelDefinition.difficulty,
     );
+
     progress = LevelManager.evaluate(
       session: session,
       level: levelDefinition,
@@ -48,31 +56,35 @@ class BlockEngine {
     final piece = tray[index];
     if (!board.canPlace(piece, row, col)) return null;
 
-    final beforeScore = session.score;
+    final scoreBefore = session.score;
+    final cellsPlaced = _countCells(piece);
 
     board.place(piece, row, col);
 
     final cleared = board.clearLines();
     final clearedLineCount = cleared.length;
 
-    session.combo = cleared.isNotEmpty ? session.combo + 1 : 0;
+    session.combo = clearedLineCount > 0 ? session.combo + 1 : 0;
     session.movesMade += 1;
-    session.placedCells += _countCells(piece);
+    session.placedCells += cellsPlaced;
     session.totalClearedLines += clearedLineCount;
 
-    // OLD BEHAVIOR: simple scoring path
-    final gainedScore = (clearedLineCount * 10) + (session.combo * 5);
-    session.score += gainedScore;
+    final scoreBreakdown = ScoreCalculator.calculate(
+      cellsPlaced: cellsPlaced,
+      clearedLines: clearedLineCount,
+      combo: session.combo,
+      scoreBefore: scoreBefore,
+    );
+
+    session.score += scoreBreakdown.total;
 
     tray.removeAt(index);
-
     if (tray.isEmpty) {
       tray = BlockPieceLibrary.generateTray(
         difficulty: levelDefinition.difficulty,
       );
     }
 
-    // Keep progression update, but keep it as light as possible.
     progress = LevelManager.evaluate(
       session: session,
       level: levelDefinition,
@@ -83,12 +95,7 @@ class BlockEngine {
         session.isLevelComplete || BlockGameOver.check(board, tray);
 
     return BlockTurnResult(
-      scoreBreakdown: ScoreBreakdown(
-        placementPoints: 0,
-        lineClearBonus: clearedLineCount * 10,
-        comboBonus: session.combo * 5,
-        milestoneBonus: 0,
-      ),
+      scoreBreakdown: scoreBreakdown,
       clearedLineCount: clearedLineCount,
       progress: progress,
     );
@@ -99,6 +106,7 @@ class BlockEngine {
     if (session.remainingSeconds <= 0) return false;
 
     session.remainingSeconds -= 1;
+
     if (session.remainingSeconds <= 0) {
       session.remainingSeconds = 0;
       progress = LevelManager.evaluate(

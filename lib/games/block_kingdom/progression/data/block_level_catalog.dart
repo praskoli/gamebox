@@ -1,4 +1,5 @@
 import '../../domain/block_mode.dart';
+import '../../domain/block_position.dart';
 import '../domain/difficulty_config.dart';
 import '../domain/level_definition.dart';
 import '../domain/level_objective.dart';
@@ -61,6 +62,8 @@ class BlockLevelCatalog {
       rewardCoins: 80 + (challenge * 10),
       rewardXp: 70 + (challenge * 12),
       timeLimitSeconds: seconds,
+      deadZones: _timeTrialDeadZones(challenge),
+      blockedCells: _timeTrialBlockedCells(challenge),
     );
   }
 
@@ -76,6 +79,8 @@ class BlockLevelCatalog {
         difficulty: const DifficultyConfig.early(),
         rewardCoins: 24 + (level * 3),
         rewardXp: 18 + (level * 4),
+        deadZones: _kingdomDeadZones(level),
+        blockedCells: _kingdomBlockedCells(level),
       );
     }
 
@@ -89,6 +94,8 @@ class BlockLevelCatalog {
         difficulty: const DifficultyConfig.mid(),
         rewardCoins: 42 + (level * 4),
         rewardXp: 34 + (level * 5),
+        deadZones: _kingdomDeadZones(level),
+        blockedCells: _kingdomBlockedCells(level),
       );
     }
 
@@ -106,6 +113,104 @@ class BlockLevelCatalog {
       difficulty: const DifficultyConfig.late(),
       rewardCoins: 70 + (level * 5),
       rewardXp: 60 + (level * 6),
+      deadZones: _kingdomDeadZones(level),
+      blockedCells: _kingdomBlockedCells(level),
     );
+  }
+
+  static List<BlockPosition> _kingdomDeadZones(int level) {
+    if (level < 6) return const <BlockPosition>[];
+
+    if (level < 11) {
+      return const <BlockPosition>[
+        BlockPosition(1, 1),
+        BlockPosition(6, 6),
+      ];
+    }
+
+    if (level < 16) {
+      return const <BlockPosition>[
+        BlockPosition(0, 3),
+        BlockPosition(3, 0),
+        BlockPosition(4, 7),
+        BlockPosition(7, 4),
+      ];
+    }
+
+    if (level < 21) {
+      return const <BlockPosition>[
+        BlockPosition(1, 5),
+        BlockPosition(2, 2),
+        BlockPosition(5, 1),
+        BlockPosition(6, 6),
+      ];
+    }
+
+    return const <BlockPosition>[
+      BlockPosition(1, 1),
+      BlockPosition(1, 6),
+      BlockPosition(3, 3),
+      BlockPosition(4, 4),
+      BlockPosition(6, 1),
+      BlockPosition(6, 6),
+    ];
+  }
+
+  static List<BlockPosition> _kingdomBlockedCells(int level) {
+    if (level < 8) return const <BlockPosition>[];
+
+    if (level < 13) {
+      return const <BlockPosition>[
+        BlockPosition(3, 3),
+        BlockPosition(4, 4),
+      ];
+    }
+
+    if (level < 21) {
+      return const <BlockPosition>[
+        BlockPosition(2, 4),
+        BlockPosition(3, 3),
+        BlockPosition(4, 4),
+        BlockPosition(5, 2),
+      ];
+    }
+
+    return const <BlockPosition>[
+      BlockPosition(0, 0),
+      BlockPosition(0, 7),
+      BlockPosition(7, 0),
+      BlockPosition(7, 7),
+      BlockPosition(3, 4),
+      BlockPosition(4, 3),
+    ];
+  }
+
+  static List<BlockPosition> _timeTrialDeadZones(int challenge) {
+    if (challenge <= 2) return const <BlockPosition>[];
+
+    if (challenge == 3) {
+      return const <BlockPosition>[
+        BlockPosition(2, 2),
+        BlockPosition(5, 5),
+      ];
+    }
+
+    return const <BlockPosition>[
+      BlockPosition(1, 6),
+      BlockPosition(2, 2),
+      BlockPosition(5, 5),
+      BlockPosition(6, 1),
+    ];
+  }
+
+  static List<BlockPosition> _timeTrialBlockedCells(int challenge) {
+    if (challenge <= 3) return const <BlockPosition>[];
+
+    return const <BlockPosition>[
+      BlockPosition(3, 3),
+      BlockPosition(3, 4),
+      BlockPosition(4, 3),
+      BlockPosition(4, 4),
+    ];
   }
 }

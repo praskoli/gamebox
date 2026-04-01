@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/block_cell_type.dart';
 import '../controller/block_controller.dart';
 
 class BoardWidget extends StatelessWidget {
@@ -68,9 +69,7 @@ class BoardWidget extends StatelessWidget {
                         height: tileSize,
                         decoration: BoxDecoration(
                           gradient: _tileGradient(
-                            row: r,
-                            col: c,
-                            filled: board.grid[r][c] == 1,
+                            cellType: board.grid[r][c],
                             isGhost: ghostSet.contains('${r}_$c'),
                             ghostValid: controller.isValidPlacement,
                             isPlaced: controller.recentPlacedCellKeys
@@ -81,7 +80,7 @@ class BoardWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(11),
                           border: Border.all(
                             color: _cellBorder(
-                              filled: board.grid[r][c] == 1,
+                              cellType: board.grid[r][c],
                               isGhost: ghostSet.contains('${r}_$c'),
                               ghostValid: controller.isValidPlacement,
                               isPlaced: controller.recentPlacedCellKeys
@@ -92,7 +91,7 @@ class BoardWidget extends StatelessWidget {
                             width: 1,
                           ),
                           boxShadow: _cellShadow(
-                            filled: board.grid[r][c] == 1,
+                            cellType: board.grid[r][c],
                             isGhost: ghostSet.contains('${r}_$c'),
                             ghostValid: controller.isValidPlacement,
                             isPlaced: controller.recentPlacedCellKeys
@@ -104,18 +103,20 @@ class BoardWidget extends StatelessWidget {
                         child: Stack(
                           children: [
                             _cellGloss(
-                              filled: board.grid[r][c] == 1,
+                              cellType: board.grid[r][c],
                               isGhost: ghostSet.contains('${r}_$c'),
                               isPlaced: controller.recentPlacedCellKeys
                                   .contains('${r}_$c'),
                               isCleared: controller.recentClearedCellKeys
                                   .contains('${r}_$c'),
                             ),
-                            if (board.grid[r][c] == 1 ||
-                                controller.recentPlacedCellKeys
-                                    .contains('${r}_$c') ||
-                                controller.recentClearedCellKeys
-                                    .contains('${r}_$c'))
+                            if (_shouldShowFilledMotif(
+                              cellType: board.grid[r][c],
+                              isPlaced: controller.recentPlacedCellKeys
+                                  .contains('${r}_$c'),
+                              isCleared: controller.recentClearedCellKeys
+                                  .contains('${r}_$c'),
+                            ))
                               Center(
                                 child: Icon(
                                   _pickMotif(r, c),
@@ -126,6 +127,22 @@ class BoardWidget extends StatelessWidget {
                                         ? 0.95
                                         : 0.82,
                                   ),
+                                ),
+                              ),
+                            if (board.grid[r][c] == BlockCellType.deadZone)
+                              Center(
+                                child: Icon(
+                                  Icons.block_rounded,
+                                  size: tileSize * 0.34,
+                                  color: const Color(0xFFFF8A80).withOpacity(0.9),
+                                ),
+                              ),
+                            if (board.grid[r][c] == BlockCellType.blocked)
+                              Center(
+                                child: Icon(
+                                  Icons.shield_rounded,
+                                  size: tileSize * 0.34,
+                                  color: const Color(0xFFB0BEC5).withOpacity(0.9),
                                 ),
                               ),
                             if (ghostSet.contains('${r}_$c'))
@@ -170,6 +187,14 @@ class BoardWidget extends StatelessWidget {
     );
   }
 
+  bool _shouldShowFilledMotif({
+    required BlockCellType cellType,
+    required bool isPlaced,
+    required bool isCleared,
+  }) {
+    return cellType == BlockCellType.filled || isPlaced || isCleared;
+  }
+
   IconData _pickMotif(int row, int col) {
     final index = (row + col) % 5;
     switch (index) {
@@ -204,25 +229,12 @@ class BoardWidget extends StatelessWidget {
   }
 
   Gradient _tileGradient({
-    required int row,
-    required int col,
-    required bool filled,
+    required BlockCellType cellType,
     required bool isGhost,
     required bool ghostValid,
     required bool isPlaced,
     required bool isCleared,
   }) {
-    final paletteIndex = (row + col) % 6;
-
-    final filledPalettes = <List<Color>>[
-      const [Color(0xFFFFD665), Color(0xFFFFB739), Color(0xFFFF9B00)],
-      const [Color(0xFF59B5FF), Color(0xFF319AF2), Color(0xFF2485D9)],
-      const [Color(0xFF8CF5B1), Color(0xFF45C86D), Color(0xFF219653)],
-      const [Color(0xFFFF9EFF), Color(0xFFE040FB), Color(0xFF9C27B0)],
-      const [Color(0xFFFFB39A), Color(0xFFFF7B54), Color(0xFFE85D2A)],
-      const [Color(0xFFC8B0FF), Color(0xFF8E6BE8), Color(0xFF6941C6)],
-    ];
-
     if (isCleared) {
       return const LinearGradient(
         colors: [
@@ -246,10 +258,35 @@ class BoardWidget extends StatelessWidget {
       );
     }
 
-    if (filled) {
-      final colors = filledPalettes[paletteIndex];
-      return LinearGradient(
-        colors: colors,
+    if (cellType == BlockCellType.filled) {
+      return const LinearGradient(
+        colors: [
+          Color(0xFFFFD665),
+          Color(0xFFFFB739),
+          Color(0xFFFF9B00),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      );
+    }
+
+    if (cellType == BlockCellType.deadZone) {
+      return const LinearGradient(
+        colors: [
+          Color(0xFF4A1115),
+          Color(0xFF2C0B0E),
+        ],
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+      );
+    }
+
+    if (cellType == BlockCellType.blocked) {
+      return const LinearGradient(
+        colors: [
+          Color(0xFF465A64),
+          Color(0xFF263238),
+        ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       );
@@ -286,7 +323,7 @@ class BoardWidget extends StatelessWidget {
   }
 
   Color _cellBorder({
-    required bool filled,
+    required BlockCellType cellType,
     required bool isGhost,
     required bool ghostValid,
     required bool isPlaced,
@@ -294,7 +331,15 @@ class BoardWidget extends StatelessWidget {
   }) {
     if (isCleared) return const Color(0xFFFFF2AE).withOpacity(0.95);
     if (isPlaced) return const Color(0xFFFFE39A).withOpacity(0.85);
-    if (filled) return const Color(0xFFFFFFFF).withOpacity(0.16);
+    if (cellType == BlockCellType.filled) {
+      return const Color(0xFFFFFFFF).withOpacity(0.16);
+    }
+    if (cellType == BlockCellType.deadZone) {
+      return const Color(0xFFFF8A80).withOpacity(0.65);
+    }
+    if (cellType == BlockCellType.blocked) {
+      return const Color(0xFFCFD8DC).withOpacity(0.65);
+    }
 
     if (isGhost) {
       return ghostValid
@@ -306,7 +351,7 @@ class BoardWidget extends StatelessWidget {
   }
 
   List<BoxShadow> _cellShadow({
-    required bool filled,
+    required BlockCellType cellType,
     required bool isGhost,
     required bool ghostValid,
     required bool isPlaced,
@@ -344,7 +389,27 @@ class BoardWidget extends StatelessWidget {
       ];
     }
 
-    if (filled) {
+    if (cellType == BlockCellType.deadZone) {
+      return [
+        BoxShadow(
+          color: const Color(0xFFFF5252).withOpacity(0.14),
+          blurRadius: 8,
+          spreadRadius: 0.6,
+        ),
+      ];
+    }
+
+    if (cellType == BlockCellType.blocked) {
+      return [
+        BoxShadow(
+          color: Colors.white.withOpacity(0.05),
+          blurRadius: 8,
+          spreadRadius: 0.4,
+        ),
+      ];
+    }
+
+    if (cellType == BlockCellType.filled) {
       return [
         BoxShadow(
           color: Colors.white.withOpacity(0.06),
@@ -358,12 +423,15 @@ class BoardWidget extends StatelessWidget {
   }
 
   Widget _cellGloss({
-    required bool filled,
+    required BlockCellType cellType,
     required bool isGhost,
     required bool isPlaced,
     required bool isCleared,
   }) {
-    if (!filled && !isGhost && !isPlaced && !isCleared) {
+    if (cellType == BlockCellType.empty &&
+        !isGhost &&
+        !isPlaced &&
+        !isCleared) {
       return const SizedBox.shrink();
     }
 
@@ -381,6 +449,10 @@ class BoardWidget extends StatelessWidget {
                 ? 0.26
                 : isGhost
                 ? 0.12
+                : cellType == BlockCellType.deadZone
+                ? 0.08
+                : cellType == BlockCellType.blocked
+                ? 0.10
                 : 0.16,
           ),
           borderRadius: BorderRadius.circular(999),
