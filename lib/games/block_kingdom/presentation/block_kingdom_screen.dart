@@ -17,7 +17,7 @@ import 'widgets/board_widget.dart';
 import 'widgets/piece_widget.dart';
 import 'widgets/tray_widget.dart';
 import 'widgets/time_trial_overlay.dart';
-
+import '../progression/data/block_progression_service.dart';
 
 class BlockKingdomScreen extends StatefulWidget {
   const BlockKingdomScreen({
@@ -214,11 +214,11 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
 
     if (widget.mode == BlockMode.kingdom && success) {
       await BlockProgressionService.instance.completeLevel(
-        levelNumber: controller.currentLevelNumber,
+        level: controller.currentLevelNumber,
         score: score,
       );
     } else if (widget.mode == BlockMode.kingdom) {
-      await BlockProgressionService.instance.setLastPlayedLevel(
+      await BlockProgressionService.instance.setLastPlayed(
         controller.currentLevelNumber,
       );
     }
@@ -337,6 +337,13 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
     final score = controller.engine.session.score;
     await _applyRewards(success: true);
 
+    if (widget.mode == BlockMode.kingdom) {
+      await BlockProgressionService.instance.completeLevel(
+        level: controller.currentLevelNumber,
+        score: controller.engine.session.score,
+      );
+    }
+
     if (!mounted) return;
 
     final isKingdom = widget.mode == BlockMode.kingdom;
@@ -444,9 +451,15 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
                   children: [
                     Expanded(
                       child: OutlinedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           Navigator.of(context).pop();
-                          _restartSession(
+
+                          if (widget.mode == BlockMode.kingdom) {
+                            await BlockProgressionService.instance.setLastPlayed(
+                              controller.currentLevelNumber,
+                            );
+                          }
+                          await _restartSession(
                             levelNumber: controller.currentLevelNumber,
                           );
                         },
@@ -656,6 +669,13 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
                       child: ElevatedButton(
                         onPressed: () async {
                           Navigator.of(context).pop();
+
+                          if (widget.mode == BlockMode.kingdom) {
+                            await BlockProgressionService.instance.setLastPlayed(
+                              controller.currentLevelNumber,
+                            );
+                          }
+
                           await _restartSession(
                             levelNumber: controller.currentLevelNumber,
                           );
