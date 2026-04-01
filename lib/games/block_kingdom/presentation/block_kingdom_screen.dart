@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
-
+import 'widgets/kingdom_hud.dart';
 import '../../../platform/audio/sound_service.dart';
 import '../../../platform/player/services/player_stats_service.dart';
 import '../../../platform/profile/services/profile_service.dart';
@@ -17,6 +17,7 @@ import 'widgets/board_widget.dart';
 import 'widgets/piece_widget.dart';
 import 'widgets/tray_widget.dart';
 import 'widgets/time_trial_overlay.dart';
+
 
 class BlockKingdomScreen extends StatefulWidget {
   const BlockKingdomScreen({
@@ -345,60 +346,161 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return AlertDialog(
-          backgroundColor: const Color(0xFF111827),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-          ),
-          title: Text(
-            isTimeTrial ? 'Time Trial Cleared' : 'Victory!',
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w900,
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xFF111827),
+                  Color(0xFF0F172A),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(28),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.08),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.34),
+                  blurRadius: 24,
+                  offset: const Offset(0, 12),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 74,
+                  height: 74,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFFF59E0B),
+                        Color(0xFFFB7185),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                  child: const Icon(
+                    Icons.emoji_events_rounded,
+                    color: Colors.white,
+                    size: 38,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  isTimeTrial ? 'Time Trial Cleared!' : 'Level Complete!',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 26,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  isKingdom
+                      ? 'Your kingdom grows stronger. Rewards unlocked and next level is ready.'
+                      : 'You beat the challenge. Collect your rewards and keep going.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.82),
+                    height: 1.42,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 18),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _StatChip(
+                      icon: Icons.workspace_premium_rounded,
+                      label: 'Score',
+                      value: '$score',
+                    ),
+                    _StatChip(
+                      icon: Icons.flag_rounded,
+                      label: isKingdom ? 'Level' : 'Challenge',
+                      value: '${controller.currentLevelNumber}',
+                    ),
+                    _StatChip(
+                      icon: Icons.card_giftcard_rounded,
+                      label: 'Reward',
+                      value: controller.rewardLabel,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 18),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          _restartSession(
+                            levelNumber: controller.currentLevelNumber,
+                          );
+                        },
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: 1.2,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        child: const Text(
+                          'Replay',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          Navigator.of(context).pop();
+                          if (isKingdom) {
+                            await _startNextKingdomLevel();
+                          } else {
+                            await _restartSession();
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFF59E0B),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        child: Text(
+                          isKingdom ? 'Next Level' : 'Play Again',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _StatChip(
-                icon: Icons.workspace_premium_rounded,
-                label: 'Final Score',
-                value: '$score',
-              ),
-              const SizedBox(height: 10),
-              _StatChip(
-                icon: Icons.flag_rounded,
-                label: isKingdom ? 'Level' : 'Challenge',
-                value: '${controller.currentLevelNumber}',
-              ),
-              const SizedBox(height: 10),
-              _StatChip(
-                icon: Icons.card_giftcard_rounded,
-                label: 'Reward',
-                value: controller.rewardLabel,
-              ),
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).maybePop();
-              },
-              child: const Text('Exit'),
-            ),
-            FilledButton(
-              onPressed: () async {
-                Navigator.of(context).pop();
-                if (isKingdom) {
-                  await _startNextKingdomLevel();
-                } else {
-                  await _restartSession();
-                }
-              },
-              child: Text(isKingdom ? 'Next Level' : 'Play Again'),
-            ),
-          ],
         );
       },
     );
@@ -431,66 +533,154 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) {
-        return AlertDialog(
-          backgroundColor: const Color(0xFF111827),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-          ),
-          title: Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                subtitle,
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.82),
-                  height: 1.45,
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.all(22),
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                colors: [
+                  Color(0xFF111827),
+                  Color(0xFF0F172A),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(28),
+              border: Border.all(
+                color: Colors.white.withOpacity(0.08),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.34),
+                  blurRadius: 24,
+                  offset: const Offset(0, 12),
                 ),
-              ),
-              const SizedBox(height: 16),
-              _StatChip(
-                icon: Icons.emoji_events_rounded,
-                label: 'Score',
-                value: '$score',
-              ),
-              const SizedBox(height: 10),
-              _StatChip(
-                icon: Icons.flag_rounded,
-                label: widget.mode == BlockMode.timeTrial
-                    ? 'Challenge'
-                    : widget.mode == BlockMode.kingdom
-                    ? 'Level'
-                    : 'Run',
-                value: '${controller.currentLevelNumber}',
-              ),
-            ],
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 74,
+                  height: 74,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color(0xFF8B5CF6),
+                        Color(0xFFFF5A6E),
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(22),
+                  ),
+                  child: const Icon(
+                    Icons.refresh_rounded,
+                    color: Colors.white,
+                    size: 38,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 26,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.82),
+                    height: 1.42,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 18),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _StatChip(
+                      icon: Icons.emoji_events_rounded,
+                      label: 'Score',
+                      value: '$score',
+                    ),
+                    _StatChip(
+                      icon: Icons.flag_rounded,
+                      label: widget.mode == BlockMode.timeTrial
+                          ? 'Challenge'
+                          : widget.mode == BlockMode.kingdom
+                          ? 'Level'
+                          : 'Run',
+                      value: '${controller.currentLevelNumber}',
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 18),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).maybePop();
+                        },
+                        style: OutlinedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                          side: const BorderSide(
+                            color: Colors.white,
+                            width: 1.2,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        child: const Text(
+                          'Exit',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          Navigator.of(context).pop();
+                          await _restartSession(
+                            levelNumber: controller.currentLevelNumber,
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF8B5CF6),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        child: const Text(
+                          'Retry',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-                Navigator.of(context).maybePop();
-              },
-              child: const Text('Exit'),
-            ),
-            FilledButton(
-              onPressed: () async {
-                Navigator.of(context).pop();
-                await _restartSession(
-                  levelNumber: widget.mode == BlockMode.kingdom
-                      ? controller.currentLevelNumber
-                      : controller.currentLevelNumber,
-                );
-              },
-              child: const Text('Retry'),
-            ),
-          ],
         );
       },
     );
@@ -577,7 +767,7 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
                   const _AmbientParticles(),
                   Column(
                     children: [
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 6),
                       BannerWidget(
                         primaryText: controller.banner,
                         secondaryText: controller.secondaryBanner,
@@ -586,7 +776,16 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
                         scorePulse: controller.scorePulse,
                         scoreGain: controller.lastScoreGain,
                       ),
-                      const SizedBox(height: 10),
+                      if (widget.mode == BlockMode.kingdom)
+                        KingdomHud(
+                          levelLabel: 'L${controller.currentLevelNumber}',
+                          objectiveText: controller.progress.objectiveTitle,
+                          progressText: controller.progress.progressText,
+                          rewardText: controller.rewardLabel,
+                          primaryProgress: controller.progress.primaryProgress,
+                          secondaryProgress: controller.progress.secondaryProgress,
+                        ),
+                      const SizedBox(height: 6),
                       Expanded(
                         child: Center(
                           child: Padding(

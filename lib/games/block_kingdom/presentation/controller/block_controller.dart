@@ -39,7 +39,7 @@ class BlockController extends ChangeNotifier {
   String secondaryBanner = '';
   Color bannerColor = const Color(0xFFFFD37A);
 
-  static const double dragLift = 90;
+  static const double dragLift = 110;
 
   PlacementFeedback? latestFeedback;
   int feedbackVersion = 0;
@@ -123,7 +123,7 @@ class BlockController extends ChangeNotifier {
   double get dragVisualCellSize {
     final cell = boardCellSize;
     if (cell <= 0) return 36;
-    return math.max(36, cell * 1.20);
+    return math.max(36, cell * 0.90);
   }
 
   double get dragLiftPx => dragLift;
