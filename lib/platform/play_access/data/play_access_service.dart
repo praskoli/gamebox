@@ -4,7 +4,7 @@ import '../domain/play_access_approval_request.dart';
 import '../domain/play_access_config.dart';
 import '../domain/play_access_daily_state.dart';
 import '../domain/play_access_guard_result.dart';
-import '../../../platform/play_access/data/play_access_repository.dart';
+import '../data/play_access_repository.dart';
 
 class PlayAccessService with WidgetsBindingObserver {
   PlayAccessService._();

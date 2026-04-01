@@ -1,8 +1,14 @@
+import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../../platform/audio/sound_service.dart';
 import '../../../platform/player/services/player_stats_service.dart';
 import '../../../platform/profile/services/profile_service.dart';
+import '../../../platform/play_access/data/play_access_service.dart';
+import '../domain/block_mode.dart';
+import '../progression/data/block_level_catalog.dart';
+import '../progression/data/block_progression_service.dart';
 import 'controller/block_controller.dart';
 import 'effects/block_place_effect.dart';
 import 'effects/line_clear_sweep_effect.dart';
@@ -10,55 +16,136 @@ import 'widgets/banner_widget.dart';
 import 'widgets/board_widget.dart';
 import 'widgets/piece_widget.dart';
 import 'widgets/tray_widget.dart';
+import 'widgets/time_trial_overlay.dart';
 
 class BlockKingdomScreen extends StatefulWidget {
-  const BlockKingdomScreen({super.key});
+  const BlockKingdomScreen({
+    super.key,
+    this.mode = BlockMode.endless,
+    this.initialLevelNumber = 1,
+  });
+
+  final BlockMode mode;
+  final int initialLevelNumber;
 
   @override
   State<BlockKingdomScreen> createState() => _BlockKingdomScreenState();
 }
 
 class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
-  final BlockController controller = BlockController();
+  BlockController? _controller;
   final GlobalKey _boardKey = GlobalKey();
 
-  bool _rewarded = false;
+  bool _isPreparing = true;
   bool _dialogShown = false;
+  bool _resolutionHandled = false;
   int _lastFeedbackVersion = 0;
+
+  Timer? _timeTrialTimer;
 
   final List<_OverlayEntryData> _overlayEntries = <_OverlayEntryData>[];
 
   @override
   void initState() {
     super.initState();
-    controller.start();
-    SoundService.instance.playGameStart();
+    _prepare();
   }
 
-  Future<void> _handleGameOver() async {
-    if (_rewarded) return;
-    _rewarded = true;
-
-    final score = controller.engine.session.score;
-    final xp = (score ~/ 10).clamp(5, 999999);
-    final coins = (score ~/ 5).clamp(3, 999999);
-
-    try {
-      await ProfileService.instance.addGameCompletionRewards(
-        coins: coins,
-        xp: xp,
+  @override
+  void dispose() {
+    _timeTrialTimer?.cancel();
+    final activeController = _controller;
+    if (activeController != null) {
+      PlayAccessService.instance.endGameplaySession(
+        completedLevel: false,
       );
-
-      await PlayerStatsService.instance.recordGameCompletion(
-        gameId: 'block_kingdom',
-        xp: xp,
-        coins: coins,
-        levelNumber: 1,
-        score: score,
-      );
-    } catch (_) {
-      // Keep gameplay stable even if writes fail.
     }
+    super.dispose();
+  }
+
+  Future<void> _prepare({int? forceLevelNumber}) async {
+    setState(() {
+      _isPreparing = true;
+      _dialogShown = false;
+      _resolutionHandled = false;
+      _overlayEntries.clear();
+      _lastFeedbackVersion = 0;
+    });
+
+    int startLevel = forceLevelNumber ?? widget.initialLevelNumber;
+
+    if (widget.mode == BlockMode.kingdom) {
+      final progress = await BlockProgressionService.instance.getProgress();
+      startLevel = progress.lastPlayedLevel.clamp(
+        1,
+        BlockLevelCatalog.maxKingdomLevel,
+      );
+    }
+
+    final controller = BlockController(
+      mode: widget.mode,
+      initialLevelNumber: startLevel,
+    )..start();
+
+    _controller = controller;
+
+    await PlayAccessService.instance.beginGameplaySession(
+      gameId: 'block_kingdom',
+      levelNumber: controller.currentLevelNumber,
+    );
+
+    _configureTimer();
+    SoundService.instance.playGameStart();
+
+    if (!mounted) return;
+    setState(() {
+      _isPreparing = false;
+    });
+  }
+
+  void _configureTimer() {
+    _timeTrialTimer?.cancel();
+
+    if (widget.mode != BlockMode.timeTrial) return;
+
+    _timeTrialTimer = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted || _isPreparing || _dialogShown) return;
+
+      final controller = _controller;
+      if (controller == null) return;
+
+      controller.tickTimer();
+      _checkResolutionAndShowDialog();
+    });
+  }
+
+  Future<void> _restartSession({int? levelNumber}) async {
+    _timeTrialTimer?.cancel();
+    await PlayAccessService.instance.endGameplaySession(
+      completedLevel: false,
+    );
+    await _prepare(forceLevelNumber: levelNumber);
+  }
+
+  Future<void> _startNextKingdomLevel() async {
+    final controller = _controller;
+    if (controller == null) return;
+
+    final nextLevel = (controller.currentLevelNumber + 1).clamp(
+      1,
+      BlockLevelCatalog.maxKingdomLevel,
+    );
+
+    await PlayAccessService.instance.endGameplaySession(
+      completedLevel: true,
+    );
+
+    if (nextLevel > BlockLevelCatalog.maxKingdomLevel) {
+      if (mounted) Navigator.of(context).maybePop();
+      return;
+    }
+
+    await _prepare(forceLevelNumber: nextLevel);
   }
 
   void _scheduleBoardRectUpdate() {
@@ -70,89 +157,71 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
       if (box == null || !box.hasSize) return;
 
       final offset = box.localToGlobal(Offset.zero);
-      controller.attachBoardRect(offset & box.size);
+      _controller?.attachBoardRect(offset & box.size);
     });
   }
 
-  void _checkGameOverAndShowDialog() {
-    if (!controller.engine.session.isGameOver || _dialogShown) return;
+  Future<void> _applyRewards({
+    required bool success,
+  }) async {
+    final controller = _controller;
+    if (controller == null) return;
 
-    _dialogShown = true;
+    final score = controller.engine.session.score;
+    int xp = 0;
+    int coins = 0;
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      await _handleGameOver();
-      if (!mounted) return;
+    switch (widget.mode) {
+      case BlockMode.endless:
+        xp = (score ~/ 10).clamp(5, 999999);
+        coins = (score ~/ 5).clamp(3, 999999);
+        break;
+      case BlockMode.kingdom:
+        if (success) {
+          xp = controller.levelDefinition.rewardXp + (score ~/ 40);
+          coins = controller.levelDefinition.rewardCoins + (score ~/ 70);
+        }
+        break;
+      case BlockMode.timeTrial:
+        if (success) {
+          final timeBonus = (controller.engine.session.remainingSeconds ~/ 5);
+          xp = controller.levelDefinition.rewardXp + timeBonus;
+          coins = controller.levelDefinition.rewardCoins + (timeBonus ~/ 2);
+        }
+        break;
+    }
 
-      await showDialog<void>(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) {
-          final score = controller.engine.session.score;
-          final xp = (score ~/ 10).clamp(5, 999999);
-          final coins = (score ~/ 5).clamp(3, 999999);
-
-          return AlertDialog(
-            backgroundColor: const Color(0xFF111827),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-            ),
-            title: const Text(
-              'Kingdom Full',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            content: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _StatChip(
-                  icon: Icons.emoji_events_rounded,
-                  label: 'Final Score',
-                  value: '$score',
-                ),
-                const SizedBox(height: 10),
-                _StatChip(
-                  icon: Icons.bolt_rounded,
-                  label: 'XP Earned',
-                  value: '+$xp',
-                ),
-                const SizedBox(height: 10),
-                _StatChip(
-                  icon: Icons.monetization_on_rounded,
-                  label: 'Coins Earned',
-                  value: '+$coins',
-                ),
-              ],
-            ),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).maybePop();
-                },
-                child: const Text('Exit'),
-              ),
-              FilledButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                  controller.restart();
-                  _rewarded = false;
-                  _dialogShown = false;
-                  _lastFeedbackVersion = 0;
-                  _overlayEntries.clear();
-                  SoundService.instance.playGameStart();
-                },
-                child: const Text('Play Again'),
-              ),
-            ],
-          );
-        },
+    if (coins > 0 || xp > 0) {
+      await ProfileService.instance.addGameCompletionRewards(
+        coins: coins,
+        xp: xp,
       );
-    });
+    }
+
+    await PlayerStatsService.instance.recordGameCompletion(
+      gameId: 'block_kingdom',
+      xp: xp,
+      coins: coins,
+      levelNumber: controller.currentLevelNumber,
+      score: score,
+    );
+
+    if (widget.mode == BlockMode.kingdom && success) {
+      await BlockProgressionService.instance.completeLevel(
+        levelNumber: controller.currentLevelNumber,
+        score: score,
+      );
+    } else if (widget.mode == BlockMode.kingdom) {
+      await BlockProgressionService.instance.setLastPlayedLevel(
+        controller.currentLevelNumber,
+      );
+    }
   }
 
   void _consumeFeedback() {
+    final controller = _controller;
+    if (controller == null) return;
+
     final feedback = controller.latestFeedback;
     final rect = controller.boardRect;
     final cellSize = controller.boardCellSize;
@@ -239,7 +308,7 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
         _OverlayEntryData(
           id: UniqueKey().toString(),
           widget: _FloatingScoreEffect(
-            position: Offset(rect.right - 90, rect.top + 12),
+            position: Offset(rect.right - 96, rect.top + 12),
             text: '+${feedback.scoreGain}',
             highlight: feedback.crossedMilestone,
           ),
@@ -247,7 +316,7 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
       );
     }
 
-    Future.delayed(const Duration(milliseconds: 650), () {
+    Future.delayed(const Duration(milliseconds: 760), () {
       if (!mounted) return;
       setState(() {
         _overlayEntries.clear();
@@ -255,80 +324,313 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
     });
   }
 
+  Future<void> _showSuccessDialog() async {
+    final controller = _controller;
+    if (controller == null) return;
+
+    final score = controller.engine.session.score;
+    await _applyRewards(success: true);
+
+    if (!mounted) return;
+
+    final isKingdom = widget.mode == BlockMode.kingdom;
+    final isTimeTrial = widget.mode == BlockMode.timeTrial;
+
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color(0xFF111827),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          title: Text(
+            isTimeTrial ? 'Time Trial Cleared' : 'Victory!',
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _StatChip(
+                icon: Icons.workspace_premium_rounded,
+                label: 'Final Score',
+                value: '$score',
+              ),
+              const SizedBox(height: 10),
+              _StatChip(
+                icon: Icons.flag_rounded,
+                label: isKingdom ? 'Level' : 'Challenge',
+                value: '${controller.currentLevelNumber}',
+              ),
+              const SizedBox(height: 10),
+              _StatChip(
+                icon: Icons.card_giftcard_rounded,
+                label: 'Reward',
+                value: controller.rewardLabel,
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).maybePop();
+              },
+              child: const Text('Exit'),
+            ),
+            FilledButton(
+              onPressed: () async {
+                Navigator.of(context).pop();
+                if (isKingdom) {
+                  await _startNextKingdomLevel();
+                } else {
+                  await _restartSession();
+                }
+              },
+              child: Text(isKingdom ? 'Next Level' : 'Play Again'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showFailureDialog() async {
+    final controller = _controller;
+    if (controller == null) return;
+
+    await _applyRewards(success: widget.mode == BlockMode.endless);
+
+    if (!mounted) return;
+
+    final score = controller.engine.session.score;
+    final title = switch (widget.mode) {
+      BlockMode.endless => 'Kingdom Full',
+      BlockMode.kingdom => 'Level Missed',
+      BlockMode.timeTrial => 'Time Trial Failed',
+    };
+
+    final subtitle = switch (widget.mode) {
+      BlockMode.endless => 'The board is full. Ready for another run?',
+      BlockMode.kingdom =>
+      'You were close. Retry the level and keep the kingdom growing.',
+      BlockMode.timeTrial =>
+      'The clock won this one. Retry and finish before time runs out.',
+    };
+
+    await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: const Color(0xFF111827),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          title: Text(
+            title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                subtitle,
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.82),
+                  height: 1.45,
+                ),
+              ),
+              const SizedBox(height: 16),
+              _StatChip(
+                icon: Icons.emoji_events_rounded,
+                label: 'Score',
+                value: '$score',
+              ),
+              const SizedBox(height: 10),
+              _StatChip(
+                icon: Icons.flag_rounded,
+                label: widget.mode == BlockMode.timeTrial
+                    ? 'Challenge'
+                    : widget.mode == BlockMode.kingdom
+                    ? 'Level'
+                    : 'Run',
+                value: '${controller.currentLevelNumber}',
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).maybePop();
+              },
+              child: const Text('Exit'),
+            ),
+            FilledButton(
+              onPressed: () async {
+                Navigator.of(context).pop();
+                await _restartSession(
+                  levelNumber: widget.mode == BlockMode.kingdom
+                      ? controller.currentLevelNumber
+                      : controller.currentLevelNumber,
+                );
+              },
+              child: const Text('Retry'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void _checkResolutionAndShowDialog() {
+    final controller = _controller;
+    if (controller == null || _dialogShown || _resolutionHandled) return;
+
+    switch (controller.sessionOutcome) {
+      case BlockSessionOutcome.none:
+        return;
+      case BlockSessionOutcome.success:
+        _resolutionHandled = true;
+        _dialogShown = true;
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          await PlayAccessService.instance.endGameplaySession(
+            completedLevel: true,
+          );
+          await _showSuccessDialog();
+          if (!mounted) return;
+          controller.clearSessionOutcome();
+          _dialogShown = false;
+        });
+        break;
+      case BlockSessionOutcome.failure:
+        _resolutionHandled = true;
+        _dialogShown = true;
+        WidgetsBinding.instance.addPostFrameCallback((_) async {
+          await PlayAccessService.instance.endGameplaySession(
+            completedLevel: false,
+          );
+          await _showFailureDialog();
+          if (!mounted) return;
+          controller.clearSessionOutcome();
+          _dialogShown = false;
+        });
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     _scheduleBoardRectUpdate();
+
+    if (_isPreparing || _controller == null) {
+      return const Scaffold(
+        backgroundColor: Color(0xFF0B1220),
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    final controller = _controller!;
 
     return AnimatedBuilder(
       animation: controller,
       builder: (context, _) {
         _scheduleBoardRectUpdate();
         _consumeFeedback();
-        _checkGameOverAndShowDialog();
+        _checkResolutionAndShowDialog();
 
         final draggingPiece = controller.draggingPiece;
         final dragCellSize = controller.dragVisualCellSize;
 
         return Scaffold(
-          backgroundColor: const Color(0xFF07090F),
-          body: SafeArea(
-            child: Stack(
-              children: [
-                Column(
-                  children: [
-                    const SizedBox(height: 10),
-                    BannerWidget(
-                      primaryText: controller.banner,
-                      secondaryText: controller.secondaryBanner,
-                      color: controller.bannerColor,
-                      score: controller.engine.session.score,
-                      scorePulse: controller.scorePulse,
-                      scoreGain: controller.lastScoreGain,
+          backgroundColor: const Color(0xFF0B1220),
+          body: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFF0B1220),
+                  Color(0xFF111A2F),
+                  Color(0xFF1A2340),
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: SafeArea(
+              child: Stack(
+                children: [
+                  const _AmbientParticles(),
+                  Column(
+                    children: [
+                      const SizedBox(height: 10),
+                      BannerWidget(
+                        primaryText: controller.banner,
+                        secondaryText: controller.secondaryBanner,
+                        color: controller.bannerColor,
+                        score: controller.engine.session.score,
+                        scorePulse: controller.scorePulse,
+                        scoreGain: controller.lastScoreGain,
+                      ),
+                      const SizedBox(height: 10),
+                      Expanded(
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                            child: AspectRatio(
+                              aspectRatio: 1,
+                              child: BoardWidget(
+                                key: _boardKey,
+                                controller: controller,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(12, 8, 12, 18),
+                        child: TrayWidget(controller: controller),
+                      ),
+                    ],
+                  ),
+                  if (controller.showTimer)
+                    TimeTrialOverlay(
+                      timerText: controller.timerLabel,
+                      isUrgent: controller.engine.session.remainingSeconds <= 10,
                     ),
-                    const SizedBox(height: 10),
-                    Expanded(
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: BoardWidget(
-                              key: _boardKey,
-                              controller: controller,
+                  ..._overlayEntries.map((e) => e.widget),
+                  if (draggingPiece != null)
+                    Positioned(
+                      left: controller.dragLeft,
+                      top: controller.dragTop,
+                      child: IgnorePointer(
+                        child: AnimatedScale(
+                          duration: const Duration(milliseconds: 90),
+                          curve: Curves.easeOutBack,
+                          scale: 1.18,
+                          child: Material(
+                            color: Colors.transparent,
+                            child: PieceWidget(
+                              piece: draggingPiece,
+                              cellSize: dragCellSize,
+                              active: true,
+                              opacity: 0.98,
                             ),
                           ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(12, 8, 12, 18),
-                      child: TrayWidget(controller: controller),
-                    ),
-                  ],
-                ),
-                ..._overlayEntries.map((e) => e.widget),
-                if (draggingPiece != null)
-                  Positioned(
-                    left: controller.dragLeft,
-                    top: controller.dragTop,
-                    child: IgnorePointer(
-                      child: AnimatedScale(
-                        duration: const Duration(milliseconds: 90),
-                        curve: Curves.easeOutBack,
-                        scale: 1.18,
-                        child: Material(
-                          color: Colors.transparent,
-                          child: PieceWidget(
-                            piece: draggingPiece,
-                            cellSize: dragCellSize,
-                            active: true,
-                            opacity: 0.98,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-              ],
+                ],
+              ),
             ),
           ),
         );
@@ -556,6 +858,96 @@ class _FloatingScoreEffectState extends State<_FloatingScoreEffect>
         },
       ),
     );
+  }
+}
+
+class _AmbientParticles extends StatefulWidget {
+  const _AmbientParticles();
+
+  @override
+  State<_AmbientParticles> createState() => _AmbientParticlesState();
+}
+
+class _AmbientParticlesState extends State<_AmbientParticles>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+  final List<_AmbientDot> _dots = List<_AmbientDot>.generate(
+    20,
+        (index) => _AmbientDot(
+      seed: index + 1,
+    ),
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 12),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(
+      child: AnimatedBuilder(
+        animation: _controller,
+        builder: (context, _) {
+          return CustomPaint(
+            size: MediaQuery.of(context).size,
+            painter: _AmbientParticlesPainter(
+              dots: _dots,
+              t: _controller.value,
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _AmbientDot {
+  final int seed;
+
+  const _AmbientDot({required this.seed});
+
+  double x(double t) => ((seed * 47) % 100) / 100;
+  double y(double t) => ((((seed * 29) % 100) / 100) + (t * 0.08)) % 1.2;
+  double radius() => 1.6 + (seed % 3) * 0.8;
+  double opacity() => 0.08 + ((seed % 5) * 0.02);
+}
+
+class _AmbientParticlesPainter extends CustomPainter {
+  final List<_AmbientDot> dots;
+  final double t;
+
+  const _AmbientParticlesPainter({
+    required this.dots,
+    required this.t,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final dot in dots) {
+      final paint = Paint()
+        ..color = const Color(0xFF9DD6FF).withOpacity(dot.opacity())
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 6);
+
+      final dx = dot.x(t) * size.width;
+      final dy = dot.y(t) * size.height;
+      canvas.drawCircle(Offset(dx, dy), dot.radius(), paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _AmbientParticlesPainter oldDelegate) {
+    return oldDelegate.t != t;
   }
 }
 

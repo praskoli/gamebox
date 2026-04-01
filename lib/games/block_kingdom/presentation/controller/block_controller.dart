@@ -1,13 +1,26 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:gamebox/platform/audio/sound_service.dart';
-
+import 'package:gamebox/platform/haptics/haptic_service.dart';
+import 'package:gamebox/platform/play_access/data/play_access_service.dart';
 import '../../data/block_caption_pool.dart';
 import '../../domain/block_piece.dart';
+import '../../domain/block_mode.dart';
 import '../../engine/block_engine.dart';
+import '../../progression/domain/level_definition.dart';
+import '../../progression/domain/level_progress.dart';
+
 
 class BlockController extends ChangeNotifier {
-  BlockEngine engine = BlockEngine();
+  BlockController({
+    required this.mode,
+    required this.initialLevelNumber,
+  });
+
+  final BlockMode mode;
+  int initialLevelNumber;
+
+  late BlockEngine engine;
 
   Rect? _boardRect;
 
@@ -37,9 +50,15 @@ class BlockController extends ChangeNotifier {
   int lastScoreGain = 0;
 
   int _transientToken = 0;
+  BlockSessionOutcome sessionOutcome = BlockSessionOutcome.none;
 
   void start() {
-    engine = BlockEngine()..start();
+    engine = BlockEngine(
+      mode: mode,
+      levelNumber: initialLevelNumber,
+    )..start();
+
+    sessionOutcome = BlockSessionOutcome.none;
     _resetDragState();
     _resetTransientState();
     banner = '';
@@ -48,7 +67,10 @@ class BlockController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void restart() {
+  void restart({int? levelNumber}) {
+    if (levelNumber != null) {
+      initialLevelNumber = levelNumber;
+    }
     start();
   }
 
@@ -58,6 +80,38 @@ class BlockController extends ChangeNotifier {
   }
 
   Rect? get boardRect => _boardRect;
+
+  LevelDefinition get levelDefinition => engine.levelDefinition;
+  LevelProgress get progress => engine.progress;
+
+  int get currentLevelNumber => levelDefinition.levelNumber;
+
+  String get levelLabel {
+    switch (mode) {
+      case BlockMode.kingdom:
+        return 'Level ${levelDefinition.levelNumber}';
+      case BlockMode.timeTrial:
+        return 'Challenge ${levelDefinition.levelNumber}';
+      case BlockMode.endless:
+        return 'Classic Run';
+    }
+  }
+
+  String get rewardLabel {
+    if (mode == BlockMode.endless) {
+      return 'Score-based rewards';
+    }
+    return '+${levelDefinition.rewardXp} XP • +${levelDefinition.rewardCoins} coins';
+  }
+
+  bool get showTimer => mode.isTimed;
+
+  String get timerLabel {
+    final seconds = engine.session.remainingSeconds.clamp(0, 9999);
+    final mm = (seconds ~/ 60).toString().padLeft(2, '0');
+    final ss = (seconds % 60).toString().padLeft(2, '0');
+    return '$mm:$ss';
+  }
 
   double get boardCellSize {
     final rect = _boardRect;
@@ -122,7 +176,10 @@ class BlockController extends ChangeNotifier {
   }
 
   void startDrag(int index, Offset globalPosition) {
+    if (engine.session.isGameOver) return;
     if (index < 0 || index >= engine.tray.length) return;
+
+    PlayAccessService.instance.recordUserInteraction();
 
     draggingIndex = index;
     draggingPiece = engine.tray[index];
@@ -132,6 +189,7 @@ class BlockController extends ChangeNotifier {
     banner = '';
     secondaryBanner = '';
 
+    _safeHaptic(HapticService.selection);
     _updatePreviewFromGlobal(globalPosition);
     notifyListeners();
   }
@@ -139,113 +197,234 @@ class BlockController extends ChangeNotifier {
   void updateDrag(Offset globalPosition) {
     if (!isDragging || draggingPiece == null) return;
 
+    PlayAccessService.instance.recordUserInteraction();
+
     dragGlobalPosition = globalPosition;
     _updatePreviewFromGlobal(globalPosition);
     notifyListeners();
   }
 
   void endDrag() {
-    if (!isDragging) return;
+    debugPrint('END_DRAG: entered');
+    if (!isDragging) {
+      debugPrint('END_DRAG: ignored because isDragging = false');
+      return;
+    }
+
+    try {
+      PlayAccessService.instance.recordUserInteraction();
+      debugPrint('END_DRAG: recorded interaction');
+    } catch (e, st) {
+      debugPrint('END_DRAG: recordUserInteraction error -> $e');
+      debugPrint('$st');
+    }
 
     final piece = draggingPiece;
     final row = previewRow;
     final col = previewCol;
     final trayIndex = draggingIndex;
 
+    debugPrint(
+      'END_DRAG: piece=${piece != null}, trayIndex=$trayIndex, row=$row, col=$col, isValidPlacement=$isValidPlacement',
+    );
+
     if (piece != null &&
         trayIndex != null &&
         row != null &&
         col != null &&
         isValidPlacement) {
-      final beforeScore = engine.session.score;
-      final placedCells = _buildPlacedCells(piece, row, col);
-      final previewResult = _simulatePlacement(piece, row, col);
+      try {
+        final placedCells = _buildPlacedCells(piece, row, col);
+        debugPrint('END_DRAG: built placedCells = ${placedCells.length}');
 
-      final placed = engine.placePiece(
-        trayIndex,
-        row,
-        col,
-      );
-
-      if (placed) {
-        final scoreGain = engine.session.score - beforeScore;
-        final comboNow = engine.session.combo;
-        final clearedLineCount =
-            previewResult.clearedRows.length + previewResult.clearedCols.length;
-
-        recentPlacedCellKeys = placedCells.map((e) => e.key).toSet();
-        recentClearedCellKeys =
-            previewResult.clearedCells.map((e) => e.key).toSet();
-
-        lastScoreGain = scoreGain;
-        scorePulse = true;
-
-        final crossedMilestone = _crossedMilestone(
-          beforeScore,
-          engine.session.score,
+        final previewResult = _simulatePlacement(piece, row, col);
+        debugPrint(
+          'END_DRAG: preview rows=${previewResult.clearedRows.length}, cols=${previewResult.clearedCols.length}, cells=${previewResult.clearedCells.length}',
         );
 
-        final feedback = PlacementFeedback(
-          placedCells: placedCells,
-          clearedCells: previewResult.clearedCells,
-          clearedRows: previewResult.clearedRows,
-          clearedCols: previewResult.clearedCols,
-          primaryText: _resolvePrimaryCaption(
-            clearedLineCount: clearedLineCount,
+        debugPrint('END_DRAG: calling engine.placePiece...');
+        final turnResult = engine.placePiece(
+          trayIndex,
+          row,
+          col,
+        );
+        debugPrint('END_DRAG: engine.placePiece returned ${turnResult != null}');
+
+        if (turnResult != null) {
+          debugPrint('END_DRAG: turnResult.scoreBreakdown.total = ${turnResult.scoreBreakdown.total}');
+          final scoreGain = turnResult.scoreBreakdown.total;
+          final comboNow = engine.session.combo;
+          final clearedLineCount = turnResult.clearedLineCount;
+
+          recentPlacedCellKeys = placedCells.map((e) => e.key).toSet();
+          recentClearedCellKeys =
+              previewResult.clearedCells.map((e) => e.key).toSet();
+
+          lastScoreGain = scoreGain;
+          scorePulse = true;
+
+          final crossedMilestone = turnResult.scoreBreakdown.milestoneBonus > 0;
+          debugPrint('END_DRAG: crossedMilestone = $crossedMilestone');
+
+          final feedback = PlacementFeedback(
+            placedCells: placedCells,
+            clearedCells: previewResult.clearedCells,
+            clearedRows: previewResult.clearedRows,
+            clearedCols: previewResult.clearedCols,
+            primaryText: _resolvePrimaryCaption(
+              clearedLineCount: clearedLineCount,
+              combo: comboNow,
+              scoreGain: scoreGain,
+              completedObjective: engine.session.isLevelComplete,
+            ),
+            secondaryText: _resolveSecondaryCaption(
+              clearedLineCount: clearedLineCount,
+              combo: comboNow,
+              crossedMilestone: crossedMilestone,
+              scoreGain: scoreGain,
+              completedObjective: engine.session.isLevelComplete,
+            ),
             combo: comboNow,
             scoreGain: scoreGain,
-          ),
-          secondaryText: _resolveSecondaryCaption(
-            clearedLineCount: clearedLineCount,
-            combo: comboNow,
             crossedMilestone: crossedMilestone,
-            scoreGain: scoreGain,
-          ),
-          combo: comboNow,
-          scoreGain: scoreGain,
-          crossedMilestone: crossedMilestone,
-          eventId: DateTime.now().microsecondsSinceEpoch,
-        );
+            eventId: DateTime.now().microsecondsSinceEpoch,
+          );
 
-        latestFeedback = feedback;
-        feedbackVersion++;
+          latestFeedback = feedback;
+          feedbackVersion++;
 
-        banner = feedback.primaryText;
-        secondaryBanner = feedback.secondaryText;
+          banner = feedback.primaryText;
+          secondaryBanner = feedback.secondaryText;
 
-        if (crossedMilestone) {
-          bannerColor = const Color(0xFFFFE37A);
-        } else if (clearedLineCount > 0) {
-          bannerColor = const Color(0xFF84FFD2);
+          if (engine.session.isLevelComplete) {
+            bannerColor = const Color(0xFF84FFD2);
+          } else if (crossedMilestone) {
+            bannerColor = const Color(0xFFFFE37A);
+          } else if (clearedLineCount > 0) {
+            bannerColor = const Color(0xFF84FFD2);
+          } else {
+            bannerColor = const Color(0xFFFFD37A);
+          }
+
+          debugPrint('END_DRAG: playing sounds/haptics');
+          SoundService.instance.playBlockPlace();
+
+          try {
+            HapticService.light();
+          } catch (e, st) {
+            debugPrint('END_DRAG: Haptic light error -> $e');
+            debugPrint('$st');
+          }
+
+          if (clearedLineCount > 0) {
+            SoundService.instance.playLineClear();
+            SoundService.instance.playMatch();
+            try {
+              HapticService.medium();
+            } catch (e, st) {
+              debugPrint('END_DRAG: Haptic medium error -> $e');
+              debugPrint('$st');
+            }
+          }
+
+          if (comboNow >= 3 || crossedMilestone) {
+            SoundService.instance.playBonus();
+            try {
+              HapticService.heavy();
+            } catch (e, st) {
+              debugPrint('END_DRAG: Haptic heavy error -> $e');
+              debugPrint('$st');
+            }
+          }
+
+          if (engine.session.isLevelComplete) {
+            SoundService.instance.playLevelComplete();
+            try {
+              HapticService.heavy();
+            } catch (e, st) {
+              debugPrint('END_DRAG: Haptic heavy complete error -> $e');
+              debugPrint('$st');
+            }
+            sessionOutcome = BlockSessionOutcome.success;
+          } else if (engine.session.isGameOver) {
+            SoundService.instance.playFail();
+            try {
+              HapticService.heavy();
+            } catch (e, st) {
+              debugPrint('END_DRAG: Haptic heavy fail error -> $e');
+              debugPrint('$st');
+            }
+            sessionOutcome = BlockSessionOutcome.failure;
+          }
+
+          _scheduleTransientCleanup();
+          debugPrint('END_DRAG: success branch completed');
         } else {
-          bannerColor = const Color(0xFFFFD37A);
+          debugPrint('END_DRAG: turnResult was null, playing fail');
+          SoundService.instance.playFail();
+          try {
+            HapticService.selection();
+          } catch (_) {}
         }
-
-        SoundService.instance.playBlockPlace();
-
-        if (clearedLineCount > 0) {
-          SoundService.instance.playLineClear();
-          SoundService.instance.playMatch();
-        }
-
-        if (comboNow >= 3 || crossedMilestone) {
-          SoundService.instance.playBonus();
-        }
-
-        if (engine.session.isGameOver) {
-          SoundService.instance.playLevelComplete();
-        }
-
-        _scheduleTransientCleanup();
+      } catch (e, st) {
+        debugPrint('END_DRAG: SUCCESS BRANCH ERROR -> $e');
+        debugPrint('$st');
       }
     } else {
+      debugPrint('END_DRAG: invalid placement branch');
       SoundService.instance.playFail();
+      try {
+        HapticService.selection();
+      } catch (_) {}
     }
 
+    debugPrint('END_DRAG: resetting drag state');
     _resetDragState();
+    notifyListeners();
+    debugPrint('END_DRAG: finished');
+  }
+
+  void tickTimer() {
+    if (!mode.isTimed || engine.session.isGameOver) return;
+
+    final ended = engine.tickTimer();
+
+    if (ended) {
+      if (engine.session.isLevelComplete) {
+        banner = 'Clock Beaten!';
+        secondaryBanner = 'Time Trial cleared';
+        bannerColor = const Color(0xFF84FFD2);
+        SoundService.instance.playLevelComplete();
+        _safeHaptic(HapticService.heavy);
+        sessionOutcome = BlockSessionOutcome.success;
+      } else {
+        banner = 'Time Up!';
+        secondaryBanner = 'Challenge missed';
+        bannerColor = const Color(0xFFFF7C8B);
+        SoundService.instance.playFail();
+        _safeHaptic(HapticService.heavy);
+        sessionOutcome = BlockSessionOutcome.failure;
+      }
+    } else if (engine.session.remainingSeconds <= 10) {
+      banner = 'Final Seconds!';
+      secondaryBanner = 'Move fast and finish strong';
+      bannerColor = const Color(0xFF8B5CF6);
+    }
+
     notifyListeners();
   }
 
+  void clearSessionOutcome() {
+    sessionOutcome = BlockSessionOutcome.none;
+    notifyListeners();
+  }
+  void _safeHaptic(void Function() action) {
+    try {
+      action();
+    } catch (_) {
+      // Never let haptics break gameplay flow.
+    }
+  }
   void _scheduleTransientCleanup() {
     _transientToken++;
     final token = _transientToken;
@@ -256,18 +435,20 @@ class BlockController extends ChangeNotifier {
       notifyListeners();
     });
 
-    Future.delayed(const Duration(milliseconds: 280), () {
+    Future.delayed(const Duration(milliseconds: 320), () {
       if (token != _transientToken) return;
       recentPlacedCellKeys = <String>{};
       notifyListeners();
     });
 
-    Future.delayed(const Duration(milliseconds: 520), () {
+    Future.delayed(const Duration(milliseconds: 700), () {
       if (token != _transientToken) return;
       recentClearedCellKeys = <String>{};
-      banner = '';
-      secondaryBanner = '';
-      bannerColor = const Color(0xFFFFD37A);
+      if (!engine.session.isGameOver) {
+        banner = '';
+        secondaryBanner = '';
+        bannerColor = const Color(0xFFFFD37A);
+      }
       notifyListeners();
     });
   }
@@ -413,16 +594,15 @@ class BlockController extends ChangeNotifier {
     );
   }
 
-  bool _crossedMilestone(int beforeScore, int afterScore) {
-    const milestones = <int>[100, 250, 500, 1000, 2000, 5000];
-    return milestones.any((m) => beforeScore < m && afterScore >= m);
-  }
-
   String _resolvePrimaryCaption({
     required int clearedLineCount,
     required int combo,
     required int scoreGain,
+    required bool completedObjective,
   }) {
+    if (completedObjective) {
+      return mode == BlockMode.timeTrial ? 'Trial Cleared!' : 'Level Complete!';
+    }
     if (combo >= 5) return 'Legend Move!';
     if (combo == 4) return 'King Level!';
     if (combo == 3) return 'Brilliant!';
@@ -438,7 +618,11 @@ class BlockController extends ChangeNotifier {
     required int combo,
     required bool crossedMilestone,
     required int scoreGain,
+    required bool completedObjective,
   }) {
+    if (completedObjective) {
+      return rewardLabel;
+    }
     if (crossedMilestone) return 'Bonus unlocked!';
     if (combo >= 4) return 'Board mastery';
     if (combo == 3) return 'Keep the streak';
@@ -447,6 +631,12 @@ class BlockController extends ChangeNotifier {
     if (clearedLineCount == 1) return 'Line clear';
     return scoreGain > 0 ? '+$scoreGain score' : 'Perfect fit';
   }
+}
+
+enum BlockSessionOutcome {
+  none,
+  success,
+  failure,
 }
 
 class PreviewCell {

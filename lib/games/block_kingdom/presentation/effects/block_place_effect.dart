@@ -129,26 +129,33 @@ class _BlockPlaceEffectState extends State<BlockPlaceEffect>
                     opacity: _fade.value,
                     child: Transform.scale(
                       scale: _scale.value,
-                      child: Container(
-                        width: widget.cellSize,
-                        height: widget.cellSize,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(widget.cellSize * 0.22),
-                          color: glowColor.withOpacity(
-                            widget.emphasizeClear ? 0.22 : 0.18,
-                          ),
-                          border: Border.all(
-                            color: glowColor.withOpacity(0.8),
-                            width: 1.2,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: glowColor.withOpacity(0.35),
-                              blurRadius: widget.emphasizeClear ? 24 : 14,
-                              spreadRadius: widget.emphasizeClear ? 3 : 1,
+                      child: Transform.rotate(
+                        angle: widget.emphasizeClear
+                            ? _controller.value * 0.14
+                            : 0,
+                        child: Container(
+                          width: widget.cellSize,
+                          height: widget.cellSize,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                            BorderRadius.circular(widget.cellSize * 0.22),
+                            color: glowColor.withOpacity(
+                              widget.emphasizeClear ? 0.22 : 0.18,
                             ),
-                          ],
+                            border: Border.all(
+                              color: glowColor.withOpacity(0.8),
+                              width: 1.2,
+                            ),
+                            boxShadow: [
+                              BoxShadow(
+                                color: glowColor.withOpacity(0.35),
+                                blurRadius:
+                                widget.emphasizeClear ? 24 : 14,
+                                spreadRadius:
+                                widget.emphasizeClear ? 3 : 1,
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

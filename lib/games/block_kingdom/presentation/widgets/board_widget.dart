@@ -68,6 +68,8 @@ class BoardWidget extends StatelessWidget {
                         height: tileSize,
                         decoration: BoxDecoration(
                           gradient: _tileGradient(
+                            row: r,
+                            col: c,
                             filled: board.grid[r][c] == 1,
                             isGhost: ghostSet.contains('${r}_$c'),
                             ghostValid: controller.isValidPlacement,
@@ -99,13 +101,44 @@ class BoardWidget extends StatelessWidget {
                                 .contains('${r}_$c'),
                           ),
                         ),
-                        child: _cellGloss(
-                          filled: board.grid[r][c] == 1,
-                          isGhost: ghostSet.contains('${r}_$c'),
-                          isPlaced: controller.recentPlacedCellKeys
-                              .contains('${r}_$c'),
-                          isCleared: controller.recentClearedCellKeys
-                              .contains('${r}_$c'),
+                        child: Stack(
+                          children: [
+                            _cellGloss(
+                              filled: board.grid[r][c] == 1,
+                              isGhost: ghostSet.contains('${r}_$c'),
+                              isPlaced: controller.recentPlacedCellKeys
+                                  .contains('${r}_$c'),
+                              isCleared: controller.recentClearedCellKeys
+                                  .contains('${r}_$c'),
+                            ),
+                            if (board.grid[r][c] == 1 ||
+                                controller.recentPlacedCellKeys
+                                    .contains('${r}_$c') ||
+                                controller.recentClearedCellKeys
+                                    .contains('${r}_$c'))
+                              Center(
+                                child: Icon(
+                                  _pickMotif(r, c),
+                                  size: tileSize * 0.34,
+                                  color: Colors.white.withOpacity(
+                                    controller.recentClearedCellKeys
+                                        .contains('${r}_$c')
+                                        ? 0.95
+                                        : 0.82,
+                                  ),
+                                ),
+                              ),
+                            if (ghostSet.contains('${r}_$c'))
+                              Center(
+                                child: Icon(
+                                  _pickMotif(r, c),
+                                  size: tileSize * 0.28,
+                                  color: Colors.white.withOpacity(
+                                    controller.isValidPlacement ? 0.45 : 0.30,
+                                  ),
+                                ),
+                              ),
+                          ],
                         ),
                       ),
                     ),
@@ -137,6 +170,22 @@ class BoardWidget extends StatelessWidget {
     );
   }
 
+  IconData _pickMotif(int row, int col) {
+    final index = (row + col) % 5;
+    switch (index) {
+      case 0:
+        return Icons.workspace_premium_rounded;
+      case 1:
+        return Icons.diamond_rounded;
+      case 2:
+        return Icons.eco_rounded;
+      case 3:
+        return Icons.auto_awesome_rounded;
+      default:
+        return Icons.local_fire_department_rounded;
+    }
+  }
+
   double _tileScale({
     required String key,
     required Set<String> ghostSet,
@@ -155,12 +204,25 @@ class BoardWidget extends StatelessWidget {
   }
 
   Gradient _tileGradient({
+    required int row,
+    required int col,
     required bool filled,
     required bool isGhost,
     required bool ghostValid,
     required bool isPlaced,
     required bool isCleared,
   }) {
+    final paletteIndex = (row + col) % 6;
+
+    final filledPalettes = <List<Color>>[
+      const [Color(0xFFFFD665), Color(0xFFFFB739), Color(0xFFFF9B00)],
+      const [Color(0xFF59B5FF), Color(0xFF319AF2), Color(0xFF2485D9)],
+      const [Color(0xFF8CF5B1), Color(0xFF45C86D), Color(0xFF219653)],
+      const [Color(0xFFFF9EFF), Color(0xFFE040FB), Color(0xFF9C27B0)],
+      const [Color(0xFFFFB39A), Color(0xFFFF7B54), Color(0xFFE85D2A)],
+      const [Color(0xFFC8B0FF), Color(0xFF8E6BE8), Color(0xFF6941C6)],
+    ];
+
     if (isCleared) {
       return const LinearGradient(
         colors: [
@@ -175,9 +237,9 @@ class BoardWidget extends StatelessWidget {
     if (isPlaced) {
       return const LinearGradient(
         colors: [
-          Color(0xFFFFD665),
-          Color(0xFFFFB739),
-          Color(0xFFFF9B00),
+          Color(0xFFFFE17D),
+          Color(0xFFFFC140),
+          Color(0xFFFFA400),
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
@@ -185,12 +247,9 @@ class BoardWidget extends StatelessWidget {
     }
 
     if (filled) {
-      return const LinearGradient(
-        colors: [
-          Color(0xFF59B5FF),
-          Color(0xFF319AF2),
-          Color(0xFF2485D9),
-        ],
+      final colors = filledPalettes[paletteIndex];
+      return LinearGradient(
+        colors: colors,
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       );
@@ -235,7 +294,7 @@ class BoardWidget extends StatelessWidget {
   }) {
     if (isCleared) return const Color(0xFFFFF2AE).withOpacity(0.95);
     if (isPlaced) return const Color(0xFFFFE39A).withOpacity(0.85);
-    if (filled) return const Color(0xFFA7DAFF).withOpacity(0.28);
+    if (filled) return const Color(0xFFFFFFFF).withOpacity(0.16);
 
     if (isGhost) {
       return ghostValid
@@ -288,7 +347,7 @@ class BoardWidget extends StatelessWidget {
     if (filled) {
       return [
         BoxShadow(
-          color: const Color(0xFF349AF0).withOpacity(0.15),
+          color: Colors.white.withOpacity(0.06),
           blurRadius: 8,
           spreadRadius: 0.4,
         ),
