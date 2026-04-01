@@ -69,6 +69,8 @@ class BoardWidget extends StatelessWidget {
                         height: tileSize,
                         decoration: BoxDecoration(
                           gradient: _tileGradient(
+                            row: r,
+                            col: c,
                             cellType: board.grid[r][c],
                             isGhost: ghostSet.contains('${r}_$c'),
                             ghostValid: controller.isValidPlacement,
@@ -134,7 +136,8 @@ class BoardWidget extends StatelessWidget {
                                 child: Icon(
                                   Icons.block_rounded,
                                   size: tileSize * 0.34,
-                                  color: const Color(0xFFFF8A80).withOpacity(0.9),
+                                  color:
+                                  const Color(0xFFFF8A80).withOpacity(0.9),
                                 ),
                               ),
                             if (board.grid[r][c] == BlockCellType.blocked)
@@ -142,7 +145,8 @@ class BoardWidget extends StatelessWidget {
                                 child: Icon(
                                   Icons.shield_rounded,
                                   size: tileSize * 0.34,
-                                  color: const Color(0xFFB0BEC5).withOpacity(0.9),
+                                  color:
+                                  const Color(0xFFB0BEC5).withOpacity(0.9),
                                 ),
                               ),
                             if (ghostSet.contains('${r}_$c'))
@@ -229,12 +233,25 @@ class BoardWidget extends StatelessWidget {
   }
 
   Gradient _tileGradient({
+    required int row,
+    required int col,
     required BlockCellType cellType,
     required bool isGhost,
     required bool ghostValid,
     required bool isPlaced,
     required bool isCleared,
   }) {
+    final paletteIndex = (row + col) % 6;
+
+    final filledPalettes = <List<Color>>[
+      const [Color(0xFFFFD665), Color(0xFFFFB739), Color(0xFFFF9B00)],
+      const [Color(0xFF59B5FF), Color(0xFF319AF2), Color(0xFF2485D9)],
+      const [Color(0xFF8CF5B1), Color(0xFF45C86D), Color(0xFF219653)],
+      const [Color(0xFFFF9EFF), Color(0xFFE040FB), Color(0xFF9C27B0)],
+      const [Color(0xFFFFB39A), Color(0xFFFF7B54), Color(0xFFE85D2A)],
+      const [Color(0xFFC8B0FF), Color(0xFF8E6BE8), Color(0xFF6941C6)],
+    ];
+
     if (isCleared) {
       return const LinearGradient(
         colors: [
@@ -259,12 +276,9 @@ class BoardWidget extends StatelessWidget {
     }
 
     if (cellType == BlockCellType.filled) {
-      return const LinearGradient(
-        colors: [
-          Color(0xFFFFD665),
-          Color(0xFFFFB739),
-          Color(0xFFFF9B00),
-        ],
+      final colors = filledPalettes[paletteIndex];
+      return LinearGradient(
+        colors: colors,
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       );

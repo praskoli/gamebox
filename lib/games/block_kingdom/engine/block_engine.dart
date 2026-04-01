@@ -1,8 +1,10 @@
 import '../data/block_piece_library.dart';
 import '../domain/block_board.dart';
+import '../domain/block_cell_type.dart';
 import '../domain/block_game_session.dart';
 import '../domain/block_mode.dart';
 import '../domain/block_piece.dart';
+import '../domain/block_special_type.dart';
 import '../progression/data/block_level_catalog.dart';
 import '../progression/domain/level_definition.dart';
 import '../progression/domain/level_progress.dart';
@@ -10,6 +12,7 @@ import '../progression/engine/level_manager.dart';
 import '../progression/engine/score_breakdown.dart';
 import '../progression/engine/score_calculator.dart';
 import 'block_game_over.dart';
+import 'block_special_handler.dart';
 
 class BlockEngine {
   BlockEngine({
@@ -40,7 +43,7 @@ class BlockEngine {
     );
 
     tray = BlockPieceLibrary.generateTray(
-      difficulty: levelDefinition.difficulty,
+      levelDefinition: levelDefinition,
     );
 
     progress = LevelManager.evaluate(
@@ -58,6 +61,51 @@ class BlockEngine {
 
     final scoreBefore = session.score;
     final cellsPlaced = _countCells(piece);
+
+    if (piece.specialType == BlockSpecialType.bomb) {
+      board.place(piece, row, col);
+      final bombClearedKeys = BlockSpecialHandler.applyBomb(
+        board: board,
+        centerRow: row,
+        centerCol: col,
+      );
+
+      final bombBonus = 45 + (bombClearedKeys.length * 6);
+
+      session.combo = 0;
+      session.movesMade += 1;
+      session.placedCells += cellsPlaced;
+      session.score += bombBonus;
+
+      tray.removeAt(index);
+      if (tray.isEmpty) {
+        tray = BlockPieceLibrary.generateTray(
+          levelDefinition: levelDefinition,
+        );
+      }
+
+      progress = LevelManager.evaluate(
+        session: session,
+        level: levelDefinition,
+      );
+
+      session.isLevelComplete = progress.isComplete;
+      session.isGameOver =
+          session.isLevelComplete || BlockGameOver.check(board, tray);
+
+      return BlockTurnResult(
+        scoreBreakdown: ScoreBreakdown(
+          placementPoints: 15,
+          lineClearBonus: 0,
+          comboBonus: 0,
+          milestoneBonus: bombBonus - 15,
+        ),
+        clearedLineCount: 0,
+        progress: progress,
+        usedBomb: true,
+        bombClearedKeys: bombClearedKeys,
+      );
+    }
 
     board.place(piece, row, col);
 
@@ -81,7 +129,7 @@ class BlockEngine {
     tray.removeAt(index);
     if (tray.isEmpty) {
       tray = BlockPieceLibrary.generateTray(
-        difficulty: levelDefinition.difficulty,
+        levelDefinition: levelDefinition,
       );
     }
 
@@ -98,6 +146,8 @@ class BlockEngine {
       scoreBreakdown: scoreBreakdown,
       clearedLineCount: clearedLineCount,
       progress: progress,
+      usedBomb: false,
+      bombClearedKeys: const <String>{},
     );
   }
 
@@ -137,9 +187,13 @@ class BlockTurnResult {
     required this.scoreBreakdown,
     required this.clearedLineCount,
     required this.progress,
+    required this.usedBomb,
+    required this.bombClearedKeys,
   });
 
   final ScoreBreakdown scoreBreakdown;
   final int clearedLineCount;
   final LevelProgress progress;
+  final bool usedBomb;
+  final Set<String> bombClearedKeys;
 }

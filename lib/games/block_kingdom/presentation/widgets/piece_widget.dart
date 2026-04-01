@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../domain/block_piece.dart';
-
+import '../../domain/block_special_type.dart';
 class PieceWidget extends StatelessWidget {
   final BlockPiece piece;
   final double cellSize;
@@ -39,9 +39,21 @@ class PieceWidget extends StatelessWidget {
       [Color(0xFFB39DFF), Color(0xFF7E57C2), Color(0xFF5E35B1)],
     ];
 
-    final colors = palettes[piece.hashCode.abs() % palettes.length];
+    final isBomb = piece.specialType == BlockSpecialType.bomb;
+
+    final colors = isBomb
+        ? const [
+      Color(0xFFFF5A5F),
+      Color(0xFFFF1E3C),
+      Color(0xFFB31217),
+    ]
+        : palettes[piece.hashCode.abs() % palettes.length];
+
     final shadowColor = colors[1];
-    final motif = _pickMotif(colors[1]);
+
+    final motif = isBomb
+        ? Icons.bolt_rounded
+        : _pickMotif(colors[1]);
 
     return Opacity(
       opacity: opacity,
@@ -69,12 +81,16 @@ class PieceWidget extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(radius),
                   border: Border.all(
-                    color: Colors.white.withOpacity(active ? 0.6 : 0.28),
+                    color: isBomb
+                        ? Colors.white.withOpacity(0.85)
+                        : Colors.white.withOpacity(active ? 0.6 : 0.28),
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: shadowColor.withOpacity(active ? 0.4 : 0.18),
-                      blurRadius: active ? 20 : 10,
+                      color: isBomb
+                          ? Colors.redAccent.withOpacity(0.5)
+                          : shadowColor.withOpacity(active ? 0.4 : 0.18),
+                      blurRadius: isBomb ? 24 : (active ? 20 : 10),
                       offset: const Offset(0, 4),
                     ),
                   ],
@@ -102,8 +118,8 @@ class PieceWidget extends StatelessWidget {
                     Center(
                       child: Icon(
                         motif,
-                        size: cellSize * 0.38,
-                        color: Colors.white.withOpacity(0.85),
+                        size: isBomb ? cellSize * 0.42 : cellSize * 0.38,
+                        color: Colors.white.withOpacity(isBomb ? 1 : 0.85),
                       ),
                     ),
 

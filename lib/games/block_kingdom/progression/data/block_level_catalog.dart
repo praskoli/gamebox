@@ -7,7 +7,7 @@ import '../domain/level_objective.dart';
 class BlockLevelCatalog {
   const BlockLevelCatalog._();
 
-  static const int maxKingdomLevel = 30;
+  static const int maxKingdomLevel = 100;
 
   static LevelDefinition forMode(
       BlockMode mode, {
@@ -32,17 +32,25 @@ class BlockLevelCatalog {
       difficulty: DifficultyConfig.mid(),
       rewardCoins: 0,
       rewardXp: 0,
+      allowBomb: false,
+      bombChance: 0,
     );
   }
 
   static LevelDefinition timeTrial({required int levelNumber}) {
-    final challenge = levelNumber.clamp(1, 5);
+    final challenge = levelNumber.clamp(1, 10);
+
     final targetScore = switch (challenge) {
       1 => 260,
       2 => 320,
       3 => 380,
       4 => 450,
-      _ => 520,
+      5 => 520,
+      6 => 600,
+      7 => 680,
+      8 => 760,
+      9 => 840,
+      _ => 920,
     };
 
     final seconds = switch (challenge) {
@@ -50,7 +58,12 @@ class BlockLevelCatalog {
       2 => 90,
       3 => 85,
       4 => 80,
-      _ => 75,
+      5 => 75,
+      6 => 72,
+      7 => 69,
+      8 => 66,
+      9 => 63,
+      _ => 60,
     };
 
     return LevelDefinition(
@@ -58,12 +71,18 @@ class BlockLevelCatalog {
       title: 'Time Trial',
       subtitle: 'Beat the clock before the timer runs out.',
       objective: LevelObjective.reachScore(targetScore),
-      difficulty: const DifficultyConfig.timeTrial(),
-      rewardCoins: 80 + (challenge * 10),
-      rewardXp: 70 + (challenge * 12),
+      difficulty: challenge <= 3
+          ? const DifficultyConfig.timeTrial()
+          : challenge <= 6
+          ? const DifficultyConfig.mid()
+          : const DifficultyConfig.late(),
+      rewardCoins: 80 + (challenge * 12),
+      rewardXp: 70 + (challenge * 14),
       timeLimitSeconds: seconds,
       deadZones: _timeTrialDeadZones(challenge),
       blockedCells: _timeTrialBlockedCells(challenge),
+      allowBomb: challenge >= 4,
+      bombChance: challenge >= 7 ? 0.10 : 0.06,
     );
   }
 
@@ -81,10 +100,12 @@ class BlockLevelCatalog {
         rewardXp: 18 + (level * 4),
         deadZones: _kingdomDeadZones(level),
         blockedCells: _kingdomBlockedCells(level),
+        allowBomb: false,
+        bombChance: 0,
       );
     }
 
-    if (level <= 20) {
+    if (level <= 25) {
       final targetScore = 260 + ((level - 10) * 85);
       return LevelDefinition(
         levelNumber: level,
@@ -96,16 +117,18 @@ class BlockLevelCatalog {
         rewardXp: 34 + (level * 5),
         deadZones: _kingdomDeadZones(level),
         blockedCells: _kingdomBlockedCells(level),
+        allowBomb: level >= 14,
+        bombChance: level >= 20 ? 0.08 : 0.05,
       );
     }
 
-    final hybridScore = 900 + ((level - 20) * 120);
-    final hybridLines = 8 + (level - 20);
+    final hybridScore = 900 + ((level - 25) * 90);
+    final hybridLines = 8 + ((level - 25) ~/ 2);
 
     return LevelDefinition(
       levelNumber: level,
       title: 'Kingdom Level $level',
-      subtitle: 'Master precise play with dual objectives.',
+      subtitle: 'Master precision with dual objectives and tighter boards.',
       objective: LevelObjective.hybrid(
         targetScore: hybridScore,
         targetLines: hybridLines,
@@ -115,6 +138,8 @@ class BlockLevelCatalog {
       rewardXp: 60 + (level * 6),
       deadZones: _kingdomDeadZones(level),
       blockedCells: _kingdomBlockedCells(level),
+      allowBomb: true,
+      bombChance: level >= 60 ? 0.12 : 0.09,
     );
   }
 
@@ -137,7 +162,7 @@ class BlockLevelCatalog {
       ];
     }
 
-    if (level < 21) {
+    if (level < 26) {
       return const <BlockPosition>[
         BlockPosition(1, 5),
         BlockPosition(2, 2),
@@ -146,27 +171,40 @@ class BlockLevelCatalog {
       ];
     }
 
+    if (level < 41) {
+      return const <BlockPosition>[
+        BlockPosition(1, 1),
+        BlockPosition(1, 6),
+        BlockPosition(3, 3),
+        BlockPosition(4, 4),
+        BlockPosition(6, 1),
+        BlockPosition(6, 6),
+      ];
+    }
+
     return const <BlockPosition>[
-      BlockPosition(1, 1),
-      BlockPosition(1, 6),
-      BlockPosition(3, 3),
-      BlockPosition(4, 4),
-      BlockPosition(6, 1),
-      BlockPosition(6, 6),
+      BlockPosition(0, 2),
+      BlockPosition(0, 5),
+      BlockPosition(2, 0),
+      BlockPosition(2, 7),
+      BlockPosition(5, 0),
+      BlockPosition(5, 7),
+      BlockPosition(7, 2),
+      BlockPosition(7, 5),
     ];
   }
 
   static List<BlockPosition> _kingdomBlockedCells(int level) {
     if (level < 8) return const <BlockPosition>[];
 
-    if (level < 13) {
+    if (level < 16) {
       return const <BlockPosition>[
         BlockPosition(3, 3),
         BlockPosition(4, 4),
       ];
     }
 
-    if (level < 21) {
+    if (level < 30) {
       return const <BlockPosition>[
         BlockPosition(2, 4),
         BlockPosition(3, 3),
@@ -175,13 +213,26 @@ class BlockLevelCatalog {
       ];
     }
 
+    if (level < 50) {
+      return const <BlockPosition>[
+        BlockPosition(0, 0),
+        BlockPosition(0, 7),
+        BlockPosition(7, 0),
+        BlockPosition(7, 7),
+        BlockPosition(3, 4),
+        BlockPosition(4, 3),
+      ];
+    }
+
     return const <BlockPosition>[
-      BlockPosition(0, 0),
-      BlockPosition(0, 7),
-      BlockPosition(7, 0),
-      BlockPosition(7, 7),
-      BlockPosition(3, 4),
-      BlockPosition(4, 3),
+      BlockPosition(1, 3),
+      BlockPosition(1, 4),
+      BlockPosition(3, 1),
+      BlockPosition(4, 1),
+      BlockPosition(3, 6),
+      BlockPosition(4, 6),
+      BlockPosition(6, 3),
+      BlockPosition(6, 4),
     ];
   }
 
@@ -195,22 +246,46 @@ class BlockLevelCatalog {
       ];
     }
 
+    if (challenge <= 6) {
+      return const <BlockPosition>[
+        BlockPosition(1, 6),
+        BlockPosition(2, 2),
+        BlockPosition(5, 5),
+        BlockPosition(6, 1),
+      ];
+    }
+
     return const <BlockPosition>[
+      BlockPosition(1, 1),
       BlockPosition(1, 6),
-      BlockPosition(2, 2),
-      BlockPosition(5, 5),
+      BlockPosition(3, 3),
+      BlockPosition(4, 4),
       BlockPosition(6, 1),
+      BlockPosition(6, 6),
     ];
   }
 
   static List<BlockPosition> _timeTrialBlockedCells(int challenge) {
     if (challenge <= 3) return const <BlockPosition>[];
 
+    if (challenge <= 6) {
+      return const <BlockPosition>[
+        BlockPosition(3, 3),
+        BlockPosition(3, 4),
+        BlockPosition(4, 3),
+        BlockPosition(4, 4),
+      ];
+    }
+
     return const <BlockPosition>[
-      BlockPosition(3, 3),
-      BlockPosition(3, 4),
-      BlockPosition(4, 3),
-      BlockPosition(4, 4),
+      BlockPosition(2, 3),
+      BlockPosition(2, 4),
+      BlockPosition(3, 2),
+      BlockPosition(3, 5),
+      BlockPosition(4, 2),
+      BlockPosition(4, 5),
+      BlockPosition(5, 3),
+      BlockPosition(5, 4),
     ];
   }
 }

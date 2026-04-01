@@ -251,19 +251,28 @@ class BlockController extends ChangeNotifier {
         scorePulse = true;
 
         final crossedMilestone = turnResult.scoreBreakdown.milestoneBonus > 0;
-
+        if (turnResult.usedBomb) {
+          recentClearedCellKeys = {
+            ...recentClearedCellKeys,
+            ...turnResult.bombClearedKeys,
+          };
+        }
         final feedback = PlacementFeedback(
           placedCells: placedCells,
           clearedCells: previewResult.clearedCells,
           clearedRows: previewResult.clearedRows,
           clearedCols: previewResult.clearedCols,
-          primaryText: _resolvePrimaryCaption(
+          primaryText: turnResult.usedBomb
+              ? 'Bomb Blast!'
+              : _resolvePrimaryCaption(
             clearedLineCount: clearedLineCount,
             combo: comboNow,
             scoreGain: scoreGain,
             completedObjective: engine.session.isLevelComplete,
           ),
-          secondaryText: _resolveSecondaryCaption(
+          secondaryText: turnResult.usedBomb
+              ? '+$scoreGain special score'
+              : _resolveSecondaryCaption(
             clearedLineCount: clearedLineCount,
             combo: comboNow,
             crossedMilestone: crossedMilestone,

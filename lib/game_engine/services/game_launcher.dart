@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../games/block_kingdom/domain/block_mode.dart';
+import '../../games/block_kingdom/presentation/block_kingdom_map_screen.dart';
 import '../../games/block_kingdom/presentation/block_kingdom_screen.dart';
 import '../catalog/game_registry.dart';
 
@@ -12,11 +13,23 @@ class GameLauncher {
         int initialLevelNumber = 1,
       }) async {
     if (gameId == 'block_kingdom') {
+      final mode = blockMode ?? BlockMode.endless;
+
+      if (mode == BlockMode.kingdom) {
+        await Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const BlockKingdomMapScreen(),
+          ),
+        );
+        return;
+      }
+
       await Navigator.push(
         context,
         MaterialPageRoute(
           builder: (_) => BlockKingdomScreen(
-            mode: blockMode ?? BlockMode.endless,
+            mode: mode,
             initialLevelNumber: initialLevelNumber,
           ),
         ),

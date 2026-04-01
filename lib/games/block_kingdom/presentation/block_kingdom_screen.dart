@@ -18,7 +18,7 @@ import 'widgets/piece_widget.dart';
 import 'widgets/tray_widget.dart';
 import 'widgets/time_trial_overlay.dart';
 import '../progression/data/block_progression_service.dart';
-
+import '../progression/data/block_theme_catalog.dart';
 class BlockKingdomScreen extends StatefulWidget {
   const BlockKingdomScreen({
     super.key,
@@ -74,8 +74,7 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
     });
 
     try {
-      //int startLevel = forceLevelNumber ?? widget.initialLevelNumber;
-      int startLevel = 15; // 🔥 test level
+      int startLevel = forceLevelNumber ?? widget.initialLevelNumber;
       if (widget.mode == BlockMode.kingdom) {
         final progress = await BlockProgressionService.instance.getProgress();
         startLevel = progress.lastPlayedLevel.clamp(
@@ -766,17 +765,13 @@ class _BlockKingdomScreenState extends State<BlockKingdomScreen> {
 
         final draggingPiece = controller.draggingPiece;
         final dragCellSize = controller.dragVisualCellSize;
-
+        final visualTheme = BlockThemeCatalog.forLevel(controller.currentLevelNumber);
         return Scaffold(
           backgroundColor: const Color(0xFF0B1220),
           body: Container(
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [
-                  Color(0xFF0B1220),
-                  Color(0xFF111A2F),
-                  Color(0xFF1A2340),
-                ],
+                colors: visualTheme.screenGradient,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),

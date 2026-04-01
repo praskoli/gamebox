@@ -23,8 +23,8 @@ class TrayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tray = controller.engine.tray;
-    final theme = _trayThemes[
-    (controller.engine.session.score ~/ 25) % _trayThemes.length];
+    final theme =
+    _trayThemes[(controller.engine.session.score ~/ 25) % _trayThemes.length];
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 260),

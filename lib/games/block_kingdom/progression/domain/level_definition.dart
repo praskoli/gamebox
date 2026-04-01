@@ -14,6 +14,8 @@ class LevelDefinition {
     this.timeLimitSeconds = 0,
     this.deadZones = const <BlockPosition>[],
     this.blockedCells = const <BlockPosition>[],
+    this.allowBomb = false,
+    this.bombChance = 0.0,
   });
 
   final int levelNumber;
@@ -26,6 +28,9 @@ class LevelDefinition {
   final int timeLimitSeconds;
   final List<BlockPosition> deadZones;
   final List<BlockPosition> blockedCells;
+
+  final bool allowBomb;
+  final double bombChance;
 
   bool get isTimed => timeLimitSeconds > 0;
 }

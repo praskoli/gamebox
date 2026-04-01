@@ -1,0 +1,4 @@
+enum BlockSpecialType {
+  none,
+  bomb,
+}

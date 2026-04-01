@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import '../domain/block_piece.dart';
-import '../progression/domain/difficulty_config.dart';
+import '../domain/block_special_type.dart';
+import '../progression/domain/level_definition.dart';
 
 class BlockPieceLibrary {
   BlockPieceLibrary._();
@@ -9,24 +10,11 @@ class BlockPieceLibrary {
   static final Random _random = Random();
 
   static final List<BlockPiece> _friendlyPieces = <BlockPiece>[
-    const BlockPiece([
-      [1],
-    ]),
-    const BlockPiece([
-      [1, 1],
-    ]),
-    const BlockPiece([
-      [1],
-      [1],
-    ]),
-    const BlockPiece([
-      [1, 1, 1],
-    ]),
-    const BlockPiece([
-      [1],
-      [1],
-      [1],
-    ]),
+    const BlockPiece([[1]]),
+    const BlockPiece([[1, 1]]),
+    const BlockPiece([[1], [1]]),
+    const BlockPiece([[1, 1, 1]]),
+    const BlockPiece([[1], [1], [1]]),
     const BlockPiece([
       [1, 1],
       [1, 1],
@@ -94,16 +82,25 @@ class BlockPieceLibrary {
   }
 
   static List<BlockPiece> generateTray({
-    required DifficultyConfig difficulty,
+    required LevelDefinition levelDefinition,
   }) {
     return List<BlockPiece>.generate(
-      difficulty.traySize,
-          (_) => randomWeighted(difficulty),
+      levelDefinition.difficulty.traySize,
+          (_) => randomWeighted(levelDefinition),
       growable: true,
     );
   }
 
-  static BlockPiece randomWeighted(DifficultyConfig difficulty) {
+  static BlockPiece randomWeighted(LevelDefinition levelDefinition) {
+    if (levelDefinition.allowBomb &&
+       _random.nextDouble() < levelDefinition.bombChance) {
+      return const BlockPiece(
+        [[1]],
+        specialType: BlockSpecialType.bomb,
+      );
+    }
+
+    final difficulty = levelDefinition.difficulty;
     final total = difficulty.friendlyWeight +
         difficulty.standardWeight +
         difficulty.trickyWeight;
