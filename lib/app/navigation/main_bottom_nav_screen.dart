@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../routing/route_names.dart';
 import '../../platform/auth/google_sign_in_service.dart';
+import '../../game_engine/catalog/diy_games_screen.dart';
 import '../../game_engine/catalog/featured_games_screen.dart';
 import '../home/home_tab_screen.dart';
 import '../home/home_view_model.dart';
@@ -27,6 +28,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   static const List<String> _titles = <String>[
     'Home',
     'Featured Games',
+    'DIY',
     'Player Stats',
     'Profile',
   ];
@@ -34,7 +36,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   @override
   void initState() {
     super.initState();
-    _currentIndex = widget.initialIndex.clamp(0, 3);
+    _currentIndex = widget.initialIndex.clamp(0, 4);
   }
 
   Future<void> _logout(BuildContext context) async {
@@ -67,13 +69,13 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
             appBar: AppBar(
               title: Text(_titles[_currentIndex]),
               actions: [
-                if (_currentIndex != 3)
+                if (_currentIndex != 4)
                   IconButton(
                     onPressed: vm.refresh,
                     icon: const Icon(Icons.refresh_rounded),
                     tooltip: 'Refresh',
                   ),
-                if (_currentIndex == 3)
+                if (_currentIndex == 4)
                   IconButton(
                     onPressed: () => _logout(context),
                     icon: const Icon(Icons.logout_rounded),
@@ -86,6 +88,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
               children: const [
                 HomeTabScreen(),
                 FeaturedGamesScreen(),
+                DiyGamesScreen(),
                 PlayerStatsScreen(),
                 PlayerProfileTabScreen(),
               ],
@@ -107,6 +110,11 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                   icon: Icon(Icons.sports_esports_rounded),
                   selectedIcon: Icon(Icons.sports_esports_rounded),
                   label: 'Featured',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.auto_awesome_rounded),
+                  selectedIcon: Icon(Icons.auto_awesome_rounded),
+                  label: 'DIY',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.bar_chart_rounded),

@@ -1,4 +1,3 @@
-// lib/features/memory_match/domain/memory_game_engine.dart
 import 'dart:async';
 import 'dart:math';
 
@@ -8,11 +7,13 @@ import '../../../games/memory_match/domain/memory_level.dart';
 class MemoryGameEngine {
   MemoryGameEngine({
     required this.level,
-  }) {
-    _cards = _buildCards(level);
+    List<String>? overrideItems,
+  }) : _overrideItems = overrideItems {
+    _cards = _buildCards(level, overrideItems: _overrideItems);
   }
 
   final MemoryLevel level;
+  final List<String>? _overrideItems;
 
   late List<MemoryCardModel> _cards;
   final List<int> _selectedIndexes = <int>[];
@@ -27,15 +28,33 @@ class MemoryGameEngine {
   bool get isBusy => _isResolving;
   bool get isCompleted => _matches >= level.totalPairs;
 
-  static List<MemoryCardModel> _buildCards(MemoryLevel level) {
+  static List<MemoryCardModel> _buildCards(
+      MemoryLevel level, {
+        List<String>? overrideItems,
+      }) {
     final Random random = Random(
       (level.levelNumber * 101) + (level.worldIndex * 17),
     );
 
-    final List<String> source = List<String>.from(level.theme.itemPool)
-      ..shuffle(random);
+    final List<String> source = List<String>.from(
+      overrideItems != null && overrideItems.isNotEmpty
+          ? overrideItems
+          : level.theme.itemPool,
+    )..shuffle(random);
 
-    final List<String> pairValues = source.take(level.totalPairs).toList();
+    final int pairCount = level.totalPairs;
+
+    final List<String> pairValues;
+    if (source.length >= pairCount) {
+      pairValues = source.take(pairCount).toList(growable: false);
+    } else {
+      final List<String> expanded = <String>[];
+      while (expanded.length < pairCount) {
+        expanded.addAll(source);
+      }
+      pairValues = expanded.take(pairCount).toList(growable: false);
+    }
+
     final List<String> values = <String>[...pairValues, ...pairValues]
       ..shuffle(random);
 
@@ -54,20 +73,20 @@ class MemoryGameEngine {
     _matches = 0;
     _isResolving = false;
     _selectedIndexes.clear();
-    _cards = _buildCards(level);
+    _cards = _buildCards(level, overrideItems: _overrideItems);
   }
 
   void revealAll() {
     _cards = _cards
         .map((MemoryCardModel card) => card.copyWith(isFaceUp: true))
-        .toList();
+        .toList(growable: false);
   }
 
   void hideUnmatched() {
     _cards = _cards.map((MemoryCardModel card) {
       if (card.isMatched) return card;
       return card.copyWith(isFaceUp: false, isLocked: false);
-    }).toList();
+    }).toList(growable: false);
   }
 
   Future<FlipResult> flip(int index) async {

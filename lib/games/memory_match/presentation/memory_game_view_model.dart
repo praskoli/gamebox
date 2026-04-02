@@ -1,19 +1,20 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import '../../../platform/profile/services/profile_service.dart';
-import '../../../platform/player/services/player_stats_service.dart';
-import '../../../platform/player/player_profile.dart';
-import '../../../platform/profile/services/profile_service.dart';
+
 import '../../../platform/audio/sound_service.dart';
 import '../../../platform/play_access/data/play_access_service.dart';
 import '../../../platform/play_access/data/play_pause_message_library.dart';
 import '../../../platform/play_access/domain/play_pause_message.dart';
+import '../../../platform/player/player_profile.dart';
+import '../../../platform/player/services/player_stats_service.dart';
+import '../../../platform/profile/services/profile_service.dart';
 import '../data/memory_progress_repository.dart';
 import '../data/memory_world_registry.dart';
 import '../../../games/memory_match/domain/memory_card_model.dart';
-import '../domain/memory_game_engine.dart';
 import '../../../games/memory_match/domain/memory_level.dart';
+import '../domain/memory_diy_game_config.dart';
+import '../domain/memory_game_engine.dart';
 import '../domain/memory_theme_pack.dart';
 import '../../../games/memory_match/domain/memory_world_bundle.dart';
 
@@ -39,27 +40,34 @@ class MemoryReactionData {
 
 class MemoryGameViewModel extends ChangeNotifier {
   MemoryGameViewModel({
-    required this.worldId,
-    required this.levelNumber,
-  });
+    this.worldId,
+    this.levelNumber,
+    this.diyConfig,
+  }) : assert(
+  diyConfig != null || (worldId != null && levelNumber != null),
+  'Provide diyConfig OR both worldId and levelNumber.',
+  );
 
-  final String worldId;
-  final int levelNumber;
+  final String? worldId;
+  final int? levelNumber;
+  final MemoryDiyGameConfig? diyConfig;
 
   final PlayAccessService _playAccessService = PlayAccessService.instance;
 
   late MemoryThemePack theme;
   late MemoryLevel level;
   late MemoryGameEngine _engine;
+
   bool _hasPersistedCompletion = false;
   bool _isLoading = true;
   bool _isPreviewing = false;
   bool _isCompleted = false;
   bool _playAccessSessionStarted = false;
-// 🔧 TEMP COMPATIBILITY (old screen expects these)
+
   bool get isParentControlEnabled => false;
   int get tokensRemaining => 0;
   bool get isLevelLocked => false;
+
   int _secondsElapsed = 0;
   int _score = 0;
 
@@ -119,40 +127,51 @@ class MemoryGameViewModel extends ChangeNotifier {
   bool get showSoftPauseReminder => _showSoftPauseReminder;
   PlayPauseMessage? get softPauseMessage => _softPauseMessage;
 
+  int get _effectiveLevelNumber => diyConfig?.levelNumber ?? (levelNumber ?? 1);
+
+  String get _effectiveWorldId =>
+      diyConfig?.baseWorldId ??
+          (worldId?.trim().isNotEmpty == true
+              ? worldId!.trim()
+              : MemoryWorldRegistry.fruitsWorldId);
+
   int get pauseMessageSeed =>
-      levelNumber + level.levelNumber + _secondsElapsed + moves;
+      _effectiveLevelNumber + level.levelNumber + _secondsElapsed + moves;
+
+  String get screenTitle {
+    if (diyConfig != null) {
+      return '${diyConfig!.title} • DIY';
+    }
+    return '${theme.worldTitle} • Level ${level.levelNumber}';
+  }
 
   bool isWrongCard(String id) => _wrongCardIds.contains(id);
   bool isJustMatchedCard(String id) => _justMatchedIds.contains(id);
 
   Future<void> requestUnlockFromParent() async {
-    // Parent token flow is no longer used for gameplay unlock.
-    // OTP-based unlock happens on the map screen via PlayAccess.
+    // Gameplay unlock is handled elsewhere in current app flow.
   }
+
   Future<void> initialize() async {
     _isLoading = true;
     notifyListeners();
 
     await MemoryWorldRegistry.ensureInitialized();
     await _playAccessService.initialize();
-    _bindLiveUpdates();
+
+    if (diyConfig == null) {
+      _bindLiveUpdates();
+    }
 
     await _setupLevel();
   }
 
   Future<void> _setupLevel() async {
-    final String resolvedWorldId = MemoryWorldRegistry.resolveWorldId(
-      requestedWorldId: worldId,
-      levelNumber: levelNumber,
-    );
-
-    theme = MemoryWorldRegistry.byWorldId(resolvedWorldId);
-    level = MemoryWorldRegistry.generateLevel(
-      worldId: resolvedWorldId,
-      levelNumber: levelNumber,
-    );
-
-    _engine = MemoryGameEngine(level: level);
+    if (diyConfig != null) {
+      await _setupDiyLevel();
+    } else {
+      await _setupStandardLevel();
+    }
 
     try {
       _playerProfile = await ProfileService.instance.getProfile();
@@ -177,6 +196,7 @@ class MemoryGameViewModel extends ChangeNotifier {
     _showSoftPauseReminder = false;
     _softPauseMessage = null;
     _playAccessSessionStarted = false;
+    _hasPersistedCompletion = false;
 
     if (level.previewDurationMs > 0) {
       _isPreviewing = true;
@@ -199,6 +219,51 @@ class MemoryGameViewModel extends ChangeNotifier {
     _startTimer();
     _scheduleSoftPauseReminder();
   }
+
+  Future<void> _setupStandardLevel() async {
+    final String resolvedWorldId = MemoryWorldRegistry.resolveWorldId(
+      requestedWorldId: _effectiveWorldId,
+      levelNumber: _effectiveLevelNumber,
+    );
+
+    theme = MemoryWorldRegistry.byWorldId(resolvedWorldId);
+    level = MemoryWorldRegistry.generateLevel(
+      worldId: resolvedWorldId,
+      levelNumber: _effectiveLevelNumber,
+    );
+
+    _engine = MemoryGameEngine(level: level);
+  }
+
+  Future<void> _setupDiyLevel() async {
+    final MemoryDiyGameConfig config = diyConfig!;
+    final MemoryThemePack resolvedTheme =
+    MemoryWorldRegistry.byWorldId(config.baseWorldId);
+
+    theme = resolvedTheme;
+
+    final int worldIndex = MemoryWorldRegistry.availableWorldIds.indexOf(config.baseWorldId);
+
+    level = MemoryLevel(
+      levelNumber: config.levelNumber,
+      worldIndex: worldIndex < 0 ? 0 : worldIndex,
+      theme: resolvedTheme,
+      gridColumns: config.gridColumns,
+      gridRows: config.gridRows,
+      previewDurationMs: config.previewDurationMs,
+      flipBackDelayMs: config.flipBackDelayMs,
+      rewardCoins: 20,
+      isRewardLevel: false,
+      isSpeedLevel: config.previewDurationMs == 0,
+      isMemoryProLevel: config.previewDurationMs > 0 && config.previewDurationMs <= 800,
+    );
+
+    _engine = MemoryGameEngine(
+      level: level,
+      overrideItems: config.items,
+    );
+  }
+
   Future<void> persistCompletionRewards() async {
     if (!_isCompleted) return;
     if (_hasPersistedCompletion) return;
@@ -218,6 +283,7 @@ class MemoryGameViewModel extends ChangeNotifier {
       score: score,
     );
   }
+
   Future<void> _beginPlayAccessSessionIfNeeded() async {
     if (_playAccessSessionStarted) return;
     await _playAccessService.beginGameplaySession(
@@ -239,14 +305,15 @@ class MemoryGameViewModel extends ChangeNotifier {
       final int previousPreview = level.previewDurationMs;
 
       final String resolvedWorldId = MemoryWorldRegistry.resolveWorldId(
-        requestedWorldId: worldId,
-        levelNumber: levelNumber,
+        requestedWorldId: _effectiveWorldId,
+        levelNumber: _effectiveLevelNumber,
       );
 
-      final nextTheme = MemoryWorldRegistry.byWorldId(resolvedWorldId);
-      final nextLevel = MemoryWorldRegistry.generateLevel(
+      final MemoryThemePack nextTheme =
+      MemoryWorldRegistry.byWorldId(resolvedWorldId);
+      final MemoryLevel nextLevel = MemoryWorldRegistry.generateLevel(
         worldId: resolvedWorldId,
-        levelNumber: levelNumber,
+        levelNumber: _effectiveLevelNumber,
       );
 
       final bool changed = previousThemeId != nextTheme.id ||
@@ -316,9 +383,9 @@ class MemoryGameViewModel extends ChangeNotifier {
   }) {
     if (options.isEmpty) return;
 
-    final picked =
+    final Map<String, String> picked =
     options[DateTime.now().microsecondsSinceEpoch % options.length];
-    final comboText = useCombo && _comboCount > 1 ? ' ${_comboCount}x' : '';
+    final String comboText = useCombo && _comboCount > 1 ? ' ${_comboCount}x' : '';
 
     final Color color;
     switch (type) {
@@ -360,6 +427,9 @@ class MemoryGameViewModel extends ChangeNotifier {
 
     final FlipResult result = await _engine.flip(index);
 
+    // Critical UI refresh so first tap visibly flips immediately.
+    notifyListeners();
+
     if (!result.didFlip) return;
 
     if (result.isMatch) {
@@ -381,12 +451,12 @@ class MemoryGameViewModel extends ChangeNotifier {
     final int? secondIndex = result.secondIndex;
     if (firstIndex == null || secondIndex == null) return;
 
-    final first = _engine.cards[firstIndex];
-    final second = _engine.cards[secondIndex];
+    final MemoryCardModel first = _engine.cards[firstIndex];
+    final MemoryCardModel second = _engine.cards[secondIndex];
 
     _justMatchedIds = <String>{first.id, second.id};
 
-    final now = DateTime.now();
+    final DateTime now = DateTime.now();
     if (_lastMatchTime != null &&
         now.difference(_lastMatchTime!).inSeconds <= 4) {
       _comboCount += 1;
@@ -413,7 +483,7 @@ class MemoryGameViewModel extends ChangeNotifier {
     _emitReaction(
       type: MemoryReactionType.success,
       useCombo: true,
-      options: const [
+      options: const <Map<String, String>>[
         {'emoji': '🔥', 'text': 'WOW!'},
         {'emoji': '✨', 'text': 'GREAT!'},
         {'emoji': '💥', 'text': 'AWESOME!'},
@@ -436,16 +506,18 @@ class MemoryGameViewModel extends ChangeNotifier {
     final int? secondIndex = result.secondIndex;
     if (firstIndex == null || secondIndex == null) return;
 
-    final first = _engine.cards[firstIndex];
-    final second = _engine.cards[secondIndex];
+    final MemoryCardModel first = _engine.cards[firstIndex];
+    final MemoryCardModel second = _engine.cards[secondIndex];
 
     _wrongCardIds = <String>{first.id, second.id};
     _comboCount = 0;
     _lastMatchTime = null;
 
+    notifyListeners();
+
     _emitReaction(
       type: MemoryReactionType.fail,
-      options: const [
+      options: const <Map<String, String>>[
         {'emoji': '😅', 'text': 'OOPS!'},
         {'emoji': '🙈', 'text': 'TRY AGAIN!'},
         {'emoji': '😵', 'text': 'NOOO!'},
@@ -465,7 +537,7 @@ class MemoryGameViewModel extends ChangeNotifier {
     _timer?.cancel();
     _isCompleted = true;
 
-    final stars = earnedStars;
+    final int stars = earnedStars;
 
     final int finishTimeBonus = _secondsElapsed < 45
         ? 40
@@ -485,19 +557,22 @@ class MemoryGameViewModel extends ChangeNotifier {
 
     _emitReaction(
       type: MemoryReactionType.complete,
-      options: const [
+      options: const <Map<String, String>>[
         {'emoji': '🏆', 'text': 'AMAZING!'},
         {'emoji': '🎉', 'text': 'FANTASTIC!'},
         {'emoji': '🚀', 'text': 'BRILLIANT!'},
       ],
     );
 
-    await MemoryProgressRepository.instance.saveLevelResult(
-      worldId: level.worldId,
-      levelNumber: level.levelNumber,
-      score: _score,
-      stars: stars,
-    );
+    // Keep existing world progression untouched for DIY games.
+    if (diyConfig == null) {
+      await MemoryProgressRepository.instance.saveLevelResult(
+        worldId: level.worldId,
+        levelNumber: level.levelNumber,
+        score: _score,
+        stars: stars,
+      );
+    }
 
     if (_playAccessSessionStarted) {
       await _playAccessService.endGameplaySession(
@@ -540,6 +615,7 @@ class MemoryGameViewModel extends ChangeNotifier {
   }
 
   String get specialLevelLabel {
+    if (diyConfig != null) return 'DIY Custom';
     if (level.isRewardLevel) return 'Reward Level';
     if (level.isSpeedLevel) return 'Speed Level';
     if (level.isMemoryProLevel) return 'Memory Pro';

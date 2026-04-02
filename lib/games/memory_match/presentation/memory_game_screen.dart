@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../platform/play_access/domain/play_pause_message.dart';
 import '../../../platform/play_access/presentation/widgets/animated_play_pause_message_card.dart';
 import '../../../platform/play_access/presentation/widgets/game_break_overlay.dart';
+import '../../../games/memory_match/domain/memory_diy_game_config.dart';
 import 'memory_game_view_model.dart';
 import 'widgets/animated_counter.dart';
 import 'widgets/memory_tile.dart';
@@ -11,12 +12,17 @@ import 'widgets/memory_tile.dart';
 class MemoryGameScreen extends StatelessWidget {
   const MemoryGameScreen({
     super.key,
-    required this.worldId,
-    required this.levelNumber,
-  });
+    this.worldId,
+    this.levelNumber,
+    this.diyConfig,
+  }) : assert(
+  diyConfig != null || (worldId != null && levelNumber != null),
+  'Provide either diyConfig or both worldId and levelNumber.',
+  );
 
-  final String worldId;
-  final int levelNumber;
+  final String? worldId;
+  final int? levelNumber;
+  final MemoryDiyGameConfig? diyConfig;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +30,12 @@ class MemoryGameScreen extends StatelessWidget {
       create: (_) => MemoryGameViewModel(
         worldId: worldId,
         levelNumber: levelNumber,
+        diyConfig: diyConfig,
       )..initialize(),
       child: const _MemoryGameView(),
     );
   }
 }
-
 class _MemoryGameView extends StatelessWidget {
   const _MemoryGameView();
 
@@ -193,7 +199,8 @@ class _MemoryGameView extends StatelessWidget {
                               level.isMemoryProLevel
                                   ? 'Memory Pro: memorize quickly.'
                                   : 'Memorize the tiles before they flip back.',
-                              style: const TextStyle(fontWeight: FontWeight.w700),
+                              style:
+                              const TextStyle(fontWeight: FontWeight.w700),
                             ),
                           ),
                         ],
