@@ -240,6 +240,11 @@ class MemoryDiyCatalog {
       createdAt: null,
       updatedAt: null,
       isMixedCategory: category.isMixed,
+      status: 'draft',
+      submittedAt: null,
+      reviewedAt: null,
+      reviewedBy: '',
+      rejectionReason: '',
     );
   }
 }

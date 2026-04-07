@@ -186,6 +186,11 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
       createdAt: widget.initialConfig?.createdAt,
       updatedAt: widget.initialConfig?.updatedAt,
       isMixedCategory: _selectedCategory.isMixed,
+      status: widget.initialConfig?.status ?? 'draft',
+      submittedAt: widget.initialConfig?.submittedAt,
+      reviewedAt: widget.initialConfig?.reviewedAt,
+      reviewedBy: widget.initialConfig?.reviewedBy ?? '',
+      rejectionReason: widget.initialConfig?.rejectionReason ?? '',
     );
   }
 
@@ -430,7 +435,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     setState(() => _isSubmitting = true);
 
     try {
-      await _saveDraft();
+      final MemoryDiyGameConfig config = _buildConfig(
+        ownerUid: _ownerUid,
+        id: _draftId,
+      );
+
+      await MemoryDiyRepository.instance.submitForReview(config);
 
       if (!mounted) return;
 
@@ -438,7 +448,19 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           const SnackBar(
-            content: Text('Project submitted successfully. Ready to play!'),
+            content: Text('Project submitted for review successfully.'),
+          ),
+        );
+
+      Navigator.of(context).pop(true);
+    } catch (e) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            content: Text('Could not submit project: $e'),
           ),
         );
     } finally {
@@ -511,12 +533,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               currentStep: _currentStep,
               totalSteps: _totalSteps,
               onBack: _currentStep == 0 ? null : _goBack,
-              onNext: _currentStep <= 5 ? _goNext : null,
-              onPlay: _currentStep == 6 ? _playGame : null,
-              onSubmit: _currentStep == 7 ? _submitProject : null,
+              onNext: _currentStep < _totalSteps - 1 ? _goNext : null,
+              onPlay: _playGame,
+              onSubmit: _submitProject,
               playEnabled: _canPlay,
               submitEnabled: _canPlay && !_isSubmitting,
-              disabledReason: _currentStep >= 6 ? _playDisabledReason : null,
+              disabledReason: _currentStep == _totalSteps - 1 ? _playDisabledReason : null,
               isSubmitting: _isSubmitting,
             ),
           ],
@@ -1629,10 +1651,8 @@ class _BottomActionBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool isPreviewStep = currentStep == totalSteps - 2;
-    final bool isSubmitStep = currentStep == totalSteps - 1;
-    final bool showDisabled =
-        (isPreviewStep && !playEnabled) || (isSubmitStep && !submitEnabled);
+    final bool isFinalStep = currentStep == totalSteps - 1;
+    final bool showDisabled = isFinalStep && !submitEnabled;
 
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
@@ -1682,49 +1702,66 @@ class _BottomActionBar extends StatelessWidget {
                 ],
               ),
             ),
-          Row(
-            children: [
-              if (currentStep > 0)
+          if (!isFinalStep)
+            Row(
+              children: [
+                if (currentStep > 0)
+                  Expanded(
+                    child: OutlinedButton.icon(
+                      onPressed: onBack,
+                      icon: const Icon(Icons.arrow_back_rounded),
+                      label: const Text('Back'),
+                    ),
+                  ),
+                if (currentStep > 0) const SizedBox(width: 10),
                 Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: onBack,
-                    icon: const Icon(Icons.arrow_back_rounded),
-                    label: const Text('Back'),
-                  ),
-                ),
-              if (currentStep > 0) const SizedBox(width: 10),
-              Expanded(
-                flex: 2,
-                child: ElevatedButton.icon(
-                  onPressed: isPreviewStep
-                      ? (playEnabled ? onPlay : null)
-                      : isSubmitStep
-                      ? (submitEnabled ? onSubmit : null)
-                      : onNext,
-                  icon: Icon(
-                    isPreviewStep
-                        ? Icons.play_arrow_rounded
-                        : isSubmitStep
-                        ? Icons.task_alt_rounded
-                        : Icons.arrow_forward_rounded,
-                  ),
-                  label: Text(
-                    isPreviewStep
-                        ? 'Play My Project'
-                        : isSubmitStep
-                        ? (isSubmitting ? 'Submitting...' : 'Submit Project')
-                        : 'Next Step',
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(52),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
+                  flex: 2,
+                  child: ElevatedButton.icon(
+                    onPressed: onNext,
+                    icon: const Icon(Icons.arrow_forward_rounded),
+                    label: const Text('Next Step'),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(52),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
+              ],
+            )
+          else
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: playEnabled ? onPlay : null,
+                    icon: const Icon(Icons.play_arrow_rounded),
+                    label: const Text('Play My Project'),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: submitEnabled ? onSubmit : null,
+                    icon: Icon(
+                      isSubmitting
+                          ? Icons.hourglass_top_rounded
+                          : Icons.task_alt_rounded,
+                    ),
+                    label: Text(
+                      isSubmitting ? 'Submitting...' : 'Submit Project',
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(52),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
     );
