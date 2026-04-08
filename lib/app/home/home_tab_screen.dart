@@ -520,3 +520,30 @@ class _ErrorState extends StatelessWidget {
     );
   }
 }
+class _NeonAppBarTitle extends StatelessWidget {
+  const _NeonAppBarTitle(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 20, // keep AppBar size intact
+        fontWeight: FontWeight.w800,
+        color: Colors.white,
+        shadows: [
+          Shadow(
+            color: Color(0xCCFF4FD8),
+            blurRadius: 6,
+          ),
+          Shadow(
+            color: Color(0xCC9D4DFF),
+            blurRadius: 12,
+          ),
+        ],
+      ),
+    );
+  }
+}

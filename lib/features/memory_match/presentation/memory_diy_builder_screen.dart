@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../data/memory_diy_catalog.dart';
@@ -9,9 +10,11 @@ class MemoryDiyBuilderScreen extends StatefulWidget {
   const MemoryDiyBuilderScreen({
     super.key,
     this.initialConfig,
+    this.isReviewMode = false,
   });
 
   final MemoryDiyGameConfig? initialConfig;
+  final bool isReviewMode;
 
   @override
   State<MemoryDiyBuilderScreen> createState() => _MemoryDiyBuilderScreenState();
@@ -78,6 +81,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   ];
 
   late final TextEditingController _titleController;
+  late final TextEditingController _creatorNameController;
 
   late String _selectedCategoryId;
   late int _gridColumns;
@@ -92,6 +96,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   int _currentStep = 0;
   bool _isSaving = false;
   bool _isSubmitting = false;
+
+  bool get _isReadOnly => widget.isReviewMode;
 
   @override
   void initState() {
@@ -113,6 +119,10 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
       text: initial?.title ?? '',
     );
 
+    _creatorNameController = TextEditingController(
+      text: initial?.creatorName ?? _defaultCreatorName(),
+    );
+
     _reconcileSelectedItemsForCategory();
     _reconcileSelectedItemsForPairCount();
   }
@@ -120,6 +130,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   @override
   void dispose() {
     _titleController.dispose();
+    _creatorNameController.dispose();
     super.dispose();
   }
 
@@ -134,12 +145,17 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
 
   bool get _isTitleValid => _titleController.text.trim().length >= 3;
 
+  bool get _isCreatorNameValid => _creatorNameController.text.trim().length >= 2;
+
   bool get _isCategoryValid => _selectedCategoryId.trim().isNotEmpty;
 
   bool get _isCardSelectionValid => _selectedItems.length == _pairCount;
 
   bool get _canPlay =>
-      _isTitleValid && _isCategoryValid && _isCardSelectionValid;
+      _isTitleValid &&
+          _isCreatorNameValid &&
+          _isCategoryValid &&
+          _isCardSelectionValid;
 
   double get _progressValue => (_stepNumber / _totalSteps).clamp(0, 1);
 
@@ -148,9 +164,17 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return value.isEmpty ? 'My Memory Project' : value;
   }
 
+  String get _creatorNamePreview {
+    final String value = _creatorNameController.text.trim();
+    return value.isEmpty ? _defaultCreatorName() : value;
+  }
+
   String? get _playDisabledReason {
     if (!_isTitleValid) {
       return 'Add a project title with at least 3 characters.';
+    }
+    if (!_isCreatorNameValid) {
+      return 'Add a creator display name with at least 2 characters.';
     }
     if (!_isCategoryValid) {
       return 'Choose a theme for your project.';
@@ -165,6 +189,27 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return null;
   }
 
+  String _defaultCreatorName() {
+    final User? user = FirebaseAuth.instance.currentUser;
+
+    final String displayName = user?.displayName?.trim() ?? '';
+    if (displayName.isNotEmpty) return displayName;
+
+    final String email = user?.email?.trim() ?? '';
+    if (email.isNotEmpty && email.contains('@')) {
+      final String prefix = email.split('@').first.trim();
+      if (prefix.isNotEmpty) {
+        return prefix
+            .split(RegExp(r'[._\-]'))
+            .where((e) => e.trim().isNotEmpty)
+            .map((e) => e[0].toUpperCase() + e.substring(1))
+            .join(' ');
+      }
+    }
+
+    return 'Arena Builder';
+  }
+
   MemoryDiyGameConfig _buildConfig({
     required String ownerUid,
     String id = '',
@@ -174,6 +219,9 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
       title: _titleController.text.trim().isEmpty
           ? 'My Memory Project'
           : _titleController.text.trim(),
+      creatorName: _creatorNameController.text.trim().isEmpty
+          ? _defaultCreatorName()
+          : _creatorNameController.text.trim(),
       categoryId: _selectedCategory.id,
       baseWorldId: _selectedCategory.baseWorldId,
       gridColumns: _gridColumns,
@@ -207,6 +255,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   void _changeCategory(MemoryDiyCategory category) {
+    if (_isReadOnly) return;
+
     setState(() {
       _selectedCategoryId = category.id;
       _selectedItems = <String>[];
@@ -214,6 +264,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   void _changeGrid(_GridPreset preset) {
+    if (_isReadOnly) return;
+
     setState(() {
       _gridColumns = preset.columns;
       _gridRows = preset.rows;
@@ -234,6 +286,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   void _toggleItem(String item) {
+    if (_isReadOnly) return;
+
     setState(() {
       if (_selectedItems.contains(item)) {
         _selectedItems.remove(item);
@@ -258,6 +312,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   void _autoFillSelection() {
+    if (_isReadOnly) return;
+
     final List<String> items = _availableItems.take(_pairCount).toList();
     setState(() {
       _selectedItems = items;
@@ -265,6 +321,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   void _clearSelection() {
+    if (_isReadOnly) return;
+
     setState(() {
       _selectedItems = <String>[];
     });
@@ -277,6 +335,8 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
       case 0:
         if (!_isTitleValid) {
           message = 'Give your project a title with at least 3 characters.';
+        } else if (!_isCreatorNameValid) {
+          message = 'Add a creator display name with at least 2 characters.';
         }
         break;
       case 1:
@@ -361,13 +421,26 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   Future<void> _saveDraft() async {
+    if (widget.isReviewMode) return;
     if (_isSaving) return;
+
     if (!_isTitleValid) {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
           const SnackBar(
             content: Text('Please give your project a title before saving.'),
+          ),
+        );
+      return;
+    }
+
+    if (!_isCreatorNameValid) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          const SnackBar(
+            content: Text('Please add your creator display name before saving.'),
           ),
         );
       return;
@@ -419,6 +492,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
   }
 
   Future<void> _submitProject() async {
+    if (widget.isReviewMode) return;
     if (_isSubmitting) return;
 
     if (!_canPlay) {
@@ -439,6 +513,21 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
         ownerUid: _ownerUid,
         id: _draftId,
       );
+      final bool canSubmit =
+      await MemoryDiyRepository.instance.canSubmitMoreGames();
+
+      if (!canSubmit) {
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            const SnackBar(
+              content: Text('Free limit reached (2 submissions).'),
+            ),
+          );
+
+        setState(() => _isSubmitting = false);
+        return;
+      }
 
       await MemoryDiyRepository.instance.submitForReview(config);
 
@@ -478,20 +567,45 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF7F8FC),
       appBar: AppBar(
-        title: const Text('Memory DIY Studio'),
+        elevation: 0,
+        backgroundColor:
+        widget.isReviewMode ? const Color(0xFF18122B) : Colors.white,
+        foregroundColor:
+        widget.isReviewMode ? Colors.white : const Color(0xFF111827),
+        titleSpacing: 16,
+        title: Row(
+          children: [
+            Icon(
+              widget.isReviewMode
+                  ? Icons.admin_panel_settings_rounded
+                  : Icons.auto_awesome_rounded,
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                widget.isReviewMode ? 'Admin Review' : 'DIY Studio',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontWeight: FontWeight.w900),
+              ),
+            ),
+          ],
+        ),
         actions: [
-          TextButton.icon(
-            onPressed: _isSaving ? null : _saveDraft,
-            icon: _isSaving
-                ? const SizedBox(
-              width: 16,
-              height: 16,
-              child: CircularProgressIndicator(strokeWidth: 2),
-            )
-                : const Icon(Icons.save_rounded),
-            label: Text(_isSaving ? 'Saving...' : 'Save Draft'),
-          ),
-          const SizedBox(width: 8),
+           if (!widget.isReviewMode) ...[
+            TextButton.icon(
+              onPressed: _isSaving ? null : _saveDraft,
+              icon: _isSaving
+                  ? const SizedBox(
+                width: 16,
+                height: 16,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+                  : const Icon(Icons.save_rounded),
+              label: Text(_isSaving ? 'Saving...' : 'Save Draft'),
+            ),
+            const SizedBox(width: 8),
+          ],
         ],
       ),
       body: SafeArea(
@@ -499,11 +613,48 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
           children: [
             _BuilderHeader(
               title: _projectTitlePreview,
+              headingText: 'DIY Game Studio',
               stepNumber: _stepNumber,
               totalSteps: _totalSteps,
               progressValue: _progressValue,
               stepLabel: _stepLabelFor(_currentStep),
+              isReviewMode: widget.isReviewMode,
             ),
+            if (widget.isReviewMode)
+              Container(
+                width: double.infinity,
+                margin: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 12,
+                ),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFFF5F3FF), Color(0xFFEEF2FF)],
+                  ),
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: const Color(0xFFD8B4FE)),
+                ),
+                child: const Row(
+                  children: [
+                    Icon(
+                      Icons.visibility_rounded,
+                      color: Color(0xFF7C3AED),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        'Review Mode is active. You can inspect every step and play the project, but editing, saving, and submission are disabled.',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w700,
+                          height: 1.35,
+                          color: Color(0xFF4C1D95),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             Expanded(
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 260),
@@ -535,11 +686,14 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               onBack: _currentStep == 0 ? null : _goBack,
               onNext: _currentStep < _totalSteps - 1 ? _goNext : null,
               onPlay: _playGame,
-              onSubmit: _submitProject,
+              onSubmit: widget.isReviewMode ? null : _submitProject,
               playEnabled: _canPlay,
-              submitEnabled: _canPlay && !_isSubmitting,
-              disabledReason: _currentStep == _totalSteps - 1 ? _playDisabledReason : null,
+              submitEnabled:
+              widget.isReviewMode ? false : (_canPlay && !_isSubmitting),
+              disabledReason:
+              _currentStep == _totalSteps - 1 ? _playDisabledReason : null,
               isSubmitting: _isSubmitting,
+              isReviewMode: widget.isReviewMode,
             ),
           ],
         ),
@@ -551,14 +705,16 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🛠️',
           title: 'Name Your Project',
-          subtitle:
-          'Give your memory game a fun name. This should feel like your own creation.',
+          subtitle: widget.isReviewMode
+              ? 'Project identity is visible here for review. Editing is disabled in review mode.'
+              : 'Give your memory game a fun name and choose how your creator name should appear in the community.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -566,17 +722,62 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               const SizedBox(height: 10),
               TextField(
                 controller: _titleController,
+                readOnly: _isReadOnly,
+                enabled: !_isReadOnly,
                 textCapitalization: TextCapitalization.words,
-                onChanged: (_) => setState(() {}),
+                onChanged: _isReadOnly ? null : (_) => setState(() {}),
                 decoration: InputDecoration(
                   hintText: 'Aarav\'s Ocean Quest',
                   filled: true,
-                  fillColor: Colors.white,
+                  fillColor:
+                  _isReadOnly ? const Color(0xFFF3F4F6) : Colors.white,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
                     borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
                   ),
                   enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(
+                      color: Color(0xFF5B67F1),
+                      width: 1.4,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 18),
+              const _SectionTitle('Creator Display Name'),
+              const SizedBox(height: 10),
+              TextField(
+                controller: _creatorNameController,
+                readOnly: _isReadOnly,
+                enabled: !_isReadOnly,
+                textCapitalization: TextCapitalization.words,
+                onChanged: _isReadOnly ? null : (_) => setState(() {}),
+                decoration: InputDecoration(
+                  hintText: 'Prasanth Plays',
+                  helperText: widget.isReviewMode
+                      ? 'Shown exactly as this project will appear in community and creator listings.'
+                      : 'This name will be shown in Community, Leaderboard, and My Projects.',
+                  filled: true,
+                  fillColor:
+                  _isReadOnly ? const Color(0xFFF3F4F6) : Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                    borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+                  ),
+                  disabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
                     borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
                   ),
@@ -591,15 +792,17 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               ),
               const SizedBox(height: 14),
               _StatusInfoRow(
-                icon: _isTitleValid
+                icon: (_isTitleValid && _isCreatorNameValid)
                     ? Icons.check_circle_rounded
                     : Icons.edit_rounded,
-                iconColor: _isTitleValid
+                iconColor: (_isTitleValid && _isCreatorNameValid)
                     ? const Color(0xFF16A34A)
                     : const Color(0xFF5B67F1),
-                text: _isTitleValid
-                    ? 'Great! Your project title is ready.'
-                    : 'Use at least 3 characters.',
+                text: (_isTitleValid && _isCreatorNameValid)
+                    ? 'Great! Your project and creator identity are ready.'
+                    : (!_isTitleValid
+                    ? 'Use at least 3 characters for the project title.'
+                    : 'Use at least 2 characters for creator display name.'),
               ),
             ],
           ),
@@ -612,11 +815,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🎨',
           title: 'Choose a Theme',
-          subtitle:
-          'Pick the world for your project. This decides the style and item pool for your game.',
+          subtitle: widget.isReviewMode
+              ? 'Theme selection is shown for inspection. Category switching is disabled in review mode.'
+              : 'Pick the world for your project. This decides the style and item pool for your game.',
         ),
         const SizedBox(height: 16),
         GridView.builder(
@@ -638,6 +842,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               subtitle: category.subtitle,
               selected: selected,
               isMixed: category.isMixed,
+              enabled: !_isReadOnly,
               onTap: () => _changeCategory(category),
             );
           },
@@ -650,14 +855,16 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🧱',
           title: 'Choose Board Size',
-          subtitle:
-          'Your board size decides how many unique cards you must choose in the next step.',
+          subtitle: widget.isReviewMode
+              ? 'Board configuration is visible for review. Size changes are disabled.'
+              : 'Your board size decides how many unique cards you must choose in the next step.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -674,6 +881,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                     subtitle:
                     '${preset.subtitle} • ${preset.columns * preset.rows} cards • ${(preset.columns * preset.rows) ~/ 2} pairs',
                     selected: selected,
+                    enabled: !_isReadOnly,
                     onTap: () => _changeGrid(preset),
                   ),
                 );
@@ -698,14 +906,16 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🧩',
           title: 'Choose Your Cards',
-          subtitle:
-          'Now that your board size is fixed, pick exactly the right number of cards for your project.',
+          subtitle: widget.isReviewMode
+              ? 'Card choices are visible for inspection. Card interactions are disabled.'
+              : 'Now that your board size is fixed, pick exactly the right number of cards for your project.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -757,7 +967,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                 children: [
                   Expanded(
                     child: OutlinedButton.icon(
-                      onPressed: _clearSelection,
+                      onPressed: _isReadOnly ? null : _clearSelection,
                       icon: const Icon(Icons.clear_all_rounded),
                       label: const Text('Clear'),
                     ),
@@ -765,7 +975,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                   const SizedBox(width: 10),
                   Expanded(
                     child: ElevatedButton.icon(
-                      onPressed: _autoFillSelection,
+                      onPressed: _isReadOnly ? null : _autoFillSelection,
                       icon: const Icon(Icons.auto_fix_high_rounded),
                       label: const Text('Quick Fill'),
                     ),
@@ -777,6 +987,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -789,7 +1000,9 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
               ),
               const SizedBox(height: 6),
               Text(
-                'Tap cards to include them in your project.',
+                widget.isReviewMode
+                    ? 'Viewing selected and available cards.'
+                    : 'Tap cards to include them in your project.',
                 style: TextStyle(
                   color: Colors.grey.shade700,
                   fontWeight: FontWeight.w600,
@@ -814,6 +1027,7 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                     item: item,
                     selected: selected,
                     order: selected ? _selectedItems.indexOf(item) + 1 : null,
+                    enabled: !_isReadOnly,
                     onTap: () => _toggleItem(item),
                   );
                 },
@@ -829,14 +1043,16 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '👀',
           title: 'Choose Preview Speed',
-          subtitle:
-          'Set how long the cards stay visible at the start before the game begins.',
+          subtitle: widget.isReviewMode
+              ? 'Preview timing is shown for review. Changes are disabled.'
+              : 'Set how long the cards stay visible at the start before the game begins.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -851,7 +1067,9 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                     title: preset.label,
                     subtitle: preset.subtitle,
                     selected: selected,
+                    enabled: !_isReadOnly,
                     onTap: () {
+                      if (_isReadOnly) return;
                       setState(() {
                         _previewDurationMs = preset.value;
                       });
@@ -870,14 +1088,16 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '⚡',
           title: 'Choose Flip Back Speed',
-          subtitle:
-          'Set how fast wrong pairs flip back down after a mistake.',
+          subtitle: widget.isReviewMode
+              ? 'Flip-back timing is shown for review. Changes are disabled.'
+              : 'Set how fast wrong pairs flip back down after a mistake.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
+          dimmed: _isReadOnly,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -892,7 +1112,9 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                     title: preset.label,
                     subtitle: preset.subtitle,
                     selected: selected,
+                    enabled: !_isReadOnly,
                     onTap: () {
+                      if (_isReadOnly) return;
                       setState(() {
                         _flipBackDelayMs = preset.value;
                       });
@@ -915,11 +1137,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🚀',
           title: 'Preview Your Project',
-          subtitle:
-          'Review your project before moving to the final submission step.',
+          subtitle: widget.isReviewMode
+              ? 'Everything below is read-only preview data for admin inspection.'
+              : 'Review your project before moving to the final submission step.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
@@ -931,6 +1154,14 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w900,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                'By $_creatorNamePreview',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: Color(0xFF5B67F1),
                 ),
               ),
               const SizedBox(height: 8),
@@ -947,6 +1178,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                         : '${_previewDurationMs}ms preview',
                   ),
                   _InfoPill(label: '${_flipBackDelayMs}ms flip'),
+                  if (widget.isReviewMode)
+                    const _InfoPill(
+                      label: 'Review Mode',
+                      backgroundColor: Color(0xFFF5F3FF),
+                      textColor: Color(0xFF7C3AED),
+                    ),
                 ],
               ),
               const SizedBox(height: 16),
@@ -1022,11 +1259,12 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const _StepTitle(
+        _StepTitle(
           emoji: '🏁',
-          title: 'Your Project',
-          subtitle:
-          'This is your final project screen. Submit it, save it, or go back and improve it.',
+          title: widget.isReviewMode ? 'Review Project' : 'Your Project',
+          subtitle: widget.isReviewMode
+              ? 'Final review screen. Play is allowed, but save and submit are intentionally disabled.'
+              : 'This is your final project screen. Submit it, save it, or go back and improve it.',
         ),
         const SizedBox(height: 16),
         _StudioCard(
@@ -1038,6 +1276,14 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                 style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w900,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                'Creator: $_creatorNamePreview',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: Color(0xFF5B67F1),
                 ),
               ),
               const SizedBox(height: 8),
@@ -1073,7 +1319,9 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
                     ? const Color(0xFF16A34A)
                     : const Color(0xFFF59E0B),
                 text: _canPlay
-                    ? 'Your project is ready for submission and play.'
+                    ? (widget.isReviewMode
+                    ? 'Project is playable and ready for admin review decisions.'
+                    : 'Your project is ready for submission and play.')
                     : (disabledReason ?? 'Project is not ready yet.'),
               ),
             ],
@@ -1156,39 +1404,56 @@ class _MemoryDiyBuilderScreenState extends State<MemoryDiyBuilderScreen> {
 class _BuilderHeader extends StatelessWidget {
   const _BuilderHeader({
     required this.title,
+    required this.headingText,
     required this.stepNumber,
     required this.totalSteps,
     required this.progressValue,
     required this.stepLabel,
+    required this.isReviewMode,
   });
 
   final String title;
+  final String headingText;
   final int stepNumber;
   final int totalSteps;
   final double progressValue;
   final String stepLabel;
+  final bool isReviewMode;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF5B67F1), Color(0xFF8B5CF6)],
+          colors: isReviewMode
+              ? const [Color(0xFF1E1B4B), Color(0xFF312E81)]
+              : const [Color(0xFF5B67F1), Color(0xFF8B5CF6)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         boxShadow: [
           BoxShadow(
-            color: Color(0x225B67F1),
+            color: isReviewMode
+                ? const Color(0x221E1B4B)
+                : const Color(0x225B67F1),
             blurRadius: 14,
-            offset: Offset(0, 6),
+            offset: const Offset(0, 6),
           ),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Row(
+            children: [
+              const Expanded(
+                child: _NeonSectionHeading(text: 'DIY Game Studio'),
+              ),
+              if (isReviewMode) const _ReviewModeBadge(),
+            ],
+          ),
+          const SizedBox(height: 10),
           Text(
             '🎮 $title',
             maxLines: 1,
@@ -1215,6 +1480,87 @@ class _BuilderHeader extends StatelessWidget {
               minHeight: 10,
               backgroundColor: Colors.white24,
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _NeonSectionHeading extends StatelessWidget {
+  const _NeonSectionHeading({
+    required this.text,
+  });
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 24,
+        fontWeight: FontWeight.w900,
+        letterSpacing: 0.4,
+        shadows: [
+          Shadow(
+            color: Color(0xFFFF4FD8),
+            blurRadius: 8,
+          ),
+          Shadow(
+            color: Color(0xFFB026FF),
+            blurRadius: 18,
+          ),
+          Shadow(
+            color: Color(0x66FFFFFF),
+            blurRadius: 2,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ReviewModeBadge extends StatelessWidget {
+  const _ReviewModeBadge();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFFFF4FD8), Color(0xFF8B5CF6)],
+        ),
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: const Color(0x55FFFFFF)),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x44FF4FD8),
+            blurRadius: 12,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: const Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(
+            Icons.remove_red_eye_rounded,
+            color: Colors.white,
+            size: 16,
+          ),
+          SizedBox(width: 6),
+          Text(
+            'Review Mode',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontSize: 12,
             ),
           ),
         ],
@@ -1281,27 +1627,37 @@ class _SectionTitle extends StatelessWidget {
 class _StudioCard extends StatelessWidget {
   const _StudioCard({
     required this.child,
+    this.dimmed = false,
   });
 
   final Widget child;
+  final bool dimmed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: const Color(0xFFFDFDFE),
-        borderRadius: BorderRadius.circular(22),
-        border: Border.all(color: const Color(0xFFE5E7EB)),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x12000000),
-            blurRadius: 12,
-            offset: Offset(0, 6),
+    return AnimatedOpacity(
+      duration: const Duration(milliseconds: 180),
+      opacity: dimmed ? 0.82 : 1,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: dimmed ? const Color(0xFFFAFAFC) : const Color(0xFFFDFDFE),
+          borderRadius: BorderRadius.circular(22),
+          border: Border.all(
+            color: dimmed
+                ? const Color(0xFFD1D5DB)
+                : const Color(0xFFE5E7EB),
           ),
-        ],
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x12000000),
+              blurRadius: 12,
+              offset: Offset(0, 6),
+            ),
+          ],
+        ),
+        child: child,
       ),
-      child: child,
     );
   }
 }
@@ -1313,6 +1669,7 @@ class _CategoryTile extends StatelessWidget {
     required this.selected,
     required this.isMixed,
     required this.onTap,
+    required this.enabled,
   });
 
   final String title;
@@ -1320,91 +1677,104 @@ class _CategoryTile extends StatelessWidget {
   final bool selected;
   final bool isMixed;
   final VoidCallback onTap;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: onTap,
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: selected
-                  ? const [Color(0xFFEEF2FF), Color(0xFFF5F3FF)]
-                  : const [Colors.white, Color(0xFFF9FAFB)],
-            ),
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: selected
-                  ? const Color(0xFF5B67F1)
-                  : const Color(0xFFE5E7EB),
-              width: selected ? 1.6 : 1,
-            ),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x10000000),
-                blurRadius: 10,
-                offset: Offset(0, 4),
+    return Opacity(
+      opacity: enabled ? 1 : 0.72,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(20),
+          onTap: enabled ? onTap : null,
+          child: Ink(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: selected
+                    ? const [Color(0xFFEEF2FF), Color(0xFFF5F3FF)]
+                    : const [Colors.white, Color(0xFFF9FAFB)],
               ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(14),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 42,
-                      height: 42,
-                      decoration: BoxDecoration(
-                        color: selected
-                            ? const Color(0xFF5B67F1)
-                            : const Color(0xFFF3F4F6),
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: Icon(
-                        isMixed
-                            ? Icons.auto_awesome_rounded
-                            : Icons.category_rounded,
-                        color: selected
-                            ? Colors.white
-                            : const Color(0xFF6B7280),
-                      ),
-                    ),
-                    const Spacer(),
-                    if (selected)
-                      const Icon(
-                        Icons.check_circle_rounded,
-                        color: Color(0xFF5B67F1),
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 14),
-                Text(
-                  title,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 16,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Expanded(
-                  child: Text(
-                    subtitle,
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      color: Color(0xFF6B7280),
-                      fontWeight: FontWeight.w600,
-                      height: 1.3,
-                    ),
-                  ),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(
+                color: selected
+                    ? const Color(0xFF5B67F1)
+                    : const Color(0xFFE5E7EB),
+                width: selected ? 1.6 : 1,
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x10000000),
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
                 ),
               ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(14),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        width: 42,
+                        height: 42,
+                        decoration: BoxDecoration(
+                          color: selected
+                              ? const Color(0xFF5B67F1)
+                              : const Color(0xFFF3F4F6),
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Icon(
+                          isMixed
+                              ? Icons.auto_awesome_rounded
+                              : Icons.category_rounded,
+                          color: selected
+                              ? Colors.white
+                              : const Color(0xFF6B7280),
+                        ),
+                      ),
+                      const Spacer(),
+                      if (selected)
+                        const Icon(
+                          Icons.check_circle_rounded,
+                          color: Color(0xFF5B67F1),
+                        ),
+                      if (!enabled)
+                        const Padding(
+                          padding: EdgeInsets.only(left: 6),
+                          child: Icon(
+                            Icons.lock_outline_rounded,
+                            size: 18,
+                            color: Color(0xFF9CA3AF),
+                          ),
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 16,
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Expanded(
+                    child: Text(
+                      subtitle,
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        color: Color(0xFF6B7280),
+                        fontWeight: FontWeight.w600,
+                        height: 1.3,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -1418,6 +1788,7 @@ class _SelectableCardItem extends StatelessWidget {
     required this.item,
     required this.selected,
     required this.onTap,
+    required this.enabled,
     this.order,
   });
 
@@ -1425,67 +1796,81 @@ class _SelectableCardItem extends StatelessWidget {
   final bool selected;
   final int? order;
   final VoidCallback onTap;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(18),
-        onTap: onTap,
-        child: Ink(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: selected
-                  ? const [Color(0xFFEEF2FF), Color(0xFFF5F3FF)]
-                  : const [Colors.white, Color(0xFFF9FAFB)],
-            ),
-            borderRadius: BorderRadius.circular(18),
-            border: Border.all(
-              color: selected
-                  ? const Color(0xFF5B67F1)
-                  : const Color(0xFFE5E7EB),
-              width: selected ? 1.8 : 1,
-            ),
-            boxShadow: const [
-              BoxShadow(
-                color: Color(0x10000000),
-                blurRadius: 8,
-                offset: Offset(0, 4),
+    return Opacity(
+      opacity: enabled ? 1 : 0.78,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: enabled ? onTap : null,
+          child: Ink(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: selected
+                    ? const [Color(0xFFEEF2FF), Color(0xFFF5F3FF)]
+                    : const [Colors.white, Color(0xFFF9FAFB)],
               ),
-            ],
-          ),
-          child: Stack(
-            children: [
-              Center(
-                child: Text(
-                  item,
-                  style: const TextStyle(fontSize: 30),
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(
+                color: selected
+                    ? const Color(0xFF5B67F1)
+                    : const Color(0xFFE5E7EB),
+                width: selected ? 1.8 : 1,
+              ),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0x10000000),
+                  blurRadius: 8,
+                  offset: Offset(0, 4),
                 ),
-              ),
-              if (selected && order != null)
-                Positioned(
-                  top: 6,
-                  right: 6,
-                  child: Container(
-                    width: 22,
-                    height: 22,
-                    alignment: Alignment.center,
-                    decoration: const BoxDecoration(
-                      color: Color(0xFF5B67F1),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      '$order',
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w800,
-                        fontSize: 11,
+              ],
+            ),
+            child: Stack(
+              children: [
+                Center(
+                  child: Text(
+                    item,
+                    style: const TextStyle(fontSize: 30),
+                  ),
+                ),
+                if (selected && order != null)
+                  Positioned(
+                    top: 6,
+                    right: 6,
+                    child: Container(
+                      width: 22,
+                      height: 22,
+                      alignment: Alignment.center,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFF5B67F1),
+                        shape: BoxShape.circle,
+                      ),
+                      child: Text(
+                        '$order',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 11,
+                        ),
                       ),
                     ),
                   ),
-                ),
-            ],
+                if (!enabled)
+                  const Positioned(
+                    left: 6,
+                    bottom: 6,
+                    child: Icon(
+                      Icons.lock_outline_rounded,
+                      size: 16,
+                      color: Color(0xFF9CA3AF),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
@@ -1499,67 +1884,76 @@ class _SelectionTile extends StatelessWidget {
     required this.subtitle,
     required this.selected,
     required this.onTap,
+    required this.enabled,
   });
 
   final String title;
   final String subtitle;
   final bool selected;
   final VoidCallback onTap;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(18),
-        onTap: onTap,
-        child: Ink(
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            color: selected ? const Color(0xFFEEF2FF) : Colors.white,
-            borderRadius: BorderRadius.circular(18),
-            border: Border.all(
-              color: selected
-                  ? const Color(0xFF5B67F1)
-                  : const Color(0xFFE5E7EB),
-              width: selected ? 1.6 : 1,
-            ),
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 15,
-                      ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      subtitle,
-                      style: const TextStyle(
-                        color: Color(0xFF6B7280),
-                        fontWeight: FontWeight.w600,
-                        height: 1.3,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: 10),
-              Icon(
-                selected
-                    ? Icons.check_circle_rounded
-                    : Icons.radio_button_unchecked_rounded,
+    return Opacity(
+      opacity: enabled ? 1 : 0.72,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(18),
+          onTap: enabled ? onTap : null,
+          child: Ink(
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: selected ? const Color(0xFFEEF2FF) : Colors.white,
+              borderRadius: BorderRadius.circular(18),
+              border: Border.all(
                 color: selected
                     ? const Color(0xFF5B67F1)
-                    : const Color(0xFF9CA3AF),
+                    : const Color(0xFFE5E7EB),
+                width: selected ? 1.6 : 1,
               ),
-            ],
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 15,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        subtitle,
+                        style: const TextStyle(
+                          color: Color(0xFF6B7280),
+                          fontWeight: FontWeight.w600,
+                          height: 1.3,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Icon(
+                  !enabled
+                      ? Icons.lock_outline_rounded
+                      : (selected
+                      ? Icons.check_circle_rounded
+                      : Icons.radio_button_unchecked_rounded),
+                  color: !enabled
+                      ? const Color(0xFF9CA3AF)
+                      : (selected
+                      ? const Color(0xFF5B67F1)
+                      : const Color(0xFF9CA3AF)),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -1601,23 +1995,27 @@ class _StatusInfoRow extends StatelessWidget {
 class _InfoPill extends StatelessWidget {
   const _InfoPill({
     required this.label,
+    this.backgroundColor = const Color(0xFFF3F4F6),
+    this.textColor = const Color(0xFF374151),
   });
 
   final String label;
+  final Color backgroundColor;
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
       decoration: BoxDecoration(
-        color: const Color(0xFFF3F4F6),
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(
         label,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w700,
-          color: Color(0xFF374151),
+          color: textColor,
         ),
       ),
     );
@@ -1634,8 +2032,9 @@ class _BottomActionBar extends StatelessWidget {
     required this.onSubmit,
     required this.playEnabled,
     required this.submitEnabled,
-    this.disabledReason,
     required this.isSubmitting,
+    required this.isReviewMode,
+    this.disabledReason,
   });
 
   final int currentStep;
@@ -1648,11 +2047,12 @@ class _BottomActionBar extends StatelessWidget {
   final bool submitEnabled;
   final String? disabledReason;
   final bool isSubmitting;
+  final bool isReviewMode;
 
   @override
   Widget build(BuildContext context) {
     final bool isFinalStep = currentStep == totalSteps - 1;
-    final bool showDisabled = isFinalStep && !submitEnabled;
+    final bool showDisabled = isFinalStep && !playEnabled;
 
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
@@ -1720,6 +2120,24 @@ class _BottomActionBar extends StatelessWidget {
                     onPressed: onNext,
                     icon: const Icon(Icons.arrow_forward_rounded),
                     label: const Text('Next Step'),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(52),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          else if (isReviewMode)
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton.icon(
+                    onPressed: playEnabled ? onPlay : null,
+                    icon: const Icon(Icons.play_arrow_rounded),
+                    label: const Text('Play Project'),
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(52),
                       shape: RoundedRectangleBorder(

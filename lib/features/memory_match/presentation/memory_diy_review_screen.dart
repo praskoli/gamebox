@@ -86,9 +86,30 @@ class _MemoryDiyReviewScreenState extends State<MemoryDiyReviewScreen>
         return Scaffold(
           backgroundColor: const Color(0xFFF7F8FC),
           appBar: AppBar(
-            title: const Text('DIY Review Studio'),
+            elevation: 0,
+            backgroundColor: const Color(0xFF18122B),
+            foregroundColor: Colors.white,
+            titleSpacing: 16,
+            title: Row(
+              children: const [
+                Icon(Icons.admin_panel_settings_rounded),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    'DIY Review Studio',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             bottom: TabBar(
               controller: _tabController,
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.white70,
+              indicatorColor: Colors.white,
               tabs: const [
                 Tab(text: 'Pending'),
                 Tab(text: 'Approved'),
@@ -98,6 +119,16 @@ class _MemoryDiyReviewScreenState extends State<MemoryDiyReviewScreen>
           ),
           body: Column(
             children: [
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFF1E1B4B), Color(0xFF312E81)],
+                  ),
+                ),
+                child: const _NeonSectionHeading(text: 'DIY Review Studio'),
+              ),
               const _ReviewHeroBanner(),
               Expanded(
                 child: TabBarView(
@@ -473,6 +504,7 @@ class _ReviewProjectCardState extends State<_ReviewProjectCard> {
       MaterialPageRoute<void>(
         builder: (_) => MemoryDiyBuilderScreen(
           initialConfig: widget.config,
+          isReviewMode: true,
         ),
       ),
     );
@@ -777,6 +809,27 @@ class _InfoPill extends StatelessWidget {
           fontWeight: FontWeight.w700,
           color: Color(0xFF374151),
         ),
+      ),
+    );
+  }
+}
+class _NeonSectionHeading extends StatelessWidget {
+  const _NeonSectionHeading({required this.text});
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        color: Colors.white,
+        fontSize: 24,
+        fontWeight: FontWeight.w900,
+        shadows: [
+          Shadow(color: Color(0xFFFF4FD8), blurRadius: 8),
+          Shadow(color: Color(0xFFB026FF), blurRadius: 18),
+        ],
       ),
     );
   }

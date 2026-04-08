@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../routing/route_names.dart';
-import '../../platform/auth/google_sign_in_service.dart';
-import '../../game_engine/catalog/diy_games_screen.dart';
+import '../../platform/profile/settings_screen.dart';
+import '../../game_engine/catalog/diy_game_studio_entry_screen.dart';
 import '../../game_engine/catalog/featured_games_screen.dart';
 import '../home/home_tab_screen.dart';
 import '../home/home_view_model.dart';
 import '../../platform/profile/player_profile_tab_screen.dart';
-import '../../platform/player/presentation/player_stats_screen.dart';
+import '../../game_engine/community/community_creations_screen.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
   const MainBottomNavScreen({
@@ -24,12 +23,16 @@ class MainBottomNavScreen extends StatefulWidget {
 
 class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   late int _currentIndex;
+  late final PageController _pageController;
+
+  final GlobalKey<CommunityCreationsScreenState> _creatorTabKey =
+  GlobalKey<CommunityCreationsScreenState>();
 
   static const List<String> _titles = <String>[
     'Home',
-    'Featured Games',
-    'DIY',
-    'Player Stats',
+    'Play',
+    'DIY Game Studio',
+    '',
     'Profile',
   ];
 
@@ -37,26 +40,70 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   void initState() {
     super.initState();
     _currentIndex = widget.initialIndex.clamp(0, 4);
+    _pageController = PageController(initialPage: _currentIndex);
   }
 
-  Future<void> _logout(BuildContext context) async {
-    await GoogleSignInService.instance.signOut();
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
-    if (!mounted) return;
+  PreferredSizeWidget? _buildAppBar(HomeViewModel vm) {
+    if (_currentIndex == 2) {
+      return null;
+    }
 
-    Navigator.of(context).pushNamedAndRemoveUntil(
-      RouteNames.login,
-          (route) => false,
+    return AppBar(
+      title: _currentIndex == 3
+          ? null
+          : _BoldAppBarTitle(_titles[_currentIndex]),
+      actions: [
+        if (_currentIndex != 4 && _currentIndex != 3)
+          IconButton(
+            onPressed: vm.refresh,
+            icon: const Icon(Icons.refresh_rounded),
+            tooltip: 'Refresh',
+          ),
+        if (_currentIndex == 3)
+          IconButton(
+            onPressed: () {
+              _creatorTabKey.currentState?.refreshCreatorFeed();
+            },
+            icon: const Icon(Icons.refresh_rounded),
+            tooltip: 'Refresh',
+          ),
+        if (_currentIndex == 4)
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => ChangeNotifierProvider<HomeViewModel>.value(
+                    value: vm,
+                    child: const SettingsScreen(),
+                  ),
+                ),
+              );
+            },
+            icon: const Icon(Icons.settings_rounded),
+            tooltip: 'Settings',
+          ),
+      ],
     );
+  }
 
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        const SnackBar(
-          content: Text('Logged out successfully.'),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
+  void _goToPage(int index) {
+    if (_currentIndex == index) return;
+
+    setState(() {
+      _currentIndex = index;
+    });
+
+    _pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 280),
+      curve: Curves.easeOutCubic,
+    );
   }
 
   @override
@@ -66,40 +113,32 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
       child: Consumer<HomeViewModel>(
         builder: (context, vm, _) {
           return Scaffold(
-            appBar: AppBar(
-              title: Text(_titles[_currentIndex]),
-              actions: [
-                if (_currentIndex != 4)
-                  IconButton(
-                    onPressed: vm.refresh,
-                    icon: const Icon(Icons.refresh_rounded),
-                    tooltip: 'Refresh',
-                  ),
-                if (_currentIndex == 4)
-                  IconButton(
-                    onPressed: () => _logout(context),
-                    icon: const Icon(Icons.logout_rounded),
-                    tooltip: 'Logout',
-                  ),
-              ],
-            ),
-            body: IndexedStack(
-              index: _currentIndex,
-              children: const [
-                HomeTabScreen(),
-                FeaturedGamesScreen(),
-                DiyGamesScreen(),
-                PlayerStatsScreen(),
-                PlayerProfileTabScreen(),
-              ],
-            ),
-            bottomNavigationBar: NavigationBar(
-              selectedIndex: _currentIndex,
-              onDestinationSelected: (index) {
+            appBar: _buildAppBar(vm),
+
+            // ✅ FULL SWIPE ENABLED
+            body: PageView(
+              controller: _pageController,
+              onPageChanged: (index) {
                 setState(() {
                   _currentIndex = index;
                 });
               },
+              children: [
+                const HomeTabScreen(),
+                const FeaturedGamesScreen(),
+                const DiyGameStudioEntryScreen(),
+                CommunityCreationsScreen(
+                  key: _creatorTabKey,
+                  showScaffold: false,
+                  showInlineHeader: false,
+                ),
+                const PlayerProfileTabScreen(),
+              ],
+            ),
+
+            bottomNavigationBar: NavigationBar(
+              selectedIndex: _currentIndex,
+              onDestinationSelected: _goToPage,
               destinations: const [
                 NavigationDestination(
                   icon: Icon(Icons.home_rounded),
@@ -109,7 +148,7 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                 NavigationDestination(
                   icon: Icon(Icons.sports_esports_rounded),
                   selectedIcon: Icon(Icons.sports_esports_rounded),
-                  label: 'Featured',
+                  label: 'Play',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.auto_awesome_rounded),
@@ -117,9 +156,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
                   label: 'DIY',
                 ),
                 NavigationDestination(
-                  icon: Icon(Icons.bar_chart_rounded),
-                  selectedIcon: Icon(Icons.bar_chart_rounded),
-                  label: 'Stats',
+                  icon: Icon(Icons.public_rounded),
+                  selectedIcon: Icon(Icons.public_rounded),
+                  label: 'Creator',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.person_rounded),
@@ -130,6 +169,34 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+class _BoldAppBarTitle extends StatelessWidget {
+  const _BoldAppBarTitle(this.text);
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w900,
+        color: Color(0xFF111827), // dark text
+        shadows: [
+          Shadow(
+            color: Color(0xFF9D4DFF), // neon purple glow
+            blurRadius: 6,
+          ),
+          Shadow(
+            color: Color(0xFFEC4899), // neon pink glow
+            blurRadius: 12,
+          ),
+        ],
       ),
     );
   }

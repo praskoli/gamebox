@@ -1,0 +1,142 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function currentUid() {
+      return signedIn() ? request.auth.uid : "";
+    }
+
+    function currentEmail() {
+      return signedIn() && request.auth.token.email is string
+        ? request.auth.token.email
+        : "";
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function reviewerConfigExists() {
+      return exists(/databases/$(database)/documents/app_config/diy_review_admins);
+    }
+
+    function reviewerConfig() {
+      return get(/databases/$(database)/documents/app_config/diy_review_admins).data;
+    }
+
+    function isConfiguredDiyReviewerByUid() {
+      return reviewerConfigExists()
+        && reviewerConfig().allowedUids is list
+        && reviewerConfig().allowedUids.hasAny([currentUid()]);
+    }
+
+    function isConfiguredDiyReviewerByEmail() {
+      return reviewerConfigExists()
+        && reviewerConfig().allowedEmails is list
+        && reviewerConfig().allowedEmails.hasAny([currentEmail()]);
+    }
+
+    function isFallbackReviewer() {
+      return signedIn()
+        && currentUid() == "GYVOprIIgscWyLPY0L2mDnRsXYs2";
+    }
+
+    function isDiyReviewer() {
+      return signedIn() && (
+        isConfiguredDiyReviewerByUid()
+        || isConfiguredDiyReviewerByEmail()
+        || isFallbackReviewer()
+      );
+    }
+
+  function isCommunityVisibleGame() {
+  return resource.data.gameType == "memory"
+    && resource.data.status == "approved";
+}
+
+    match /memory_match_worlds/{worldId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /memory_match_config/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /app_config/{docId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      match /memory_worlds/{worldId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /parent_control/{document=**} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /play_access/{document=**} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /game_stats/{gameId} {
+        allow read, write: if isOwner(uid);
+      }
+
+      match /game_progress/{gameId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    match /{path=**}/custom_games/{gameId} {
+      allow read: if signedIn() && (
+        resource.data.ownerUid == request.auth.uid ||
+        isDiyReviewer() ||
+        isCommunityVisibleGame()
+      );
+
+      allow create: if signedIn()
+        && request.resource.data.ownerUid is string
+        && request.resource.data.ownerUid == request.auth.uid;
+
+      allow update: if signedIn() && (
+        resource.data.ownerUid == request.auth.uid ||
+        isDiyReviewer()
+      );
+
+      allow delete: if signedIn() && (
+        resource.data.ownerUid == request.auth.uid ||
+        isDiyReviewer()
+      );
+    }
+
+    match /mail/{docId} {
+      allow create: if signedIn()
+        && request.resource.data.to is list
+        && request.resource.data.to.size() > 0
+        && request.resource.data.message is map
+        && request.resource.data.message.subject is string
+        && (
+          request.resource.data.message.text is string ||
+          request.resource.data.message.html is string
+        )
+        && request.resource.data.meta is map
+        && request.resource.data.meta.uid is string
+        && request.resource.data.meta.uid == request.auth.uid
+        && request.resource.data.meta.type == "play_access_otp"
+        && request.resource.data.meta.requestId is string;
+
+      allow read: if false;
+      allow update, delete: if false;
+    }
+  }
+}

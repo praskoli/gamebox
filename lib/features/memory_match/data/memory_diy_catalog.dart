@@ -225,6 +225,7 @@ class MemoryDiyCatalog {
     return MemoryDiyGameConfig(
       id: '',
       title: category.title,
+      creatorName: 'Arena Builder', // ✅ FIX ADDED
       categoryId: category.id,
       baseWorldId: category.baseWorldId,
       gridColumns: 4,

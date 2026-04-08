@@ -4,6 +4,7 @@ class MemoryDiyGameConfig {
   const MemoryDiyGameConfig({
     required this.id,
     required this.title,
+    required this.creatorName,
     required this.categoryId,
     required this.baseWorldId,
     required this.gridColumns,
@@ -25,6 +26,7 @@ class MemoryDiyGameConfig {
 
   final String id;
   final String title;
+  final String creatorName;
   final String categoryId;
   final String baseWorldId;
   final int gridColumns;
@@ -55,6 +57,7 @@ class MemoryDiyGameConfig {
   MemoryDiyGameConfig copyWith({
     String? id,
     String? title,
+    String? creatorName,
     String? categoryId,
     String? baseWorldId,
     int? gridColumns,
@@ -76,6 +79,7 @@ class MemoryDiyGameConfig {
     return MemoryDiyGameConfig(
       id: id ?? this.id,
       title: title ?? this.title,
+      creatorName: creatorName ?? this.creatorName,
       categoryId: categoryId ?? this.categoryId,
       baseWorldId: baseWorldId ?? this.baseWorldId,
       gridColumns: gridColumns ?? this.gridColumns,
@@ -100,6 +104,7 @@ class MemoryDiyGameConfig {
     return <String, dynamic>{
       'id': id,
       'title': title,
+      'creatorName': creatorName,
       'categoryId': categoryId,
       'baseWorldId': baseWorldId,
       'gridColumns': gridColumns,
@@ -141,13 +146,14 @@ class MemoryDiyGameConfig {
     }
 
     String readString(dynamic value, String fallback) {
-      if (value is String && value.trim().isNotEmpty) return value;
+      if (value is String && value.trim().isNotEmpty) return value.trim();
       return fallback;
     }
 
     return MemoryDiyGameConfig(
       id: readString(map['id'], ''),
       title: readString(map['title'], 'My Memory Game'),
+      creatorName: readString(map['creatorName'], 'Arena Builder'),
       categoryId: readString(map['categoryId'], 'fruits'),
       baseWorldId: readString(map['baseWorldId'], 'fruits'),
       gridColumns: readInt(map['gridColumns'], 4),

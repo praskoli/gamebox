@@ -17,6 +17,7 @@ dependencies:
   audioplayers: ^5.2.1
   firebase_storage: ^13.0.0
   image_picker: ^1.1.2
+  share_plus: ^7.2.1
 dev_dependencies:
   flutter_test:
     sdk: flutter

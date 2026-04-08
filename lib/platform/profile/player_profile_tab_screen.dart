@@ -1,51 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../app/routing/route_names.dart';
-import '../auth/google_sign_in_service.dart';
 import '../../app/home/home_view_model.dart';
-import '../../games/memory_match/presentation/parent_unlock_screen.dart';
-import 'edit_player_profile_screen.dart';
+import '../../app/routing/route_names.dart';
+import '../../platform/player/presentation/player_stats_screen.dart';
 
 class PlayerProfileTabScreen extends StatelessWidget {
   const PlayerProfileTabScreen({super.key});
-
-  Future<void> _logout(BuildContext context) async {
-    await GoogleSignInService.instance.signOut();
-
-    if (!context.mounted) return;
-
-    Navigator.of(context).pushNamedAndRemoveUntil(
-      RouteNames.login,
-          (route) => false,
-    );
-
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        const SnackBar(
-          content: Text('Logged out successfully.'),
-          behavior: SnackBarBehavior.floating,
-        ),
-      );
-  }
-
-  Future<void> _openEditProfile(BuildContext context, HomeViewModel vm) async {
-    final profile = vm.profile;
-    if (profile == null) return;
-
-    final result = await Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) => EditPlayerProfileScreen(
-          initialProfile: profile,
-        ),
-      ),
-    );
-
-    if (result != null) {
-      await vm.refresh();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,14 +42,25 @@ class PlayerProfileTabScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(24),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF3158FF), Color(0xFF9333EA)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(28),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Color(0x443158FF),
+                      blurRadius: 18,
+                      offset: Offset(0, 8),
+                    ),
+                  ],
                 ),
                 child: Column(
                   children: [
                     CircleAvatar(
                       radius: 56,
-                      backgroundColor: const Color(0xFFECE1FA),
+                      backgroundColor: Colors.white.withOpacity(0.16),
                       backgroundImage: profile.photoUrl.trim().isNotEmpty
                           ? NetworkImage(profile.photoUrl)
                           : null,
@@ -97,7 +70,7 @@ class PlayerProfileTabScreen extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 40,
                           fontWeight: FontWeight.w700,
-                          color: Color(0xFF7C1FB1),
+                          color: Colors.white,
                         ),
                       )
                           : null,
@@ -108,108 +81,91 @@ class PlayerProfileTabScreen extends StatelessWidget {
                           ? 'Player'
                           : profile.displayName,
                       style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
                       ),
                     ),
                     const SizedBox(height: 8),
                     Text(
                       otpDestination.isEmpty
-                          ? 'No approval email configured'
-                          : 'OTP goes to: $otpDestination',
+                          ? 'No approval portal linked'
+                          : 'Approval portal: $otpDestination',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
                         color: otpDestination.isEmpty
-                            ? Colors.redAccent
-                            : const Color(0xFF6B7280),
-                        fontWeight: otpDestination.isEmpty
-                            ? FontWeight.w700
-                            : FontWeight.w500,
+                            ? const Color(0xFFFECACA)
+                            : Colors.white.withOpacity(0.92),
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    if (profile.temporaryEmail.trim().isNotEmpty) ...[
-                      const SizedBox(height: 6),
-                      const Text(
-                        'Temporary email is currently overriding primary approval email.',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 12.5,
-                          color: Color(0xFFB45309),
-                          fontWeight: FontWeight.w600,
+                    const SizedBox(height: 18),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: _HeroMiniStat(
+                            title: 'Coins',
+                            value: '${profile.coins}',
+                            icon: Icons.monetization_on_rounded,
+                          ),
                         ),
-                      ),
-                    ],
-                    const SizedBox(height: 6),
-                    Text(
-                      profile.mobileNumber.isEmpty
-                          ? 'No mobile added'
-                          : profile.mobileNumber,
-                      style: const TextStyle(
-                        fontSize: 13.5,
-                        color: Color(0xFF6B7280),
-                      ),
-                    ),
-                    const SizedBox(height: 6),
-                    Text(
-                      profile.email.isEmpty
-                          ? 'No auth email available'
-                          : 'Auth Email: ${profile.email}',
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        color: Color(0xFF6B7280),
-                      ),
-                    ),
-                    if (profile.loginEmail.trim().isNotEmpty &&
-                        profile.loginEmail.trim() != profile.email.trim()) ...[
-                      const SizedBox(height: 6),
-                      Text(
-                        'Login / Recovery Email: ${profile.loginEmail}',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 13,
-                          color: Color(0xFF6B7280),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: _HeroMiniStat(
+                            title: 'XP',
+                            value: '${profile.xp}',
+                            icon: Icons.bolt_rounded,
+                          ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: _HeroMiniStat(
+                            title: 'Streak',
+                            value: '${profile.streakDays}',
+                            icon: Icons.local_fire_department_rounded,
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
               const SizedBox(height: 18),
-              _ActionCard(
-                icon: Icons.edit_rounded,
-                title: 'Edit Profile',
+              _CreatorSummaryCard(uid: profile.uid),
+              const SizedBox(height: 18),
+              const _SectionTitle(
+                title: '⚡ Creator Hub',
                 subtitle:
-                'Update profile photo, name, mobile, parent approval email, and temporary email.',
-                onTap: () => _openEditProfile(context, vm),
+                'Launch builds, track your rise, and level up your legend.',
               ),
               const SizedBox(height: 12),
               _ActionCard(
-                icon: Icons.lock_outline_rounded,
-                title: 'Parent Controls',
-                subtitle: 'Manage unlock approvals and child play access.',
+                icon: Icons.folder_copy_rounded,
+                title: 'My Projects',
+                subtitle:
+                'Check drafts, approvals, and all your custom game builds.',
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => const ParentUnlockScreen(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, RouteNames.myProjects);
                 },
               ),
               const SizedBox(height: 12),
               _ActionCard(
-                icon: Icons.refresh_rounded,
-                title: 'Refresh Profile',
-                subtitle: 'Reload the latest player profile and rewards.',
-                onTap: vm.refresh,
-              ),
-              const SizedBox(height: 12),
-              _ActionCard(
-                icon: Icons.logout_rounded,
-                title: 'Logout',
-                subtitle: 'Sign out from GameBox safely.',
-                onTap: () => _logout(context),
+                icon: Icons.bar_chart_rounded,
+                title: 'Player Stats',
+                subtitle:
+                'Track XP, streaks, battles played, and your overall rise.',
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                      ChangeNotifierProvider<HomeViewModel>.value(
+                        value: vm,
+                        child: const PlayerStatsScreen(),
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),
@@ -229,6 +185,313 @@ class PlayerProfileTabScreen extends StatelessWidget {
     if (parts.length == 1) return parts.first.substring(0, 1).toUpperCase();
     return (parts.first.substring(0, 1) + parts.last.substring(0, 1))
         .toUpperCase();
+  }
+}
+
+class _CreatorSummaryCard extends StatelessWidget {
+  const _CreatorSummaryCard({
+    required this.uid,
+  });
+
+  final String uid;
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: FirebaseFirestore.instance
+          .collection('users')
+          .doc(uid)
+          .collection('custom_games')
+          .snapshots(),
+      builder: (context, snapshot) {
+        final docs = snapshot.data?.docs ?? const [];
+
+        int totalProjects = docs.length;
+        int approved = 0;
+        int totalBattles = 0;
+        int totalCheers = 0;
+
+        for (final doc in docs) {
+          final data = doc.data();
+          if ((data['status'] ?? '') == 'approved') {
+            approved += 1;
+          }
+          totalBattles += (data['playCount'] as num?)?.toInt() ?? 0;
+          totalCheers += (data['likesCount'] as num?)?.toInt() ?? 0;
+        }
+
+        final List<String> badges = <String>[];
+        if (approved >= 1) badges.add('First Published');
+        if (totalBattles >= 5) badges.add('On Fire');
+        if (totalCheers >= 3) badges.add('Crowd Favorite');
+
+        return Container(
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color(0xFF161A2D),
+                Color(0xFF0F1324),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(color: const Color(0xFF2A3160)),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x22000000),
+                blurRadius: 14,
+                offset: Offset(0, 6),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                '🏆 Creator Progress',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Your build journey inside the GameBox arena.',
+                style: TextStyle(
+                  color: Color(0xFFB9C0FF),
+                  height: 1.35,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: _SummaryTile(
+                      title: 'Builds',
+                      value: '$totalProjects',
+                      icon: Icons.folder_copy_rounded,
+                      color: const Color(0xFF7C9BFF),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _SummaryTile(
+                      title: 'Approved',
+                      value: '$approved',
+                      icon: Icons.verified_rounded,
+                      color: const Color(0xFF22C55E),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  Expanded(
+                    child: _SummaryTile(
+                      title: 'Battles',
+                      value: '$totalBattles',
+                      icon: Icons.sports_martial_arts_rounded,
+                      color: const Color(0xFFF59E0B),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _SummaryTile(
+                      title: 'Cheers',
+                      value: '$totalCheers',
+                      icon: Icons.bolt_rounded,
+                      color: const Color(0xFFEF4444),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Unlocked Badges',
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 15,
+                  color: Colors.white,
+                ),
+              ),
+              const SizedBox(height: 10),
+              if (badges.isEmpty)
+                const Text(
+                  'Publish your first approved build to unlock neon badges.',
+                  style: TextStyle(
+                    color: Color(0xFFB9C0FF),
+                    fontWeight: FontWeight.w700,
+                  ),
+                )
+              else
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: badges
+                      .map(
+                        (badge) => Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 8,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF232A56),
+                        borderRadius: BorderRadius.circular(999),
+                        border: Border.all(
+                          color: const Color(0xFF3A46A5),
+                        ),
+                      ),
+                      child: Text(
+                        badge,
+                        style: const TextStyle(
+                          color: Color(0xFFD8DEFF),
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                  )
+                      .toList(),
+                ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _HeroMiniStat extends StatelessWidget {
+  const _HeroMiniStat({
+    required this.title,
+    required this.value,
+    required this.icon,
+  });
+
+  final String title;
+  final String value;
+  final IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.14),
+        borderRadius: BorderRadius.circular(18),
+      ),
+      child: Column(
+        children: [
+          Icon(icon, color: Colors.white, size: 18),
+          const SizedBox(height: 6),
+          Text(
+            value,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontSize: 15,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            title,
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.9),
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SummaryTile extends StatelessWidget {
+  const _SummaryTile({
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.color,
+  });
+
+  final String title;
+  final String value;
+  final IconData icon;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: const Color(0xFF171D39),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: const Color(0xFF2F386C)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, color: color),
+          const SizedBox(height: 10),
+          Text(
+            title,
+            style: const TextStyle(
+              color: Color(0xFFB9C0FF),
+              fontSize: 12.5,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            value,
+            style: const TextStyle(
+              fontWeight: FontWeight.w900,
+              fontSize: 18,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SectionTitle extends StatelessWidget {
+  const _SectionTitle({
+    required this.title,
+    required this.subtitle,
+  });
+
+  final String title;
+  final String subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        const SizedBox(height: 4),
+        Text(
+          subtitle,
+          style: const TextStyle(
+            color: Color(0xFF6B7280),
+            fontSize: 13.5,
+            height: 1.35,
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -253,21 +516,40 @@ class _ActionCard extends StatelessWidget {
       child: Ink(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white,
+          gradient: const LinearGradient(
+            colors: [
+              Color(0xFF161A2D),
+              Color(0xFF101425),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
           borderRadius: BorderRadius.circular(22),
+          border: Border.all(color: const Color(0xFF2A3160)),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x22000000),
+              blurRadius: 12,
+              offset: Offset(0, 6),
+            ),
+          ],
         ),
         child: Row(
           children: [
             Container(
-              width: 48,
-              height: 48,
+              width: 50,
+              height: 50,
               decoration: BoxDecoration(
-                color: const Color(0xFF5B67F1).withOpacity(0.10),
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF4F46E5), Color(0xFF9333EA)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(
                 icon,
-                color: const Color(0xFF5B67F1),
+                color: Colors.white,
               ),
             ),
             const SizedBox(width: 14),
@@ -279,7 +561,8 @@ class _ActionCard extends StatelessWidget {
                     title,
                     style: const TextStyle(
                       fontSize: 15.5,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(height: 4),
@@ -287,18 +570,17 @@ class _ActionCard extends StatelessWidget {
                     subtitle,
                     style: const TextStyle(
                       fontSize: 13.5,
-                      color: Color(0xFF6B7280),
+                      color: Color(0xFFB9C0FF),
                       height: 1.4,
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(width: 8),
             const Icon(
               Icons.arrow_forward_ios_rounded,
               size: 16,
-              color: Color(0xFF9CA3AF),
+              color: Color(0xFFD8DEFF),
             ),
           ],
         ),

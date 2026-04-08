@@ -60,6 +60,9 @@ class MemoryDiyRepository {
       data['reviewedAt'] = previous?['reviewedAt'];
       data['reviewedBy'] = previous?['reviewedBy'] ?? '';
       data['rejectionReason'] = previous?['rejectionReason'] ?? '';
+      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
+          ? data['creatorName']
+          : (previous?['creatorName'] ?? 'Arena Builder');
     } else {
       data['createdAt'] = FieldValue.serverTimestamp();
       data['status'] = 'draft';
@@ -67,6 +70,9 @@ class MemoryDiyRepository {
       data['reviewedAt'] = null;
       data['reviewedBy'] = '';
       data['rejectionReason'] = '';
+      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
+          ? data['creatorName']
+          : 'Arena Builder';
     }
 
     await docRef.set(data, SetOptions(merge: true));
@@ -75,15 +81,22 @@ class MemoryDiyRepository {
 
   Future<void> submitForReview(MemoryDiyGameConfig config) async {
     final String uid = _currentUid;
-    final String gameId = config.id.trim().isEmpty
-        ? await saveDraft(config)
-        : config.id.trim();
+
+    final String gameId = await saveDraft(
+      config.copyWith(
+        ownerUid: uid,
+        status: 'pending_review',
+      ),
+    );
 
     await _collection(uid).doc(gameId).set(
       <String, dynamic>{
         'id': gameId,
         'ownerUid': uid,
         'gameType': 'memory',
+        'creatorName': config.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : config.creatorName.trim(),
         'status': 'pending_review',
         'submittedAt': FieldValue.serverTimestamp(),
         'updatedAt': FieldValue.serverTimestamp(),
@@ -212,10 +225,15 @@ class MemoryDiyRepository {
     await docRef.set(
       <String, dynamic>{
         'status': 'approved',
+        'communityVisible': true,
+        'approvedAt': FieldValue.serverTimestamp(),
         'reviewedAt': FieldValue.serverTimestamp(),
         'reviewedBy': _currentEmail,
         'rejectionReason': '',
         'updatedAt': FieldValue.serverTimestamp(),
+        'creatorName': config.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : config.creatorName.trim(),
       },
       SetOptions(merge: true),
     );
@@ -243,8 +261,22 @@ class MemoryDiyRepository {
         'reviewedBy': _currentEmail,
         'rejectionReason': reason,
         'updatedAt': FieldValue.serverTimestamp(),
+        'creatorName': config.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : config.creatorName.trim(),
       },
       SetOptions(merge: true),
     );
+  }
+
+  Future<bool> canSubmitMoreGames() async {
+    final String uid = _currentUid;
+
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _collection(uid)
+        .where('gameType', isEqualTo: 'memory')
+        .where('status', whereIn: ['pending_review', 'approved'])
+        .get();
+
+    return snapshot.docs.length < 2;
   }
 }
