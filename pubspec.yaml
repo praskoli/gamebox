@@ -42,3 +42,4 @@ flutter:
   assets:
     - assets/sounds/
     - assets/images/
+    - assets/images/gamebox.png
