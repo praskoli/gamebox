@@ -4,15 +4,23 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
+
 import '../../app/routing/route_names.dart';
 import '../../games/memory_match/domain/memory_diy_game_config.dart';
 import '../../games/memory_match/presentation/memory_game_screen.dart';
+import '../../story_creator/data/story_repository.dart';
+import '../../story_creator/presentation/story_player_screen.dart';
 import 'creator_profile_screen.dart';
 
 enum CommunitySortMode {
   latest,
   mostPlayed,
   mostLiked,
+}
+
+enum CreatorFeedContentType {
+  game,
+  story,
 }
 
 class CommunityCreationsScreen extends StatefulWidget {
@@ -36,15 +44,20 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
   static const int _pageSize = 20;
 
   final ScrollController _scrollController = ScrollController();
-  final List<QueryDocumentSnapshot<Map<String, dynamic>>> _docs =
-  <QueryDocumentSnapshot<Map<String, dynamic>>>[];
+  final StoryRepository _storyRepository = StoryRepository();
+
+  final List<_CreatorFeedItem> _items = <_CreatorFeedItem>[];
 
   CommunitySortMode _sortMode = CommunitySortMode.latest;
   bool _isInitialLoading = true;
   bool _isLoadingMore = false;
   bool _hasMore = true;
   Object? _error;
-  DocumentSnapshot<Map<String, dynamic>>? _lastDoc;
+
+  DocumentSnapshot<Map<String, dynamic>>? _lastGameDoc;
+  DocumentSnapshot<Map<String, dynamic>>? _lastStoryDoc;
+  bool _hasMoreGames = true;
+  bool _hasMoreStories = true;
 
   static const List<List<Color>> _tileGradients = <List<Color>>[
     <Color>[
@@ -77,11 +90,13 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
   static const List<_GuestPromptCopy> _guestPromptCopies = <_GuestPromptCopy>[
     _GuestPromptCopy(
       title: 'Cheer your favorite creators',
-      subtitle: 'Sign in to like games, support builders, and save your activity.',
+      subtitle:
+      'Sign in to like games and stories, support builders, and save your activity.',
     ),
     _GuestPromptCopy(
       title: 'Join the DIY creator arena',
-      subtitle: 'Create your identity, cheer the games you love, and keep your progress.',
+      subtitle:
+      'Create your identity, cheer the content you love, and keep your progress.',
     ),
     _GuestPromptCopy(
       title: 'Your likes deserve to count',
@@ -89,17 +104,19 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     ),
     _GuestPromptCopy(
       title: 'Support this creator properly',
-      subtitle: 'Log in to like games, follow your favorites, and stay part of the action.',
+      subtitle:
+      'Log in to like content, follow your favorites, and stay part of the action.',
     ),
     _GuestPromptCopy(
-      title: 'Ready to back this game?',
-      subtitle: 'Sign in to unlock likes and become part of the DIY creator community.',
+      title: 'Ready to back this creator?',
+      subtitle:
+      'Sign in to unlock likes and become part of the DIY creator community.',
     ),
   ];
 
   User? get _currentUser => FirebaseAuth.instance.currentUser;
   String get _currentUserId => _currentUser?.uid ?? '';
-  bool get _canLikeGames =>
+  bool get _canLikeContent =>
       _currentUser != null && !(_currentUser?.isAnonymous ?? false);
 
   @override
@@ -119,15 +136,31 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
 
   Future<void> refreshCreatorFeed() => _loadInitialPage();
 
-  Query<Map<String, dynamic>> _baseQuery() {
+  Query<Map<String, dynamic>> _gamesBaseQuery() {
     Query<Map<String, dynamic>> query = FirebaseFirestore.instance
         .collectionGroup('custom_games')
-        .where('gameType', isEqualTo: 'memory')
-        .where('status', isEqualTo: 'approved');
+        .where('status', isEqualTo: 'approved')
+        .where('communityVisible', isEqualTo: true);
 
     switch (_sortMode) {
       case CommunitySortMode.latest:
         return query.orderBy('approvedAt', descending: true);
+      case CommunitySortMode.mostPlayed:
+        return query.orderBy('playCount', descending: true);
+      case CommunitySortMode.mostLiked:
+        return query.orderBy('likesCount', descending: true);
+    }
+  }
+
+  Query<Map<String, dynamic>> _storiesBaseQuery() {
+    Query<Map<String, dynamic>> query = FirebaseFirestore.instance
+        .collection('stories')
+        .where('status', isEqualTo: 'published')
+        .where('communityVisible', isEqualTo: true);
+
+    switch (_sortMode) {
+      case CommunitySortMode.latest:
+        return query.orderBy('reviewedAt', descending: true);
       case CommunitySortMode.mostPlayed:
         return query.orderBy('playCount', descending: true);
       case CommunitySortMode.mostLiked:
@@ -141,19 +174,38 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
       _isLoadingMore = false;
       _hasMore = true;
       _error = null;
-      _lastDoc = null;
-      _docs.clear();
+      _items.clear();
+      _lastGameDoc = null;
+      _lastStoryDoc = null;
+      _hasMoreGames = true;
+      _hasMoreStories = true;
     });
 
     try {
-      final snapshot = await _baseQuery().limit(_pageSize).get();
+      final QuerySnapshot<Map<String, dynamic>> gamesSnapshot =
+      await _gamesBaseQuery().limit(_pageSize).get();
+
+      final QuerySnapshot<Map<String, dynamic>> storiesSnapshot =
+      await _storiesBaseQuery().limit(_pageSize).get();
 
       if (!mounted) return;
 
+      final List<_CreatorFeedItem> merged = <_CreatorFeedItem>[
+        ...gamesSnapshot.docs.map(_mapGameDocToFeedItem),
+        ...storiesSnapshot.docs.map(_mapStoryDocToFeedItem),
+      ];
+
+      _sortMergedItems(merged);
+
       setState(() {
-        _docs.addAll(snapshot.docs);
-        _lastDoc = snapshot.docs.isNotEmpty ? snapshot.docs.last : null;
-        _hasMore = snapshot.docs.length == _pageSize;
+        _items.addAll(merged);
+        _lastGameDoc =
+        gamesSnapshot.docs.isNotEmpty ? gamesSnapshot.docs.last : null;
+        _lastStoryDoc =
+        storiesSnapshot.docs.isNotEmpty ? storiesSnapshot.docs.last : null;
+        _hasMoreGames = gamesSnapshot.docs.length == _pageSize;
+        _hasMoreStories = storiesSnapshot.docs.length == _pageSize;
+        _hasMore = _hasMoreGames || _hasMoreStories;
         _isInitialLoading = false;
       });
     } catch (e) {
@@ -166,26 +218,63 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
   }
 
   Future<void> _loadMore() async {
-    if (_isLoadingMore || !_hasMore || _lastDoc == null) return;
+    if (_isLoadingMore || !_hasMore) return;
 
     setState(() {
       _isLoadingMore = true;
     });
 
     try {
-      final snapshot = await _baseQuery()
-          .startAfterDocument(_lastDoc!)
-          .limit(_pageSize)
-          .get();
+      QuerySnapshot<Map<String, dynamic>>? gamesSnapshot;
+      QuerySnapshot<Map<String, dynamic>>? storiesSnapshot;
+
+      if (_hasMoreGames) {
+        Query<Map<String, dynamic>> gameQuery =
+        _gamesBaseQuery().limit(_pageSize);
+        if (_lastGameDoc != null) {
+          gameQuery = gameQuery.startAfterDocument(_lastGameDoc!);
+        }
+        gamesSnapshot = await gameQuery.get();
+      }
+
+      if (_hasMoreStories) {
+        Query<Map<String, dynamic>> storyQuery =
+        _storiesBaseQuery().limit(_pageSize);
+        if (_lastStoryDoc != null) {
+          storyQuery = storyQuery.startAfterDocument(_lastStoryDoc!);
+        }
+        storiesSnapshot = await storyQuery.get();
+      }
 
       if (!mounted) return;
 
+      final List<_CreatorFeedItem> merged = <_CreatorFeedItem>[
+        if (gamesSnapshot != null)
+          ...gamesSnapshot.docs.map(_mapGameDocToFeedItem),
+        if (storiesSnapshot != null)
+          ...storiesSnapshot.docs.map(_mapStoryDocToFeedItem),
+      ];
+
+      _sortMergedItems(merged);
+
       setState(() {
-        _docs.addAll(snapshot.docs);
-        if (snapshot.docs.isNotEmpty) {
-          _lastDoc = snapshot.docs.last;
+        _items.addAll(merged);
+
+        if (gamesSnapshot != null) {
+          if (gamesSnapshot.docs.isNotEmpty) {
+            _lastGameDoc = gamesSnapshot.docs.last;
+          }
+          _hasMoreGames = gamesSnapshot.docs.length == _pageSize;
         }
-        _hasMore = snapshot.docs.length == _pageSize;
+
+        if (storiesSnapshot != null) {
+          if (storiesSnapshot.docs.isNotEmpty) {
+            _lastStoryDoc = storiesSnapshot.docs.last;
+          }
+          _hasMoreStories = storiesSnapshot.docs.length == _pageSize;
+        }
+
+        _hasMore = _hasMoreGames || _hasMoreStories;
         _isLoadingMore = false;
       });
     } catch (e) {
@@ -197,9 +286,85 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     }
   }
 
+  void _sortMergedItems(List<_CreatorFeedItem> items) {
+    switch (_sortMode) {
+      case CommunitySortMode.latest:
+        items.sort((a, b) {
+          final DateTime aTime =
+              a.visibleAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+          final DateTime bTime =
+              b.visibleAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+          return bTime.compareTo(aTime);
+        });
+        break;
+      case CommunitySortMode.mostPlayed:
+        items.sort((a, b) => b.playCount.compareTo(a.playCount));
+        break;
+      case CommunitySortMode.mostLiked:
+        items.sort((a, b) => b.likesCount.compareTo(a.likesCount));
+        break;
+    }
+  }
+
+  _CreatorFeedItem _mapGameDocToFeedItem(
+      QueryDocumentSnapshot<Map<String, dynamic>> doc,
+      ) {
+    final Map<String, dynamic> data = doc.data();
+
+    return _CreatorFeedItem(
+      id: doc.id,
+      contentType: CreatorFeedContentType.game,
+      gameType: (data['gameType'] ?? '').toString(),
+      ownerUid: (data['ownerUid'] ?? '').toString(),
+      title: (data['title'] ?? 'Untitled Game').toString(),
+      creatorName: _readCreatorName(data),
+      likesCount: (data['likesCount'] as num?)?.toInt() ?? 0,
+      playCount: (data['playCount'] as num?)?.toInt() ?? 0,
+      likedBy: (data['likedBy'] is List)
+          ? (data['likedBy'] as List<dynamic>)
+          .map((dynamic e) => e.toString())
+          .toList(growable: false)
+          : const <String>[],
+      visibleAt: _readDate(data['approvedAt']) ?? _readDate(data['updatedAt']),
+      coverImageUrl: '',
+      rawData: data,
+    );
+  }
+
+  _CreatorFeedItem _mapStoryDocToFeedItem(
+      QueryDocumentSnapshot<Map<String, dynamic>> doc,
+      ) {
+    final Map<String, dynamic> data = doc.data();
+
+    return _CreatorFeedItem(
+      id: doc.id,
+      contentType: CreatorFeedContentType.story,
+      gameType: null,
+      ownerUid: (data['ownerUid'] ?? '').toString(),
+      title: (data['title'] ?? 'Untitled Story').toString(),
+      creatorName: _readCreatorName(data),
+      likesCount: (data['likesCount'] as num?)?.toInt() ?? 0,
+      playCount: (data['playCount'] as num?)?.toInt() ?? 0,
+      likedBy: (data['likedBy'] is List)
+          ? (data['likedBy'] as List<dynamic>)
+          .map((dynamic e) => e.toString())
+          .toList(growable: false)
+          : const <String>[],
+      visibleAt: _readDate(data['reviewedAt']) ?? _readDate(data['updatedAt']),
+      coverImageUrl: (data['coverImageUrl'] ?? '').toString(),
+      rawData: data,
+    );
+  }
+
+  DateTime? _readDate(dynamic value) {
+    if (value is Timestamp) return value.toDate();
+    if (value is DateTime) return value;
+    return null;
+  }
+
   void _onScroll() {
     if (!_scrollController.hasClients) return;
-    final position = _scrollController.position;
+    final ScrollPosition position = _scrollController.position;
     if (position.pixels >= position.maxScrollExtent - 280) {
       _loadMore();
     }
@@ -211,8 +376,9 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     }
 
     try {
-      final result = await Navigator.of(context).pushNamed(RouteNames.login);
-      return result == true || _canLikeGames;
+      final dynamic result =
+      await Navigator.of(context).pushNamed(RouteNames.login);
+      return result == true || _canLikeContent;
     } catch (_) {
       if (!mounted) return false;
       ScaffoldMessenger.of(context)
@@ -227,8 +393,8 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
   }
 
   Future<bool> _showGuestLikePopup() async {
-    final int index = DateTime.now().millisecondsSinceEpoch %
-        _guestPromptCopies.length;
+    final int index =
+        DateTime.now().millisecondsSinceEpoch % _guestPromptCopies.length;
     final _GuestPromptCopy copy = _guestPromptCopies[index];
 
     final bool? result = await showDialog<bool>(
@@ -242,7 +408,7 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
             padding: const EdgeInsets.all(22),
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [
+                colors: <Color>[
                   Color(0xFF31C7A5),
                   Color(0xFF44D1B4),
                   Color(0xFF63E0C3),
@@ -251,7 +417,7 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
                 end: Alignment.bottomRight,
               ),
               borderRadius: BorderRadius.circular(28),
-              boxShadow: const [
+              boxShadow: const <BoxShadow>[
                 BoxShadow(
                   color: Color(0x33000000),
                   blurRadius: 18,
@@ -261,7 +427,7 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: <Widget>[
                 Container(
                   width: 78,
                   height: 78,
@@ -367,60 +533,61 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     return false;
   }
 
-  Future<void> _toggleLike({
-    required String ownerUid,
-    required String gameId,
-    required bool isLiked,
-  }) async {
-    if (!_canLikeGames) {
+  Future<void> _toggleLike(_CreatorFeedItem item) async {
+    if (!_canLikeContent) {
       final bool loggedIn = await _showGuestLikePopup();
-      if (!loggedIn || !_canLikeGames) {
+      if (!loggedIn || !_canLikeContent) {
         return;
       }
     }
 
-    final docRef = FirebaseFirestore.instance
+    final bool isLiked = item.likedBy.contains(_currentUserId);
+
+    final DocumentReference<Map<String, dynamic>> docRef =
+    item.contentType == CreatorFeedContentType.game
+        ? FirebaseFirestore.instance
         .collection('users')
-        .doc(ownerUid)
+        .doc(item.ownerUid)
         .collection('custom_games')
-        .doc(gameId);
+        .doc(item.id)
+        : FirebaseFirestore.instance.collection('stories').doc(item.id);
 
     try {
       if (isLiked) {
-        await docRef.update({
+        await docRef.update(<String, Object>{
           'likedBy': FieldValue.arrayRemove(<String>[_currentUserId]),
           'likesCount': FieldValue.increment(-1),
         });
       } else {
-        await docRef.update({
+        await docRef.update(<String, Object>{
           'likedBy': FieldValue.arrayUnion(<String>[_currentUserId]),
           'likesCount': FieldValue.increment(1),
         });
       }
 
-      final int index = _docs.indexWhere((doc) => doc.id == gameId);
+      final int index = _items.indexWhere(
+            (_CreatorFeedItem e) =>
+        e.id == item.id && e.contentType == item.contentType,
+      );
+
       if (index >= 0 && mounted) {
-        final current = Map<String, dynamic>.from(_docs[index].data());
-        final List<String> currentLikedBy =
-        List<String>.from(current['likedBy'] ?? const <String>[]);
-        final int currentLikesCount =
-            (current['likesCount'] as num?)?.toInt() ?? 0;
+        final List<String> updatedLikedBy =
+        List<String>.from(_items[index].likedBy);
+        final int updatedLikesCount = _items[index].likesCount;
 
         if (isLiked) {
-          currentLikedBy.remove(_currentUserId);
-          current['likesCount'] =
-          currentLikesCount > 0 ? currentLikesCount - 1 : 0;
+          updatedLikedBy.remove(_currentUserId);
+          _items[index] = _items[index].copyWith(
+            likedBy: updatedLikedBy,
+            likesCount: updatedLikesCount > 0 ? updatedLikesCount - 1 : 0,
+          );
         } else {
-          currentLikedBy.add(_currentUserId);
-          current['likesCount'] = currentLikesCount + 1;
+          updatedLikedBy.add(_currentUserId);
+          _items[index] = _items[index].copyWith(
+            likedBy: updatedLikedBy,
+            likesCount: updatedLikesCount + 1,
+          );
         }
-
-        current['likedBy'] = currentLikedBy;
-
-        _docs[index] = _MutableMapDocumentSnapshot(
-          id: _docs[index].id,
-          data: current,
-        );
 
         setState(() {});
       }
@@ -436,51 +603,96 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     }
   }
 
-  Future<void> _playGame({
-    required QueryDocumentSnapshot<Map<String, dynamic>> doc,
-  }) async {
-    final data = doc.data();
-    final ownerUid = (data['ownerUid'] ?? '').toString();
+  Future<void> _openItem(_CreatorFeedItem item) async {
+    if (item.contentType == CreatorFeedContentType.story) {
+      try {
+        await FirebaseFirestore.instance
+            .collection('stories')
+            .doc(item.id)
+            .update(<String, Object>{
+          'playCount': FieldValue.increment(1),
+        });
+      } catch (_) {}
 
-    try {
-      await FirebaseFirestore.instance
-          .collection('users')
-          .doc(ownerUid)
-          .collection('custom_games')
-          .doc(doc.id)
-          .update({
-        'playCount': FieldValue.increment(1),
-      });
-    } catch (_) {}
+      final StoryBundle? bundle = await _storyRepository.getStoryBundle(item.id);
+      if (!mounted || bundle == null) return;
 
-    final diyConfig = MemoryDiyGameConfig.fromMap({
-      ...data,
-      'id': doc.id,
-    });
-
-    if (!mounted) return;
-
-    await Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        builder: (_) => MemoryGameScreen(
-          diyConfig: diyConfig,
+      await Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => StoryPlayerScreen(
+            story: bundle.story,
+            scenes: bundle.scenes,
+          ),
         ),
-      ),
-    );
-
-    final int index = _docs.indexWhere((e) => e.id == doc.id);
-    if (index >= 0 && mounted) {
-      final current = Map<String, dynamic>.from(_docs[index].data());
-      final int currentPlayCount = (current['playCount'] as num?)?.toInt() ?? 0;
-      current['playCount'] = currentPlayCount + 1;
-
-      _docs[index] = _MutableMapDocumentSnapshot(
-        id: _docs[index].id,
-        data: current,
       );
 
-      setState(() {});
+      final int index = _items.indexWhere(
+            (_CreatorFeedItem e) =>
+        e.id == item.id && e.contentType == item.contentType,
+      );
+      if (index >= 0 && mounted) {
+        _items[index] = _items[index].copyWith(
+          playCount: _items[index].playCount + 1,
+        );
+        setState(() {});
+      }
+      return;
     }
+
+    if (item.gameType == 'memory') {
+      final String ownerUid = item.ownerUid;
+
+      try {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(ownerUid)
+            .collection('custom_games')
+            .doc(item.id)
+            .update(<String, Object>{
+          'playCount': FieldValue.increment(1),
+        });
+      } catch (_) {}
+
+      final MemoryDiyGameConfig diyConfig = MemoryDiyGameConfig.fromMap(
+        <String, dynamic>{
+          ...item.rawData,
+          'id': item.id,
+        },
+      );
+
+      if (!mounted) return;
+
+      await Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => MemoryGameScreen(
+            diyConfig: diyConfig,
+          ),
+        ),
+      );
+
+      final int index = _items.indexWhere(
+            (_CreatorFeedItem e) =>
+        e.id == item.id && e.contentType == item.contentType,
+      );
+      if (index >= 0 && mounted) {
+        _items[index] = _items[index].copyWith(
+          playCount: _items[index].playCount + 1,
+        );
+        setState(() {});
+      }
+      return;
+    }
+
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(
+            'Game type "${item.gameType ?? 'unknown'}" is not playable yet in community feed.',
+          ),
+        ),
+      );
   }
 
   void _openCreatorProfile({
@@ -536,12 +748,12 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
       );
     }
 
-    if (_docs.isEmpty) {
+    if (_items.isEmpty) {
       return const Center(
         child: Padding(
           padding: EdgeInsets.all(24),
           child: Text(
-            'No games yet.\nCreate one and be the first legend.',
+            'No creator content yet.\nPublish a game or story and be the first legend.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.w700,
@@ -557,56 +769,50 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
       child: ListView.separated(
         controller: _scrollController,
         padding: const EdgeInsets.fromLTRB(16, 6, 16, 24),
-        itemCount: _docs.length + (_isLoadingMore ? 1 : 0),
+        itemCount: _items.length + (_isLoadingMore ? 1 : 0),
         separatorBuilder: (_, __) => const SizedBox(height: 14),
-        itemBuilder: (context, i) {
-          if (i >= _docs.length) {
+        itemBuilder: (BuildContext context, int i) {
+          if (i >= _items.length) {
             return const Padding(
               padding: EdgeInsets.symmetric(vertical: 18),
               child: Center(child: CircularProgressIndicator()),
             );
           }
 
-          final doc = _docs[i];
-          final data = doc.data();
-
-          final ownerUid = (data['ownerUid'] ?? '').toString();
-          final likedByRaw = data['likedBy'];
-          final likedBy = likedByRaw is List
-              ? likedByRaw.map((e) => e.toString()).toList()
-              : <String>[];
-
+          final _CreatorFeedItem item = _items[i];
           final bool isLiked =
-              _currentUserId.isNotEmpty && likedBy.contains(_currentUserId);
+              _currentUserId.isNotEmpty && item.likedBy.contains(_currentUserId);
+          final List<Color> gradient =
+          _tileGradients[i % _tileGradients.length];
 
-          final String title = (data['title'] ?? 'Untitled Quest').toString();
-          final String creatorName = _readCreatorName(data);
-          final int likesCount = (data['likesCount'] as num?)?.toInt() ?? 0;
-          final int playCount = (data['playCount'] as num?)?.toInt() ?? 0;
-          final List<Color> gradient = _tileGradients[i % _tileGradients.length];
-
-          return _NeonCreatorGameTile(
-            ownerUid: ownerUid,
-            title: title,
-            creatorName: creatorName,
-            likesCount: likesCount,
-            playCount: playCount,
+          return _NeonCreatorContentTile(
+            ownerUid: item.ownerUid,
+            title: item.title,
+            creatorName: item.creatorName,
+            likesCount: item.likesCount,
+            playCount: item.playCount,
             isLiked: isLiked,
             gradientColors: gradient,
+            contentType: item.contentType,
+            gameType: item.gameType,
+            coverImageUrl: item.coverImageUrl,
             onProfileTap: () => _openCreatorProfile(
-              ownerUid: ownerUid,
-              creatorName: creatorName,
+              ownerUid: item.ownerUid,
+              creatorName: item.creatorName,
             ),
-            onLike: () => _toggleLike(
-              ownerUid: ownerUid,
-              gameId: doc.id,
-              isLiked: isLiked,
-            ),
+            onLike: () => _toggleLike(item),
             onShare: () {
-              final link = 'gamebox://play/${doc.id}';
-              Share.share('Jump into this GameBox arena!\n$link');
+              final String deepLink =
+              item.contentType == CreatorFeedContentType.story
+                  ? 'gamebox://story/${item.id}'
+                  : 'gamebox://play/${item.id}';
+              final String contentLabel =
+              item.contentType == CreatorFeedContentType.story
+                  ? 'story'
+                  : 'game';
+              Share.share('Jump into this GameBox $contentLabel!\n$deepLink');
             },
-            onPlay: () => _playGame(doc: doc),
+            onOpen: () => _openItem(item),
           );
         },
       ),
@@ -618,9 +824,9 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
     final bool shouldShowHeading =
         !widget.showScaffold || widget.showInlineHeader;
 
-    final body = SafeArea(
+    final Widget body = SafeArea(
       child: Column(
-        children: [
+        children: <Widget>[
           if (shouldShowHeading)
             const Padding(
               padding: EdgeInsets.fromLTRB(16, 8, 16, 6),
@@ -636,7 +842,7 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
               child: Wrap(
                 spacing: 8,
                 runSpacing: 8,
-                children: [
+                children: <Widget>[
                   _SortChip(
                     label: _sortLabel(CommunitySortMode.latest),
                     selected: _sortMode == CommunitySortMode.latest,
@@ -686,8 +892,59 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
   }
 }
 
-class _NeonCreatorGameTile extends StatelessWidget {
-  const _NeonCreatorGameTile({
+class _CreatorFeedItem {
+  const _CreatorFeedItem({
+    required this.id,
+    required this.contentType,
+    required this.ownerUid,
+    required this.title,
+    required this.creatorName,
+    required this.likesCount,
+    required this.playCount,
+    required this.likedBy,
+    required this.visibleAt,
+    required this.rawData,
+    this.gameType,
+    this.coverImageUrl = '',
+  });
+
+  final String id;
+  final CreatorFeedContentType contentType;
+  final String ownerUid;
+  final String title;
+  final String creatorName;
+  final int likesCount;
+  final int playCount;
+  final List<String> likedBy;
+  final DateTime? visibleAt;
+  final Map<String, dynamic> rawData;
+  final String? gameType;
+  final String coverImageUrl;
+
+  _CreatorFeedItem copyWith({
+    int? likesCount,
+    int? playCount,
+    List<String>? likedBy,
+  }) {
+    return _CreatorFeedItem(
+      id: id,
+      contentType: contentType,
+      ownerUid: ownerUid,
+      title: title,
+      creatorName: creatorName,
+      likesCount: likesCount ?? this.likesCount,
+      playCount: playCount ?? this.playCount,
+      likedBy: likedBy ?? this.likedBy,
+      visibleAt: visibleAt,
+      rawData: rawData,
+      gameType: gameType,
+      coverImageUrl: coverImageUrl,
+    );
+  }
+}
+
+class _NeonCreatorContentTile extends StatelessWidget {
+  const _NeonCreatorContentTile({
     required this.ownerUid,
     required this.title,
     required this.creatorName,
@@ -695,10 +952,13 @@ class _NeonCreatorGameTile extends StatelessWidget {
     required this.playCount,
     required this.isLiked,
     required this.gradientColors,
+    required this.contentType,
+    required this.gameType,
+    required this.coverImageUrl,
     required this.onProfileTap,
     required this.onLike,
     required this.onShare,
-    required this.onPlay,
+    required this.onOpen,
   });
 
   final String ownerUid;
@@ -708,175 +968,207 @@ class _NeonCreatorGameTile extends StatelessWidget {
   final int playCount;
   final bool isLiked;
   final List<Color> gradientColors;
+  final CreatorFeedContentType contentType;
+  final String? gameType;
+  final String coverImageUrl;
   final VoidCallback onProfileTap;
   final VoidCallback onLike;
   final VoidCallback onShare;
-  final VoidCallback onPlay;
+  final VoidCallback onOpen;
+
+  bool get _isStory => contentType == CreatorFeedContentType.story;
+
+  String get _typeLabel {
+    if (_isStory) return 'Story';
+    if ((gameType ?? '').trim().isEmpty) return 'Game';
+    return '${_capitalize(gameType!)} Game';
+  }
+
+  IconData get _typeIcon {
+    if (_isStory) return Icons.auto_stories_rounded;
+    switch (gameType) {
+      case 'memory':
+        return Icons.grid_view_rounded;
+      case 'block':
+        return Icons.view_module_rounded;
+      default:
+        return Icons.sports_esports_rounded;
+    }
+  }
+
+  String get _playLabel => _isStory ? '$playCount reads' : '$playCount plays';
 
   @override
   Widget build(BuildContext context) {
-    final userDoc =
-    FirebaseFirestore.instance.collection('users').doc(ownerUid);
+    final String displayName = creatorName;
+    final String photoUrl = '';
 
-    return Container(
-      padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: gradientColors,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        borderRadius: BorderRadius.circular(28),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x332E1065),
-            blurRadius: 18,
-            offset: Offset(0, 8),
-          ),
-        ],
-      ),
-      child: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
-        future: userDoc.get(),
-        builder: (context, snapshot) {
-          final userData = snapshot.data?.data() ?? <String, dynamic>{};
-          final displayName =
-          (userData['displayName'] ?? '').toString().trim().isNotEmpty
-              ? (userData['displayName'] ?? '').toString().trim()
-              : creatorName;
-          final photoUrl = (userData['photoUrl'] ?? '').toString().trim();
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final bool compact = constraints.maxWidth < 360;
 
-          return Stack(
-            children: [
-              Positioned(
-                top: -2,
-                right: 0,
-                child: Container(
-                  constraints: const BoxConstraints(minWidth: 56),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.10),
-                    borderRadius: BorderRadius.circular(999),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.favorite_rounded,
-                        color: Color(0xFFFF5F84),
-                        size: 20,
-                      ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '$likesCount',
-                        style: _neonTextStyle(
-                          fontSize: 20,
-                          glowColor: const Color(0xFFFF6BF5),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+        return Container(
+          padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: gradientColors,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(28),
+            boxShadow: const <BoxShadow>[
+              BoxShadow(
+                color: Color(0x332E1065),
+                blurRadius: 18,
+                offset: Offset(0, 8),
               ),
-              Row(
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                runSpacing: 10,
+                spacing: 10,
+                children: <Widget>[
+                  Container(
+                    constraints: BoxConstraints(
+                      maxWidth: compact
+                          ? constraints.maxWidth
+                          : constraints.maxWidth - 110,
+                    ),
+                    child: Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      spacing: 10,
+                      runSpacing: 8,
+                      children: <Widget>[
+                        _TypeChip(
+                          icon: _typeIcon,
+                          label: _typeLabel,
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    constraints: const BoxConstraints(minWidth: 56),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(0.10),
+                      borderRadius: BorderRadius.circular(999),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        const Icon(
+                          Icons.favorite_rounded,
+                          color: Color(0xFFFF5F84),
+                          size: 20,
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          '$likesCount',
+                          style: _neonTextStyle(
+                            fontSize: 20,
+                            glowColor: const Color(0xFFFF6BF5),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 12),
+              compact
+                  ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   GestureDetector(
                     onTap: onProfileTap,
-                    child: _CreatorProfileAvatar(
+                    child: _CreatorCoverAvatar(
                       displayName: displayName,
                       photoUrl: photoUrl,
+                      coverImageUrl: coverImageUrl,
+                      isStory: _isStory,
+                      size: 64,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  _CreatorTextBlock(
+                    title: title,
+                    displayName: displayName,
+                    playLabel: _playLabel,
+                    isStory: _isStory,
+                    onOpen: onOpen,
+                    onProfileTap: onProfileTap,
+                    neonTextStyle: _neonTextStyle,
+                  ),
+                ],
+              )
+                  : Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: onProfileTap,
+                    child: _CreatorCoverAvatar(
+                      displayName: displayName,
+                      photoUrl: photoUrl,
+                      coverImageUrl: coverImageUrl,
+                      isStory: _isStory,
                       size: 64,
                     ),
                   ),
                   const SizedBox(width: 14),
                   Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 64),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 6),
-                          GestureDetector(
-                            onTap: onProfileTap,
-                            child: Text(
-                              title,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: _neonTextStyle(fontSize: 22),
-                            ),
-                          ),
-                          const SizedBox(height: 4),
-                          GestureDetector(
-                            onTap: onProfileTap,
-                            child: Text(
-                              displayName,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: _neonTextStyle(fontSize: 18),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.sports_esports_rounded,
-                                color: Color(0xFF9CC1FF),
-                                size: 22,
-                              ),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Text(
-                                  '$playCount battles',
-                                  maxLines: 1,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: _neonTextStyle(
-                                    fontSize: 18,
-                                    glowColor: const Color(0xFFFF6BF5),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 14),
-                          Row(
-                            children: [
-                              _NeonIconButton(
-                                icon: isLiked
-                                    ? Icons.favorite_rounded
-                                    : Icons.favorite_border_rounded,
-                                onTap: onLike,
-                                size: 44,
-                                iconSize: 24,
-                              ),
-                              const SizedBox(width: 16),
-                              _NeonIconButton(
-                                icon: Icons.north_east_rounded,
-                                onTap: onShare,
-                                size: 44,
-                                iconSize: 24,
-                              ),
-                              const SizedBox(width: 16),
-                              _NeonIconButton(
-                                icon: Icons.play_arrow_rounded,
-                                onTap: onPlay,
-                                size: 44,
-                                iconSize: 28,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
+                    child: _CreatorTextBlock(
+                      title: title,
+                      displayName: displayName,
+                      playLabel: _playLabel,
+                      isStory: _isStory,
+                      onOpen: onOpen,
+                      onProfileTap: onProfileTap,
+                      neonTextStyle: _neonTextStyle,
                     ),
                   ),
                 ],
               ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 14,
+                runSpacing: 12,
+                children: <Widget>[
+                  _NeonIconButton(
+                    icon: isLiked
+                        ? Icons.favorite_rounded
+                        : Icons.favorite_border_rounded,
+                    onTap: onLike,
+                    size: 44,
+                    iconSize: 24,
+                  ),
+                  _NeonIconButton(
+                    icon: Icons.north_east_rounded,
+                    onTap: onShare,
+                    size: 44,
+                    iconSize: 24,
+                  ),
+                  _NeonIconButton(
+                    icon: _isStory
+                        ? Icons.auto_stories_rounded
+                        : Icons.play_arrow_rounded,
+                    onTap: onOpen,
+                    size: 44,
+                    iconSize: 28,
+                  ),
+                ],
+              ),
             ],
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 
@@ -890,27 +1182,128 @@ class _NeonCreatorGameTile extends StatelessWidget {
       color: Colors.white,
       height: 0.96,
       letterSpacing: 0.4,
-      shadows: [
+      shadows: <Shadow>[
         Shadow(color: glowColor, blurRadius: 10),
         Shadow(color: glowColor.withOpacity(0.9), blurRadius: 18),
       ],
     );
   }
+
+  String _capitalize(String value) {
+    if (value.isEmpty) return value;
+    return value.substring(0, 1).toUpperCase() + value.substring(1);
+  }
 }
 
-class _CreatorProfileAvatar extends StatelessWidget {
-  const _CreatorProfileAvatar({
+class _CreatorTextBlock extends StatelessWidget {
+  const _CreatorTextBlock({
+    required this.title,
+    required this.displayName,
+    required this.playLabel,
+    required this.isStory,
+    required this.onOpen,
+    required this.onProfileTap,
+    required this.neonTextStyle,
+  });
+
+  final String title;
+  final String displayName;
+  final String playLabel;
+  final bool isStory;
+  final VoidCallback onOpen;
+  final VoidCallback onProfileTap;
+  final TextStyle Function({
+  double fontSize,
+  Color glowColor,
+  }) neonTextStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        GestureDetector(
+          onTap: onOpen,
+          child: Text(
+            title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: neonTextStyle(fontSize: 22),
+          ),
+        ),
+        const SizedBox(height: 6),
+        GestureDetector(
+          onTap: onProfileTap,
+          child: Text(
+            displayName,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: neonTextStyle(fontSize: 18),
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: <Widget>[
+            Icon(
+              isStory
+                  ? Icons.menu_book_rounded
+                  : Icons.sports_esports_rounded,
+              color: const Color(0xFF9CC1FF),
+              size: 22,
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                playLabel,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: neonTextStyle(
+                  fontSize: 18,
+                  glowColor: const Color(0xFFFF6BF5),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _CreatorCoverAvatar extends StatelessWidget {
+  const _CreatorCoverAvatar({
     required this.displayName,
     required this.photoUrl,
+    required this.coverImageUrl,
+    required this.isStory,
     this.size = 48,
   });
 
   final String displayName;
   final String photoUrl;
+  final String coverImageUrl;
+  final bool isStory;
   final double size;
 
   @override
   Widget build(BuildContext context) {
+    if (isStory && coverImageUrl.trim().isNotEmpty) {
+      return ClipRRect(
+        borderRadius: BorderRadius.circular(18),
+        child: Image.network(
+          coverImageUrl,
+          width: size,
+          height: size,
+          fit: BoxFit.cover,
+          errorBuilder: (_, __, ___) => _FallbackAvatar(
+            name: displayName,
+            size: size,
+            isStory: true,
+          ),
+        ),
+      );
+    }
+
     if (photoUrl.isNotEmpty) {
       return ClipOval(
         child: Image.network(
@@ -921,6 +1314,7 @@ class _CreatorProfileAvatar extends StatelessWidget {
           errorBuilder: (_, __, ___) => _FallbackAvatar(
             name: displayName,
             size: size,
+            isStory: isStory,
           ),
         ),
       );
@@ -929,6 +1323,7 @@ class _CreatorProfileAvatar extends StatelessWidget {
     return _FallbackAvatar(
       name: displayName,
       size: size,
+      isStory: isStory,
     );
   }
 }
@@ -937,28 +1332,39 @@ class _FallbackAvatar extends StatelessWidget {
   const _FallbackAvatar({
     required this.name,
     required this.size,
+    required this.isStory,
   });
 
   final String name;
   final double size;
+  final bool isStory;
 
   @override
   Widget build(BuildContext context) {
-    final initials = _buildInitials(name);
+    final String initials = _buildInitials(name);
 
     return Container(
       width: size,
       height: size,
-      decoration: const BoxDecoration(
-        shape: BoxShape.circle,
+      decoration: BoxDecoration(
+        shape: isStory ? BoxShape.rectangle : BoxShape.circle,
+        borderRadius: isStory ? BorderRadius.circular(18) : null,
         gradient: LinearGradient(
-          colors: [Color(0xFF4F46E5), Color(0xFF9333EA)],
+          colors: isStory
+              ? const <Color>[Color(0xFFEC4899), Color(0xFF8B5CF6)]
+              : const <Color>[Color(0xFF4F46E5), Color(0xFF9333EA)],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
       child: Center(
-        child: Text(
+        child: isStory
+            ? const Icon(
+          Icons.auto_stories_rounded,
+          color: Colors.white,
+          size: 28,
+        )
+            : Text(
           initials,
           style: TextStyle(
             color: Colors.white,
@@ -971,21 +1377,58 @@ class _FallbackAvatar extends StatelessWidget {
   }
 
   String _buildInitials(String value) {
-    final parts = value
+    final List<String> parts = value
         .trim()
         .split(RegExp(r'\s+'))
-        .where((e) => e.isNotEmpty)
+        .where((String e) => e.isNotEmpty)
         .toList();
 
     if (parts.isEmpty) return 'AR';
     if (parts.length == 1) {
-      final word = parts.first;
+      final String word = parts.first;
       return word.length >= 2
           ? word.substring(0, math.min(2, word.length)).toUpperCase()
           : word.substring(0, 1).toUpperCase();
     }
     return (parts.first.substring(0, 1) + parts.last.substring(0, 1))
         .toUpperCase();
+  }
+}
+
+class _TypeChip extends StatelessWidget {
+  const _TypeChip({
+    required this.icon,
+    required this.label,
+  });
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(999),
+        border: Border.all(color: Colors.white.withOpacity(0.14)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Icon(icon, size: 16, color: Colors.white),
+          const SizedBox(width: 6),
+          Text(
+            label,
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w800,
+              fontSize: 12.5,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -1020,7 +1463,7 @@ class _NeonIconButton extends StatelessWidget {
           icon,
           size: iconSize,
           color: Colors.white,
-          shadows: const [
+          shadows: const <Shadow>[
             Shadow(
               color: Color(0xFFFF86FF),
               blurRadius: 12,
@@ -1097,7 +1540,7 @@ class _NeonSectionHeading extends StatelessWidget {
         fontWeight: FontWeight.w900,
         color: Colors.white,
         letterSpacing: 0.4,
-        shadows: [
+        shadows: <Shadow>[
           Shadow(
             color: Color(0xFFFF86FF),
             blurRadius: 10,
@@ -1110,46 +1553,6 @@ class _NeonSectionHeading extends StatelessWidget {
       ),
     );
   }
-}
-
-class _MutableMapDocumentSnapshot
-    implements QueryDocumentSnapshot<Map<String, dynamic>> {
-  _MutableMapDocumentSnapshot({
-    required this.id,
-    required Map<String, dynamic> data,
-  }) : _data = data;
-
-  @override
-  final String id;
-
-  final Map<String, dynamic> _data;
-
-  @override
-  Map<String, dynamic> data() => _data;
-
-  @override
-  dynamic operator [](Object field) => _data[field];
-
-  @override
-  DocumentReference<Map<String, dynamic>> get reference =>
-      throw UnimplementedError();
-
-  @override
-  SnapshotMetadata get metadata => throw UnimplementedError();
-
-  @override
-  bool get exists => true;
-
-  @override
-  int get hashCode => Object.hash(id, _data);
-
-  @override
-  bool operator ==(Object other) {
-    return other is _MutableMapDocumentSnapshot && other.id == id;
-  }
-
-  @override
-  dynamic get(Object field) => _data[field];
 }
 
 class _GuestPromptCopy {

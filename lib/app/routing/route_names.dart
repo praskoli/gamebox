@@ -5,9 +5,11 @@ class RouteNames {
   static const String login = '/login';
   static const String home = '/home';
 
-  // NEW
   static const String myProjects = '/my-projects';
   static const String community = '/community';
   static const String leaderboard = '/community-leaderboard';
   static const String settings = '/settings';
+
+  static const String storyReview = '/story-review';
+  static const String storyPlayer = '/story-player';
 }

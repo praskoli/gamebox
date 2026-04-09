@@ -1,23 +1,36 @@
 name: gamebox
 description: A new Flutter project.
+
 version: 1.0.0+1
+
 environment:
   sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
+
   cupertino_icons: ^1.0.8
+
+  # Firebase
   firebase_core: ^4.1.0
   firebase_auth: ^6.0.2
   cloud_firestore: ^6.0.1
-  google_sign_in: ^7.0.0
-  shared_preferences: ^2.3.2
-  provider: ^6.1.2
-  audioplayers: ^5.2.1
   firebase_storage: ^13.0.0
+
+  # Auth
+  google_sign_in: ^7.0.0
+
+  # State & Local
+  provider: ^6.1.2
+  shared_preferences: ^2.3.2
+
+  # Media & UI
+  audioplayers: ^5.2.1
   image_picker: ^1.1.2
   share_plus: ^7.2.1
+  flutter_tts: ^3.8.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -25,6 +38,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/sounds/
     - assets/images/
