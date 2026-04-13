@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../data/story_repository.dart';
 import '../domain/scene_model.dart';
@@ -26,6 +28,7 @@ class StoryPreviewScreen extends StatefulWidget {
 class _StoryPreviewScreenState extends State<StoryPreviewScreen>
     with TickerProviderStateMixin {
   final FlutterTts _tts = FlutterTts();
+  final AudioPlayer _audioPlayer = AudioPlayer();
   final StoryRepository _repository = StoryRepository();
 
   late final AnimationController _transitionController;
@@ -43,7 +46,7 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
   bool _isSubmitting = false;
 
   Timer? _autoplayDelayTimer;
-  Future<void>? _backgroundWarmFuture;
+  StreamSubscription<PlayerState>? _playerStateSubscription;
 
   int get _totalPages => widget.scenes.length + 1;
   bool get _isBrandScene => _index == widget.scenes.length;
@@ -75,26 +78,17 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
 
     _primeImageProviders();
 
-    _tts.setCompletionHandler(() async {
-      if (!mounted) return;
+    _tts.setCompletionHandler(_onNarrationComplete);
 
-      setState(() => _speaking = false);
-
-      if (_index < _totalPages - 1) {
-        _autoplayDelayTimer?.cancel();
-        _autoplayDelayTimer = Timer(
-          const Duration(milliseconds: 650),
-              () async {
-            if (!mounted) return;
-            await _goToIndex(_index + 1, autoPlayAfter: true);
-          },
-        );
-      }
-    });
+    _playerStateSubscription =
+        _audioPlayer.playerStateStream.listen((PlayerState state) {
+          if (state.processingState == ProcessingState.completed) {
+            _onNarrationComplete();
+          }
+        });
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await _warmWindowAround(_index);
-      _backgroundWarmFuture = _warmRemainingScenesInBackground();
       if (!mounted) return;
       await _playCurrentScene(initial: true);
     });
@@ -103,7 +97,9 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
   @override
   void dispose() {
     _autoplayDelayTimer?.cancel();
+    _playerStateSubscription?.cancel();
     _tts.stop();
+    _audioPlayer.dispose();
     _transitionController.dispose();
     super.dispose();
   }
@@ -158,22 +154,34 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
     await Future.wait(futures);
   }
 
-  Future<void> _warmRemainingScenesInBackground() async {
+  void _onNarrationComplete() {
     if (!mounted) return;
 
-    await _precacheBrandAsset();
+    setState(() => _speaking = false);
 
-    for (int i = 0; i < widget.scenes.length; i++) {
-      if (!mounted) return;
-      if (_precachedSceneIndexes.contains(i)) continue;
+    if (_index < _totalPages - 1) {
+      _autoplayDelayTimer?.cancel();
+      _autoplayDelayTimer = Timer(
+        const Duration(milliseconds: 650),
+            () async {
+          if (!mounted) return;
+          await _goToIndex(_index + 1, autoPlayAfter: true);
+        },
+      );
+    }
+  }
 
-      await _precacheSceneIndex(i);
-      await Future<void>.delayed(const Duration(milliseconds: 35));
+  Future<void> _stopNarration() async {
+    _autoplayDelayTimer?.cancel();
+    await _tts.stop();
+    await _audioPlayer.stop();
+    if (mounted) {
+      setState(() => _speaking = false);
     }
   }
 
   Future<void> _playCurrentScene({bool initial = false}) async {
-    await _tts.stop();
+    await _stopNarration();
 
     if (!mounted) return;
 
@@ -181,7 +189,6 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
 
     if (!initial) {
       setState(() {
-        _speaking = false;
         _isTransitioning = true;
       });
 
@@ -200,30 +207,43 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
     await Future<void>.delayed(const Duration(milliseconds: 140));
     if (!mounted) return;
 
-    await _tts.setLanguage(_languageCode(widget.story.language));
-    await _tts.setSpeechRate(0.42);
-
     if (_isBrandScene) {
+      await _tts.setLanguage(_languageCode(widget.story.language));
+      await _tts.setSpeechRate(0.42);
       await _tts.speak(
         'This story was created using GameBox DIY Studio. Create your own stories today.',
       );
-    } else {
-      await _tts.speak(widget.scenes[_index].narration);
+      if (mounted) {
+        setState(() => _speaking = true);
+      }
+      return;
     }
 
+    final SceneModel scene = widget.scenes[_index];
+    final String narrationAudioUrl = scene.narrationAudioUrl.trim();
+
+    if (narrationAudioUrl.isNotEmpty) {
+      try {
+        await _audioPlayer.setUrl(narrationAudioUrl);
+        await _audioPlayer.play();
+        if (mounted) {
+          setState(() => _speaking = true);
+        }
+        return;
+      } catch (_) {}
+    }
+
+    await _tts.setLanguage(_languageCode(widget.story.language));
+    await _tts.setSpeechRate(0.42);
+    await _tts.speak(scene.narration);
     if (mounted) {
       setState(() => _speaking = true);
     }
   }
 
   Future<void> _togglePlay() async {
-    _autoplayDelayTimer?.cancel();
-
     if (_speaking) {
-      await _tts.stop();
-      if (mounted) {
-        setState(() => _speaking = false);
-      }
+      await _stopNarration();
       return;
     }
 
@@ -238,13 +258,11 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
     if (_isTransitioning) return;
     if (newIndex == _index) return;
 
-    _autoplayDelayTimer?.cancel();
-    await _tts.stop();
+    await _stopNarration();
 
     if (!mounted) return;
 
     setState(() {
-      _speaking = false;
       _previousIndex = _index;
       _index = newIndex;
     });
@@ -278,6 +296,37 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
     } finally {
       if (mounted) setState(() => _isSubmitting = false);
     }
+  }
+
+  Future<void> _shareStory() async {
+    final String storyId = widget.story.id.trim();
+
+    if (storyId.isEmpty) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Save or submit the story first to share'),
+        ),
+      );
+      return;
+    }
+
+    final String storyUrl = 'https://gamebox-a9c34.web.app/s/$storyId';
+    const String playStoreUrl =
+        'https://play.google.com/store/apps/details?id=com.qtilabs.gamebox';
+
+    final String creatorLine =
+    _creatorName.isNotEmpty ? '\nBy: $_creatorName' : '';
+
+    final String message =
+        'Watch this GameBox story:\n${widget.story.title}$creatorLine\n\n'
+        'Open story:\n$storyUrl\n\n'
+        'Get GameBox:\n$playStoreUrl';
+
+    await Share.share(
+      message,
+      subject: widget.story.title,
+    );
   }
 
   String _languageCode(String label) {
@@ -382,6 +431,11 @@ class _StoryPreviewScreenState extends State<StoryPreviewScreen>
                     ),
                   ),
                   const SizedBox(width: 12),
+                  _CircleButton(
+                    icon: Icons.share_rounded,
+                    onTap: _shareStory,
+                  ),
+                  const SizedBox(width: 8),
                   _Pill(text: '${_index + 1}/$_totalPages'),
                 ],
               ),

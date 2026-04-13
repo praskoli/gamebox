@@ -96,12 +96,6 @@ class StoryRepository {
     final Map<String, dynamic> storyData = normalizedStory.toMap();
 
     storyData['updatedAt'] = FieldValue.serverTimestamp();
-
-    // Important:
-    // Do NOT pre-read storyRef.get() here.
-    // That read is what was causing PERMISSION_DENIED on first save.
-    //
-    // We write safe defaults every time with merge. This avoids the failing read.
     storyData['createdAt'] = normalizedStory.createdAt == null
         ? FieldValue.serverTimestamp()
         : Timestamp.fromDate(normalizedStory.createdAt!);
@@ -122,21 +116,30 @@ class StoryRepository {
     storyData['previewReadyAt'] = normalizedStory.previewReadyAt == null
         ? null
         : Timestamp.fromDate(normalizedStory.previewReadyAt!);
-
     storyData['communityVisible'] = normalizedStory.communityVisible;
 
     batch.set(storyRef, storyData, SetOptions(merge: true));
 
     for (int index = 0; index < scenes.length; index++) {
-      final SceneModel scene = scenes[index].copyWith(
-        id: scenes[index].id.trim().isEmpty
+      final SceneModel input = scenes[index];
+
+      final SceneModel scene = input.copyWith(
+        id: input.id.trim().isEmpty
             ? 'scene_${(index + 1).toString().padLeft(2, '0')}'
-            : scenes[index].id,
+            : input.id,
         storyId: storyId,
         order: index,
-        caption: SceneModel.generateCaption(scenes[index].narration),
-        durationSeconds:
-        SceneModel.calculateDurationSeconds(scenes[index].narration),
+        caption: SceneModel.generateCaption(input.narration),
+        durationSeconds: input.durationSeconds > 0
+            ? input.durationSeconds
+            : SceneModel.calculateDurationSeconds(input.narration),
+        // Audio metadata: keep if already generated, otherwise mark pending.
+        audioStatus: input.narrationAudioUrl.trim().isNotEmpty
+            ? 'ready'
+            : (input.audioStatus.trim().isEmpty ? 'pending' : input.audioStatus),
+        voiceId: input.voiceId.trim().isEmpty
+            ? _defaultVoiceIdForLanguage(story.language)
+            : input.voiceId.trim(),
       );
 
       final Map<String, dynamic> data = scene.toMap();
@@ -144,6 +147,10 @@ class StoryRepository {
       data['createdAt'] = scene.createdAt == null
           ? FieldValue.serverTimestamp()
           : Timestamp.fromDate(scene.createdAt!);
+
+      if (scene.audioUpdatedAt != null) {
+        data['audioUpdatedAt'] = Timestamp.fromDate(scene.audioUpdatedAt!);
+      }
 
       batch.set(scenesRef.doc(scene.id), data, SetOptions(merge: true));
     }
@@ -206,6 +213,12 @@ class StoryRepository {
           'status': scene.status,
           'flagReason': scene.flagReason,
           'isModerated': true,
+          'audioStatus': scene.narrationAudioUrl.trim().isNotEmpty
+              ? 'ready'
+              : (scene.audioStatus.trim().isEmpty ? 'pending' : scene.audioStatus),
+          'voiceId': scene.voiceId.trim().isEmpty
+              ? _defaultVoiceIdForLanguage(story.language)
+              : scene.voiceId.trim(),
           'updatedAt': FieldValue.serverTimestamp(),
         },
         SetOptions(merge: true),
@@ -233,8 +246,8 @@ class StoryRepository {
         .orderBy('order')
         .get();
 
-    final List<SceneModel> scenes =
-    sceneSnapshot.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> sceneDoc) {
+    final List<SceneModel> scenes = sceneSnapshot.docs
+        .map((QueryDocumentSnapshot<Map<String, dynamic>> sceneDoc) {
       return SceneModel.fromMap(
         <String, dynamic>{
           ...sceneDoc.data(),
@@ -473,6 +486,18 @@ class StoryRepository {
       canSubmit: true,
       scenes: moderatedScenes,
     );
+  }
+
+  String _defaultVoiceIdForLanguage(String language) {
+    switch (language.trim().toLowerCase()) {
+      case 'telugu':
+        return 'te-IN-default';
+      case 'hindi':
+        return 'hi-IN-default';
+      case 'english':
+      default:
+        return 'en-US-default';
+    }
   }
 }
 

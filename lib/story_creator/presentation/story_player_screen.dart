@@ -1,11 +1,13 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../domain/scene_model.dart';
 import '../domain/story_model.dart';
-import 'dart:math' as math;
 
 class StoryPlayerScreen extends StatefulWidget {
   const StoryPlayerScreen({
@@ -24,6 +26,7 @@ class StoryPlayerScreen extends StatefulWidget {
 class _StoryPlayerScreenState extends State<StoryPlayerScreen>
     with TickerProviderStateMixin {
   final FlutterTts _tts = FlutterTts();
+  final AudioPlayer _audioPlayer = AudioPlayer();
 
   late final AnimationController _transitionController;
   late final Animation<double> _fadeAnimation;
@@ -39,7 +42,7 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
   bool _isTransitioning = false;
 
   Timer? _autoplayDelayTimer;
-  Future<void>? _backgroundWarmFuture;
+  StreamSubscription<PlayerState>? _playerStateSubscription;
 
   int get _totalPages => widget.scenes.length + 1;
   bool get _isBrandScene => _index == widget.scenes.length;
@@ -71,26 +74,17 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
 
     _primeImageProviders();
 
-    _tts.setCompletionHandler(() async {
-      if (!mounted) return;
+    _tts.setCompletionHandler(_onNarrationComplete);
 
-      setState(() => _speaking = false);
-
-      if (_index < _totalPages - 1) {
-        _autoplayDelayTimer?.cancel();
-        _autoplayDelayTimer = Timer(
-          const Duration(milliseconds: 650),
-              () async {
-            if (!mounted) return;
-            await _goToIndex(_index + 1, autoPlayAfter: true);
-          },
-        );
-      }
-    });
+    _playerStateSubscription =
+        _audioPlayer.playerStateStream.listen((PlayerState state) {
+          if (state.processingState == ProcessingState.completed) {
+            _onNarrationComplete();
+          }
+        });
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await _warmWindowAround(_index);
-      _backgroundWarmFuture = _warmRemainingScenesInBackground();
       if (!mounted) return;
       await _playCurrentScene(initial: true);
     });
@@ -99,7 +93,9 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
   @override
   void dispose() {
     _autoplayDelayTimer?.cancel();
+    _playerStateSubscription?.cancel();
     _tts.stop();
+    _audioPlayer.dispose();
     _transitionController.dispose();
     super.dispose();
   }
@@ -154,22 +150,34 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
     await Future.wait(futures);
   }
 
-  Future<void> _warmRemainingScenesInBackground() async {
+  void _onNarrationComplete() {
     if (!mounted) return;
 
-    await _precacheBrandAsset();
+    setState(() => _speaking = false);
 
-    for (int i = 0; i < widget.scenes.length; i++) {
-      if (!mounted) return;
-      if (_precachedSceneIndexes.contains(i)) continue;
+    if (_index < _totalPages - 1) {
+      _autoplayDelayTimer?.cancel();
+      _autoplayDelayTimer = Timer(
+        const Duration(milliseconds: 650),
+            () async {
+          if (!mounted) return;
+          await _goToIndex(_index + 1, autoPlayAfter: true);
+        },
+      );
+    }
+  }
 
-      await _precacheSceneIndex(i);
-      await Future<void>.delayed(const Duration(milliseconds: 35));
+  Future<void> _stopNarration() async {
+    _autoplayDelayTimer?.cancel();
+    await _tts.stop();
+    await _audioPlayer.stop();
+    if (mounted) {
+      setState(() => _speaking = false);
     }
   }
 
   Future<void> _playCurrentScene({bool initial = false}) async {
-    await _tts.stop();
+    await _stopNarration();
 
     if (!mounted) return;
 
@@ -177,7 +185,6 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
 
     if (!initial) {
       setState(() {
-        _speaking = false;
         _isTransitioning = true;
       });
 
@@ -196,30 +203,43 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
     await Future<void>.delayed(const Duration(milliseconds: 140));
     if (!mounted) return;
 
-    await _tts.setLanguage('en-US');
-    await _tts.setSpeechRate(0.42);
-
     if (_isBrandScene) {
+      await _tts.setLanguage(_languageCode(widget.story.language));
+      await _tts.setSpeechRate(0.42);
       await _tts.speak(
         'This story was created using GameBox DIY Studio. Create your own stories today.',
       );
-    } else {
-      await _tts.speak(widget.scenes[_index].narration);
+      if (mounted) {
+        setState(() => _speaking = true);
+      }
+      return;
     }
 
+    final SceneModel scene = widget.scenes[_index];
+    final String narrationAudioUrl = scene.narrationAudioUrl.trim();
+
+    if (narrationAudioUrl.isNotEmpty) {
+      try {
+        await _audioPlayer.setUrl(narrationAudioUrl);
+        await _audioPlayer.play();
+        if (mounted) {
+          setState(() => _speaking = true);
+        }
+        return;
+      } catch (_) {}
+    }
+
+    await _tts.setLanguage(_languageCode(widget.story.language));
+    await _tts.setSpeechRate(0.42);
+    await _tts.speak(scene.narration);
     if (mounted) {
       setState(() => _speaking = true);
     }
   }
 
   Future<void> _togglePlay() async {
-    _autoplayDelayTimer?.cancel();
-
     if (_speaking) {
-      await _tts.stop();
-      if (mounted) {
-        setState(() => _speaking = false);
-      }
+      await _stopNarration();
       return;
     }
 
@@ -234,13 +254,11 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
     if (_isTransitioning) return;
     if (newIndex == _index) return;
 
-    _autoplayDelayTimer?.cancel();
-    await _tts.stop();
+    await _stopNarration();
 
     if (!mounted) return;
 
     setState(() {
-      _speaking = false;
       _previousIndex = _index;
       _index = newIndex;
     });
@@ -251,6 +269,47 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
 
     if (autoPlayAfter) {
       await _playCurrentScene();
+    }
+  }
+
+  Future<void> _shareStory() async {
+    final String storyId = widget.story.id.trim();
+
+    if (storyId.isEmpty) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Story not ready for sharing')),
+      );
+      return;
+    }
+
+    final String storyUrl = 'https://gamebox-a9c34.web.app/s/$storyId';
+    const String playStoreUrl =
+        'https://play.google.com/store/apps/details?id=com.qtilabs.gamebox';
+
+    final String creatorLine =
+    _creatorName.isNotEmpty ? '\nBy: $_creatorName' : '';
+
+    final String message =
+        'Watch this GameBox story:\n${widget.story.title}$creatorLine\n\n'
+        'Open story:\n$storyUrl\n\n'
+        'Get GameBox:\n$playStoreUrl';
+
+    await Share.share(
+      message,
+      subject: widget.story.title,
+    );
+  }
+
+  String _languageCode(String label) {
+    switch (label.toLowerCase()) {
+      case 'telugu':
+        return 'te-IN';
+      case 'hindi':
+        return 'hi-IN';
+      case 'english':
+      default:
+        return 'en-US';
     }
   }
 
@@ -344,6 +403,11 @@ class _StoryPlayerScreenState extends State<StoryPlayerScreen>
                     ),
                   ),
                   const SizedBox(width: 12),
+                  _CircleButton(
+                    icon: Icons.share_rounded,
+                    onTap: _shareStory,
+                  ),
+                  const SizedBox(width: 8),
                   _Pill(text: '${_index + 1}/$_totalPages'),
                 ],
               ),
@@ -1177,7 +1241,8 @@ class _SparklesState extends State<_Sparkles>
           return Stack(
             children: List<Widget>.generate(10, (int i) {
               final double t = (_controller.value + i * 0.09) % 1;
-              final double pulse = 0.25 + (0.25 * math.sin((t * math.pi * 2) + i));
+              final double pulse =
+                  0.25 + (0.25 * math.sin((t * math.pi * 2) + i));
 
               return Positioned(
                 top: (t * size.height),
@@ -1199,58 +1264,12 @@ class _SparklesState extends State<_Sparkles>
   }
 }
 
-class _MistEffect extends StatefulWidget {
+class _MistEffect extends StatelessWidget {
   const _MistEffect();
 
   @override
-  State<_MistEffect> createState() => _MistEffectState();
-}
-
-class _MistEffectState extends State<_MistEffect>
-    with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 8),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: AnimatedBuilder(
-        animation: _controller,
-        builder: (_, __) {
-          final double dx = (_controller.value * 40) - 20;
-          return Transform.translate(
-            offset: Offset(dx, 0),
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: <Color>[
-                    Colors.white.withOpacity(0.06),
-                    Colors.transparent,
-                    Colors.white.withOpacity(0.03),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-              ),
-            ),
-          );
-        },
-      ),
-    );
+    return const SizedBox.shrink();
   }
 }
 

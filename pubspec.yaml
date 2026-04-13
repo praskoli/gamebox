@@ -30,7 +30,10 @@ dependencies:
   image_picker: ^1.1.2
   share_plus: ^7.2.1
   flutter_tts: ^3.8.5
-
+  ffmpeg_kit_min_gpl: ^6.0.3+2-LTS
+  path_provider: ^2.1.2
+  http: ^1.2.1
+  just_audio: ^0.9.46
 dev_dependencies:
   flutter_test:
     sdk: flutter
