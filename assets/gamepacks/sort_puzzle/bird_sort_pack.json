@@ -1,0 +1,2052 @@
+{
+  "id": "bird_pack",
+  "title": "Bird Sort Pack",
+  "variant": "bird",
+  "levels": [
+    {
+      "id": "bird_001",
+      "levelNumber": 1,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 1",
+      "themeKey": "bird",
+      "star3Target": 15,
+      "star2Target": 19,
+      "star1Target": 25,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_002",
+      "levelNumber": 2,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 2",
+      "themeKey": "bird",
+      "star3Target": 16,
+      "star2Target": 20,
+      "star1Target": 26,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_003",
+      "levelNumber": 3,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 3",
+      "themeKey": "bird",
+      "star3Target": 17,
+      "star2Target": 21,
+      "star1Target": 27,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_004",
+      "levelNumber": 4,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 4",
+      "themeKey": "bird",
+      "star3Target": 18,
+      "star2Target": 22,
+      "star1Target": 28,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_005",
+      "levelNumber": 5,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 5",
+      "themeKey": "bird",
+      "star3Target": 19,
+      "star2Target": 23,
+      "star1Target": 29,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_006",
+      "levelNumber": 6,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 6",
+      "themeKey": "bird",
+      "star3Target": 20,
+      "star2Target": 24,
+      "star1Target": 30,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_007",
+      "levelNumber": 7,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 7",
+      "themeKey": "bird",
+      "star3Target": 21,
+      "star2Target": 25,
+      "star1Target": 31,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_008",
+      "levelNumber": 8,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 8",
+      "themeKey": "bird",
+      "star3Target": 22,
+      "star2Target": 26,
+      "star1Target": 32,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_009",
+      "levelNumber": 9,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 9",
+      "themeKey": "bird",
+      "star3Target": 23,
+      "star2Target": 27,
+      "star1Target": 33,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_010",
+      "levelNumber": 10,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 10",
+      "themeKey": "bird",
+      "star3Target": 24,
+      "star2Target": 28,
+      "star1Target": 34,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_011",
+      "levelNumber": 11,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 11",
+      "themeKey": "bird",
+      "star3Target": 25,
+      "star2Target": 29,
+      "star1Target": 35,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_012",
+      "levelNumber": 12,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 12",
+      "themeKey": "bird",
+      "star3Target": 26,
+      "star2Target": 30,
+      "star1Target": 36,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_013",
+      "levelNumber": 13,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 13",
+      "themeKey": "bird",
+      "star3Target": 27,
+      "star2Target": 31,
+      "star1Target": 37,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_014",
+      "levelNumber": 14,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 14",
+      "themeKey": "bird",
+      "star3Target": 28,
+      "star2Target": 32,
+      "star1Target": 38,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "bird_015",
+      "levelNumber": 15,
+      "variant": "bird",
+      "ruleFamily": "discreteStack",
+      "title": "Level 15",
+      "themeKey": "bird",
+      "star3Target": 29,
+      "star2Target": 33,
+      "star1Target": 39,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    }
+  ]
+}

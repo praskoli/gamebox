@@ -1,5 +1,6 @@
 import 'dart:math' as math;
-
+import '../../games/sort_puzzle/creator/models/sort_puzzle_creator_draft.dart';
+import '../../games/sort_puzzle/presentation/screens/sort_puzzle_game_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -683,6 +684,50 @@ class CommunityCreationsScreenState extends State<CommunityCreationsScreen> {
       return;
     }
 
+    if (item.gameType == 'sort_puzzle') {
+      final String ownerUid = item.ownerUid;
+
+      try {
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(ownerUid)
+            .collection('custom_games')
+            .doc(item.id)
+            .update(<String, Object>{
+          'playCount': FieldValue.increment(1),
+        });
+      } catch (_) {}
+
+      final SortPuzzleCreatorDraft draft = SortPuzzleCreatorDraft.fromFirestore(
+        <String, dynamic>{
+          ...item.rawData,
+        },
+        item.id,
+      );
+
+      if (!mounted) return;
+
+      await Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => SortPuzzleGameScreen(
+            level: draft.toLevel(levelNumber: draft.levelNumber),
+          ),
+        ),
+      );
+
+      final int index = _items.indexWhere(
+            (_CreatorFeedItem e) =>
+        e.id == item.id && e.contentType == item.contentType,
+      );
+      if (index >= 0 && mounted) {
+        _items[index] = _items[index].copyWith(
+          playCount: _items[index].playCount + 1,
+        );
+        setState(() {});
+      }
+      return;
+    }
+
     if (!mounted) return;
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
@@ -980,8 +1025,17 @@ class _NeonCreatorContentTile extends StatelessWidget {
 
   String get _typeLabel {
     if (_isStory) return 'Story';
-    if ((gameType ?? '').trim().isEmpty) return 'Game';
-    return '${_capitalize(gameType!)} Game';
+    switch (gameType) {
+      case 'memory':
+        return 'Memory Game';
+      case 'sort_puzzle':
+        return 'Sort Puzzle';
+      case 'block':
+        return 'Block Game';
+      default:
+        if ((gameType ?? '').trim().isEmpty) return 'Game';
+        return _capitalize(gameType!.replaceAll('_', ' '));
+    }
   }
 
   IconData get _typeIcon {

@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../../games/memory_match/domain/memory_diy_game_config.dart';
+import 'package:gamebox/games/sort_puzzle/creator/models/sort_puzzle_creator_draft.dart';
 
-class MemoryDiyRepository {
-  MemoryDiyRepository._();
+class SortPuzzleRepository {
+  SortPuzzleRepository._();
 
-  static final MemoryDiyRepository instance = MemoryDiyRepository._();
+  static final SortPuzzleRepository instance = SortPuzzleRepository._();
 
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -22,7 +22,7 @@ class MemoryDiyRepository {
   String get _currentUid {
     final String? uid = _auth.currentUser?.uid;
     if (uid == null || uid.isEmpty) {
-      throw StateError('User must be logged in to save DIY games.');
+      throw StateError('User must be logged in to save DIY sort puzzles.');
     }
     return uid;
   }
@@ -35,21 +35,29 @@ class MemoryDiyRepository {
     return email.trim().toLowerCase();
   }
 
-  Future<String> saveDraft(MemoryDiyGameConfig config) async {
+  Future<String> saveDraft(SortPuzzleCreatorDraft draft) async {
     final String uid = _currentUid;
     final CollectionReference<Map<String, dynamic>> collection = _collection(uid);
-    final String gameId = config.id.isNotEmpty ? config.id : collection.doc().id;
+    final String docId = draft.id.isNotEmpty ? draft.id : collection.doc().id;
 
-    final DocumentReference<Map<String, dynamic>> docRef = collection.doc(gameId);
+    final DocumentReference<Map<String, dynamic>> docRef = collection.doc(docId);
     final DocumentSnapshot<Map<String, dynamic>> existing = await docRef.get();
 
-    final Map<String, dynamic> data = config
+    final Map<String, dynamic> data = draft
         .copyWith(
-      id: gameId,
+      id: docId,
       ownerUid: uid,
+      creatorName: draft.creatorName.trim().isEmpty
+          ? 'Arena Builder'
+          : draft.creatorName.trim(),
     )
-        .toMap();
+        .toJson();
 
+    data['id'] = docId;
+    data['ownerUid'] = uid;
+    data['creatorName'] =
+    draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim();
+    data['gameType'] = 'sort_puzzle';
     data['updatedAt'] = FieldValue.serverTimestamp();
 
     if (existing.exists) {
@@ -60,9 +68,10 @@ class MemoryDiyRepository {
       data['reviewedAt'] = previous?['reviewedAt'];
       data['reviewedBy'] = previous?['reviewedBy'] ?? '';
       data['rejectionReason'] = previous?['rejectionReason'] ?? '';
-      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
-          ? data['creatorName']
-          : (previous?['creatorName'] ?? 'Arena Builder');
+      data['communityVisible'] = previous?['communityVisible'] ?? false;
+      data['approvedAt'] = previous?['approvedAt'];
+      data['playCount'] = previous?['playCount'] ?? 0;
+      data['likesCount'] = previous?['likesCount'] ?? 0;
     } else {
       data['createdAt'] = FieldValue.serverTimestamp();
       data['status'] = 'draft';
@@ -70,89 +79,84 @@ class MemoryDiyRepository {
       data['reviewedAt'] = null;
       data['reviewedBy'] = '';
       data['rejectionReason'] = '';
-      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
-          ? data['creatorName']
-          : 'Arena Builder';
+      data['communityVisible'] = false;
+      data['approvedAt'] = null;
+      data['playCount'] = 0;
+      data['likesCount'] = 0;
     }
 
     await docRef.set(data, SetOptions(merge: true));
-    return gameId;
+    return docId;
   }
 
-  Future<void> submitForReview(MemoryDiyGameConfig config) async {
+  Future<void> submitForReview(SortPuzzleCreatorDraft draft) async {
     final String uid = _currentUid;
-
-    final String gameId = await saveDraft(
-      config.copyWith(
+    final String docId = await saveDraft(
+      draft.copyWith(
         ownerUid: uid,
         status: 'pending_review',
       ),
     );
 
-    await _collection(uid).doc(gameId).set(
+    await _collection(uid).doc(docId).set(
       <String, dynamic>{
-        'id': gameId,
+        'id': docId,
         'ownerUid': uid,
-        'gameType': 'memory',
-        'creatorName': config.creatorName.trim().isEmpty
-            ? 'Arena Builder'
-            : config.creatorName.trim(),
+        'gameType': 'sort_puzzle',
+        'creatorName':
+        draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim(),
         'status': 'pending_review',
         'submittedAt': FieldValue.serverTimestamp(),
         'updatedAt': FieldValue.serverTimestamp(),
         'rejectionReason': '',
+        'communityVisible': false,
       },
       SetOptions(merge: true),
     );
   }
 
-  Stream<List<MemoryDiyGameConfig>> watchDrafts() {
-    final String uid = _currentUid;
-
-    return _collection(uid)
-        .where('gameType', isEqualTo: 'memory')
-        .orderBy('updatedAt', descending: true)
+  Stream<List<SortPuzzleCreatorDraft>> watchProjectsByStatus(String status) {
+    return _firestore
+        .collectionGroup('custom_games')
+        .where('gameType', isEqualTo: 'sort_puzzle')
+        .where('status', isEqualTo: status)
         .snapshots()
         .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
-      return snapshot.docs
-          .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
-        final Map<String, dynamic> data = doc.data();
-        data['id'] = doc.id;
-        return MemoryDiyGameConfig.fromMap(data);
-      }).toList(growable: false);
+      final List<SortPuzzleCreatorDraft> items = snapshot.docs
+          .map((doc) => SortPuzzleCreatorDraft.fromFirestore(doc.data(), doc.id))
+          .toList(growable: false);
+
+      items.sort((a, b) {
+        final DateTime aTime = a.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+        final DateTime bTime = b.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+        return bTime.compareTo(aTime);
+      });
+
+      return items;
     });
   }
 
-  Future<MemoryDiyGameConfig?> getById(String id) async {
+  Future<bool> canSubmitMoreGames() async {
     final String uid = _currentUid;
-    final DocumentSnapshot<Map<String, dynamic>> doc =
-    await _collection(uid).doc(id).get();
-
-    if (!doc.exists) return null;
-
-    final Map<String, dynamic> data = doc.data()!;
-    data['id'] = doc.id;
-    return MemoryDiyGameConfig.fromMap(data);
-  }
-
-  Future<void> deleteDraft(String id) async {
-    final String uid = _currentUid;
-    await _collection(uid).doc(id).delete();
+    final AggregateQuerySnapshot snapshot = await _collection(uid)
+        .where('gameType', isEqualTo: 'sort_puzzle')
+        .where('status', whereIn: const <String>['pending_review', 'approved'])
+        .count()
+        .get();
+    return (snapshot.count ?? 0) < 2;
   }
 
   Future<bool> isCurrentUserAdminReviewer() async {
-    try {
-      final String currentUid = _auth.currentUser?.uid?.trim() ?? '';
-      final String currentEmail =
-          _auth.currentUser?.email?.trim().toLowerCase() ?? '';
+    final String currentEmail = _currentEmail;
+    final String currentUid = _currentUid;
 
+    try {
       final DocumentSnapshot<Map<String, dynamic>> doc = await _firestore
           .collection(_adminConfigCollection)
           .doc(_adminConfigDocId)
           .get();
 
       final Map<String, dynamic>? data = doc.data();
-
       final dynamic rawAllowedEmails = data?['allowedEmails'];
       final dynamic rawAllowedUids = data?['allowedUids'];
 
@@ -162,8 +166,7 @@ class MemoryDiyRepository {
             .map((e) => e.toString().trim().toLowerCase())
             .where((e) => e.isNotEmpty)
             .toList(growable: false);
-      } else if (rawAllowedEmails is String &&
-          rawAllowedEmails.trim().isNotEmpty) {
+      } else if (rawAllowedEmails is String && rawAllowedEmails.trim().isNotEmpty) {
         allowedEmails = <String>[rawAllowedEmails.trim().toLowerCase()];
       } else {
         allowedEmails = <String>[_fallbackAdminEmail];
@@ -175,65 +178,29 @@ class MemoryDiyRepository {
             .map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList(growable: false);
-      } else if (rawAllowedUids is String &&
-          rawAllowedUids.trim().isNotEmpty) {
+      } else if (rawAllowedUids is String && rawAllowedUids.trim().isNotEmpty) {
         allowedUids = <String>[rawAllowedUids.trim()];
       } else {
         allowedUids = const <String>[];
       }
 
-      if (currentUid.isNotEmpty && allowedUids.contains(currentUid)) {
-        return true;
-      }
-
-      if (currentEmail.isNotEmpty && allowedEmails.contains(currentEmail)) {
-        return true;
-      }
-
-      return false;
+      return allowedUids.contains(currentUid) || allowedEmails.contains(currentEmail);
     } catch (_) {
-      final String fallbackEmail =
-          _auth.currentUser?.email?.trim().toLowerCase() ?? '';
-      return fallbackEmail == _fallbackAdminEmail;
+      return currentEmail == _fallbackAdminEmail;
     }
   }
 
-  Stream<List<MemoryDiyGameConfig>> watchProjectsByStatus(String status) {
-    return _firestore
-        .collectionGroup('custom_games')
-        .where('gameType', isEqualTo: 'memory')
-        .where('status', isEqualTo: status)
-        .snapshots()
-        .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
-      final List<MemoryDiyGameConfig> items = snapshot.docs.map((doc) {
-        final Map<String, dynamic> data = doc.data();
-        data['id'] = doc.id;
-        return MemoryDiyGameConfig.fromMap(data);
-      }).toList();
-
-      items.sort((a, b) {
-        final DateTime aTime =
-            a.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
-        final DateTime bTime =
-            b.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
-        return bTime.compareTo(aTime);
-      });
-
-      return items;
-    });
-  }
-
-  Future<void> approveProject(MemoryDiyGameConfig config) async {
+  Future<void> approveProject(SortPuzzleCreatorDraft draft) async {
     final bool isAdmin = await isCurrentUserAdminReviewer();
     if (!isAdmin) {
-      throw StateError('Only admin reviewers can approve projects.');
+      throw StateError('Only admin reviewers can approve sort projects.');
     }
 
     final DocumentReference<Map<String, dynamic>> docRef = _firestore
         .collection('users')
-        .doc(config.ownerUid)
+        .doc(draft.ownerUid)
         .collection('custom_games')
-        .doc(config.id);
+        .doc(draft.id);
 
     await docRef.set(
       <String, dynamic>{
@@ -244,52 +211,40 @@ class MemoryDiyRepository {
         'reviewedBy': _currentEmail,
         'rejectionReason': '',
         'updatedAt': FieldValue.serverTimestamp(),
-        'creatorName': config.creatorName.trim().isEmpty
-            ? 'Arena Builder'
-            : config.creatorName.trim(),
+        'creatorName':
+        draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim(),
+        'gameType': 'sort_puzzle',
       },
       SetOptions(merge: true),
     );
   }
 
   Future<void> rejectProject(
-      MemoryDiyGameConfig config, {
+      SortPuzzleCreatorDraft draft, {
         required String reason,
       }) async {
     final bool isAdmin = await isCurrentUserAdminReviewer();
     if (!isAdmin) {
-      throw StateError('Only admin reviewers can reject projects.');
+      throw StateError('Only admin reviewers can reject sort projects.');
     }
 
     final DocumentReference<Map<String, dynamic>> docRef = _firestore
         .collection('users')
-        .doc(config.ownerUid)
+        .doc(draft.ownerUid)
         .collection('custom_games')
-        .doc(config.id);
+        .doc(draft.id);
 
     await docRef.set(
       <String, dynamic>{
         'status': 'rejected',
+        'communityVisible': false,
         'reviewedAt': FieldValue.serverTimestamp(),
         'reviewedBy': _currentEmail,
-        'rejectionReason': reason,
+        'rejectionReason': reason.trim(),
         'updatedAt': FieldValue.serverTimestamp(),
-        'creatorName': config.creatorName.trim().isEmpty
-            ? 'Arena Builder'
-            : config.creatorName.trim(),
+        'gameType': 'sort_puzzle',
       },
       SetOptions(merge: true),
     );
-  }
-
-  Future<bool> canSubmitMoreGames() async {
-    final String uid = _currentUid;
-
-    final QuerySnapshot<Map<String, dynamic>> snapshot = await _collection(uid)
-        .where('gameType', isEqualTo: 'memory')
-        .where('status', whereIn: ['pending_review', 'approved'])
-        .get();
-
-    return snapshot.docs.length < 2;
   }
 }

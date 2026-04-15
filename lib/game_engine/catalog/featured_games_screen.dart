@@ -98,7 +98,7 @@ class _GameCard extends StatelessWidget {
   });
 
   bool get _isBlockKingdom => gameId == 'block_kingdom';
-
+  bool get _isSortPuzzle => gameId == 'sort_puzzle';
   @override
   Widget build(BuildContext context) {
     final accent2 = HSLColor.fromColor(color)
@@ -159,7 +159,7 @@ class _GameCard extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                         ),
                       ),
-                      if (_isBlockKingdom)
+                      if (_isBlockKingdom || _isSortPuzzle)
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 10,
@@ -170,7 +170,7 @@ class _GameCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(999),
                           ),
                           child: Text(
-                            '3 Modes',
+                            _isBlockKingdom ? '3 Modes' : '5 Variants',
                             style: TextStyle(
                               fontWeight: FontWeight.w900,
                               color: color,
@@ -184,6 +184,8 @@ class _GameCard extends StatelessWidget {
                   Text(
                     _isBlockKingdom
                         ? 'Kingdom, Endless, and Time Trial in one polished block adventure.'
+                        : _isSortPuzzle
+                        ? 'Play Bird, Ball, Color, Water, and Sand sorting challenges in one game.'
                         : 'Jump in instantly, play smoothly, and grow your player rewards.',
                     style: const TextStyle(
                       color: Color(0xFF6B7280),
@@ -209,7 +211,11 @@ class _GameCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    _isBlockKingdom ? 'Choose' : 'Play',
+                    _isBlockKingdom
+                        ? 'Choose'
+                        : _isSortPuzzle
+                        ? 'Sort'
+                        : 'Play',
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       color: color,

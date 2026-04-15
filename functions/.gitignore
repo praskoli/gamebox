@@ -3,3 +3,5 @@ lib
 .firebase
 firebase-debug.log
 *.local
+functions/serviceAccountKey.json
+*.json

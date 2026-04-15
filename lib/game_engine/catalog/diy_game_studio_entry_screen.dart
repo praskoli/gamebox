@@ -37,8 +37,8 @@ class _DiyGameStudioEntryScreenState extends State<DiyGameStudioEntryScreen> {
       subtitle: 'Start with a spark and turn it into something exciting.',
     ),
     _StudioCaption(
-      title: 'One studio. Two creative paths.',
-      subtitle: 'Build games today and get ready for stories next.',
+      title: 'One studio. Three creative paths.',
+      subtitle: 'Build Memory Match, Sort Puzzle, or create stories in one place.',
     ),
   ];
 

@@ -1,0 +1,781 @@
+{
+  "id": "color_sort_pack",
+  "title": "Color Sort",
+  "variant": "color",
+  "levels": [
+    {
+      "id": "color_1",
+      "levelNumber": 1,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 1",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 8,
+      "star2Target": 12,
+      "star1Target": 18,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_2",
+      "levelNumber": 2,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 2",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 10,
+      "star2Target": 14,
+      "star1Target": 20,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_3",
+      "levelNumber": 3,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 3",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 11,
+      "star2Target": 16,
+      "star1Target": 22,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_4",
+      "levelNumber": 4,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 4",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 12,
+      "star2Target": 17,
+      "star1Target": 24,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_5",
+      "levelNumber": 5,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 5",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 13,
+      "star2Target": 18,
+      "star1Target": 25,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_6",
+      "levelNumber": 6,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Level 6",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {},
+      "star3Target": 15,
+      "star2Target": 20,
+      "star1Target": 28,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_7",
+      "levelNumber": 7,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Move Challenge 1",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "moveLimit": 14,
+        "bonusObjective": "Finish inside the move cap"
+      },
+      "star3Target": 10,
+      "star2Target": 13,
+      "star1Target": 16,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_8",
+      "levelNumber": 8,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Move Challenge 2",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "moveLimit": 13,
+        "bonusObjective": "Finish inside the move cap"
+      },
+      "star3Target": 10,
+      "star2Target": 12,
+      "star1Target": 15,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_9",
+      "levelNumber": 9,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Time Challenge 1",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "timeLimitSeconds": 45,
+        "bonusObjective": "Beat the countdown"
+      },
+      "star3Target": 10,
+      "star2Target": 14,
+      "star1Target": 18,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_10",
+      "levelNumber": 10,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Time Challenge 2",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "timeLimitSeconds": 35,
+        "bonusObjective": "Beat the countdown"
+      },
+      "star3Target": 11,
+      "star2Target": 15,
+      "star1Target": 19,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_11",
+      "levelNumber": 11,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Ocean World 1",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "worldKey": "ocean",
+        "bonusObjective": "Finish the Ocean pattern"
+      },
+      "star3Target": 12,
+      "star2Target": 16,
+      "star1Target": 22,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    },
+    {
+      "id": "color_12",
+      "levelNumber": 12,
+      "variant": "color",
+      "ruleFamily": "discreteStack",
+      "title": "Festival World 1",
+      "themeKey": "color_classic",
+      "themeConfig": {
+        "themeKey": "color_classic",
+        "backgroundKey": "color_classic",
+        "containerSkinKey": "tube_glass",
+        "pieceSkinKey": "color_flat",
+        "soundPackKey": "default_sort"
+      },
+      "specialRules": {
+        "worldKey": "festival",
+        "bonusObjective": "Finish the Festival pattern"
+      },
+      "star3Target": 13,
+      "star2Target": 17,
+      "star1Target": 23,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containerCapacity": 4,
+      "containers": [
+        {
+          "id": "c1",
+          "pieces": [
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "green", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c2",
+          "pieces": [
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c3",
+          "pieces": [
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "red", "amount": 1 }
+          ]
+        },
+        {
+          "id": "c4",
+          "pieces": [
+            { "groupKey": "red", "amount": 1 },
+            { "groupKey": "blue", "amount": 1 },
+            { "groupKey": "green", "amount": 1 },
+            { "groupKey": "yellow", "amount": 1 }
+          ]
+        },
+        { "id": "c5", "pieces": [] },
+        { "id": "c6", "pieces": [] }
+      ]
+    }
+  ]
+}

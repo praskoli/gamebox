@@ -1,0 +1,1152 @@
+{
+  "id": "sand_pack",
+  "title": "Sand Sort Pack",
+  "variant": "sand",
+  "levels": [
+    {
+      "id": "sand_001",
+      "levelNumber": 1,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 1",
+      "themeKey": "sand",
+      "star3Target": 15,
+      "star2Target": 19,
+      "star1Target": 25,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_002",
+      "levelNumber": 2,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 2",
+      "themeKey": "sand",
+      "star3Target": 16,
+      "star2Target": 20,
+      "star1Target": 26,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_003",
+      "levelNumber": 3,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 3",
+      "themeKey": "sand",
+      "star3Target": 17,
+      "star2Target": 21,
+      "star1Target": 27,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_004",
+      "levelNumber": 4,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 4",
+      "themeKey": "sand",
+      "star3Target": 18,
+      "star2Target": 22,
+      "star1Target": 28,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_005",
+      "levelNumber": 5,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 5",
+      "themeKey": "sand",
+      "star3Target": 19,
+      "star2Target": 23,
+      "star1Target": 29,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "easy",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_006",
+      "levelNumber": 6,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 6",
+      "themeKey": "sand",
+      "star3Target": 20,
+      "star2Target": 24,
+      "star1Target": 30,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_007",
+      "levelNumber": 7,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 7",
+      "themeKey": "sand",
+      "star3Target": 21,
+      "star2Target": 25,
+      "star1Target": 31,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_008",
+      "levelNumber": 8,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 8",
+      "themeKey": "sand",
+      "star3Target": 22,
+      "star2Target": 26,
+      "star1Target": 32,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_009",
+      "levelNumber": 9,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 9",
+      "themeKey": "sand",
+      "star3Target": 23,
+      "star2Target": 27,
+      "star1Target": 33,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_010",
+      "levelNumber": 10,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 10",
+      "themeKey": "sand",
+      "star3Target": 24,
+      "star2Target": 28,
+      "star1Target": 34,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "medium",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_011",
+      "levelNumber": 11,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 11",
+      "themeKey": "sand",
+      "star3Target": 25,
+      "star2Target": 29,
+      "star1Target": 35,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": []
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_012",
+      "levelNumber": 12,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 12",
+      "themeKey": "sand",
+      "star3Target": 26,
+      "star2Target": 30,
+      "star1Target": 36,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_013",
+      "levelNumber": 13,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 13",
+      "themeKey": "sand",
+      "star3Target": 27,
+      "star2Target": 31,
+      "star1Target": 37,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c8",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_014",
+      "levelNumber": 14,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 14",
+      "themeKey": "sand",
+      "star3Target": 28,
+      "star2Target": 32,
+      "star1Target": 38,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    },
+    {
+      "id": "sand_015",
+      "levelNumber": 15,
+      "variant": "sand",
+      "ruleFamily": "flowSegment",
+      "title": "Level 15",
+      "themeKey": "sand",
+      "star3Target": 29,
+      "star2Target": 33,
+      "star1Target": 39,
+      "allowUndo": true,
+      "allowHints": true,
+      "difficulty": "hard",
+      "containers": [
+        {
+          "id": "c1",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c2",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c3",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c4",
+          "capacity": 4,
+          "pieces": []
+        },
+        {
+          "id": "c5",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c6",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "id": "c7",
+          "capacity": 4,
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 4
+            }
+          ]
+        }
+      ],
+      "containerCapacity": 4
+    }
+  ]
+}
