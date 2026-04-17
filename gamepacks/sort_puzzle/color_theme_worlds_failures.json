@@ -1,0 +1,3485 @@
+[
+  {
+    "world": "theme_worlds",
+    "level": 2,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 5,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 8,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 11,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 14,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 17,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 20,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 23,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 26,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 29,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 32,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 35,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 38,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 41,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 44,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 47,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 50,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 53,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 56,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 59,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 62,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 65,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 68,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 71,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 74,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 77,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 80,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 83,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 86,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 89,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 91,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4972,
+      "struct:clumped_colors": 13,
+      "depth:below_min_24": 3,
+      "depth:below_min_21": 6,
+      "depth:below_min_19": 4,
+      "depth:below_min_16": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 92,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 95,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 98,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 101,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 103,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4969,
+      "depth:below_min_26": 5,
+      "struct:clumped_colors": 14,
+      "depth:below_min_23": 4,
+      "depth:below_min_20": 6,
+      "depth:below_min_18": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 104,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 106,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4970,
+      "depth:below_min_26": 11,
+      "struct:clumped_colors": 10,
+      "struct:near_solved_forbidden": 2,
+      "depth:below_min_23": 4,
+      "depth:below_min_20": 1,
+      "depth:below_min_18": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 107,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 109,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4964,
+      "depth:below_min_26": 5,
+      "struct:clumped_colors": 13,
+      "struct:near_solved_forbidden": 2,
+      "depth:below_min_23": 9,
+      "depth:below_min_20": 3,
+      "depth:below_min_18": 4
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 110,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 113,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 115,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4974,
+      "depth:below_min_28": 8,
+      "struct:clumped_colors": 9,
+      "depth:below_min_22": 8,
+      "depth:below_min_19": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 116,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 118,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4974,
+      "struct:clumped_colors": 11,
+      "depth:below_min_28": 5,
+      "depth:below_min_25": 3,
+      "depth:below_min_22": 3,
+      "depth:below_min_19": 4
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 119,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 121,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4985,
+      "struct:clumped_colors": 3,
+      "depth:below_min_30": 3,
+      "depth:below_min_27": 3,
+      "depth:below_min_24": 5,
+      "depth:below_min_21": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 122,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 124,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4980,
+      "struct:clumped_colors": 9,
+      "depth:below_min_30": 5,
+      "depth:below_min_27": 3,
+      "depth:below_min_24": 2,
+      "depth:below_min_21": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 125,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 127,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4980,
+      "depth:below_min_30": 6,
+      "struct:clumped_colors": 8,
+      "depth:below_min_27": 2,
+      "depth:below_min_24": 3,
+      "depth:below_min_21": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 128,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 130,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4974,
+      "depth:below_min_30": 3,
+      "struct:near_solved_forbidden": 1,
+      "struct:clumped_colors": 11,
+      "depth:below_min_27": 6,
+      "depth:below_min_24": 3,
+      "depth:below_min_21": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 131,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 133,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4982,
+      "depth:below_min_32": 2,
+      "struct:clumped_colors": 11,
+      "depth:below_min_28": 3,
+      "depth:below_min_22": 1,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 134,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 136,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4986,
+      "depth:below_min_32": 3,
+      "struct:clumped_colors": 4,
+      "depth:below_min_28": 2,
+      "depth:below_min_25": 3,
+      "struct:near_solved_forbidden": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 137,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 138,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "DECOY",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4907,
+      "struct:clumped_colors": 27,
+      "depth:below_min_32": 12,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_28": 20,
+      "depth:below_min_25": 14,
+      "depth:below_min_22": 9
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 139,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4986,
+      "struct:clumped_colors": 5,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 2,
+      "depth:below_min_22": 2,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 140,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 142,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4981,
+      "struct:clumped_colors": 6,
+      "depth:below_min_34": 1,
+      "struct:near_solved_forbidden": 5,
+      "depth:below_min_30": 3,
+      "depth:below_min_27": 4
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 143,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 145,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4986,
+      "depth:below_min_34": 2,
+      "struct:clumped_colors": 5,
+      "depth:below_min_30": 2,
+      "depth:below_min_27": 1,
+      "struct:near_solved_forbidden": 2,
+      "depth:below_min_23": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 146,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 147,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4912,
+      "depth:below_min_34": 17,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_30": 13,
+      "depth:below_min_27": 13,
+      "depth:below_min_23": 9
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 148,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4992,
+      "depth:below_min_34": 2,
+      "depth:below_min_30": 2,
+      "struct:near_solved_forbidden": 2,
+      "struct:clumped_colors": 1,
+      "depth:below_min_23": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 149,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 151,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4864,
+      "solver:timeout_or_unsolved_fast": 66,
+      "struct:near_solved_forbidden": 18,
+      "struct:clumped_colors": 40,
+      "depth:below_min_36": 3,
+      "struct:top_color_clash": 2,
+      "depth:below_min_32": 3,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 152,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 153,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4832,
+      "struct:clumped_colors": 34,
+      "solver:timeout_or_unsolved_fast": 92,
+      "depth:below_min_36": 2,
+      "struct:near_solved_forbidden": 30,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 3,
+      "struct:top_color_clash": 1,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 154,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:clumped_colors": 56,
+      "struct:near_solved_forbidden": 22,
+      "depth:below_min_32": 3,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 3,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 155,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 156,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4820,
+      "solver:timeout_or_unsolved_fast": 94,
+      "struct:near_solved_forbidden": 41,
+      "struct:clumped_colors": 28,
+      "depth:below_min_36": 4,
+      "struct:top_color_clash": 3,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 157,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4876,
+      "struct:clumped_colors": 49,
+      "solver:timeout_or_unsolved_fast": 43,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_36": 4,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 5,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 158,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 159,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4844,
+      "struct:near_solved_forbidden": 25,
+      "struct:clumped_colors": 36,
+      "solver:timeout_or_unsolved_fast": 76,
+      "depth:below_min_36": 5,
+      "struct:top_color_clash": 2,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_32": 3,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 5
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 160,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "depth:below_min_36": 4,
+      "struct:clumped_colors": 45,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:near_solved_forbidden": 15,
+      "struct:top_color_clash": 4,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 2,
+      "depth:below_min_25": 5
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 161,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 162,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4815,
+      "struct:clumped_colors": 57,
+      "struct:near_solved_forbidden": 21,
+      "solver:timeout_or_unsolved_fast": 93,
+      "depth:below_min_38": 5,
+      "struct:top_color_clash": 2,
+      "depth:below_min_34": 3,
+      "depth:below_min_30": 1,
+      "depth:below_min_26": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 163,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "struct:clumped_colors": 51,
+      "solver:timeout_or_unsolved_fast": 53,
+      "depth:below_min_38": 3,
+      "struct:near_solved_forbidden": 20,
+      "depth:below_min_34": 4,
+      "depth:below_min_26": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 164,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 165,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4823,
+      "struct:clumped_colors": 45,
+      "solver:timeout_or_unsolved_fast": 98,
+      "struct:near_solved_forbidden": 21,
+      "depth:below_min_38": 4,
+      "struct:top_color_clash": 2,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 4
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 166,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4886,
+      "solver:timeout_or_unsolved_fast": 41,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 40,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_38": 3,
+      "depth:below_min_34": 4,
+      "depth:below_min_30": 1,
+      "depth:below_min_26": 4
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 167,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 168,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:clumped_colors": 58,
+      "struct:empty_tube_mismatch": 4816,
+      "solver:timeout_or_unsolved_fast": 89,
+      "struct:near_solved_forbidden": 27,
+      "depth:below_min_38": 3,
+      "depth:below_min_34": 4,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 169,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "struct:near_solved_forbidden": 27,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:clumped_colors": 37,
+      "depth:below_min_38": 2,
+      "depth:below_min_34": 3,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 170,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 171,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4876,
+      "struct:clumped_colors": 34,
+      "solver:timeout_or_unsolved_fast": 56,
+      "struct:near_solved_forbidden": 26,
+      "depth:below_min_40": 3,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 2,
+      "depth:below_min_28": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 172,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4900,
+      "struct:clumped_colors": 38,
+      "solver:timeout_or_unsolved_fast": 42,
+      "depth:below_min_40": 2,
+      "struct:near_solved_forbidden": 14,
+      "depth:below_min_36": 2,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 173,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 174,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4860,
+      "solver:timeout_or_unsolved_fast": 74,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 38,
+      "depth:below_min_40": 1,
+      "depth:below_min_36": 3,
+      "struct:top_color_clash": 2,
+      "depth:below_min_28": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 175,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "struct:clumped_colors": 53,
+      "struct:near_solved_forbidden": 16,
+      "solver:timeout_or_unsolved_fast": 32,
+      "struct:top_color_clash": 2,
+      "depth:below_min_28": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 176,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 177,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4877,
+      "struct:near_solved_forbidden": 22,
+      "solver:timeout_or_unsolved_fast": 63,
+      "struct:top_color_clash": 3,
+      "struct:clumped_colors": 27,
+      "depth:below_min_36": 3,
+      "depth:below_min_32": 3,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_28": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 178,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4902,
+      "solver:timeout_or_unsolved_fast": 37,
+      "struct:clumped_colors": 40,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 3,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 179,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 180,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4865,
+      "solver:timeout_or_unsolved_fast": 61,
+      "struct:clumped_colors": 48,
+      "struct:near_solved_forbidden": 20,
+      "struct:top_color_clash": 2,
+      "depth:below_min_40": 1,
+      "depth:below_min_36": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 181,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4899,
+      "struct:clumped_colors": 46,
+      "solver:timeout_or_unsolved_fast": 32,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 3,
+      "depth:below_min_37": 2,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 182,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 183,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4855,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:clumped_colors": 49,
+      "struct:near_solved_forbidden": 24,
+      "depth:below_min_42": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_33": 1,
+      "depth:below_min_29": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 184,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4912,
+      "solver:timeout_or_unsolved_fast": 38,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 30,
+      "depth:below_min_42": 1,
+      "depth:below_min_37": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 185,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 186,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4874,
+      "solver:timeout_or_unsolved_fast": 52,
+      "struct:clumped_colors": 46,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_42": 3,
+      "depth:below_min_37": 2,
+      "depth:below_min_33": 3,
+      "struct:top_color_clash": 2,
+      "depth:below_min_29": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 187,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4901,
+      "struct:near_solved_forbidden": 23,
+      "solver:timeout_or_unsolved_fast": 37,
+      "struct:clumped_colors": 34,
+      "depth:below_min_42": 1,
+      "depth:below_min_37": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_33": 1,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 188,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 189,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "solver:timeout_or_unsolved_fast": 70,
+      "struct:clumped_colors": 30,
+      "struct:near_solved_forbidden": 13,
+      "depth:below_min_42": 1,
+      "depth:below_min_37": 1,
+      "depth:below_min_33": 4,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 190,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4910,
+      "struct:clumped_colors": 32,
+      "solver:timeout_or_unsolved_fast": 44,
+      "depth:below_min_42": 2,
+      "struct:near_solved_forbidden": 8,
+      "struct:top_color_clash": 3,
+      "depth:below_min_37": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 191,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 192,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4863,
+      "solver:timeout_or_unsolved_fast": 70,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_44": 1,
+      "struct:clumped_colors": 38,
+      "struct:top_color_clash": 5,
+      "depth:below_min_35": 2,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 193,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4888,
+      "struct:clumped_colors": 39,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_44": 3,
+      "solver:timeout_or_unsolved_fast": 46,
+      "depth:below_min_39": 3,
+      "depth:below_min_35": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 194,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 195,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4845,
+      "solver:timeout_or_unsolved_fast": 73,
+      "struct:near_solved_forbidden": 24,
+      "struct:clumped_colors": 50,
+      "depth:below_min_44": 2,
+      "depth:below_min_39": 1,
+      "struct:top_color_clash": 3,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 196,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "struct:clumped_colors": 37,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 14,
+      "depth:below_min_39": 1,
+      "depth:below_min_30": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 197,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 198,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4875,
+      "struct:near_solved_forbidden": 21,
+      "struct:clumped_colors": 31,
+      "solver:timeout_or_unsolved_fast": 68,
+      "struct:top_color_clash": 3,
+      "depth:below_min_35": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 199,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "struct:clumped_colors": 29,
+      "depth:below_min_44": 3,
+      "struct:near_solved_forbidden": 21,
+      "solver:timeout_or_unsolved_fast": 35,
+      "struct:top_color_clash": 1,
+      "depth:below_min_35": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 200,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 201,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4861,
+      "solver:timeout_or_unsolved_fast": 85,
+      "struct:clumped_colors": 27,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 4,
+      "depth:below_min_46": 3,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_32": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 202,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4896,
+      "struct:clumped_colors": 40,
+      "struct:top_color_clash": 4,
+      "depth:below_min_46": 3,
+      "solver:timeout_or_unsolved_fast": 43,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_41": 1,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 203,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 204,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:clumped_colors": 37,
+      "struct:near_solved_forbidden": 12,
+      "struct:top_color_clash": 1,
+      "depth:below_min_46": 1,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 205,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4905,
+      "struct:clumped_colors": 32,
+      "struct:near_solved_forbidden": 13,
+      "solver:timeout_or_unsolved_fast": 47,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 206,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 207,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4851,
+      "solver:timeout_or_unsolved_fast": 79,
+      "struct:clumped_colors": 38,
+      "struct:near_solved_forbidden": 25,
+      "struct:top_color_clash": 2,
+      "depth:below_min_41": 2,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 208,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "solver:timeout_or_unsolved_fast": 48,
+      "struct:near_solved_forbidden": 17,
+      "struct:clumped_colors": 34,
+      "depth:below_min_46": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_41": 2,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 209,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 210,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4860,
+      "solver:timeout_or_unsolved_fast": 80,
+      "struct:clumped_colors": 33,
+      "struct:near_solved_forbidden": 22,
+      "depth:below_min_41": 2,
+      "struct:top_color_clash": 2,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 211,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4941,
+      "struct:near_solved_forbidden": 9,
+      "struct:clumped_colors": 26,
+      "depth:below_min_48": 3,
+      "solver:timeout_or_unsolved_fast": 19,
+      "depth:below_min_38": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 212,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 213,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "solver:timeout_or_unsolved_fast": 48,
+      "struct:clumped_colors": 37,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_38": 1,
+      "depth:below_min_33": 2,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 214,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:clumped_colors": 20,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:near_solved_forbidden": 15,
+      "struct:top_color_clash": 2,
+      "depth:below_min_38": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 215,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 216,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "struct:near_solved_forbidden": 17,
+      "solver:timeout_or_unsolved_fast": 47,
+      "struct:clumped_colors": 24,
+      "depth:below_min_43": 1,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 217,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4936,
+      "solver:timeout_or_unsolved_fast": 27,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 9,
+      "depth:below_min_48": 1,
+      "depth:below_min_38": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 218,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 219,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "depth:below_min_48": 1,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:clumped_colors": 27,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 18,
+      "depth:below_min_38": 1,
+      "depth:below_min_33": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 220,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4920,
+      "solver:timeout_or_unsolved_fast": 38,
+      "struct:clumped_colors": 25,
+      "struct:near_solved_forbidden": 13,
+      "depth:below_min_48": 1,
+      "depth:below_min_38": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 221,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 222,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4870,
+      "solver:timeout_or_unsolved_fast": 74,
+      "struct:near_solved_forbidden": 24,
+      "struct:clumped_colors": 28,
+      "depth:below_min_45": 1,
+      "depth:below_min_40": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 223,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "solver:timeout_or_unsolved_fast": 37,
+      "struct:clumped_colors": 27,
+      "struct:near_solved_forbidden": 11,
+      "struct:top_color_clash": 2,
+      "depth:below_min_50": 2,
+      "depth:below_min_45": 3,
+      "depth:below_min_40": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 224,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 225,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4902,
+      "solver:timeout_or_unsolved_fast": 45,
+      "struct:clumped_colors": 27,
+      "struct:near_solved_forbidden": 22,
+      "struct:top_color_clash": 2,
+      "depth:below_min_40": 1,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 226,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4928,
+      "solver:timeout_or_unsolved_fast": 31,
+      "struct:top_color_clash": 1,
+      "struct:clumped_colors": 27,
+      "struct:near_solved_forbidden": 10,
+      "depth:below_min_45": 1,
+      "depth:below_min_35": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 227,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 228,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "solver:timeout_or_unsolved_fast": 63,
+      "struct:clumped_colors": 35,
+      "struct:near_solved_forbidden": 16,
+      "struct:top_color_clash": 4,
+      "depth:below_min_50": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 229,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4936,
+      "struct:near_solved_forbidden": 13,
+      "struct:clumped_colors": 28,
+      "solver:timeout_or_unsolved_fast": 23
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 230,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 231,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:near_solved_forbidden": 12,
+      "solver:timeout_or_unsolved_fast": 49,
+      "struct:clumped_colors": 31,
+      "depth:below_min_52": 1,
+      "depth:below_min_46": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 232,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "struct:near_solved_forbidden": 18,
+      "solver:timeout_or_unsolved_fast": 25,
+      "struct:clumped_colors": 23,
+      "depth:below_min_52": 1,
+      "depth:below_min_46": 1,
+      "depth:below_min_36": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 233,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 234,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "solver:timeout_or_unsolved_fast": 60,
+      "struct:clumped_colors": 20,
+      "struct:near_solved_forbidden": 13,
+      "depth:below_min_41": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 235,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:near_solved_forbidden": 7,
+      "struct:clumped_colors": 26,
+      "struct:top_color_clash": 1,
+      "depth:below_min_41": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 236,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 237,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4890,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 21,
+      "struct:top_color_clash": 4,
+      "depth:below_min_41": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 238,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4918,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:clumped_colors": 32,
+      "struct:near_solved_forbidden": 14
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 239,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 240,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4910,
+      "struct:clumped_colors": 27,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_52": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 241,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:near_solved_forbidden": 13,
+      "solver:timeout_or_unsolved_fast": 26,
+      "struct:clumped_colors": 25,
+      "struct:top_color_clash": 2,
+      "depth:below_min_37": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 242,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 243,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4892,
+      "solver:timeout_or_unsolved_fast": 61,
+      "struct:clumped_colors": 30,
+      "struct:near_solved_forbidden": 14,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 244,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4929,
+      "solver:timeout_or_unsolved_fast": 28,
+      "struct:clumped_colors": 28,
+      "struct:near_solved_forbidden": 10,
+      "depth:below_min_48": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_43": 1,
+      "depth:below_min_37": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 245,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 246,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 25,
+      "solver:timeout_or_unsolved_fast": 61,
+      "depth:below_min_54": 1,
+      "depth:below_min_48": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_43": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 247,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "struct:clumped_colors": 24,
+      "solver:timeout_or_unsolved_fast": 38,
+      "struct:near_solved_forbidden": 8
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 248,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 249,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "struct:near_solved_forbidden": 23,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:clumped_colors": 28,
+      "struct:top_color_clash": 2,
+      "depth:below_min_43": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 250,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "solver:timeout_or_unsolved_fast": 34,
+      "struct:near_solved_forbidden": 7,
+      "struct:clumped_colors": 20,
+      "depth:below_min_54": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_48": 3
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 251,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 252,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 21,
+      "depth:below_min_39": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 253,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:clumped_colors": 33,
+      "solver:timeout_or_unsolved_fast": 24,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 254,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 255,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4919,
+      "struct:near_solved_forbidden": 17,
+      "struct:clumped_colors": 29,
+      "solver:timeout_or_unsolved_fast": 34,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 256,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4937,
+      "struct:near_solved_forbidden": 9,
+      "struct:clumped_colors": 29,
+      "solver:timeout_or_unsolved_fast": 25
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 257,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 258,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:clumped_colors": 30,
+      "solver:timeout_or_unsolved_fast": 35,
+      "struct:top_color_clash": 4,
+      "struct:near_solved_forbidden": 14
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 259,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "solver:timeout_or_unsolved_fast": 28,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 14,
+      "depth:below_min_56": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 260,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 261,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:near_solved_forbidden": 17,
+      "struct:clumped_colors": 28,
+      "solver:timeout_or_unsolved_fast": 30
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 262,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:near_solved_forbidden": 10,
+      "solver:timeout_or_unsolved_fast": 23,
+      "struct:clumped_colors": 31,
+      "struct:top_color_clash": 2,
+      "depth:below_min_40": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 263,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 264,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:clumped_colors": 16,
+      "solver:timeout_or_unsolved_fast": 47,
+      "struct:near_solved_forbidden": 9,
+      "depth:below_min_52": 2,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 265,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4948,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 14,
+      "solver:timeout_or_unsolved_fast": 11,
+      "struct:top_color_clash": 2,
+      "depth:below_min_52": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 266,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 267,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4922,
+      "struct:clumped_colors": 22,
+      "struct:near_solved_forbidden": 15,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 268,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:clumped_colors": 25,
+      "solver:timeout_or_unsolved_fast": 26,
+      "struct:near_solved_forbidden": 10
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 269,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 270,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4922,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:near_solved_forbidden": 8,
+      "struct:clumped_colors": 19,
+      "depth:below_min_58": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 271,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "struct:clumped_colors": 25,
+      "struct:top_color_clash": 4,
+      "struct:near_solved_forbidden": 9,
+      "solver:timeout_or_unsolved_fast": 22
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 272,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 273,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "solver:timeout_or_unsolved_fast": 51,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 10,
+      "depth:below_min_42": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 274,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "struct:near_solved_forbidden": 9,
+      "solver:timeout_or_unsolved_fast": 25,
+      "struct:clumped_colors": 32,
+      "struct:top_color_clash": 2,
+      "depth:below_min_60": 1,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 275,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 276,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4903,
+      "struct:clumped_colors": 32,
+      "solver:timeout_or_unsolved_fast": 52,
+      "struct:near_solved_forbidden": 12,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 277,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4943,
+      "struct:clumped_colors": 24,
+      "solver:timeout_or_unsolved_fast": 20,
+      "struct:near_solved_forbidden": 11,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 278,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 279,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "solver:timeout_or_unsolved_fast": 44,
+      "struct:clumped_colors": 25,
+      "struct:near_solved_forbidden": 13,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 280,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:clumped_colors": 28,
+      "struct:near_solved_forbidden": 11,
+      "solver:timeout_or_unsolved_fast": 34,
+      "depth:below_min_60": 1,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 281,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 282,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4936,
+      "struct:near_solved_forbidden": 14,
+      "struct:clumped_colors": 23,
+      "solver:timeout_or_unsolved_fast": 27
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 283,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4963,
+      "solver:timeout_or_unsolved_fast": 12,
+      "struct:clumped_colors": 17,
+      "struct:near_solved_forbidden": 7,
+      "depth:below_min_43": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 284,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 285,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4931,
+      "solver:timeout_or_unsolved_fast": 35,
+      "struct:clumped_colors": 29,
+      "struct:near_solved_forbidden": 5
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 286,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "struct:clumped_colors": 18,
+      "struct:near_solved_forbidden": 12,
+      "solver:timeout_or_unsolved_fast": 10,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 287,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 288,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 12,
+      "solver:timeout_or_unsolved_fast": 31
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 289,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:clumped_colors": 33,
+      "solver:timeout_or_unsolved_fast": 19,
+      "struct:near_solved_forbidden": 8,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 290,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 291,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4936,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:near_solved_forbidden": 13,
+      "struct:clumped_colors": 17,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 292,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "solver:timeout_or_unsolved_fast": 12,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 5
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 293,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 294,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "struct:near_solved_forbidden": 10,
+      "struct:clumped_colors": 24,
+      "solver:timeout_or_unsolved_fast": 30,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 295,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4946,
+      "solver:timeout_or_unsolved_fast": 18,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 296,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 297,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4929,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:clumped_colors": 21,
+      "struct:top_color_clash": 1,
+      "struct:near_solved_forbidden": 10
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 298,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4960,
+      "depth:below_min_64": 1,
+      "struct:clumped_colors": 14,
+      "solver:timeout_or_unsolved_fast": 16,
+      "struct:near_solved_forbidden": 9
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 299,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "theme_worlds",
+    "level": 300,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:near_solved_forbidden": 11,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:clumped_colors": 20
+    }
+  }
+]

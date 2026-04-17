@@ -70,6 +70,8 @@ class SoundService {
 
   Future<void> playFail() => _playRandom(_failSounds, volume: 0.55);
 
+  Future<void> playGameOver() =>
+      _playSingle('sounds/gameover3.mp3', volume: 0.82);
   Future<void> playWin() => _playRandom(_winSounds, volume: 0.85);
 
   Future<void> playBlockPlace() =>

@@ -107,7 +107,9 @@ class _TubeContainer extends StatelessWidget {
                   color: isSelected ? _accent() : _border(dark),
                   width: 2,
                 ),
-                color: dark ? Colors.white.withOpacity(0.08) : Colors.white.withOpacity(0.50),
+                color: dark
+                    ? Colors.white.withOpacity(0.08)
+                    : Colors.white.withOpacity(0.50),
               ),
             ),
             const SizedBox(height: 4),
@@ -119,7 +121,9 @@ class _TubeContainer extends StatelessWidget {
                     color: isSelected ? _accent() : _border(dark),
                     width: isSelected ? 2.6 : 2.0,
                   ),
-                  color: dark ? Colors.white.withOpacity(0.06) : Colors.white.withOpacity(0.56),
+                  color: dark
+                      ? Colors.white.withOpacity(0.06)
+                      : Colors.white.withOpacity(0.56),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(8, 10, 8, 10),
@@ -129,7 +133,9 @@ class _TubeContainer extends StatelessWidget {
                       container.capacity,
                           (index) => Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(bottom: index == container.capacity - 1 ? 0 : 5),
+                          padding: EdgeInsets.only(
+                            bottom: index == container.capacity - 1 ? 0 : 5,
+                          ),
                           child: _TubeSlot(
                             piece: slots[index],
                             style: style,
@@ -291,7 +297,9 @@ class _BirdPerchContainer extends StatelessWidget {
                     child: Center(
                       child: slots[index] == null
                           ? const SizedBox.shrink()
-                          : _BetterBirdToken(color: _resolveColor(slots[index]!.groupKey)),
+                          : _BetterBirdToken(
+                        color: _resolveColor(slots[index]!.groupKey),
+                      ),
                     ),
                   ),
                 ),
@@ -439,7 +447,8 @@ class _TrianglePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _TrianglePainter oldDelegate) => oldDelegate.color != color;
+  bool shouldRepaint(covariant _TrianglePainter oldDelegate) =>
+      oldDelegate.color != color;
 }
 
 class _SandTexturePainter extends CustomPainter {
@@ -458,7 +467,8 @@ class _SandTexturePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant _SandTexturePainter oldDelegate) => oldDelegate.color != color;
+  bool shouldRepaint(covariant _SandTexturePainter oldDelegate) =>
+      oldDelegate.color != color;
 }
 
 List<SortPiece?> _slotsFromBottom(SortContainer container) {
@@ -493,6 +503,22 @@ Color _resolveColor(String? groupKey) {
       return const Color(0xFF35C7C2);
     case 'brown':
       return const Color(0xFFA66A3F);
+    case 'cyan':
+      return const Color(0xFF21C7E8);
+    case 'lime':
+      return const Color(0xFF9AD93A);
+    case 'navy':
+      return const Color(0xFF2F4B8F);
+    case 'gold':
+      return const Color(0xFFE3B341);
+    case 'silver':
+      return const Color(0xFFB8C2CC);
+    case 'maroon':
+      return const Color(0xFF7A2E52);
+    case 'indigo':
+      return const Color(0xFF5B5BD6);
+    case 'crimson':
+      return const Color(0xFFD63A4A);
     default:
       return const Color(0xFF9AA4B2);
   }
@@ -500,10 +526,14 @@ Color _resolveColor(String? groupKey) {
 
 Color _brighten(Color color, double amount) {
   final hsl = HSLColor.fromColor(color);
-  return hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0)).toColor();
+  return hsl
+      .withLightness((hsl.lightness + amount).clamp(0.0, 1.0))
+      .toColor();
 }
 
 Color _darken(Color color, double amount) {
   final hsl = HSLColor.fromColor(color);
-  return hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0)).toColor();
+  return hsl
+      .withLightness((hsl.lightness - amount).clamp(0.0, 1.0))
+      .toColor();
 }

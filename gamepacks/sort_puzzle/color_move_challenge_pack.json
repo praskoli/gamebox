@@ -1,0 +1,68 @@
+{
+  "world": "move_challenge",
+  "variant": "color",
+  "levels": [
+    {
+      "levelNumber": 7,
+      "world": "move_challenge",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": 14,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    }
+  ]
+}

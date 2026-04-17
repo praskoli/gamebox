@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:gamebox/games/sort_puzzle/creator/models/sort_puzzle_creator_draft.dart';
+import '../creator/models/sort_puzzle_creator_draft.dart';
 
 class SortPuzzleRepository {
   SortPuzzleRepository._();
@@ -22,7 +22,7 @@ class SortPuzzleRepository {
   String get _currentUid {
     final String? uid = _auth.currentUser?.uid;
     if (uid == null || uid.isEmpty) {
-      throw StateError('User must be logged in to save DIY sort puzzles.');
+      throw StateError('User must be logged in to save Sort Puzzle projects.');
     }
     return uid;
   }
@@ -38,26 +38,18 @@ class SortPuzzleRepository {
   Future<String> saveDraft(SortPuzzleCreatorDraft draft) async {
     final String uid = _currentUid;
     final CollectionReference<Map<String, dynamic>> collection = _collection(uid);
-    final String docId = draft.id.isNotEmpty ? draft.id : collection.doc().id;
+    final String projectId = draft.id.isNotEmpty ? draft.id : collection.doc().id;
 
-    final DocumentReference<Map<String, dynamic>> docRef = collection.doc(docId);
+    final DocumentReference<Map<String, dynamic>> docRef = collection.doc(projectId);
     final DocumentSnapshot<Map<String, dynamic>> existing = await docRef.get();
 
     final Map<String, dynamic> data = draft
         .copyWith(
-      id: docId,
+      id: projectId,
       ownerUid: uid,
-      creatorName: draft.creatorName.trim().isEmpty
-          ? 'Arena Builder'
-          : draft.creatorName.trim(),
     )
         .toJson();
 
-    data['id'] = docId;
-    data['ownerUid'] = uid;
-    data['creatorName'] =
-    draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim();
-    data['gameType'] = 'sort_puzzle';
     data['updatedAt'] = FieldValue.serverTimestamp();
 
     if (existing.exists) {
@@ -68,10 +60,11 @@ class SortPuzzleRepository {
       data['reviewedAt'] = previous?['reviewedAt'];
       data['reviewedBy'] = previous?['reviewedBy'] ?? '';
       data['rejectionReason'] = previous?['rejectionReason'] ?? '';
-      data['communityVisible'] = previous?['communityVisible'] ?? false;
       data['approvedAt'] = previous?['approvedAt'];
-      data['playCount'] = previous?['playCount'] ?? 0;
-      data['likesCount'] = previous?['likesCount'] ?? 0;
+      data['communityVisible'] = previous?['communityVisible'] ?? false;
+      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
+          ? data['creatorName']
+          : (previous?['creatorName'] ?? 'Arena Builder');
     } else {
       data['createdAt'] = FieldValue.serverTimestamp();
       data['status'] = 'draft';
@@ -79,32 +72,35 @@ class SortPuzzleRepository {
       data['reviewedAt'] = null;
       data['reviewedBy'] = '';
       data['rejectionReason'] = '';
-      data['communityVisible'] = false;
       data['approvedAt'] = null;
-      data['playCount'] = 0;
-      data['likesCount'] = 0;
+      data['communityVisible'] = false;
+      data['creatorName'] = (data['creatorName'] ?? '').toString().trim().isNotEmpty
+          ? data['creatorName']
+          : 'Arena Builder';
     }
 
     await docRef.set(data, SetOptions(merge: true));
-    return docId;
+    return projectId;
   }
 
   Future<void> submitForReview(SortPuzzleCreatorDraft draft) async {
     final String uid = _currentUid;
-    final String docId = await saveDraft(
+
+    final String projectId = await saveDraft(
       draft.copyWith(
         ownerUid: uid,
         status: 'pending_review',
       ),
     );
 
-    await _collection(uid).doc(docId).set(
+    await _collection(uid).doc(projectId).set(
       <String, dynamic>{
-        'id': docId,
+        'id': projectId,
         'ownerUid': uid,
         'gameType': 'sort_puzzle',
-        'creatorName':
-        draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim(),
+        'creatorName': draft.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : draft.creatorName.trim(),
         'status': 'pending_review',
         'submittedAt': FieldValue.serverTimestamp(),
         'updatedAt': FieldValue.serverTimestamp(),
@@ -115,48 +111,50 @@ class SortPuzzleRepository {
     );
   }
 
-  Stream<List<SortPuzzleCreatorDraft>> watchProjectsByStatus(String status) {
-    return _firestore
-        .collectionGroup('custom_games')
+  Stream<List<SortPuzzleCreatorDraft>> watchDrafts() {
+    final String uid = _currentUid;
+
+    return _collection(uid)
         .where('gameType', isEqualTo: 'sort_puzzle')
-        .where('status', isEqualTo: status)
+        .orderBy('updatedAt', descending: true)
         .snapshots()
         .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
-      final List<SortPuzzleCreatorDraft> items = snapshot.docs
-          .map((doc) => SortPuzzleCreatorDraft.fromFirestore(doc.data(), doc.id))
-          .toList(growable: false);
-
-      items.sort((a, b) {
-        final DateTime aTime = a.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
-        final DateTime bTime = b.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
-        return bTime.compareTo(aTime);
-      });
-
-      return items;
+      return snapshot.docs
+          .map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+        final Map<String, dynamic> data = doc.data();
+        return SortPuzzleCreatorDraft.fromFirestore(data, doc.id);
+      }).toList(growable: false);
     });
   }
 
-  Future<bool> canSubmitMoreGames() async {
+  Future<SortPuzzleCreatorDraft?> getById(String id) async {
     final String uid = _currentUid;
-    final AggregateQuerySnapshot snapshot = await _collection(uid)
-        .where('gameType', isEqualTo: 'sort_puzzle')
-        .where('status', whereIn: const <String>['pending_review', 'approved'])
-        .count()
-        .get();
-    return (snapshot.count ?? 0) < 2;
+    final DocumentSnapshot<Map<String, dynamic>> doc =
+    await _collection(uid).doc(id).get();
+
+    if (!doc.exists) return null;
+
+    return SortPuzzleCreatorDraft.fromFirestore(doc.data()!, doc.id);
+  }
+
+  Future<void> deleteDraft(String id) async {
+    final String uid = _currentUid;
+    await _collection(uid).doc(id).delete();
   }
 
   Future<bool> isCurrentUserAdminReviewer() async {
-    final String currentEmail = _currentEmail;
-    final String currentUid = _currentUid;
-
     try {
+      final String currentUid = _auth.currentUser?.uid?.trim() ?? '';
+      final String currentEmail =
+          _auth.currentUser?.email?.trim().toLowerCase() ?? '';
+
       final DocumentSnapshot<Map<String, dynamic>> doc = await _firestore
           .collection(_adminConfigCollection)
           .doc(_adminConfigDocId)
           .get();
 
       final Map<String, dynamic>? data = doc.data();
+
       final dynamic rawAllowedEmails = data?['allowedEmails'];
       final dynamic rawAllowedUids = data?['allowedUids'];
 
@@ -166,7 +164,8 @@ class SortPuzzleRepository {
             .map((e) => e.toString().trim().toLowerCase())
             .where((e) => e.isNotEmpty)
             .toList(growable: false);
-      } else if (rawAllowedEmails is String && rawAllowedEmails.trim().isNotEmpty) {
+      } else if (rawAllowedEmails is String &&
+          rawAllowedEmails.trim().isNotEmpty) {
         allowedEmails = <String>[rawAllowedEmails.trim().toLowerCase()];
       } else {
         allowedEmails = <String>[_fallbackAdminEmail];
@@ -178,22 +177,60 @@ class SortPuzzleRepository {
             .map((e) => e.toString().trim())
             .where((e) => e.isNotEmpty)
             .toList(growable: false);
-      } else if (rawAllowedUids is String && rawAllowedUids.trim().isNotEmpty) {
+      } else if (rawAllowedUids is String &&
+          rawAllowedUids.trim().isNotEmpty) {
         allowedUids = <String>[rawAllowedUids.trim()];
       } else {
         allowedUids = const <String>[];
       }
 
-      return allowedUids.contains(currentUid) || allowedEmails.contains(currentEmail);
+      if (currentUid.isNotEmpty && allowedUids.contains(currentUid)) {
+        return true;
+      }
+
+      if (currentEmail.isNotEmpty && allowedEmails.contains(currentEmail)) {
+        return true;
+      }
+
+      return false;
     } catch (_) {
-      return currentEmail == _fallbackAdminEmail;
+      final String fallbackEmail =
+          _auth.currentUser?.email?.trim().toLowerCase() ?? '';
+      return fallbackEmail == _fallbackAdminEmail;
     }
+  }
+
+  Stream<List<SortPuzzleCreatorDraft>> watchProjectsByStatus(String status) {
+    return _firestore
+        .collectionGroup('custom_games')
+        .where('gameType', isEqualTo: 'sort_puzzle')
+        .where('status', isEqualTo: status)
+        .snapshots()
+        .map((QuerySnapshot<Map<String, dynamic>> snapshot) {
+      final List<SortPuzzleCreatorDraft> items = snapshot.docs.map((doc) {
+        return SortPuzzleCreatorDraft.fromFirestore(doc.data(), doc.id);
+      }).toList(growable: false);
+
+      items.sort((a, b) {
+        final DateTime aTime =
+            a.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+        final DateTime bTime =
+            b.updatedAt ?? DateTime.fromMillisecondsSinceEpoch(0);
+        return bTime.compareTo(aTime);
+      });
+
+      return items;
+    });
   }
 
   Future<void> approveProject(SortPuzzleCreatorDraft draft) async {
     final bool isAdmin = await isCurrentUserAdminReviewer();
     if (!isAdmin) {
-      throw StateError('Only admin reviewers can approve sort projects.');
+      throw StateError('Only admin reviewers can approve projects.');
+    }
+
+    if (draft.ownerUid.trim().isEmpty) {
+      throw StateError('Project owner UID is missing.');
     }
 
     final DocumentReference<Map<String, dynamic>> docRef = _firestore
@@ -211,8 +248,9 @@ class SortPuzzleRepository {
         'reviewedBy': _currentEmail,
         'rejectionReason': '',
         'updatedAt': FieldValue.serverTimestamp(),
-        'creatorName':
-        draft.creatorName.trim().isEmpty ? 'Arena Builder' : draft.creatorName.trim(),
+        'creatorName': draft.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : draft.creatorName.trim(),
         'gameType': 'sort_puzzle',
       },
       SetOptions(merge: true),
@@ -225,26 +263,42 @@ class SortPuzzleRepository {
       }) async {
     final bool isAdmin = await isCurrentUserAdminReviewer();
     if (!isAdmin) {
-      throw StateError('Only admin reviewers can reject sort projects.');
+      throw StateError('Only admin reviewers can reject projects.');
     }
 
-    final DocumentReference<Map<String, dynamic>> docRef = _firestore
+    if (draft.ownerUid.trim().isEmpty) {
+      throw StateError('Project owner UID is missing.');
+    }
+
+    await _firestore
         .collection('users')
         .doc(draft.ownerUid)
         .collection('custom_games')
-        .doc(draft.id);
-
-    await docRef.set(
+        .doc(draft.id)
+        .set(
       <String, dynamic>{
         'status': 'rejected',
-        'communityVisible': false,
         'reviewedAt': FieldValue.serverTimestamp(),
         'reviewedBy': _currentEmail,
         'rejectionReason': reason.trim(),
         'updatedAt': FieldValue.serverTimestamp(),
+        'creatorName': draft.creatorName.trim().isEmpty
+            ? 'Arena Builder'
+            : draft.creatorName.trim(),
         'gameType': 'sort_puzzle',
       },
       SetOptions(merge: true),
     );
+  }
+
+  Future<bool> canSubmitMoreGames() async {
+    final String uid = _currentUid;
+
+    final QuerySnapshot<Map<String, dynamic>> snapshot = await _collection(uid)
+        .where('gameType', isEqualTo: 'sort_puzzle')
+        .where('status', whereIn: ['pending_review', 'approved'])
+        .get();
+
+    return snapshot.docs.length < 2;
   }
 }

@@ -1,0 +1,4311 @@
+[
+  {
+    "world": "move_challenge",
+    "level": 1,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "SPRINT",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4757,
+      "struct:not_enough_mixed": 236,
+      "struct:near_solved_forbidden": 4,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 2,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 221,
+      "struct:empty_tube_mismatch": 4769,
+      "struct:near_solved_forbidden": 7,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 3,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "DECOY",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4746,
+      "struct:not_enough_mixed": 234,
+      "struct:near_solved_forbidden": 8,
+      "struct:too_many_solved": 12
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 4,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "SPRINT",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4718,
+      "struct:not_enough_mixed": 276,
+      "struct:near_solved_forbidden": 4,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 5,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4735,
+      "struct:not_enough_mixed": 249,
+      "struct:too_many_solved": 7,
+      "struct:near_solved_forbidden": 9
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 6,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "DECOY",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4760,
+      "struct:not_enough_mixed": 211,
+      "struct:near_solved_forbidden": 13,
+      "struct:too_many_solved": 16
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 8,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4745,
+      "struct:not_enough_mixed": 249,
+      "struct:too_many_solved": 5,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 9,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "DECOY",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4742,
+      "struct:not_enough_mixed": 234,
+      "struct:near_solved_forbidden": 10,
+      "struct:too_many_solved": 14
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 10,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "SPRINT",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4753,
+      "struct:not_enough_mixed": 240,
+      "struct:too_many_solved": 4,
+      "struct:near_solved_forbidden": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 11,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4755,
+      "struct:not_enough_mixed": 236,
+      "struct:near_solved_forbidden": 4,
+      "struct:too_many_solved": 4,
+      "depth:below_min_8": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 12,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "DECOY",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4736,
+      "struct:not_enough_mixed": 222,
+      "struct:near_solved_forbidden": 17,
+      "struct:too_many_solved": 25
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 13,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "SPRINT",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4749,
+      "struct:not_enough_mixed": 242,
+      "struct:too_many_solved": 3,
+      "struct:near_solved_forbidden": 6
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 14,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4760,
+      "struct:not_enough_mixed": 235,
+      "struct:near_solved_forbidden": 3,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 15,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "DECOY",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4753,
+      "struct:not_enough_mixed": 223,
+      "struct:too_many_solved": 13,
+      "depth:below_min_8": 1,
+      "struct:near_solved_forbidden": 10
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 16,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "SPRINT",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4758,
+      "struct:not_enough_mixed": 238,
+      "struct:too_many_solved": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 17,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4752,
+      "struct:not_enough_mixed": 240,
+      "struct:too_many_solved": 4,
+      "struct:near_solved_forbidden": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 18,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "DECOY",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 210,
+      "struct:empty_tube_mismatch": 4767,
+      "struct:too_many_solved": 10,
+      "struct:near_solved_forbidden": 13
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 19,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "SPRINT",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4758,
+      "struct:not_enough_mixed": 236,
+      "struct:near_solved_forbidden": 5,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 20,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4724,
+      "struct:not_enough_mixed": 266,
+      "struct:near_solved_forbidden": 5,
+      "struct:too_many_solved": 5
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 21,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "DECOY",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4738,
+      "struct:not_enough_mixed": 230,
+      "struct:too_many_solved": 16,
+      "depth:below_min_10": 2,
+      "struct:near_solved_forbidden": 13,
+      "depth:below_min_9": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 22,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "SPRINT",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4741,
+      "struct:not_enough_mixed": 253,
+      "struct:near_solved_forbidden": 2,
+      "struct:too_many_solved": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 23,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4777,
+      "struct:not_enough_mixed": 212,
+      "struct:near_solved_forbidden": 5,
+      "struct:too_many_solved": 6
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 24,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "DECOY",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4753,
+      "struct:not_enough_mixed": 210,
+      "struct:near_solved_forbidden": 11,
+      "struct:too_many_solved": 23,
+      "depth:below_min_10": 1,
+      "depth:below_min_9": 1,
+      "depth:below_min_8": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 25,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "SPRINT",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4749,
+      "struct:not_enough_mixed": 248,
+      "struct:near_solved_forbidden": 1,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 26,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4727,
+      "struct:not_enough_mixed": 263,
+      "struct:too_many_solved": 6,
+      "struct:near_solved_forbidden": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 27,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "DECOY",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4757,
+      "struct:not_enough_mixed": 209,
+      "struct:too_many_solved": 21,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_9": 1,
+      "depth:below_min_8": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 28,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "SPRINT",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4743,
+      "struct:not_enough_mixed": 251,
+      "struct:near_solved_forbidden": 5,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 29,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4746,
+      "struct:not_enough_mixed": 245,
+      "struct:near_solved_forbidden": 7,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 30,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "DECOY",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4757,
+      "struct:not_enough_mixed": 208,
+      "struct:too_many_solved": 14,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_10": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 31,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "SPRINT",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4910,
+      "struct:not_enough_mixed": 90
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 32,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4898,
+      "struct:not_enough_mixed": 102
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 33,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "DECOY",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4879,
+      "struct:not_enough_mixed": 106,
+      "struct:too_many_solved": 13,
+      "depth:below_min_12": 1,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 34,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "SPRINT",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4903,
+      "struct:not_enough_mixed": 97
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 35,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:not_enough_mixed": 83
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 36,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "DECOY",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "struct:not_enough_mixed": 94,
+      "struct:too_many_solved": 11,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 37,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "SPRINT",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4898,
+      "struct:not_enough_mixed": 102
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 38,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "struct:not_enough_mixed": 91
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 39,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "DECOY",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "struct:not_enough_mixed": 92,
+      "struct:too_many_solved": 12,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 40,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "SPRINT",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4902,
+      "struct:not_enough_mixed": 98
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 41,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4935,
+      "struct:not_enough_mixed": 65
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 42,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "DECOY",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "struct:not_enough_mixed": 64,
+      "struct:too_many_solved": 12
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 43,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "SPRINT",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "struct:not_enough_mixed": 86
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 44,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "struct:not_enough_mixed": 84
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 45,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "DECOY",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:too_many_solved": 10,
+      "struct:not_enough_mixed": 84
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 46,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "SPRINT",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "struct:not_enough_mixed": 76
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 47,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:not_enough_mixed": 68
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 48,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "DECOY",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:not_enough_mixed": 67,
+      "struct:too_many_solved": 8
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 49,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "SPRINT",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4926,
+      "struct:not_enough_mixed": 74
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 50,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4901,
+      "struct:not_enough_mixed": 99
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 51,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "DECOY",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 86,
+      "struct:empty_tube_mismatch": 4904,
+      "struct:too_many_solved": 10
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 52,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "SPRINT",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4929,
+      "struct:not_enough_mixed": 71
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 53,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "struct:not_enough_mixed": 84
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 54,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "DECOY",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "struct:too_many_solved": 10,
+      "struct:not_enough_mixed": 69
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 55,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "SPRINT",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "struct:not_enough_mixed": 79
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 56,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "struct:not_enough_mixed": 77
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 57,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "DECOY",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "struct:too_many_solved": 7,
+      "struct:not_enough_mixed": 69
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 58,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "SPRINT",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "struct:not_enough_mixed": 86
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 59,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4922,
+      "struct:not_enough_mixed": 78
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 60,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "DECOY",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "struct:not_enough_mixed": 66,
+      "struct:too_many_solved": 10,
+      "struct:clumped_colors": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 61,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "SPRINT",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4931,
+      "struct:not_enough_mixed": 69
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 62,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:not_enough_mixed": 75
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 63,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "DECOY",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "struct:not_enough_mixed": 81,
+      "struct:too_many_solved": 8
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 64,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "SPRINT",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:not_enough_mixed": 68
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 65,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4913,
+      "struct:not_enough_mixed": 87
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 66,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "DECOY",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4918,
+      "struct:not_enough_mixed": 74,
+      "struct:too_many_solved": 7,
+      "struct:clumped_colors": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 67,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "SPRINT",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:not_enough_mixed": 68
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 68,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "struct:not_enough_mixed": 66
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 69,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "DECOY",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4913,
+      "struct:not_enough_mixed": 79,
+      "struct:too_many_solved": 7,
+      "struct:clumped_colors": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 70,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "SPRINT",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4938,
+      "struct:not_enough_mixed": 62
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 71,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 125,
+      "struct:empty_tube_mismatch": 4872,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 72,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "DECOY",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4832,
+      "struct:not_enough_mixed": 162,
+      "struct:too_many_solved": 6
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 73,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "SPRINT",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "struct:not_enough_mixed": 137,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 74,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "struct:not_enough_mixed": 130,
+      "struct:too_many_solved": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 75,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "DECOY",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 151,
+      "struct:empty_tube_mismatch": 4840,
+      "struct:too_many_solved": 9
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 76,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "SPRINT",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4872,
+      "struct:not_enough_mixed": 127,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 77,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4865,
+      "struct:not_enough_mixed": 134,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 78,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "DECOY",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "struct:not_enough_mixed": 134,
+      "struct:too_many_solved": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 79,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "SPRINT",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4890,
+      "struct:not_enough_mixed": 108,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 80,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4860,
+      "struct:not_enough_mixed": 139,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 81,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "DECOY",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4858,
+      "struct:not_enough_mixed": 135,
+      "struct:too_many_solved": 7
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 82,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "SPRINT",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4900,
+      "struct:not_enough_mixed": 99,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 83,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "struct:not_enough_mixed": 116
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 84,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "DECOY",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "struct:not_enough_mixed": 104,
+      "struct:too_many_solved": 5
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 85,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "SPRINT",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4890,
+      "struct:not_enough_mixed": 109,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 86,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4883,
+      "struct:not_enough_mixed": 115,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 87,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "DECOY",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4887,
+      "struct:not_enough_mixed": 110,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 88,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "SPRINT",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "struct:not_enough_mixed": 117,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 89,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4869,
+      "struct:not_enough_mixed": 129,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 90,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "DECOY",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4869,
+      "struct:not_enough_mixed": 130,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 91,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "struct:not_enough_mixed": 114,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 92,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4901,
+      "struct:not_enough_mixed": 98,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 93,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "DECOY",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4867,
+      "struct:not_enough_mixed": 132,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 94,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "struct:not_enough_mixed": 120,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 95,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "struct:not_enough_mixed": 115,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 96,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "DECOY",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "struct:not_enough_mixed": 114,
+      "struct:too_many_solved": 6
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 97,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4897,
+      "struct:not_enough_mixed": 101,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 98,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4892,
+      "struct:not_enough_mixed": 104,
+      "struct:too_many_solved": 4
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 99,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "DECOY",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4889,
+      "struct:not_enough_mixed": 106,
+      "struct:too_many_solved": 5
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 100,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4869,
+      "struct:not_enough_mixed": 128,
+      "struct:too_many_solved": 3
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 101,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4947,
+      "struct:not_enough_mixed": 53
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 102,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "DECOY",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "struct:not_enough_mixed": 70
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 103,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4949,
+      "struct:not_enough_mixed": 51
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 104,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4945,
+      "struct:not_enough_mixed": 55
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 105,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "DECOY",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 63,
+      "struct:empty_tube_mismatch": 4935,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 106,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4942,
+      "struct:not_enough_mixed": 58
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 107,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4955,
+      "struct:not_enough_mixed": 45
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 108,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "DECOY",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "struct:not_enough_mixed": 59,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 109,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4948,
+      "struct:not_enough_mixed": 52
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 110,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:not_enough_mixed": 61
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 111,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "DECOY",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4941,
+      "struct:not_enough_mixed": 57,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 112,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4950,
+      "struct:not_enough_mixed": 50
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 113,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:not_enough_mixed": 61
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 114,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "DECOY",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:not_enough_mixed": 60,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 115,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4956,
+      "struct:not_enough_mixed": 44
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 116,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4952,
+      "struct:not_enough_mixed": 48
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 117,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "DECOY",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4945,
+      "struct:not_enough_mixed": 53,
+      "struct:too_many_solved": 2
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 118,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4956,
+      "struct:not_enough_mixed": 44
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 119,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4945,
+      "struct:not_enough_mixed": 55
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 120,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "DECOY",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:not_enough_mixed": 66,
+      "struct:too_many_solved": 1
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 121,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4956,
+      "struct:not_enough_mixed": 44
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 122,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4957,
+      "struct:not_enough_mixed": 43
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 123,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "DECOY",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4948,
+      "struct:not_enough_mixed": 52
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 124,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4967,
+      "struct:not_enough_mixed": 33
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 125,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4960,
+      "struct:not_enough_mixed": 40
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 126,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "DECOY",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4950,
+      "struct:not_enough_mixed": 50
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 127,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4958,
+      "struct:not_enough_mixed": 42
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 128,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4967,
+      "struct:not_enough_mixed": 33
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 129,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "DECOY",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4951,
+      "struct:not_enough_mixed": 49
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 130,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4951,
+      "struct:not_enough_mixed": 49
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 131,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4954,
+      "struct:not_enough_mixed": 46
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 132,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "DECOY",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4946,
+      "struct:not_enough_mixed": 54
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 133,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4956,
+      "struct:not_enough_mixed": 44
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 134,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4972,
+      "struct:not_enough_mixed": 28
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 135,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "DECOY",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4950,
+      "struct:not_enough_mixed": 50
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 136,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4961,
+      "struct:not_enough_mixed": 39
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 137,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4969,
+      "struct:not_enough_mixed": 31
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 138,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "DECOY",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4937,
+      "struct:not_enough_mixed": 63
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 139,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4957,
+      "struct:not_enough_mixed": 43
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 140,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4966,
+      "struct:not_enough_mixed": 34
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 141,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4944,
+      "struct:not_enough_mixed": 56
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 142,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "struct:not_enough_mixed": 41
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 143,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "struct:not_enough_mixed": 41
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 144,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "struct:not_enough_mixed": 41
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 145,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4968,
+      "struct:not_enough_mixed": 32
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 146,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4962,
+      "struct:not_enough_mixed": 38
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 147,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4949,
+      "struct:not_enough_mixed": 51
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 148,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4965,
+      "struct:not_enough_mixed": 35
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 149,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4958,
+      "struct:not_enough_mixed": 42
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 150,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4952,
+      "struct:not_enough_mixed": 48
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 151,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4665,
+      "struct:not_enough_mixed": 335
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 152,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4658,
+      "struct:not_enough_mixed": 342
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 153,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4610,
+      "struct:not_enough_mixed": 390
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 154,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4667,
+      "struct:not_enough_mixed": 333
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 155,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4664,
+      "struct:not_enough_mixed": 336
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 156,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4640,
+      "struct:not_enough_mixed": 360
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 157,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4688,
+      "struct:not_enough_mixed": 312
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 158,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4628,
+      "struct:not_enough_mixed": 372
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 159,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4601,
+      "struct:not_enough_mixed": 399
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 160,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4686,
+      "struct:not_enough_mixed": 314
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 161,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4835,
+      "struct:not_enough_mixed": 165
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 162,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4819,
+      "struct:not_enough_mixed": 181
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 163,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4842,
+      "struct:not_enough_mixed": 158
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 164,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4851,
+      "struct:not_enough_mixed": 149
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 165,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4804,
+      "struct:not_enough_mixed": 196
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 166,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4841,
+      "struct:not_enough_mixed": 159
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 167,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 156,
+      "struct:empty_tube_mismatch": 4844
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 168,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4821,
+      "struct:not_enough_mixed": 179
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 169,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4844,
+      "struct:not_enough_mixed": 156
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 170,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4841,
+      "struct:not_enough_mixed": 159
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 171,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4864,
+      "struct:not_enough_mixed": 136
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 172,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4863,
+      "struct:not_enough_mixed": 137
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 173,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4875,
+      "struct:not_enough_mixed": 125
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 174,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4843,
+      "struct:not_enough_mixed": 157
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 175,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "struct:not_enough_mixed": 127
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 176,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4877,
+      "struct:not_enough_mixed": 123
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 177,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4839,
+      "struct:not_enough_mixed": 161
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 178,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4864,
+      "struct:not_enough_mixed": 136
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 179,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "struct:not_enough_mixed": 118
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 180,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4855,
+      "struct:not_enough_mixed": 145
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 181,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4868,
+      "struct:not_enough_mixed": 132
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 182,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4855,
+      "struct:not_enough_mixed": 145
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 183,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4851,
+      "struct:not_enough_mixed": 149
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 184,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "struct:not_enough_mixed": 118
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 185,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "struct:not_enough_mixed": 138
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 186,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4835,
+      "struct:not_enough_mixed": 165
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 187,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "struct:not_enough_mixed": 122
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 188,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "struct:not_enough_mixed": 122
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 189,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4833,
+      "struct:not_enough_mixed": 167
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 190,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "struct:not_enough_mixed": 127
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 191,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4851,
+      "struct:not_enough_mixed": 149
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 192,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4833,
+      "struct:not_enough_mixed": 167
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 193,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4860,
+      "struct:not_enough_mixed": 140
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 194,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 129,
+      "struct:empty_tube_mismatch": 4871
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 195,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4830,
+      "struct:not_enough_mixed": 170
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 196,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "struct:not_enough_mixed": 118
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 197,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 125,
+      "struct:empty_tube_mismatch": 4875
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 198,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4827,
+      "struct:not_enough_mixed": 173
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 199,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4871,
+      "struct:not_enough_mixed": 129
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 200,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4869,
+      "struct:not_enough_mixed": 131
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 201,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4846,
+      "struct:not_enough_mixed": 154
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 202,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4863,
+      "struct:not_enough_mixed": 137
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 203,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 136,
+      "struct:empty_tube_mismatch": 4864
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 204,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4825,
+      "struct:not_enough_mixed": 175
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 205,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4853,
+      "struct:not_enough_mixed": 147
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 206,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4841,
+      "struct:not_enough_mixed": 159
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 207,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4805,
+      "struct:not_enough_mixed": 195
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 208,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4865,
+      "struct:not_enough_mixed": 135
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 209,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4859,
+      "struct:not_enough_mixed": 141
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 210,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4835,
+      "struct:not_enough_mixed": 165
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 211,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "struct:not_enough_mixed": 118
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 212,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "struct:not_enough_mixed": 109
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 213,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "struct:not_enough_mixed": 138
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 214,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4871,
+      "struct:not_enough_mixed": 129
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 215,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4881,
+      "struct:not_enough_mixed": 119
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 216,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4868,
+      "struct:not_enough_mixed": 132
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 217,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4886,
+      "struct:not_enough_mixed": 114
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 218,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4875,
+      "struct:not_enough_mixed": 125
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 219,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4849,
+      "struct:not_enough_mixed": 151
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 220,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "struct:not_enough_mixed": 116
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 221,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4732,
+      "struct:not_enough_mixed": 268
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 222,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4717,
+      "struct:not_enough_mixed": 283
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 223,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4760,
+      "struct:not_enough_mixed": 240
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 224,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4731,
+      "struct:not_enough_mixed": 269
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 225,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 293,
+      "struct:empty_tube_mismatch": 4707
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 226,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4719,
+      "struct:not_enough_mixed": 281
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 227,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4701,
+      "struct:not_enough_mixed": 299
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 228,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4695,
+      "struct:not_enough_mixed": 305
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 229,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4740,
+      "struct:not_enough_mixed": 260
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 230,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4710,
+      "struct:not_enough_mixed": 290
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 231,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4856,
+      "struct:not_enough_mixed": 144
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 232,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "struct:not_enough_mixed": 109
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 233,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "struct:not_enough_mixed": 89
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 234,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "struct:not_enough_mixed": 134
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 235,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4896,
+      "struct:not_enough_mixed": 104
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 236,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4889,
+      "struct:not_enough_mixed": 111
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 237,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4867,
+      "struct:not_enough_mixed": 133
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 238,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "struct:not_enough_mixed": 122
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 239,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4900,
+      "struct:not_enough_mixed": 100
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 240,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4860,
+      "struct:not_enough_mixed": 140
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 241,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4759,
+      "struct:not_enough_mixed": 241
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 242,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4731,
+      "struct:not_enough_mixed": 269
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 243,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4707,
+      "struct:not_enough_mixed": 293
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 244,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4746,
+      "struct:not_enough_mixed": 254
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 245,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4738,
+      "struct:not_enough_mixed": 262
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 246,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4699,
+      "struct:not_enough_mixed": 301
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 247,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4717,
+      "struct:not_enough_mixed": 283
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 248,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4754,
+      "struct:not_enough_mixed": 246
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 249,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4700,
+      "struct:not_enough_mixed": 300
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 250,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4712,
+      "struct:not_enough_mixed": 288
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 251,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "struct:not_enough_mixed": 109
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 252,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4868,
+      "struct:not_enough_mixed": 132
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 253,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:not_enough_mixed": 83
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 254,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4896,
+      "struct:not_enough_mixed": 104
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 255,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4879,
+      "struct:not_enough_mixed": 121
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 256,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "struct:not_enough_mixed": 89
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 257,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4896,
+      "struct:not_enough_mixed": 104
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 258,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4888,
+      "struct:not_enough_mixed": 112
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 259,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "struct:not_enough_mixed": 91
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 260,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4888,
+      "struct:not_enough_mixed": 112
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 261,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4737,
+      "struct:not_enough_mixed": 263
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 262,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4780,
+      "struct:not_enough_mixed": 220
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 263,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4756,
+      "struct:not_enough_mixed": 244
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 264,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4700,
+      "struct:not_enough_mixed": 300
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 265,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4745,
+      "struct:not_enough_mixed": 255
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 266,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4764,
+      "struct:not_enough_mixed": 236
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 267,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:not_enough_mixed": 281,
+      "struct:empty_tube_mismatch": 4719
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 268,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4770,
+      "struct:not_enough_mixed": 230
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 269,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4770,
+      "struct:not_enough_mixed": 230
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 270,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4731,
+      "struct:not_enough_mixed": 269
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 271,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:not_enough_mixed": 94
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 272,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "struct:not_enough_mixed": 79
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 273,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "struct:not_enough_mixed": 120
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 274,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4893,
+      "struct:not_enough_mixed": 107
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 275,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4871,
+      "struct:not_enough_mixed": 129
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 276,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4876,
+      "struct:not_enough_mixed": 124
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 277,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4898,
+      "struct:not_enough_mixed": 102
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 278,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "struct:not_enough_mixed": 86
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 279,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4887,
+      "struct:not_enough_mixed": 113
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 280,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4919,
+      "struct:not_enough_mixed": 81
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 281,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4810,
+      "struct:not_enough_mixed": 190
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 282,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4733,
+      "struct:not_enough_mixed": 267
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 283,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4783,
+      "struct:not_enough_mixed": 217
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 284,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4775,
+      "struct:not_enough_mixed": 225
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 285,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4750,
+      "struct:not_enough_mixed": 250
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 286,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4805,
+      "struct:not_enough_mixed": 195
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 287,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4803,
+      "struct:not_enough_mixed": 197
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 288,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4741,
+      "struct:not_enough_mixed": 259
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 289,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4780,
+      "struct:not_enough_mixed": 220
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 290,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4767,
+      "struct:not_enough_mixed": 233
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 291,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "struct:not_enough_mixed": 106
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 292,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:not_enough_mixed": 94
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 293,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4920,
+      "struct:not_enough_mixed": 80
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 294,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "struct:not_enough_mixed": 105
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 295,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:not_enough_mixed": 83
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 296,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "struct:not_enough_mixed": 84
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 297,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "struct:not_enough_mixed": 106
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 298,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4912,
+      "struct:not_enough_mixed": 88
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 299,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4918,
+      "struct:not_enough_mixed": 82
+    }
+  },
+  {
+    "world": "move_challenge",
+    "level": 300,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "struct:not_enough_mixed": 105
+    }
+  }
+]

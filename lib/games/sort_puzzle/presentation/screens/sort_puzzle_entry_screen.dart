@@ -88,9 +88,7 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
                           selectedColor: theme.accent,
                           backgroundColor: theme.cardBackground,
                           side: BorderSide(
-                            color: selected
-                                ? theme.accent
-                                : theme.cardBorder,
+                            color: selected ? theme.accent : theme.cardBorder,
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
@@ -111,7 +109,9 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
                     itemBuilder: (context, index) {
                       final mode = modes[index];
                       return Padding(
-                        padding: EdgeInsets.only(bottom: index == modes.length - 1 ? 0 : 14),
+                        padding: EdgeInsets.only(
+                          bottom: index == modes.length - 1 ? 0 : 14,
+                        ),
                         child: _OfficialModeCard(
                           theme: theme,
                           data: mode,
@@ -168,14 +168,6 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
             'Beat the clock with fast sorting, quick pattern reading, and smart empty-tube control.',
             icon: Icons.timer_rounded,
           ),
-          _OfficialModeCardData(
-            modeKey: 'theme_worlds',
-            title: 'Theme Worlds',
-            badge: 'Worlds',
-            description:
-            'Play seasonal and story-inspired palettes like Ocean, Forest, Festival, and Volcano.',
-            icon: Icons.public_rounded,
-          ),
         ];
       case SortPuzzleVariant.ball:
         return const [
@@ -222,14 +214,6 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
             'Pour under pressure and keep colors flowing efficiently.',
             icon: Icons.timer_rounded,
           ),
-          _OfficialModeCardData(
-            modeKey: 'theme_worlds',
-            title: 'Theme Worlds',
-            badge: 'Worlds',
-            description:
-            'Ocean, Neon Lab, Ice Flow, and more themed official puzzle sets.',
-            icon: Icons.public_rounded,
-          ),
         ];
       case SortPuzzleVariant.sand:
         return const [
@@ -249,14 +233,6 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
             'Tighter move counts reward cleaner planning and fewer mistakes.',
             icon: Icons.flag_rounded,
           ),
-          _OfficialModeCardData(
-            modeKey: 'theme_worlds',
-            title: 'Theme Worlds',
-            badge: 'Worlds',
-            description:
-            'Play official dunes, canyon, sunset, and festival-themed sets.',
-            icon: Icons.wb_sunny_rounded,
-          ),
         ];
       case SortPuzzleVariant.bird:
         return const [
@@ -275,14 +251,6 @@ class _SortPuzzleEntryScreenState extends State<SortPuzzleEntryScreen> {
             description:
             'Perch the flock cleanly using fewer moves and smarter branch use.',
             icon: Icons.flag_rounded,
-          ),
-          _OfficialModeCardData(
-            modeKey: 'theme_worlds',
-            title: 'Theme Worlds',
-            badge: 'Worlds',
-            description:
-            'Forest, Tropical, Snow Peak, and Sunset branch worlds.',
-            icon: Icons.forest_rounded,
           ),
         ];
     }
@@ -384,8 +352,14 @@ class _OfficialModeCard extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                Color.alphaBlend(theme.accent.withOpacity(dark ? 0.16 : 0.10), theme.cardBackground),
-                Color.alphaBlend(theme.accent2.withOpacity(dark ? 0.12 : 0.06), theme.cardBackground),
+                Color.alphaBlend(
+                  theme.accent.withOpacity(dark ? 0.16 : 0.10),
+                  theme.cardBackground,
+                ),
+                Color.alphaBlend(
+                  theme.accent2.withOpacity(dark ? 0.12 : 0.06),
+                  theme.cardBackground,
+                ),
               ],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'package:gamebox/games/sort_puzzle/data/sort_puzzle_repository.dart';
 import '../../domain/sort_piece.dart';
 import '../../domain/sort_puzzle_variant.dart';
 import '../../presentation/screens/sort_puzzle_game_screen.dart';
 import '../models/sort_puzzle_creator_draft.dart';
+import 'package:gamebox/games/sort_puzzle/data/sort_puzzle_repository.dart';
 
 class SortPuzzleCreatorScreen extends StatefulWidget {
   const SortPuzzleCreatorScreen({
@@ -20,12 +20,15 @@ class SortPuzzleCreatorScreen extends StatefulWidget {
   final bool isReviewMode;
 
   @override
-  State<SortPuzzleCreatorScreen> createState() => _SortPuzzleCreatorScreenState();
+  State<SortPuzzleCreatorScreen> createState() =>
+      _SortPuzzleCreatorScreenState();
 }
 
 class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
   late final TextEditingController _titleController;
   late final TextEditingController _creatorNameController;
+  final TextEditingController _moveLimitController = TextEditingController();
+  final TextEditingController _timeLimitController = TextEditingController();
 
   final List<String> _allGroups = const <String>[
     'red',
@@ -47,6 +50,11 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
   bool _isSaving = false;
   bool _isSubmitting = false;
   bool _rulesDialogShown = false;
+  bool _isRemoveMode = false;
+
+  String? _lastSolvabilitySignature;
+  bool? _lastSolvable;
+  String? _lastSolvabilityReason;
 
   bool get _isReadOnly => widget.isReviewMode;
   bool get _isReviewMode => widget.isReviewMode;
@@ -58,7 +66,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     final SortPuzzleCreatorDraft? initial = widget.initialDraft;
 
     _titleController = TextEditingController(
-      text: initial?.title.isNotEmpty == true ? initial!.title : 'My Sort Puzzle',
+      text:
+      initial?.title.isNotEmpty == true ? initial!.title : 'My Sort Puzzle',
     );
     _creatorNameController = TextEditingController(
       text: initial?.creatorName.isNotEmpty == true
@@ -68,6 +77,11 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
 
     _draftId = initial?.id ?? '';
     _capacity = initial?.capacity ?? 4;
+    _moveLimitController.text =
+    initial?.moveLimit != null ? initial!.moveLimit.toString() : '';
+    _timeLimitController.text = initial?.timeLimitSeconds != null
+        ? initial!.timeLimitSeconds.toString()
+        : '';
 
     if (initial != null && initial.containers.isNotEmpty) {
       _containers = initial.containers
@@ -103,6 +117,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
   void dispose() {
     _titleController.dispose();
     _creatorNameController.dispose();
+    _moveLimitController.dispose();
+    _timeLimitController.dispose();
     super.dispose();
   }
 
@@ -134,8 +150,27 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     }
   }
 
+  int? _parsePositiveInt(String raw) {
+    final String value = raw.trim();
+    if (value.isEmpty) return null;
+    final int? parsed = int.tryParse(value);
+    if (parsed == null || parsed <= 0) return null;
+    return parsed;
+  }
+
+  bool get _hasValidOptionalLimits {
+    final String moveRaw = _moveLimitController.text.trim();
+    final String timeRaw = _timeLimitController.text.trim();
+
+    final bool moveOk = moveRaw.isEmpty || _parsePositiveInt(moveRaw) != null;
+    final bool timeOk = timeRaw.isEmpty || _parsePositiveInt(timeRaw) != null;
+
+    return moveOk && timeOk;
+  }
+
   bool get _isTitleValid => _titleController.text.trim().length >= 3;
-  bool get _isCreatorNameValid => _creatorNameController.text.trim().length >= 2;
+  bool get _isCreatorNameValid =>
+      _creatorNameController.text.trim().length >= 2;
   bool get _hasMinimumContainers => _containers.length >= 3;
   bool get _hasAtLeastTwoGroups => _activeGroups.length >= 2;
   bool get _hasAtLeastOneEmptyContainer =>
@@ -202,47 +237,7 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     return _containers.length >= _activeGroups.length + 1;
   }
 
-  List<String> get _groupValidationMessages {
-    final List<String> messages = <String>[];
-
-    final List<String> orderedGroups = _activeGroups.toList()..sort();
-    for (final group in orderedGroups) {
-      final int total = _totalPiecesForGroup(group);
-      if (total < _capacity) {
-        final int missing = _capacity - total;
-        messages.add(
-          '${_prettyGroup(group)} needs $missing more piece${missing == 1 ? '' : 's'} ($total/$_capacity).',
-        );
-      } else if (total > _capacity) {
-        final int extra = total - _capacity;
-        messages.add(
-          '${_prettyGroup(group)} has $extra extra piece${extra == 1 ? '' : 's'} ($total/$_capacity).',
-        );
-      } else {
-        messages.add('${_prettyGroup(group)} is complete ($_capacity/$_capacity).');
-      }
-    }
-
-    if (!_hasAtLeastOneEmptyContainer) {
-      messages.add('Keep at least one empty container so the player has room to move.');
-    }
-
-    if (_mixedContainerCount < 1) {
-      messages.add('Create at least one mixed container so the puzzle starts unsolved.');
-    }
-
-    if (_hasTooManySolvedContainersAtStart) {
-      messages.add('Too many containers are already solved. Mix the colors more.');
-    }
-
-    if (!_containerCountSupportsGroups) {
-      messages.add('Keep at least one more container than active groups.');
-    }
-
-    return messages;
-  }
-
-  bool get _isReadyForPreview =>
+  bool get _meetsStructuralRules =>
       _isTitleValid &&
           _isCreatorNameValid &&
           _hasAtLeastTwoGroups &&
@@ -253,52 +248,387 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
           _allActiveGroupsExactlyCapacity &&
           _hasNoInactiveGroupPieces &&
           _mixedContainerCount >= 1 &&
-          !_hasTooManySolvedContainersAtStart;
+          !_hasTooManySolvedContainersAtStart &&
+          _hasValidOptionalLimits;
 
-  String? get _previewBlockReason {
-    if (!_isTitleValid) {
-      return 'Add a puzzle title with at least 3 characters.';
-    }
-    if (!_isCreatorNameValid) {
-      return 'Add a creator name with at least 2 characters.';
-    }
-    if (!_hasAtLeastTwoGroups) {
-      return 'Select at least 2 active groups.';
-    }
-    if (!_hasMinimumContainers) {
-      return 'Use at least 3 containers.';
-    }
-    if (!_containerCountSupportsGroups) {
-      return 'Keep at least one more container than active groups so the player has room to move.';
-    }
-    if (!_hasAnyPieces) {
-      return 'Add pieces to the containers before previewing.';
-    }
-    if (!_hasAtLeastOneEmptyContainer) {
-      return 'Keep at least one empty container.';
-    }
-    if (!_hasNoInactiveGroupPieces) {
-      return 'Remove pieces that belong to inactive groups.';
+  void _markSolvabilityDirty() {
+    _lastSolvabilitySignature = null;
+    _lastSolvable = null;
+    _lastSolvabilityReason = null;
+  }
+
+  String _boardSignature() {
+    final String containersSig = _containers
+        .map(
+          (container) => container
+          .map((piece) => '${piece.groupKey}:${piece.amount}')
+          .join(','),
+    )
+        .join('|');
+
+    return '$containersSig::cap=$_capacity::groups=${(_activeGroups.toList()..sort()).join(",")}';
+  }
+
+  bool get _isSolvable {
+    _ensureSolvabilityEvaluated();
+    return _lastSolvable ?? false;
+  }
+
+  String? get _solvabilityReason {
+    _ensureSolvabilityEvaluated();
+    return _lastSolvabilityReason;
+  }
+
+  void _ensureSolvabilityEvaluated() {
+    if (!_meetsStructuralRules) return;
+
+    final String signature = _boardSignature();
+    if (_lastSolvabilitySignature == signature && _lastSolvable != null) {
+      return;
     }
 
-    for (final group in _activeGroups) {
+    final _SolvabilityResult result = _evaluateSolvability();
+    _lastSolvabilitySignature = signature;
+    _lastSolvable = result.solvable;
+    _lastSolvabilityReason = result.reason;
+  }
+
+  _SolvabilityResult _evaluateSolvability() {
+    final List<List<String>> startBoard = _containers
+        .map((container) => _expandContainerToSlots(container))
+        .toList(growable: false);
+
+    if (_isSolvedBoard(startBoard)) {
+      return const _SolvabilityResult(
+        solvable: false,
+        reason: 'This puzzle is already solved at the start. Mix the colors more.',
+      );
+    }
+
+    final List<_MovePair> openingMoves = _generateMoves(startBoard);
+    if (openingMoves.isEmpty) {
+      return const _SolvabilityResult(
+        solvable: false,
+        reason:
+        'This layout has no valid opening moves. Rearrange the colors or add more maneuvering space.',
+      );
+    }
+
+    const int maxStates = 50000;
+    final List<List<List<String>>> stack = <List<List<String>>>[startBoard];
+    final Set<String> visited = <String>{_normalizedFingerprint(startBoard)};
+
+    while (stack.isNotEmpty) {
+      final List<List<String>> board = stack.removeLast();
+
+      if (_isSolvedBoard(board)) {
+        return const _SolvabilityResult(
+          solvable: true,
+          reason: null,
+        );
+      }
+
+      if (visited.length > maxStates) {
+        return const _SolvabilityResult(
+          solvable: false,
+          reason:
+          'This layout could not be verified as solvable within safe limits. Simplify it or add another empty container.',
+        );
+      }
+
+      final List<_MovePair> moves = _generateMoves(board);
+      for (final _MovePair move in moves) {
+        final List<List<String>> next = _applyMove(board, move);
+        final String fp = _normalizedFingerprint(next);
+        if (visited.add(fp)) {
+          stack.add(next);
+        }
+      }
+    }
+
+    return const _SolvabilityResult(
+      solvable: false,
+      reason:
+      'This layout is not solvable with the current arrangement. Mix the colors differently and try again.',
+    );
+  }
+
+  List<List<String>> _cloneBoard(List<List<String>> board) {
+    return board.map((stack) => List<String>.from(stack)).toList(growable: false);
+  }
+
+  List<String> _expandContainerToSlots(List<SortPiece> pieces) {
+    final List<String> slots = <String>[];
+    for (final SortPiece piece in pieces) {
+      for (int i = 0; i < piece.amount; i++) {
+        if (slots.length < _capacity) {
+          slots.add(piece.groupKey);
+        }
+      }
+    }
+    return slots;
+  }
+
+  bool _isSolvedBoard(List<List<String>> board) {
+    for (final List<String> stack in board) {
+      if (stack.isEmpty) continue;
+      if (stack.length != _capacity) return false;
+      final String first = stack.first;
+      for (final String value in stack) {
+        if (value != first) return false;
+      }
+    }
+    return true;
+  }
+
+  int _topRunCount(List<String> stack) {
+    if (stack.isEmpty) return 0;
+    final String top = stack.last;
+    int count = 0;
+    for (int i = stack.length - 1; i >= 0; i--) {
+      if (stack[i] != top) break;
+      count++;
+    }
+    return count;
+  }
+
+  bool _isUniformAndFull(List<String> stack) {
+    if (stack.length != _capacity || stack.isEmpty) return false;
+    final String first = stack.first;
+    for (final String value in stack) {
+      if (value != first) return false;
+    }
+    return true;
+  }
+
+  List<_MovePair> _generateMoves(List<List<String>> board) {
+    final List<_MovePair> moves = <_MovePair>[];
+
+    for (int from = 0; from < board.length; from++) {
+      final List<String> source = board[from];
+      if (source.isEmpty) continue;
+
+      final String movingColor = source.last;
+      final int run = _topRunCount(source);
+
+      for (int to = 0; to < board.length; to++) {
+        if (from == to) continue;
+
+        final List<String> target = board[to];
+        if (target.length >= _capacity) continue;
+
+        if (target.isNotEmpty && target.last != movingColor) {
+          continue;
+        }
+
+        if (target.isEmpty && _isUniformAndFull(source)) {
+          continue;
+        }
+
+        final int free = _capacity - target.length;
+        final int amount = run < free ? run : free;
+        if (amount <= 0) continue;
+
+        moves.add(_MovePair(from: from, to: to, amount: amount));
+      }
+    }
+
+    return moves;
+  }
+
+  List<List<String>> _applyMove(List<List<String>> board, _MovePair move) {
+    final List<List<String>> next = _cloneBoard(board);
+    final List<String> source = next[move.from];
+    final List<String> target = next[move.to];
+    final String movingColor = source.last;
+
+    for (int i = 0; i < move.amount; i++) {
+      source.removeLast();
+      target.add(movingColor);
+    }
+
+    return next;
+  }
+
+  String _normalizedFingerprint(List<List<String>> board) {
+    final List<String> parts = board
+        .map((stack) => stack.join('>'))
+        .toList(growable: false)
+      ..sort();
+    return parts.join('|');
+  }
+
+  List<_ValidationCheck> _buildValidationChecks() {
+    final List<_ValidationCheck> checks = <_ValidationCheck>[
+      _ValidationCheck(
+        label: 'Puzzle title has at least 3 characters',
+        passed: _isTitleValid,
+        successMessage: 'Title looks good.',
+        errorMessage: 'Enter a title with at least 3 characters.',
+      ),
+      _ValidationCheck(
+        label: 'Creator name has at least 2 characters',
+        passed: _isCreatorNameValid,
+        successMessage: 'Creator name looks good.',
+        errorMessage: 'Enter a creator name with at least 2 characters.',
+      ),
+      _ValidationCheck(
+        label: 'At least 2 active colors selected',
+        passed: _hasAtLeastTwoGroups,
+        successMessage: 'Enough active colors selected.',
+        errorMessage: 'Select at least 2 active colors.',
+      ),
+      _ValidationCheck(
+        label: 'At least 3 containers available',
+        passed: _hasMinimumContainers,
+        successMessage: 'Enough containers available.',
+        errorMessage: 'Use at least 3 containers.',
+      ),
+      _ValidationCheck(
+        label: 'Enough containers for active colors',
+        passed: _containerCountSupportsGroups,
+        successMessage: 'You have enough containers for the selected colors.',
+        errorMessage:
+        'Add at least ${_recommendedMinExtraContainers()} more container${_recommendedMinExtraContainers() == 1 ? '' : 's'} to keep room for solving.',
+      ),
+      _ValidationCheck(
+        label: 'At least 1 empty container',
+        passed: _hasAtLeastOneEmptyContainer,
+        successMessage: 'An empty container is available for movement.',
+        errorMessage: 'Add or clear a container so at least 1 is fully empty.',
+      ),
+      _ValidationCheck(
+        label: 'At least 1 mixed container',
+        passed: _mixedContainerCount >= 1,
+        successMessage: 'The puzzle starts unsolved.',
+        errorMessage: 'Mix colors in at least 1 container so the puzzle is not already trivial.',
+      ),
+      _ValidationCheck(
+        label: 'Not too many solved containers at start',
+        passed: !_hasTooManySolvedContainersAtStart,
+        successMessage: 'Starting state is not overly solved.',
+        errorMessage: 'Too many containers are already solved. Remix them.',
+      ),
+      _ValidationCheck(
+        label: 'Move and time limits are valid',
+        passed: _hasValidOptionalLimits,
+        successMessage: 'Optional limits look valid.',
+        errorMessage: 'Move limit and time limit must be positive numbers if provided.',
+      ),
+    ];
+
+    final List<String> orderedGroups = _activeGroups.toList()..sort();
+    for (final String group in orderedGroups) {
       final int total = _totalPiecesForGroup(group);
-      if (total < _capacity) {
-        return '${_prettyGroup(group)} must appear exactly $_capacity times. Add ${_capacity - total} more.';
-      }
+      final bool passed = total == _capacity;
+      final String colorLabel = _prettyGroup(group);
+      checks.add(
+        _ValidationCheck(
+          label: '$colorLabel count matches capacity',
+          passed: passed,
+          successMessage: '$colorLabel is complete ($total/$_capacity).',
+          errorMessage: total < _capacity
+              ? '$colorLabel is short by ${_capacity - total}. Add more $colorLabel pieces.'
+              : '$colorLabel has ${total - _capacity} extra. Remove some $colorLabel pieces.',
+        ),
+      );
+    }
+
+    if (_meetsStructuralRules) {
+      checks.add(
+        _ValidationCheck(
+          label: 'Puzzle is solvable',
+          passed: _isSolvable,
+          successMessage: 'This layout can be solved.',
+          errorMessage: _solvabilityReason ??
+              'This layout is not solvable. Remix the colors or add more empty space.',
+        ),
+      );
+    } else {
+      checks.add(
+        const _ValidationCheck(
+          label: 'Puzzle is solvable',
+          passed: false,
+          successMessage: 'This layout can be solved.',
+          errorMessage:
+          'Solvability will be checked after the structural rules pass.',
+        ),
+      );
+    }
+
+    return checks;
+  }
+
+  int _recommendedMinExtraContainers() {
+    final int target = (_activeGroups.length + 1) - _containers.length;
+    return target > 0 ? target : 0;
+  }
+
+  List<String> _buildSuggestions() {
+    final List<String> suggestions = <String>[];
+
+    for (final String group in (_activeGroups.toList()..sort())) {
+      final int total = _totalPiecesForGroup(group);
       if (total > _capacity) {
-        return '${_prettyGroup(group)} must appear exactly $_capacity times. Remove ${total - _capacity} extra.';
+        suggestions.add(
+          'Remove ${total - _capacity} ${_prettyGroup(group)} piece${total - _capacity == 1 ? '' : 's'}.',
+        );
+      } else if (total < _capacity) {
+        suggestions.add(
+          'Add ${_capacity - total} more ${_prettyGroup(group)} piece${_capacity - total == 1 ? '' : 's'}.',
+        );
       }
     }
 
-    if (_mixedContainerCount < 1) {
-      return 'Create at least one mixed container so the puzzle starts unsolved.';
+    final int minExtra = _recommendedMinExtraContainers();
+    if (minExtra > 0) {
+      suggestions.add(
+        'Add at least $minExtra more empty container${minExtra == 1 ? '' : 's'} so the puzzle has enough solving space.',
+      );
+    } else if (_meetsStructuralRules && !_isSolvable) {
+      suggestions.add(
+        'Try adding 1 extra empty container to create more maneuvering space.',
+      );
+    }
+
+    if (!_hasAtLeastOneEmptyContainer) {
+      suggestions.add('Keep at least 1 container completely empty.');
     }
 
     if (_hasTooManySolvedContainersAtStart) {
-      return 'Too many containers are already solved at the start. Mix the colors more so the puzzle feels meaningful.';
+      suggestions.add('Remix solved containers so the puzzle does not start too easy.');
     }
 
+    if (_mixedContainerCount < 1) {
+      suggestions.add('Create at least 1 mixed container.');
+    }
+
+    if (_meetsStructuralRules && !_isSolvable) {
+      suggestions.add('Use Remove Top mode to clear blocking top colors and remix the layout.');
+      suggestions.add('Save as Draft, then return and continue improving the layout.');
+    }
+
+    if (suggestions.isEmpty) {
+      suggestions.add('Everything looks good. You can continue.');
+    }
+
+    return suggestions;
+  }
+
+  List<String> get _groupValidationMessages {
+    final List<String> messages = _buildValidationChecks()
+        .map((item) => item.passed ? item.successMessage : item.errorMessage)
+        .toList(growable: false);
+
+    return messages;
+  }
+
+  bool get _isReadyForPreview => _meetsStructuralRules && _isSolvable;
+
+  String? get _previewBlockReason {
+    for (final _ValidationCheck check in _buildValidationChecks()) {
+      if (!check.passed) return check.errorMessage;
+    }
     return null;
   }
 
@@ -309,7 +639,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
       case 1:
         return _hasAtLeastTwoGroups &&
             _hasMinimumContainers &&
-            _containerCountSupportsGroups;
+            _containerCountSupportsGroups &&
+            _hasValidOptionalLimits;
       case 2:
         return _isReadyForPreview;
       case 3:
@@ -321,11 +652,164 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     }
   }
 
-  void _nextStep() {
+  Future<void> _showValidationPopup({
+    required String title,
+    required String intro,
+    bool allowAddContainer = false,
+    bool allowSaveDraft = false,
+  }) async {
+    if (!mounted) return;
+
+    final List<_ValidationCheck> checks = _buildValidationChecks();
+    final List<String> suggestions = _buildSuggestions();
+
+    await showDialog<void>(
+      context: context,
+      builder: (context) => Dialog(
+        insetPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+        backgroundColor: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [Color(0xFF101828), Color(0xFF1F2937)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(28),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0x55000000),
+                blurRadius: 24,
+                offset: Offset(0, 10),
+              ),
+            ],
+            border: Border.all(
+              color: const Color(0xFF334155),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 52,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: _isReadyForPreview
+                            ? const Color(0xFF052E16)
+                            : const Color(0xFF3F1D1D),
+                        border: Border.all(
+                          color: _isReadyForPreview
+                              ? const Color(0xFF22C55E)
+                              : const Color(0xFFF87171),
+                          width: 2,
+                        ),
+                      ),
+                      child: Icon(
+                        _isReadyForPreview
+                            ? Icons.verified_rounded
+                            : Icons.error_outline_rounded,
+                        color: _isReadyForPreview
+                            ? const Color(0xFF4ADE80)
+                            : const Color(0xFFFCA5A5),
+                        size: 28,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.06),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Text(
+                    intro,
+                    style: const TextStyle(
+                      color: Color(0xFFE5E7EB),
+                      height: 1.35,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Flexible(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        _ValidationChecklistCard(checks: checks),
+                        const SizedBox(height: 12),
+                        _SuggestionCard(suggestions: suggestions),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 14),
+                Wrap(
+                  spacing: 10,
+                  runSpacing: 10,
+                  alignment: WrapAlignment.end,
+                  children: [
+                    if (!_isReviewMode && allowSaveDraft)
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          _saveDraft();
+                        },
+                        icon: const Icon(Icons.save_rounded),
+                        label: const Text('Save Draft'),
+                      ),
+                    if (!_isReviewMode && allowAddContainer)
+                      ElevatedButton.icon(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          _addContainer();
+                          _showSnack('Added 1 empty container. Recheck the puzzle now.');
+                        },
+                        icon: const Icon(Icons.add_box_rounded),
+                        label: const Text('Add Container'),
+                      ),
+                    TextButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      child: const Text('Close'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _nextStep() async {
     if (_currentStep >= 4) return;
     final String? reason = _stepBlockReason();
     if (reason != null) {
-      _showSnack(reason);
+      await _showValidationPopup(
+        title: 'Puzzle needs fixes',
+        intro: reason,
+        allowAddContainer: !_isReadOnly,
+        allowSaveDraft: !_isReadOnly,
+      );
       return;
     }
     setState(() => _currentStep += 1);
@@ -347,6 +831,9 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
         if (!_hasMinimumContainers) return 'Use at least 3 containers.';
         if (!_containerCountSupportsGroups) {
           return 'Need at least one empty container beyond the active groups.';
+        }
+        if (!_hasValidOptionalLimits) {
+          return 'Move limit and time limit must be positive numbers if provided.';
         }
         return null;
       case 2:
@@ -390,7 +877,10 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
               _RuleLine('Create at least 1 mixed container.'),
               _RuleLine('Do not leave inactive-color pieces in the board.'),
               _RuleLine('Do not start with too many solved containers.'),
-              _RuleLine('Preview and submit are allowed only after all rules pass.'),
+              _RuleLine('Move limit and time limit are optional.'),
+              _RuleLine('The puzzle must also be solvable, not just structurally valid.'),
+              _RuleLine('Use Place mode to add colors and Remove Top mode to remove the top color from a container.'),
+              _RuleLine('If the puzzle is not solvable, save as draft and continue improving it.'),
             ],
           ),
         ),
@@ -426,6 +916,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
       if (!_activeGroups.contains(_selectedGroup)) {
         _selectedGroup = _activeGroups.first;
       }
+
+      _markSolvabilityDirty();
     });
   }
 
@@ -433,6 +925,7 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     if (_isReadOnly) return;
     setState(() {
       _containers.add(<SortPiece>[]);
+      _markSolvabilityDirty();
     });
   }
 
@@ -444,6 +937,7 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     }
     setState(() {
       _containers.removeLast();
+      _markSolvabilityDirty();
     });
   }
 
@@ -469,33 +963,45 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
         }
         return next;
       }).toList(growable: true);
+      _markSolvabilityDirty();
     });
 
     _showSnack('Capacity changed to $_capacity. Recheck your color totals.');
   }
 
-  void _onContainerTapped(int containerIndex) {
-    if (_isReadOnly) return;
-
-    final int totalForSelected = _totalPiecesForGroup(_selectedGroup);
-    if (totalForSelected >= _capacity) {
-      _showSnack(
-        '${_prettyGroup(_selectedGroup)} is already complete ($_capacity/$_capacity). Choose another color or remove one first.',
-      );
+  void _removeTopPieceFromContainer(int containerIndex) {
+    final List<SortPiece> pieces = _containers[containerIndex];
+    if (pieces.isEmpty) {
+      _showSnack('This container is already empty.');
       return;
     }
 
+    final SortPiece removed = pieces.removeLast();
+    if (removed.amount > 1) {
+      pieces.add(removed.copyWith(amount: removed.amount - 1));
+    }
+
+    _markSolvabilityDirty();
+  }
+
+  void _onContainerTapped(int containerIndex) {
+    if (_isReadOnly) return;
+
     setState(() {
+      if (_isRemoveMode) {
+        _removeTopPieceFromContainer(containerIndex);
+        return;
+      }
+
+      final int totalForSelected = _totalPiecesForGroup(_selectedGroup);
+      if (totalForSelected >= _capacity) {
+        return;
+      }
+
       final List<SortPiece> pieces = _containers[containerIndex];
       final int used = pieces.fold<int>(0, (sum, item) => sum + item.amount);
 
       if (used >= _capacity) {
-        if (pieces.isNotEmpty) {
-          final SortPiece removed = pieces.removeLast();
-          if (removed.amount > 1) {
-            pieces.add(removed.copyWith(amount: removed.amount - 1));
-          }
-        }
         return;
       }
 
@@ -512,13 +1018,25 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
           ),
         );
       }
+
+      _markSolvabilityDirty();
     });
 
-    final int updatedTotal = _totalPiecesForGroup(_selectedGroup);
-    if (updatedTotal == _capacity) {
-      _showSnack(
-        '${_prettyGroup(_selectedGroup)} is now complete ($_capacity/$_capacity).',
-      );
+    if (!_isRemoveMode) {
+      final int totalForSelected = _totalPiecesForGroup(_selectedGroup);
+      if (totalForSelected > _capacity) {
+        _showSnack(
+          '${_prettyGroup(_selectedGroup)} has too many pieces now. Remove some from the board.',
+        );
+      } else if (totalForSelected == _capacity) {
+        _showSnack(
+          '${_prettyGroup(_selectedGroup)} is now complete ($_capacity/$_capacity).',
+        );
+      } else if (_totalPiecesForGroup(_selectedGroup) >= _capacity) {
+        _showSnack(
+          '${_prettyGroup(_selectedGroup)} is already complete ($_capacity/$_capacity). Choose another color or switch to Remove Top mode.',
+        );
+      }
     }
   }
 
@@ -535,6 +1053,9 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
       ),
       growable: false,
     );
+
+    final int? moveLimit = _parsePositiveInt(_moveLimitController.text);
+    final int? timeLimitSeconds = _parsePositiveInt(_timeLimitController.text);
 
     return SortPuzzleCreatorDraft(
       id: id,
@@ -556,12 +1077,19 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
       containerSkinKey: widget.variant.name,
       pieceSkinKey: widget.variant.name,
       soundPackKey: 'default_sort',
+      moveLimit: moveLimit,
+      timeLimitSeconds: timeLimitSeconds,
     );
   }
 
   Future<void> _testPlay() async {
     if (!_isReadyForPreview) {
-      _showSnack(_previewBlockReason ?? 'Puzzle is not ready yet.');
+      await _showValidationPopup(
+        title: 'Cannot test this puzzle',
+        intro: _previewBlockReason ?? 'Puzzle is not ready yet.',
+        allowAddContainer: !_isReadOnly,
+        allowSaveDraft: !_isReadOnly,
+      );
       return;
     }
 
@@ -584,7 +1112,12 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     if (_isReadOnly || _isSaving) return;
 
     if (!_isTitleValid) {
-      _showSnack('Please give your puzzle a title before saving.');
+      await _showValidationPopup(
+        title: 'Cannot save draft',
+        intro: 'Please fix the essentials before saving.',
+        allowAddContainer: false,
+        allowSaveDraft: false,
+      );
       return;
     }
 
@@ -624,17 +1157,28 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
     if (_isReadOnly || _isSubmitting) return;
 
     if (!_isReadyForPreview) {
-      _showSnack(_previewBlockReason ?? 'Puzzle is not ready yet.');
+      await _showValidationPopup(
+        title: 'Cannot submit this puzzle',
+        intro: _previewBlockReason ?? 'Puzzle is not ready yet.',
+        allowAddContainer: !_isReadOnly,
+        allowSaveDraft: !_isReadOnly,
+      );
       return;
     }
 
     setState(() => _isSubmitting = true);
 
     try {
-      final bool canSubmit = await SortPuzzleRepository.instance.canSubmitMoreGames();
+      final bool canSubmit =
+      await SortPuzzleRepository.instance.canSubmitMoreGames();
       if (!canSubmit) {
         if (!mounted) return;
-        _showSnack('Free limit reached (2 submissions).');
+        await _showValidationPopup(
+          title: 'Submission limit reached',
+          intro: 'Free limit reached (2 submissions).',
+          allowAddContainer: false,
+          allowSaveDraft: true,
+        );
         setState(() => _isSubmitting = false);
         return;
       }
@@ -722,8 +1266,10 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
       backgroundColor: const Color(0xFFF7F8FC),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: _isReviewMode ? const Color(0xFF18122B) : Colors.white,
-        foregroundColor: _isReviewMode ? Colors.white : const Color(0xFF111827),
+        backgroundColor:
+        _isReviewMode ? const Color(0xFF18122B) : Colors.white,
+        foregroundColor:
+        _isReviewMode ? Colors.white : const Color(0xFF111827),
         title: Text(
           _isReviewMode
               ? '${_variantLabel(widget.variant)} Review'
@@ -834,6 +1380,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
                       onAddContainer: _addContainer,
                       onRemoveContainer: _removeContainer,
                       onChangeCapacity: _changeCapacity,
+                      moveLimitController: _moveLimitController,
+                      timeLimitController: _timeLimitController,
                     ),
                   ),
                   _StepScaffold(
@@ -852,6 +1400,26 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
                         setState(() => _selectedGroup = value);
                       },
                       onContainerTap: _onContainerTapped,
+                      isRemoveMode: _isRemoveMode,
+                      onToggleRemoveMode: (value) {
+                        if (_isReadOnly) return;
+                        setState(() {
+                          _isRemoveMode = value;
+                        });
+                      },
+                      onShowValidationPopup: () {
+                        _showValidationPopup(
+                          title: _isReadyForPreview
+                              ? 'Puzzle looks good'
+                              : 'Puzzle needs fixes',
+                          intro: _isReadyForPreview
+                              ? 'Your puzzle is structurally valid and solvable.'
+                              : (_previewBlockReason ??
+                              'Some rules are not passing yet.'),
+                          allowAddContainer: !_isReadOnly,
+                          allowSaveDraft: !_isReadOnly,
+                        );
+                      },
                     ),
                   ),
                   _StepScaffold(
@@ -868,6 +1436,8 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
                       reason: _previewBlockReason,
                       onTestPlay: _testPlay,
                       isReviewMode: _isReviewMode,
+                      moveLimitText: _moveLimitController.text.trim(),
+                      timeLimitText: _timeLimitController.text.trim(),
                     ),
                   ),
                   _StepScaffold(
@@ -887,7 +1457,9 @@ class _SortPuzzleCreatorScreenState extends State<SortPuzzleCreatorScreen> {
               canGoNext: _canGoNext(),
               isReviewMode: _isReviewMode,
               onBack: _previousStep,
-              onNext: _nextStep,
+              onNext: () {
+                _nextStep();
+              },
               onSave: _isReviewMode ? null : _saveDraft,
               isSaving: _isSaving,
             ),
@@ -967,7 +1539,8 @@ class _StepHeader extends StatelessWidget {
               children: [
                 CircleAvatar(
                   radius: 11,
-                  backgroundColor: active ? Colors.white : const Color(0xFFF3F4F6),
+                  backgroundColor:
+                  active ? Colors.white : const Color(0xFFF3F4F6),
                   child: Icon(
                     done ? Icons.check_rounded : Icons.circle,
                     size: 12,
@@ -1049,9 +1622,8 @@ class _StepOneTitleCreator extends StatelessWidget {
             icon: titleValid && creatorValid
                 ? Icons.check_circle_rounded
                 : Icons.info_outline_rounded,
-            iconColor: titleValid && creatorValid
-                ? const Color(0xFF16A34A)
-                : accent,
+            iconColor:
+            titleValid && creatorValid ? const Color(0xFF16A34A) : accent,
             text: titleValid && creatorValid
                 ? 'Good start. Move to setup.'
                 : 'Title needs 3+ characters and creator name needs 2+ characters.',
@@ -1096,6 +1668,8 @@ class _StepTwoSetup extends StatelessWidget {
     required this.onAddContainer,
     required this.onRemoveContainer,
     required this.onChangeCapacity,
+    required this.moveLimitController,
+    required this.timeLimitController,
   });
 
   final List<String> allGroups;
@@ -1110,6 +1684,8 @@ class _StepTwoSetup extends StatelessWidget {
   final VoidCallback onAddContainer;
   final VoidCallback onRemoveContainer;
   final ValueChanged<int> onChangeCapacity;
+  final TextEditingController moveLimitController;
+  final TextEditingController timeLimitController;
 
   @override
   Widget build(BuildContext context) {
@@ -1191,6 +1767,28 @@ class _StepTwoSetup extends StatelessWidget {
             text:
             'Active groups: ${activeGroups.length} • Containers: $containerCount • Capacity: $capacity',
           ),
+          const SizedBox(height: 16),
+          TextField(
+            controller: moveLimitController,
+            readOnly: isReadOnly,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              labelText: 'Move Limit (optional)',
+              hintText: 'Example: 18',
+              border: OutlineInputBorder(),
+            ),
+          ),
+          const SizedBox(height: 12),
+          TextField(
+            controller: timeLimitController,
+            readOnly: isReadOnly,
+            keyboardType: TextInputType.number,
+            decoration: const InputDecoration(
+              labelText: 'Time Limit in Seconds (optional)',
+              hintText: 'Example: 45',
+              border: OutlineInputBorder(),
+            ),
+          ),
         ],
       ),
     );
@@ -1210,6 +1808,9 @@ class _StepThreeContainers extends StatelessWidget {
     required this.solvedContainerCount,
     required this.onSelectGroup,
     required this.onContainerTap,
+    required this.isRemoveMode,
+    required this.onToggleRemoveMode,
+    required this.onShowValidationPopup,
   });
 
   final List<List<SortPiece>> containers;
@@ -1223,6 +1824,9 @@ class _StepThreeContainers extends StatelessWidget {
   final int solvedContainerCount;
   final ValueChanged<String> onSelectGroup;
   final ValueChanged<int> onContainerTap;
+  final bool isRemoveMode;
+  final ValueChanged<bool> onToggleRemoveMode;
+  final VoidCallback onShowValidationPopup;
 
   @override
   Widget build(BuildContext context) {
@@ -1236,7 +1840,9 @@ class _StepThreeContainers extends StatelessWidget {
           Text(
             isReadOnly
                 ? 'Review mode. Container editing is disabled.'
-                : 'Pick a group, then tap a container to place it. Tap a full container to remove the last placed piece.',
+                : isRemoveMode
+                ? 'Remove Top mode is active. Tap any container to remove its top color.'
+                : 'Place mode is active. Pick a color, then tap a container to place it.',
             style: const TextStyle(
               color: Color(0xFF6B7280),
               fontWeight: FontWeight.w600,
@@ -1244,6 +1850,29 @@ class _StepThreeContainers extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 12),
+          if (!isReadOnly)
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: [
+                ChoiceChip(
+                  label: const Text('Place'),
+                  selected: !isRemoveMode,
+                  onSelected: (_) => onToggleRemoveMode(false),
+                ),
+                ChoiceChip(
+                  label: const Text('Remove Top'),
+                  selected: isRemoveMode,
+                  onSelected: (_) => onToggleRemoveMode(true),
+                ),
+                OutlinedButton.icon(
+                  onPressed: onShowValidationPopup,
+                  icon: const Icon(Icons.rule_rounded),
+                  label: const Text('Live Rules Check'),
+                ),
+              ],
+            ),
+          if (!isReadOnly) const SizedBox(height: 12),
           Wrap(
             spacing: 8,
             runSpacing: 8,
@@ -1284,7 +1913,7 @@ class _StepThreeContainers extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
-                ...validationMessages.map(
+                ...validationMessages.take(4).map(
                       (message) => Padding(
                     padding: const EdgeInsets.only(bottom: 6),
                     child: Text(
@@ -1329,6 +1958,7 @@ class _StepThreeContainers extends StatelessWidget {
                 variant: variant,
                 selectedColor: groupColor(selectedGroup),
                 onTap: () => onContainerTap(index),
+                isRemoveMode: isRemoveMode,
               );
             },
           ),
@@ -1352,6 +1982,8 @@ class _StepFourPreview extends StatelessWidget {
     required this.reason,
     required this.onTestPlay,
     required this.isReviewMode,
+    required this.moveLimitText,
+    required this.timeLimitText,
   });
 
   final String title;
@@ -1366,6 +1998,8 @@ class _StepFourPreview extends StatelessWidget {
   final String? reason;
   final VoidCallback onTestPlay;
   final bool isReviewMode;
+  final String moveLimitText;
+  final String timeLimitText;
 
   @override
   Widget build(BuildContext context) {
@@ -1394,6 +2028,8 @@ class _StepFourPreview extends StatelessWidget {
               _InfoPill(label: 'Groups ${activeGroups.length}'),
               _InfoPill(label: 'Containers ${containers.length}'),
               _InfoPill(label: 'Capacity $capacity'),
+              if (moveLimitText.isNotEmpty) _InfoPill(label: 'Moves $moveLimitText'),
+              if (timeLimitText.isNotEmpty) _InfoPill(label: 'Time ${timeLimitText}s'),
             ],
           ),
           const SizedBox(height: 16),
@@ -1414,6 +2050,7 @@ class _StepFourPreview extends StatelessWidget {
                 variant: variant,
                 selectedColor: groupColor(activeGroups.first),
                 onTap: () {},
+                isRemoveMode: false,
               );
             },
           ),
@@ -1657,6 +2294,7 @@ class _CreatorContainerCard extends StatelessWidget {
     required this.variant,
     required this.selectedColor,
     required this.onTap,
+    required this.isRemoveMode,
   });
 
   final List<SortPiece> pieces;
@@ -1664,10 +2302,12 @@ class _CreatorContainerCard extends StatelessWidget {
   final SortPuzzleVariant variant;
   final Color selectedColor;
   final VoidCallback onTap;
+  final bool isRemoveMode;
 
   @override
   Widget build(BuildContext context) {
     final List<SortPiece?> slots = _expandPiecesToSlots(pieces, capacity);
+    final bool hasTopPiece = pieces.isNotEmpty;
 
     return Material(
       color: Colors.transparent,
@@ -1678,7 +2318,12 @@ class _CreatorContainerCard extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(22),
-            border: Border.all(color: const Color(0xFFE5E7EB)),
+            border: Border.all(
+              color: isRemoveMode && hasTopPiece
+                  ? const Color(0xFFF87171)
+                  : const Color(0xFFE5E7EB),
+              width: isRemoveMode && hasTopPiece ? 2 : 1,
+            ),
             boxShadow: const [
               BoxShadow(
                 color: Color(0x10000000),
@@ -1687,58 +2332,85 @@ class _CreatorContainerCard extends StatelessWidget {
               ),
             ],
           ),
-          child: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              children: [
-                Container(
-                  width: 56,
-                  height: 14,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: const Color(0xFFD1D5DB), width: 2),
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 6),
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24),
-                      border: Border.all(
-                        color: const Color(0xFFD1D5DB),
-                        width: 2,
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 56,
+                      height: 14,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border:
+                        Border.all(color: const Color(0xFFD1D5DB), width: 2),
+                        color: Colors.white,
                       ),
-                      color: const Color(0xFFF8FAFC),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: List<Widget>.generate(capacity, (index) {
-                          final SortPiece? piece = slots[index];
-                          return Expanded(
-                            child: Container(
-                              margin: EdgeInsets.only(
-                                bottom: index == capacity - 1 ? 0 : 6,
-                              ),
-                              decoration: BoxDecoration(
-                                color: piece == null
-                                    ? const Color(0xFFF0ECF6)
-                                    : _pieceColor(piece.groupKey),
-                                borderRadius: BorderRadius.circular(
-                                  variant == SortPuzzleVariant.ball ? 999 : 14,
+                    const SizedBox(height: 6),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(24),
+                          border: Border.all(
+                            color: const Color(0xFFD1D5DB),
+                            width: 2,
+                          ),
+                          color: const Color(0xFFF8FAFC),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 10,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: List<Widget>.generate(capacity, (index) {
+                              final SortPiece? piece = slots[index];
+                              return Expanded(
+                                child: Container(
+                                  margin: EdgeInsets.only(
+                                    bottom: index == capacity - 1 ? 0 : 6,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: piece == null
+                                        ? const Color(0xFFF0ECF6)
+                                        : _pieceColor(piece.groupKey),
+                                    borderRadius: BorderRadius.circular(
+                                      variant == SortPuzzleVariant.ball
+                                          ? 999
+                                          : 14,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          );
-                        }),
+                              );
+                            }),
+                          ),
+                        ),
                       ),
+                    ),
+                  ],
+                ),
+              ),
+              if (isRemoveMode && hasTopPiece)
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFFEE2E2),
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.remove_rounded,
+                      size: 16,
+                      color: Color(0xFFB91C1C),
                     ),
                   ),
                 ),
-              ],
-            ),
+            ],
           ),
         ),
       ),
@@ -1778,4 +2450,166 @@ class _CreatorContainerCard extends StatelessWidget {
         return selectedColor;
     }
   }
+}
+
+class _ValidationChecklistCard extends StatelessWidget {
+  const _ValidationChecklistCard({
+    required this.checks,
+  });
+
+  final List<_ValidationCheck> checks;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.06),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: Colors.white.withOpacity(0.08)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Live Rules Check',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(height: 10),
+          ...checks.map(
+                (item) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(
+                    item.passed
+                        ? Icons.check_circle_rounded
+                        : Icons.cancel_rounded,
+                    color: item.passed
+                        ? const Color(0xFF4ADE80)
+                        : const Color(0xFFF87171),
+                    size: 20,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      item.passed ? item.successMessage : item.errorMessage,
+                      style: const TextStyle(
+                        color: Color(0xFFE5E7EB),
+                        height: 1.3,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _SuggestionCard extends StatelessWidget {
+  const _SuggestionCard({
+    required this.suggestions,
+  });
+
+  final List<String> suggestions;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.06),
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: Colors.white.withOpacity(0.08)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Suggested Fixes',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              fontSize: 16,
+            ),
+          ),
+          const SizedBox(height: 10),
+          ...suggestions.map(
+                (item) => Padding(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.tips_and_updates_rounded,
+                    color: Color(0xFFFBBF24),
+                    size: 20,
+                  ),
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      item,
+                      style: const TextStyle(
+                        color: Color(0xFFE5E7EB),
+                        height: 1.3,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ValidationCheck {
+  const _ValidationCheck({
+    required this.label,
+    required this.passed,
+    required this.successMessage,
+    required this.errorMessage,
+  });
+
+  final String label;
+  final bool passed;
+  final String successMessage;
+  final String errorMessage;
+}
+
+class _MovePair {
+  const _MovePair({
+    required this.from,
+    required this.to,
+    required this.amount,
+  });
+
+  final int from;
+  final int to;
+  final int amount;
+}
+
+class _SolvabilityResult {
+  const _SolvabilityResult({
+    required this.solvable,
+    required this.reason,
+  });
+
+  final bool solvable;
+  final String? reason;
 }

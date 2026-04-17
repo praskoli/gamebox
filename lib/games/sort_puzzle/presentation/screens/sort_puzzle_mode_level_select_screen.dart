@@ -1,12 +1,15 @@
 import 'dart:math' as math;
-
+import '../../../../features/memory_match/data/memory_diy_repository.dart';
 import 'package:flutter/material.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../data/asset_sort_puzzle_repository.dart';
 import '../../data/sort_puzzle_progress_service.dart';
 import '../../domain/sort_level.dart';
 import '../../domain/sort_puzzle_variant.dart';
 import '../screens/sort_puzzle_game_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SortPuzzleModeLevelSelectScreen extends StatefulWidget {
   const SortPuzzleModeLevelSelectScreen({
@@ -16,8 +19,7 @@ class SortPuzzleModeLevelSelectScreen extends StatefulWidget {
     required this.modeTitle,
     required this.description,
   });
-
-  final SortPuzzleVariant variant;
+    final SortPuzzleVariant variant;
   final String modeKey;
   final String modeTitle;
   final String description;
@@ -30,7 +32,9 @@ class SortPuzzleModeLevelSelectScreen extends StatefulWidget {
 class _SortPuzzleModeLevelSelectScreenState
     extends State<SortPuzzleModeLevelSelectScreen> {
   static const int _levelsPerPage = 25;
-
+  static const String _adminConfigCollection = 'app_config';
+  static const String _adminConfigDocId = 'diy_review_admins';
+  static const String _fallbackAdminEmail = 'koli.prasanth.rao@gmail.com';
   final PageController _pageController = PageController();
 
   late Future<List<SortLevel>> _future;
@@ -50,12 +54,65 @@ class _SortPuzzleModeLevelSelectScreenState
     super.dispose();
   }
 
-  Future<List<SortLevel>> _load() async {
-    final List<SortLevel> levels =
-    await AssetSortPuzzleRepository.instance.loadLevels(widget.variant);
-    final List<SortLevel> filtered = _filterLevels(levels);
+  Future<bool> _isCurrentUserAdminReviewer() async {
+    final String currentUid = FirebaseAuth.instance.currentUser?.uid.trim() ?? '';
+    final String currentEmail =
+        FirebaseAuth.instance.currentUser?.email?.trim().toLowerCase() ?? '';
 
-    _unlockedStep = await SortPuzzleProgressService.instance.getUnlockedStep(
+    try {
+      final DocumentSnapshot<Map<String, dynamic>> doc = await FirebaseFirestore
+          .instance
+          .collection(_adminConfigCollection)
+          .doc(_adminConfigDocId)
+          .get();
+
+      final Map<String, dynamic>? data = doc.data();
+      final dynamic rawAllowedEmails = data?['allowedEmails'];
+      final dynamic rawAllowedUids = data?['allowedUids'];
+
+      final List<String> allowedEmails;
+      if (rawAllowedEmails is List) {
+        allowedEmails = rawAllowedEmails
+            .map((dynamic e) => e.toString().trim().toLowerCase())
+            .where((String e) => e.isNotEmpty)
+            .toList(growable: false);
+      } else if (rawAllowedEmails is String &&
+          rawAllowedEmails.trim().isNotEmpty) {
+        allowedEmails = <String>[rawAllowedEmails.trim().toLowerCase()];
+      } else {
+        allowedEmails = <String>[_fallbackAdminEmail];
+      }
+
+      final List<String> allowedUids;
+      if (rawAllowedUids is List) {
+        allowedUids = rawAllowedUids
+            .map((dynamic e) => e.toString().trim())
+            .where((String e) => e.isNotEmpty)
+            .toList(growable: false);
+      } else if (rawAllowedUids is String &&
+          rawAllowedUids.trim().isNotEmpty) {
+        allowedUids = <String>[rawAllowedUids.trim()];
+      } else {
+        allowedUids = const <String>[];
+      }
+
+      return allowedUids.contains(currentUid) ||
+          allowedEmails.contains(currentEmail);
+    } catch (_) {
+      return currentEmail == _fallbackAdminEmail;
+    }
+  }
+
+  Future<List<SortLevel>> _load() async {
+    final List<SortLevel> filtered = await AssetSortPuzzleRepository.instance
+        .loadLevelsForMode(widget.variant, widget.modeKey);
+
+    final bool isAdmin =
+    await MemoryDiyRepository.instance.isCurrentUserAdminReviewer();
+
+    _unlockedStep = isAdmin
+        ? filtered.length
+        : await SortPuzzleProgressService.instance.getUnlockedStep(
       widget.variant,
       widget.modeKey,
     );
@@ -68,6 +125,7 @@ class _SortPuzzleModeLevelSelectScreenState
         widget.modeKey,
         level.levelNumber,
       );
+
     }
 
     if (filtered.isNotEmpty) {
@@ -82,26 +140,6 @@ class _SortPuzzleModeLevelSelectScreenState
     }
 
     return filtered;
-  }
-
-  List<SortLevel> _filterLevels(List<SortLevel> levels) {
-    switch (widget.modeKey) {
-      case 'move_challenge':
-        return levels.where((e) => e.specialRules.moveLimit != null).toList();
-      case 'time_challenge':
-        return levels
-            .where((e) => e.specialRules.timeLimitSeconds != null)
-            .toList();
-      case 'theme_worlds':
-        return levels.where((e) => e.specialRules.worldKey != null).toList();
-      case 'classic_journey':
-      default:
-        return levels.where((e) {
-          return e.specialRules.moveLimit == null &&
-              e.specialRules.timeLimitSeconds == null &&
-              e.specialRules.worldKey == null;
-        }).toList();
-    }
   }
 
   Future<void> _openLevel(List<SortLevel> levels, int index) async {
@@ -188,8 +226,20 @@ class _SortPuzzleModeLevelSelectScreenState
                 final List<SortLevel> levels =
                     snapshot.data ?? const <SortLevel>[];
                 if (levels.isEmpty) {
-                  return const Center(
-                    child: Text('No official levels available yet.'),
+                  return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(24),
+                      child: Text(
+                        _emptyMessage(),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF475569),
+                          height: 1.35,
+                        ),
+                      ),
+                    ),
                   );
                 }
 
@@ -276,7 +326,8 @@ class _SortPuzzleModeLevelSelectScreenState
                               startIndex: start,
                               unlockedStep: _unlockedStep,
                               starsByLevel: _starsByLevel,
-                              onTap: (globalIndex) => _openLevel(levels, globalIndex),
+                              onTap: (globalIndex) =>
+                                  _openLevel(levels, globalIndex),
                             ),
                           );
                         },
@@ -333,6 +384,21 @@ class _SortPuzzleModeLevelSelectScreenState
         return 'Theme Worlds';
       default:
         return widget.modeTitle;
+    }
+  }
+
+  String _emptyMessage() {
+    switch (widget.modeKey) {
+      case 'classic_journey':
+        return 'No Classic Journey levels are available yet.\n\nClassic Journey expects official levels without move limits, time limits, or theme world keys.';
+      case 'move_challenge':
+        return 'No Move Challenge levels are available yet.\n\nMove Challenge expects official levels with a moveLimit.';
+      case 'time_challenge':
+        return 'No Time Challenge levels are available yet.\n\nTime Challenge expects official levels with a timeLimitSeconds value.';
+      case 'theme_worlds':
+        return 'No Theme Worlds levels are available yet.\n\nTheme Worlds expects official levels with a worldKey.';
+      default:
+        return 'No official levels available yet.';
     }
   }
 

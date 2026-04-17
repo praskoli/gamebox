@@ -1,0 +1,5 @@
+world,requested_levels,generated_levels,failed_levels,success_rate_percent,avg_attempts_success,avg_depth_success
+classic_journey,300,81,219,27.0,1890.77,15.4
+move_challenge,300,1,299,0.33,1316.0,6.0
+time_challenge,300,100,200,33.33,1885.6,17.1
+theme_worlds,300,82,218,27.33,1890.05,15.5

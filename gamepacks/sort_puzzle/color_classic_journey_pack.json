@@ -1,0 +1,8932 @@
+{
+  "world": "classic_journey",
+  "variant": "color",
+  "levels": [
+    {
+      "levelNumber": 1,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 3
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 3
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 3,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 3
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 4,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "pink",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 6,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 7,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 3
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 3
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 9,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 3
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 10,
+      "world": "classic_journey",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 3
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 3
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 12,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 13,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 3
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 15,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 16,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 3
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 3
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 18,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 19,
+      "world": "classic_journey",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 3
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 21,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 3
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 22,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 24,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 25,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 3
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 27,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 28,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 30,
+      "world": "classic_journey",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 31,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 33,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 34,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 36,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 37,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 39,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 3
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 40,
+      "world": "classic_journey",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 3
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 42,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 43,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 45,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 46,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 48,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 49,
+      "world": "classic_journey",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 51,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 52,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 54,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 55,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 57,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 58,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 60,
+      "world": "classic_journey",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 61,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 63,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 64,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 66,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 67,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 69,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 70,
+      "world": "classic_journey",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 72,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 73,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 75,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 76,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 78,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 79,
+      "world": "classic_journey",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 81,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 84,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 85,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 87,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 88,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 90,
+      "world": "classic_journey",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 93,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 94,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 96,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 97,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 99,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 100,
+      "world": "classic_journey",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 102,
+      "world": "classic_journey",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 105,
+      "world": "classic_journey",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 108,
+      "world": "classic_journey",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "easy",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 109,
+      "world": "classic_journey",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 111,
+      "world": "classic_journey",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 114,
+      "world": "classic_journey",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 117,
+      "world": "classic_journey",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 121,
+      "world": "classic_journey",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 124,
+      "world": "classic_journey",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 126,
+      "world": "classic_journey",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 129,
+      "world": "classic_journey",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 135,
+      "world": "classic_journey",
+      "band": 14,
+      "complexityLabel": "master_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 138,
+      "world": "classic_journey",
+      "band": 14,
+      "complexityLabel": "master_entry",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 141,
+      "world": "classic_journey",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 147,
+      "world": "classic_journey",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 150,
+      "world": "classic_journey",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "color",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "classic",
+        "visualStyle": "standard"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

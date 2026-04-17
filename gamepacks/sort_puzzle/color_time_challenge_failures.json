@@ -1,0 +1,3182 @@
+[
+  {
+    "world": "time_challenge",
+    "level": 2,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 5,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 8,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 11,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 14,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 17,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 20,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 23,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 26,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 29,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 32,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 35,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 38,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 41,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 44,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 47,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 50,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 53,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 56,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 59,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 62,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 65,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 68,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 71,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 74,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 77,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 80,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 83,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 86,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 89,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 92,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 95,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 98,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 101,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 104,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 107,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 110,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 113,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 116,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 119,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 122,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 125,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 128,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 131,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 134,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 137,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 140,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 143,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 146,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 149,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 151,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4876,
+      "solver:timeout_or_unsolved_fast": 71,
+      "depth:below_min_36": 2,
+      "struct:near_solved_forbidden": 19,
+      "struct:clumped_colors": 17,
+      "depth:below_min_32": 5,
+      "struct:top_color_clash": 2,
+      "depth:below_min_28": 5,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 152,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 153,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:clumped_colors": 18,
+      "struct:empty_tube_mismatch": 4847,
+      "struct:near_solved_forbidden": 22,
+      "solver:timeout_or_unsolved_fast": 102,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 7,
+      "depth:below_min_28": 1,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 154,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4851,
+      "struct:near_solved_forbidden": 28,
+      "struct:clumped_colors": 13,
+      "solver:timeout_or_unsolved_fast": 86,
+      "depth:below_min_36": 5,
+      "depth:below_min_32": 5,
+      "struct:top_color_clash": 2,
+      "depth:below_min_28": 7,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 155,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 156,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4816,
+      "solver:timeout_or_unsolved_fast": 124,
+      "struct:near_solved_forbidden": 23,
+      "struct:clumped_colors": 16,
+      "depth:below_min_36": 2,
+      "struct:duplicate_stack_layout": 1,
+      "struct:top_color_clash": 4,
+      "depth:below_min_32": 8,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 157,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4887,
+      "solver:timeout_or_unsolved_fast": 74,
+      "struct:clumped_colors": 10,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_36": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_32": 5,
+      "depth:below_min_28": 1,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 158,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 159,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4839,
+      "solver:timeout_or_unsolved_fast": 115,
+      "struct:near_solved_forbidden": 21,
+      "depth:below_min_36": 7,
+      "struct:clumped_colors": 12,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_32": 2,
+      "depth:below_min_28": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 160,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4852,
+      "solver:timeout_or_unsolved_fast": 83,
+      "struct:top_color_clash": 4,
+      "struct:near_solved_forbidden": 29,
+      "struct:clumped_colors": 15,
+      "depth:below_min_36": 5,
+      "depth:below_min_32": 7,
+      "depth:below_min_28": 3,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 161,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 162,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4829,
+      "solver:timeout_or_unsolved_fast": 101,
+      "struct:near_solved_forbidden": 29,
+      "struct:clumped_colors": 22,
+      "depth:below_min_38": 5,
+      "struct:top_color_clash": 1,
+      "depth:below_min_34": 2,
+      "depth:below_min_30": 7,
+      "depth:below_min_26": 4
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 163,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4875,
+      "struct:clumped_colors": 12,
+      "solver:timeout_or_unsolved_fast": 88,
+      "depth:below_min_38": 5,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_34": 2,
+      "depth:below_min_30": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 164,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 165,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4843,
+      "solver:timeout_or_unsolved_fast": 106,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 22,
+      "depth:below_min_38": 5,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_34": 3,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 166,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4868,
+      "solver:timeout_or_unsolved_fast": 79,
+      "struct:near_solved_forbidden": 22,
+      "struct:clumped_colors": 20,
+      "depth:below_min_38": 3,
+      "struct:top_color_clash": 2,
+      "depth:below_min_34": 1,
+      "depth:below_min_30": 3,
+      "depth:below_min_26": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 167,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 168,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4818,
+      "solver:timeout_or_unsolved_fast": 125,
+      "struct:clumped_colors": 17,
+      "depth:below_min_38": 4,
+      "struct:near_solved_forbidden": 19,
+      "struct:top_color_clash": 5,
+      "depth:below_min_34": 5,
+      "depth:below_min_30": 5,
+      "depth:below_min_26": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 169,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4852,
+      "depth:below_min_38": 6,
+      "solver:timeout_or_unsolved_fast": 90,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 22,
+      "struct:top_color_clash": 1,
+      "depth:below_min_34": 2,
+      "depth:below_min_30": 4,
+      "depth:below_min_26": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 170,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 171,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4872,
+      "struct:clumped_colors": 18,
+      "solver:timeout_or_unsolved_fast": 83,
+      "struct:near_solved_forbidden": 18,
+      "struct:top_color_clash": 3,
+      "depth:below_min_36": 2,
+      "depth:below_min_32": 1,
+      "depth:below_min_28": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 172,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4893,
+      "solver:timeout_or_unsolved_fast": 67,
+      "depth:below_min_40": 3,
+      "struct:clumped_colors": 18,
+      "struct:near_solved_forbidden": 14,
+      "struct:top_color_clash": 4,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 173,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 174,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4887,
+      "solver:timeout_or_unsolved_fast": 75,
+      "struct:near_solved_forbidden": 21,
+      "struct:clumped_colors": 11,
+      "depth:below_min_40": 3,
+      "depth:below_min_36": 2,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 175,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 6,
+      "struct:clumped_colors": 11,
+      "solver:timeout_or_unsolved_fast": 53,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 176,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 177,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4863,
+      "solver:timeout_or_unsolved_fast": 94,
+      "struct:clumped_colors": 19,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 3,
+      "depth:below_min_40": 1,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 178,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4899,
+      "solver:timeout_or_unsolved_fast": 56,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 17,
+      "struct:near_solved_forbidden": 20,
+      "depth:below_min_40": 1,
+      "depth:below_min_36": 1,
+      "depth:below_min_28": 4
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 179,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 180,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4859,
+      "solver:timeout_or_unsolved_fast": 95,
+      "struct:near_solved_forbidden": 23,
+      "depth:below_min_40": 1,
+      "struct:clumped_colors": 15,
+      "depth:below_min_36": 3,
+      "depth:below_min_32": 1,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 181,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4890,
+      "struct:near_solved_forbidden": 20,
+      "solver:timeout_or_unsolved_fast": 68,
+      "struct:clumped_colors": 18,
+      "struct:top_color_clash": 3,
+      "depth:below_min_37": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 182,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 183,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4864,
+      "solver:timeout_or_unsolved_fast": 91,
+      "struct:near_solved_forbidden": 24,
+      "struct:top_color_clash": 3,
+      "struct:clumped_colors": 12,
+      "depth:below_min_42": 1,
+      "depth:below_min_37": 3,
+      "depth:below_min_33": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 184,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4899,
+      "solver:timeout_or_unsolved_fast": 62,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_42": 1,
+      "struct:clumped_colors": 15,
+      "struct:top_color_clash": 2,
+      "depth:below_min_37": 3,
+      "depth:below_min_33": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 185,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 186,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "solver:timeout_or_unsolved_fast": 94,
+      "struct:empty_tube_mismatch": 4864,
+      "struct:near_solved_forbidden": 19,
+      "struct:clumped_colors": 18,
+      "depth:below_min_37": 1,
+      "struct:top_color_clash": 3,
+      "depth:below_min_33": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 187,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4900,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:clumped_colors": 17,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_42": 3,
+      "struct:top_color_clash": 4,
+      "depth:below_min_37": 1,
+      "depth:below_min_33": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 188,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 189,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4870,
+      "solver:timeout_or_unsolved_fast": 91,
+      "struct:clumped_colors": 15,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_42": 2,
+      "struct:top_color_clash": 3,
+      "depth:below_min_37": 1,
+      "depth:below_min_33": 1,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 190,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4886,
+      "solver:timeout_or_unsolved_fast": 65,
+      "struct:near_solved_forbidden": 18,
+      "struct:clumped_colors": 23,
+      "depth:below_min_42": 2,
+      "struct:top_color_clash": 2,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_33": 1,
+      "depth:below_min_29": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 191,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 192,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "solver:timeout_or_unsolved_fast": 86,
+      "depth:below_min_44": 1,
+      "struct:top_color_clash": 4,
+      "struct:clumped_colors": 12,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_39": 1,
+      "depth:below_min_35": 1,
+      "depth:below_min_30": 5
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 193,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "solver:timeout_or_unsolved_fast": 51,
+      "struct:clumped_colors": 10,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_39": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_35": 1,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 194,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 195,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4872,
+      "solver:timeout_or_unsolved_fast": 91,
+      "struct:clumped_colors": 12,
+      "depth:below_min_44": 3,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_39": 2,
+      "depth:below_min_35": 3,
+      "depth:below_min_30": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 196,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_44": 3,
+      "struct:clumped_colors": 18,
+      "struct:top_color_clash": 3,
+      "depth:below_min_35": 3,
+      "depth:below_min_30": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 197,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 198,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "solver:timeout_or_unsolved_fast": 93,
+      "struct:clumped_colors": 19,
+      "struct:near_solved_forbidden": 14,
+      "struct:top_color_clash": 4,
+      "depth:below_min_44": 2,
+      "depth:below_min_39": 2,
+      "depth:below_min_35": 3,
+      "depth:below_min_30": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 199,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4893,
+      "struct:clumped_colors": 15,
+      "solver:timeout_or_unsolved_fast": 65,
+      "struct:top_color_clash": 4,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_44": 1,
+      "depth:below_min_35": 1,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 200,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 201,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4879,
+      "solver:timeout_or_unsolved_fast": 84,
+      "struct:clumped_colors": 17,
+      "struct:near_solved_forbidden": 12,
+      "depth:below_min_46": 1,
+      "struct:top_color_clash": 4,
+      "struct:duplicate_stack_layout": 2,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 202,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "struct:clumped_colors": 6,
+      "solver:timeout_or_unsolved_fast": 63,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_46": 1,
+      "depth:below_min_36": 2,
+      "struct:top_color_clash": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 203,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 204,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "solver:timeout_or_unsolved_fast": 104,
+      "depth:below_min_46": 2,
+      "struct:near_solved_forbidden": 14,
+      "struct:top_color_clash": 4,
+      "struct:clumped_colors": 8,
+      "depth:below_min_41": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 205,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4907,
+      "depth:below_min_46": 4,
+      "solver:timeout_or_unsolved_fast": 63,
+      "struct:near_solved_forbidden": 13,
+      "struct:clumped_colors": 6,
+      "struct:top_color_clash": 3,
+      "depth:below_min_41": 2,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 206,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 207,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4869,
+      "struct:clumped_colors": 9,
+      "solver:timeout_or_unsolved_fast": 94,
+      "struct:near_solved_forbidden": 23,
+      "struct:top_color_clash": 1,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 1,
+      "depth:below_min_36": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 208,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4888,
+      "solver:timeout_or_unsolved_fast": 73,
+      "struct:near_solved_forbidden": 18,
+      "struct:clumped_colors": 17,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 209,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 210,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4866,
+      "solver:timeout_or_unsolved_fast": 93,
+      "struct:top_color_clash": 5,
+      "struct:near_solved_forbidden": 12,
+      "struct:duplicate_stack_layout": 1,
+      "struct:clumped_colors": 16,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 3,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 211,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4928,
+      "struct:clumped_colors": 11,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_43": 1,
+      "struct:top_color_clash": 4,
+      "depth:below_min_33": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 212,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 213,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "struct:clumped_colors": 12,
+      "solver:timeout_or_unsolved_fast": 72,
+      "struct:near_solved_forbidden": 19,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 214,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4926,
+      "struct:near_solved_forbidden": 13,
+      "solver:timeout_or_unsolved_fast": 38,
+      "struct:clumped_colors": 20,
+      "depth:below_min_43": 1,
+      "struct:duplicate_stack_layout": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 215,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 216,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4908,
+      "solver:timeout_or_unsolved_fast": 61,
+      "depth:below_min_48": 3,
+      "struct:near_solved_forbidden": 15,
+      "struct:clumped_colors": 8,
+      "struct:top_color_clash": 4,
+      "depth:below_min_43": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 217,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "struct:clumped_colors": 10,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:near_solved_forbidden": 13,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 218,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 219,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "struct:top_color_clash": 2,
+      "solver:timeout_or_unsolved_fast": 81,
+      "struct:near_solved_forbidden": 13,
+      "struct:clumped_colors": 13
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 220,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "struct:duplicate_stack_layout": 1,
+      "solver:timeout_or_unsolved_fast": 43,
+      "struct:clumped_colors": 8,
+      "struct:near_solved_forbidden": 8
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 221,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 222,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4902,
+      "solver:timeout_or_unsolved_fast": 71,
+      "struct:near_solved_forbidden": 19,
+      "struct:clumped_colors": 5,
+      "depth:below_min_50": 1,
+      "depth:below_min_45": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 223,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4928,
+      "solver:timeout_or_unsolved_fast": 40,
+      "struct:top_color_clash": 5,
+      "struct:clumped_colors": 14,
+      "struct:near_solved_forbidden": 13
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 224,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 225,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "solver:timeout_or_unsolved_fast": 72,
+      "struct:near_solved_forbidden": 15,
+      "struct:clumped_colors": 18,
+      "depth:below_min_45": 2,
+      "struct:top_color_clash": 1,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 226,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "struct:clumped_colors": 13,
+      "solver:timeout_or_unsolved_fast": 48,
+      "depth:below_min_50": 1,
+      "struct:near_solved_forbidden": 13,
+      "struct:duplicate_stack_layout": 1,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 227,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 228,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4886,
+      "struct:clumped_colors": 14,
+      "solver:timeout_or_unsolved_fast": 75,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_50": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_45": 2,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 229,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:near_solved_forbidden": 7,
+      "solver:timeout_or_unsolved_fast": 49,
+      "struct:clumped_colors": 8,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 230,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 231,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4883,
+      "solver:timeout_or_unsolved_fast": 77,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 18,
+      "struct:top_color_clash": 3,
+      "depth:below_min_52": 1,
+      "depth:below_min_46": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 232,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4919,
+      "solver:timeout_or_unsolved_fast": 52,
+      "struct:near_solved_forbidden": 12,
+      "struct:clumped_colors": 11,
+      "depth:below_min_46": 3,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 233,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 234,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4899,
+      "solver:timeout_or_unsolved_fast": 66,
+      "struct:near_solved_forbidden": 17,
+      "struct:clumped_colors": 12,
+      "depth:below_min_52": 1,
+      "struct:top_color_clash": 3,
+      "depth:below_min_46": 1,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 235,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "solver:timeout_or_unsolved_fast": 49,
+      "struct:clumped_colors": 12,
+      "struct:near_solved_forbidden": 13,
+      "struct:top_color_clash": 1,
+      "depth:below_min_46": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 236,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 237,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4889,
+      "solver:timeout_or_unsolved_fast": 71,
+      "struct:clumped_colors": 12,
+      "struct:near_solved_forbidden": 20,
+      "struct:top_color_clash": 7,
+      "depth:below_min_46": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 238,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:near_solved_forbidden": 14,
+      "struct:clumped_colors": 13
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 239,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 240,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4905,
+      "solver:timeout_or_unsolved_fast": 69,
+      "struct:clumped_colors": 5,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_52": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 241,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "solver:timeout_or_unsolved_fast": 52,
+      "struct:clumped_colors": 8,
+      "struct:near_solved_forbidden": 12,
+      "struct:top_color_clash": 4,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_43": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 242,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 243,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4905,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 17,
+      "struct:top_color_clash": 2,
+      "depth:below_min_43": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 244,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4927,
+      "struct:near_solved_forbidden": 13,
+      "solver:timeout_or_unsolved_fast": 47,
+      "struct:clumped_colors": 11,
+      "depth:below_min_43": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 245,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 246,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4885,
+      "solver:timeout_or_unsolved_fast": 82,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 12,
+      "struct:top_color_clash": 3,
+      "depth:below_min_48": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 247,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4915,
+      "solver:timeout_or_unsolved_fast": 52,
+      "struct:near_solved_forbidden": 15,
+      "struct:clumped_colors": 13,
+      "struct:duplicate_stack_layout": 1,
+      "struct:top_color_clash": 3,
+      "depth:below_min_48": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 248,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 249,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "solver:timeout_or_unsolved_fast": 78,
+      "depth:below_min_54": 3,
+      "struct:clumped_colors": 8,
+      "struct:near_solved_forbidden": 13,
+      "struct:top_color_clash": 2,
+      "depth:below_min_48": 1,
+      "depth:below_min_37": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 250,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4920,
+      "struct:near_solved_forbidden": 10,
+      "solver:timeout_or_unsolved_fast": 59,
+      "struct:clumped_colors": 9,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 251,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 252,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "solver:timeout_or_unsolved_fast": 62,
+      "struct:clumped_colors": 17,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 5
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 253,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4945,
+      "solver:timeout_or_unsolved_fast": 24,
+      "struct:near_solved_forbidden": 13,
+      "struct:clumped_colors": 13,
+      "struct:top_color_clash": 5
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 254,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 255,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "solver:timeout_or_unsolved_fast": 47,
+      "struct:near_solved_forbidden": 19,
+      "struct:clumped_colors": 12,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 256,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4944,
+      "solver:timeout_or_unsolved_fast": 28,
+      "struct:top_color_clash": 5,
+      "struct:clumped_colors": 10,
+      "struct:near_solved_forbidden": 10,
+      "depth:below_min_56": 1,
+      "depth:below_min_44": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 257,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 258,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:near_solved_forbidden": 6,
+      "solver:timeout_or_unsolved_fast": 48,
+      "depth:below_min_56": 1,
+      "struct:clumped_colors": 9,
+      "struct:top_color_clash": 3,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 259,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4935,
+      "struct:clumped_colors": 11,
+      "struct:top_color_clash": 1,
+      "solver:timeout_or_unsolved_fast": 36,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_39": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 260,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 261,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4913,
+      "solver:timeout_or_unsolved_fast": 59,
+      "struct:clumped_colors": 15,
+      "struct:near_solved_forbidden": 11,
+      "struct:top_color_clash": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 262,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4937,
+      "struct:near_solved_forbidden": 14,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:clumped_colors": 14,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 263,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 264,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4907,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:near_solved_forbidden": 15,
+      "struct:clumped_colors": 8,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 265,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "solver:timeout_or_unsolved_fast": 42,
+      "struct:clumped_colors": 9,
+      "struct:near_solved_forbidden": 12,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 266,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 267,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4908,
+      "solver:timeout_or_unsolved_fast": 62,
+      "struct:clumped_colors": 9,
+      "struct:near_solved_forbidden": 17,
+      "struct:top_color_clash": 3,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 268,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4953,
+      "solver:timeout_or_unsolved_fast": 26,
+      "struct:clumped_colors": 10,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1,
+      "depth:below_min_40": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 269,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 270,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "solver:timeout_or_unsolved_fast": 55,
+      "struct:near_solved_forbidden": 15,
+      "struct:clumped_colors": 9,
+      "struct:top_color_clash": 2,
+      "depth:below_min_58": 1,
+      "depth:below_min_40": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 271,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4945,
+      "solver:timeout_or_unsolved_fast": 40,
+      "struct:clumped_colors": 7,
+      "struct:near_solved_forbidden": 7,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 272,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 273,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:near_solved_forbidden": 9,
+      "struct:clumped_colors": 6,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 274,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:near_solved_forbidden": 11,
+      "struct:clumped_colors": 11,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 275,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 276,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "solver:timeout_or_unsolved_fast": 57,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 7,
+      "struct:clumped_colors": 10
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 277,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4936,
+      "struct:near_solved_forbidden": 9,
+      "solver:timeout_or_unsolved_fast": 34,
+      "struct:clumped_colors": 15,
+      "struct:top_color_clash": 4,
+      "depth:below_min_54": 1,
+      "depth:below_min_42": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 278,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 279,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "struct:near_solved_forbidden": 14,
+      "solver:timeout_or_unsolved_fast": 54,
+      "struct:clumped_colors": 7,
+      "struct:top_color_clash": 2,
+      "depth:below_min_48": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 280,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:near_solved_forbidden": 12,
+      "struct:clumped_colors": 10,
+      "struct:top_color_clash": 3,
+      "depth:below_min_54": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 281,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 282,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4918,
+      "struct:near_solved_forbidden": 10,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:clumped_colors": 11,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 283,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4951,
+      "struct:clumped_colors": 17,
+      "solver:timeout_or_unsolved_fast": 20,
+      "struct:near_solved_forbidden": 12
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 284,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 285,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4940,
+      "solver:timeout_or_unsolved_fast": 42,
+      "struct:clumped_colors": 7,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 286,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4954,
+      "solver:timeout_or_unsolved_fast": 27,
+      "struct:clumped_colors": 11,
+      "struct:near_solved_forbidden": 6,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 287,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 288,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4927,
+      "struct:near_solved_forbidden": 6,
+      "solver:timeout_or_unsolved_fast": 53,
+      "struct:clumped_colors": 13,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 289,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4959,
+      "solver:timeout_or_unsolved_fast": 19,
+      "struct:near_solved_forbidden": 10,
+      "struct:clumped_colors": 9,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 290,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 291,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 7,
+      "struct:top_color_clash": 5,
+      "depth:below_min_44": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 292,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:near_solved_forbidden": 18,
+      "struct:clumped_colors": 9,
+      "solver:timeout_or_unsolved_fast": 34
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 293,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 294,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4927,
+      "struct:near_solved_forbidden": 12,
+      "solver:timeout_or_unsolved_fast": 44,
+      "struct:clumped_colors": 14,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 295,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4949,
+      "struct:near_solved_forbidden": 10,
+      "solver:timeout_or_unsolved_fast": 30,
+      "struct:clumped_colors": 8,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 296,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 297,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4943,
+      "struct:clumped_colors": 15,
+      "solver:timeout_or_unsolved_fast": 32,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 298,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4943,
+      "struct:clumped_colors": 11,
+      "solver:timeout_or_unsolved_fast": 31,
+      "depth:below_min_64": 1,
+      "struct:near_solved_forbidden": 13,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 299,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "time_challenge",
+    "level": 300,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4928,
+      "struct:clumped_colors": 6,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:top_color_clash": 3,
+      "struct:near_solved_forbidden": 17
+    }
+  }
+]

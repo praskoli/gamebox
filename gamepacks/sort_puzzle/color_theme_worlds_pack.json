@@ -1,0 +1,9086 @@
+{
+  "world": "theme_worlds",
+  "variant": "color",
+  "levels": [
+    {
+      "levelNumber": 1,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 3,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 4,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 6,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 7,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 9,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 3
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 10,
+      "world": "theme_worlds",
+      "band": 1,
+      "complexityLabel": "simple",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 3
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 3
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 12,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 3
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 13,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 3
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 3
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 15,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 16,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 3
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 18,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 19,
+      "world": "theme_worlds",
+      "band": 2,
+      "complexityLabel": "simple_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 21,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 3
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 22,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 24,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 25,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 27,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 3
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 28,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 30,
+      "world": "theme_worlds",
+      "band": 3,
+      "complexityLabel": "medium",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 3
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 31,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 33,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 34,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 36,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 37,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "pink",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 39,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 40,
+      "world": "theme_worlds",
+      "band": 4,
+      "complexityLabel": "medium_high",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 42,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 43,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 45,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 46,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 48,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 49,
+      "world": "theme_worlds",
+      "band": 5,
+      "complexityLabel": "medium_complex",
+      "difficulty": "easy",
+      "themeKey": "candy_realm",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "alternating",
+        "visualStyle": "clean_open"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 51,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 52,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 54,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 55,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 57,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 58,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 60,
+      "world": "theme_worlds",
+      "band": 6,
+      "complexityLabel": "complex",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 61,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 63,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 64,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 66,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 67,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 69,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 70,
+      "world": "theme_worlds",
+      "band": 7,
+      "complexityLabel": "complex_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 72,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 73,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 75,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 76,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 78,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 79,
+      "world": "theme_worlds",
+      "band": 8,
+      "complexityLabel": "advanced",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 81,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 82,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 84,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 85,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "easy",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 87,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 88,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 90,
+      "world": "theme_worlds",
+      "band": 9,
+      "complexityLabel": "advanced_high",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 2
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        }
+      ]
+    },
+    {
+      "levelNumber": 93,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 94,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 96,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 97,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 99,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 100,
+      "world": "theme_worlds",
+      "band": 10,
+      "complexityLabel": "expert_entry",
+      "difficulty": "medium",
+      "themeKey": "sky_garden",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "staircase",
+        "visualStyle": "asymmetric_flow"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 102,
+      "world": "theme_worlds",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "easy",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 105,
+      "world": "theme_worlds",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 108,
+      "world": "theme_worlds",
+      "band": 11,
+      "complexityLabel": "expert",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 111,
+      "world": "theme_worlds",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 112,
+      "world": "theme_worlds",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 114,
+      "world": "theme_worlds",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 117,
+      "world": "theme_worlds",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 2
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 120,
+      "world": "theme_worlds",
+      "band": 12,
+      "complexityLabel": "expert_high",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 2
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 123,
+      "world": "theme_worlds",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 126,
+      "world": "theme_worlds",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 129,
+      "world": "theme_worlds",
+      "band": 13,
+      "complexityLabel": "expert_complex",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 2
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "cyan",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 132,
+      "world": "theme_worlds",
+      "band": 14,
+      "complexityLabel": "master_entry",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 2
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "lime",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 135,
+      "world": "theme_worlds",
+      "band": 14,
+      "complexityLabel": "master_entry",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "navy",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 2
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 141,
+      "world": "theme_worlds",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "yellow",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            },
+            {
+              "groupKey": "maroon",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "pink",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "maroon",
+              "amount": 2
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "lime",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 144,
+      "world": "theme_worlds",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "purple",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "brown",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "orange",
+              "amount": 2
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "blue",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "blue",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "red",
+              "amount": 1
+            },
+            {
+              "groupKey": "purple",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "brown",
+              "amount": 2
+            },
+            {
+              "groupKey": "orange",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "levelNumber": 150,
+      "world": "theme_worlds",
+      "band": 15,
+      "complexityLabel": "master",
+      "difficulty": "medium",
+      "themeKey": "crystal_cave",
+      "config": {
+        "moveLimit": null,
+        "timeLimitSeconds": null,
+        "strategy": "traps",
+        "visualStyle": "compact_dense"
+      },
+      "containers": [
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": []
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "crimson",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "indigo",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "teal",
+              "amount": 1
+            },
+            {
+              "groupKey": "navy",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "pieces": [
+            {
+              "groupKey": "silver",
+              "amount": 1
+            },
+            {
+              "groupKey": "gold",
+              "amount": 1
+            },
+            {
+              "groupKey": "green",
+              "amount": 1
+            },
+            {
+              "groupKey": "silver",
+              "amount": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3501 @@
+[
+  {
+    "world": "classic_journey",
+    "level": 2,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 5,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 8,
+    "band": 1,
+    "complexity_label": "simple",
+    "profile": "BOTTLENECK",
+    "target_depth": 6,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 11,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 14,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 17,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 20,
+    "band": 2,
+    "complexity_label": "simple_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 8,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 23,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 26,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 29,
+    "band": 3,
+    "complexity_label": "medium",
+    "profile": "BOTTLENECK",
+    "target_depth": 10,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 32,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 35,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 38,
+    "band": 4,
+    "complexity_label": "medium_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 12,
+    "final_relaxed_depth": 8,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 41,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 44,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 47,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 50,
+    "band": 5,
+    "complexity_label": "medium_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 14,
+    "final_relaxed_depth": 9,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 53,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 56,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 59,
+    "band": 6,
+    "complexity_label": "complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 16,
+    "final_relaxed_depth": 11,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 62,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 65,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 68,
+    "band": 7,
+    "complexity_label": "complex_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 18,
+    "final_relaxed_depth": 12,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 71,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 74,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 77,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 80,
+    "band": 8,
+    "complexity_label": "advanced",
+    "profile": "BOTTLENECK",
+    "target_depth": 20,
+    "final_relaxed_depth": 14,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 82,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "SPRINT",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4982,
+      "struct:clumped_colors": 15,
+      "depth:below_min_22": 1,
+      "depth:below_min_19": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 83,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 86,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 89,
+    "band": 9,
+    "complexity_label": "advanced_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 22,
+    "final_relaxed_depth": 15,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 91,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "SPRINT",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4980,
+      "depth:below_min_24": 3,
+      "struct:clumped_colors": 12,
+      "depth:below_min_21": 3,
+      "depth:below_min_19": 1,
+      "struct:near_solved_forbidden": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 92,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 95,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 98,
+    "band": 10,
+    "complexity_label": "expert_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 24,
+    "final_relaxed_depth": 16,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 101,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 103,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4973,
+      "depth:below_min_26": 3,
+      "struct:clumped_colors": 15,
+      "depth:below_min_23": 4,
+      "depth:below_min_20": 5
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 104,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 106,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "SPRINT",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4975,
+      "depth:below_min_26": 8,
+      "struct:clumped_colors": 6,
+      "depth:below_min_23": 5,
+      "depth:below_min_20": 5,
+      "depth:below_min_18": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 107,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 110,
+    "band": 11,
+    "complexity_label": "expert",
+    "profile": "BOTTLENECK",
+    "target_depth": 26,
+    "final_relaxed_depth": 18,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 112,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4970,
+      "depth:below_min_28": 3,
+      "struct:clumped_colors": 9,
+      "struct:near_solved_forbidden": 1,
+      "depth:below_min_25": 8,
+      "depth:below_min_22": 5,
+      "depth:below_min_19": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 113,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 115,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4972,
+      "depth:below_min_28": 10,
+      "struct:clumped_colors": 10,
+      "depth:below_min_25": 4,
+      "struct:near_solved_forbidden": 1,
+      "depth:below_min_19": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 116,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 118,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "SPRINT",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4975,
+      "struct:clumped_colors": 6,
+      "depth:below_min_28": 9,
+      "struct:near_solved_forbidden": 1,
+      "depth:below_min_25": 4,
+      "depth:below_min_22": 3,
+      "depth:below_min_19": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 119,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 120,
+    "band": 12,
+    "complexity_label": "expert_high",
+    "profile": "DECOY",
+    "target_depth": 28,
+    "final_relaxed_depth": 19,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4894,
+      "depth:below_min_28": 25,
+      "struct:clumped_colors": 27,
+      "struct:near_solved_forbidden": 2,
+      "depth:below_min_25": 23,
+      "depth:below_min_22": 20,
+      "depth:below_min_19": 9
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 122,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 123,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "DECOY",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "struct:clumped_colors": 30,
+      "depth:below_min_30": 18,
+      "depth:below_min_27": 22,
+      "depth:below_min_24": 5,
+      "depth:below_min_21": 9
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 125,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 127,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4979,
+      "struct:clumped_colors": 12,
+      "depth:below_min_30": 1,
+      "depth:below_min_27": 2,
+      "depth:below_min_24": 3,
+      "depth:below_min_21": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 128,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 130,
+    "band": 13,
+    "complexity_label": "expert_complex",
+    "profile": "SPRINT",
+    "target_depth": 30,
+    "final_relaxed_depth": 21,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4981,
+      "struct:clumped_colors": 7,
+      "depth:below_min_30": 2,
+      "depth:below_min_27": 4,
+      "depth:below_min_24": 1,
+      "depth:below_min_21": 5
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 131,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 132,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "DECOY",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "depth:below_min_32": 16,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_28": 15,
+      "depth:below_min_25": 14,
+      "depth:below_min_22": 6,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 133,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4978,
+      "depth:below_min_32": 2,
+      "struct:clumped_colors": 11,
+      "struct:near_solved_forbidden": 3,
+      "depth:below_min_28": 4,
+      "depth:below_min_25": 1,
+      "depth:below_min_22": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 134,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 136,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4985,
+      "struct:clumped_colors": 10,
+      "depth:below_min_28": 2,
+      "depth:below_min_25": 2,
+      "depth:below_min_22": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 137,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 139,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "SPRINT",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4985,
+      "depth:below_min_32": 3,
+      "struct:clumped_colors": 6,
+      "struct:near_solved_forbidden": 4,
+      "depth:below_min_28": 1,
+      "depth:below_min_25": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 140,
+    "band": 14,
+    "complexity_label": "master_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 32,
+    "final_relaxed_depth": 22,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 142,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4987,
+      "struct:clumped_colors": 4,
+      "struct:near_solved_forbidden": 4,
+      "depth:below_min_34": 1,
+      "depth:below_min_30": 1,
+      "depth:below_min_27": 1,
+      "depth:below_min_23": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 143,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 144,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "DECOY",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "depth:below_min_34": 15,
+      "struct:clumped_colors": 19,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_30": 17,
+      "depth:below_min_27": 13,
+      "depth:below_min_23": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 145,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4982,
+      "struct:clumped_colors": 6,
+      "depth:below_min_34": 3,
+      "depth:below_min_30": 2,
+      "depth:below_min_27": 3,
+      "depth:below_min_23": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 146,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 148,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "SPRINT",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4984,
+      "struct:near_solved_forbidden": 3,
+      "depth:below_min_34": 1,
+      "struct:clumped_colors": 7,
+      "depth:below_min_30": 3,
+      "depth:below_min_23": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 149,
+    "band": 15,
+    "complexity_label": "master",
+    "profile": "BOTTLENECK",
+    "target_depth": 34,
+    "final_relaxed_depth": 23,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 151,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4884,
+      "struct:clumped_colors": 42,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:near_solved_forbidden": 19,
+      "depth:below_min_36": 2,
+      "depth:below_min_28": 2,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 152,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 153,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4824,
+      "struct:near_solved_forbidden": 29,
+      "struct:clumped_colors": 39,
+      "solver:timeout_or_unsolved_fast": 96,
+      "struct:top_color_clash": 1,
+      "depth:below_min_36": 4,
+      "depth:below_min_32": 1,
+      "depth:below_min_28": 4,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_25": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 154,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4901,
+      "solver:timeout_or_unsolved_fast": 37,
+      "struct:clumped_colors": 36,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_36": 2,
+      "struct:top_color_clash": 4,
+      "depth:below_min_32": 1,
+      "depth:below_min_28": 1,
+      "depth:below_min_25": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 155,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 156,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4825,
+      "struct:near_solved_forbidden": 22,
+      "solver:timeout_or_unsolved_fast": 84,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 53,
+      "depth:below_min_36": 3,
+      "depth:below_min_32": 3,
+      "depth:below_min_28": 5,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 157,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "solver:timeout_or_unsolved_fast": 41,
+      "struct:clumped_colors": 43,
+      "struct:near_solved_forbidden": 25,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 5,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_28": 2,
+      "struct:top_color_clash": 1,
+      "depth:below_min_25": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 158,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 159,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "DECOY",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4837,
+      "solver:timeout_or_unsolved_fast": 80,
+      "struct:clumped_colors": 37,
+      "struct:near_solved_forbidden": 33,
+      "depth:below_min_36": 4,
+      "struct:top_color_clash": 2,
+      "depth:below_min_32": 3,
+      "depth:below_min_28": 2,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 160,
+    "band": 16,
+    "complexity_label": "master_high",
+    "profile": "SPRINT",
+    "target_depth": 36,
+    "final_relaxed_depth": 25,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4865,
+      "depth:below_min_36": 4,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:clumped_colors": 44,
+      "struct:near_solved_forbidden": 20,
+      "struct:top_color_clash": 2,
+      "depth:below_min_32": 4,
+      "depth:below_min_28": 1,
+      "depth:below_min_25": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 161,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 162,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4823,
+      "solver:timeout_or_unsolved_fast": 104,
+      "struct:clumped_colors": 33,
+      "depth:below_min_38": 5,
+      "struct:near_solved_forbidden": 25,
+      "depth:below_min_34": 7,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 163,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "depth:below_min_38": 4,
+      "struct:clumped_colors": 32,
+      "struct:near_solved_forbidden": 18,
+      "solver:timeout_or_unsolved_fast": 45,
+      "struct:top_color_clash": 1,
+      "depth:below_min_34": 3,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 164,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 165,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4839,
+      "solver:timeout_or_unsolved_fast": 77,
+      "struct:near_solved_forbidden": 22,
+      "depth:below_min_38": 8,
+      "struct:clumped_colors": 43,
+      "struct:top_color_clash": 2,
+      "depth:below_min_34": 2,
+      "depth:below_min_30": 5,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 166,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4880,
+      "struct:clumped_colors": 31,
+      "solver:timeout_or_unsolved_fast": 51,
+      "struct:near_solved_forbidden": 30,
+      "depth:below_min_34": 3,
+      "depth:below_min_30": 2,
+      "depth:below_min_26": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 167,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 168,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "DECOY",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4834,
+      "solver:timeout_or_unsolved_fast": 101,
+      "struct:near_solved_forbidden": 21,
+      "struct:clumped_colors": 33,
+      "depth:below_min_38": 2,
+      "depth:below_min_34": 4,
+      "struct:top_color_clash": 3,
+      "depth:below_min_30": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 169,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "SPRINT",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4875,
+      "struct:clumped_colors": 46,
+      "solver:timeout_or_unsolved_fast": 44,
+      "struct:near_solved_forbidden": 26,
+      "depth:below_min_38": 3,
+      "depth:below_min_34": 2,
+      "struct:top_color_clash": 2,
+      "depth:below_min_30": 1,
+      "depth:below_min_26": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 170,
+    "band": 17,
+    "complexity_label": "master_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 38,
+    "final_relaxed_depth": 26,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 171,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4874,
+      "struct:clumped_colors": 28,
+      "solver:timeout_or_unsolved_fast": 68,
+      "struct:near_solved_forbidden": 21,
+      "depth:below_min_36": 3,
+      "depth:below_min_32": 2,
+      "struct:top_color_clash": 3,
+      "depth:below_min_28": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 172,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4915,
+      "struct:clumped_colors": 38,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:near_solved_forbidden": 12,
+      "depth:below_min_40": 3,
+      "depth:below_min_36": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_28": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 173,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 174,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4861,
+      "struct:near_solved_forbidden": 36,
+      "solver:timeout_or_unsolved_fast": 61,
+      "struct:clumped_colors": 36,
+      "depth:below_min_40": 2,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 175,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4927,
+      "struct:clumped_colors": 27,
+      "solver:timeout_or_unsolved_fast": 27,
+      "struct:near_solved_forbidden": 16,
+      "struct:top_color_clash": 1,
+      "depth:below_min_32": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 176,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 177,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "solver:timeout_or_unsolved_fast": 67,
+      "struct:clumped_colors": 36,
+      "depth:below_min_40": 2,
+      "struct:near_solved_forbidden": 18,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 1,
+      "depth:below_min_28": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 178,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "SPRINT",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4888,
+      "solver:timeout_or_unsolved_fast": 46,
+      "depth:below_min_40": 1,
+      "struct:near_solved_forbidden": 22,
+      "struct:clumped_colors": 38,
+      "struct:top_color_clash": 3,
+      "depth:below_min_28": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 179,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 180,
+    "band": 18,
+    "complexity_label": "elite_entry",
+    "profile": "DECOY",
+    "target_depth": 40,
+    "final_relaxed_depth": 28,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "solver:timeout_or_unsolved_fast": 69,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 31,
+      "depth:below_min_40": 3,
+      "depth:below_min_36": 3,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 181,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "solver:timeout_or_unsolved_fast": 35,
+      "struct:clumped_colors": 37,
+      "struct:near_solved_forbidden": 14
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 182,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 183,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4870,
+      "struct:clumped_colors": 35,
+      "solver:timeout_or_unsolved_fast": 69,
+      "depth:below_min_42": 2,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_37": 4,
+      "struct:top_color_clash": 3,
+      "depth:below_min_29": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 184,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:clumped_colors": 30,
+      "solver:timeout_or_unsolved_fast": 31,
+      "struct:near_solved_forbidden": 19,
+      "struct:duplicate_stack_layout": 1,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 185,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 186,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4883,
+      "struct:clumped_colors": 28,
+      "struct:near_solved_forbidden": 21,
+      "solver:timeout_or_unsolved_fast": 63,
+      "struct:top_color_clash": 2,
+      "depth:below_min_37": 1,
+      "depth:below_min_33": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 187,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "solver:timeout_or_unsolved_fast": 38,
+      "depth:below_min_42": 2,
+      "struct:near_solved_forbidden": 12,
+      "struct:clumped_colors": 38,
+      "depth:below_min_37": 1,
+      "depth:below_min_33": 1,
+      "depth:below_min_29": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 188,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "BOTTLENECK",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 189,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "DECOY",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "solver:timeout_or_unsolved_fast": 71,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 31,
+      "struct:top_color_clash": 2,
+      "depth:below_min_33": 2,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 190,
+    "band": 19,
+    "complexity_label": "elite",
+    "profile": "SPRINT",
+    "target_depth": 42,
+    "final_relaxed_depth": 29,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:clumped_colors": 46,
+      "struct:empty_tube_mismatch": 4902,
+      "solver:timeout_or_unsolved_fast": 35,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_42": 1,
+      "depth:below_min_29": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 191,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 192,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4863,
+      "solver:timeout_or_unsolved_fast": 70,
+      "struct:near_solved_forbidden": 21,
+      "struct:clumped_colors": 40,
+      "depth:below_min_44": 1,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_39": 1,
+      "struct:top_color_clash": 2,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 193,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:clumped_colors": 39,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_44": 3,
+      "depth:below_min_30": 1,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 194,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 195,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4873,
+      "solver:timeout_or_unsolved_fast": 72,
+      "struct:near_solved_forbidden": 18,
+      "struct:clumped_colors": 31,
+      "depth:below_min_44": 2,
+      "depth:below_min_39": 2,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 196,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4895,
+      "solver:timeout_or_unsolved_fast": 47,
+      "struct:top_color_clash": 1,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 29,
+      "depth:below_min_44": 4,
+      "depth:below_min_39": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 197,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 198,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "DECOY",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4842,
+      "struct:near_solved_forbidden": 29,
+      "depth:below_min_44": 4,
+      "struct:clumped_colors": 48,
+      "solver:timeout_or_unsolved_fast": 73,
+      "depth:below_min_39": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_30": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 199,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "SPRINT",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4906,
+      "struct:near_solved_forbidden": 13,
+      "solver:timeout_or_unsolved_fast": 48,
+      "struct:clumped_colors": 29,
+      "struct:too_many_solved": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_44": 1,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 200,
+    "band": 20,
+    "complexity_label": "elite_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 44,
+    "final_relaxed_depth": 30,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 201,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4862,
+      "solver:timeout_or_unsolved_fast": 84,
+      "struct:clumped_colors": 28,
+      "struct:near_solved_forbidden": 17,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 2,
+      "struct:top_color_clash": 2,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 202,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "solver:timeout_or_unsolved_fast": 41,
+      "struct:empty_tube_mismatch": 4907,
+      "struct:clumped_colors": 32,
+      "depth:below_min_46": 1,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_41": 2,
+      "depth:below_min_32": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 203,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 204,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4868,
+      "solver:timeout_or_unsolved_fast": 79,
+      "struct:clumped_colors": 28,
+      "struct:near_solved_forbidden": 22,
+      "struct:top_color_clash": 2,
+      "depth:below_min_41": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 205,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4904,
+      "solver:timeout_or_unsolved_fast": 42,
+      "depth:below_min_46": 3,
+      "struct:near_solved_forbidden": 16,
+      "struct:clumped_colors": 31,
+      "depth:below_min_36": 1,
+      "depth:below_min_32": 2,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 206,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 207,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4882,
+      "solver:timeout_or_unsolved_fast": 65,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 15,
+      "struct:top_color_clash": 4,
+      "depth:below_min_46": 4,
+      "depth:below_min_41": 1,
+      "depth:below_min_32": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 208,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "SPRINT",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4896,
+      "depth:below_min_46": 4,
+      "solver:timeout_or_unsolved_fast": 44,
+      "struct:clumped_colors": 36,
+      "struct:near_solved_forbidden": 18,
+      "struct:top_color_clash": 1,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 209,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 210,
+    "band": 21,
+    "complexity_label": "elite_complex",
+    "profile": "DECOY",
+    "target_depth": 46,
+    "final_relaxed_depth": 32,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4878,
+      "solver:timeout_or_unsolved_fast": 72,
+      "depth:below_min_46": 1,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 15,
+      "struct:duplicate_stack_layout": 2,
+      "struct:top_color_clash": 4,
+      "depth:below_min_41": 3,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 211,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "struct:near_solved_forbidden": 19,
+      "solver:timeout_or_unsolved_fast": 26,
+      "struct:clumped_colors": 27,
+      "struct:top_color_clash": 4,
+      "depth:below_min_38": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 212,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 213,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4908,
+      "struct:near_solved_forbidden": 18,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:clumped_colors": 21,
+      "struct:top_color_clash": 2,
+      "depth:below_min_33": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 214,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4921,
+      "solver:timeout_or_unsolved_fast": 22,
+      "struct:near_solved_forbidden": 17,
+      "struct:clumped_colors": 39,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 215,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 216,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4885,
+      "solver:timeout_or_unsolved_fast": 55,
+      "struct:near_solved_forbidden": 21,
+      "struct:clumped_colors": 33,
+      "depth:below_min_48": 2,
+      "depth:below_min_43": 2,
+      "depth:below_min_38": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 217,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4937,
+      "solver:timeout_or_unsolved_fast": 26,
+      "struct:clumped_colors": 23,
+      "struct:top_color_clash": 1,
+      "struct:near_solved_forbidden": 12,
+      "depth:below_min_33": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 218,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 219,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "DECOY",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4910,
+      "struct:clumped_colors": 32,
+      "solver:timeout_or_unsolved_fast": 41,
+      "struct:near_solved_forbidden": 15,
+      "struct:top_color_clash": 1,
+      "depth:below_min_38": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 220,
+    "band": 22,
+    "complexity_label": "supreme_entry",
+    "profile": "SPRINT",
+    "target_depth": 48,
+    "final_relaxed_depth": 33,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "struct:clumped_colors": 34,
+      "solver:timeout_or_unsolved_fast": 21,
+      "struct:near_solved_forbidden": 8,
+      "depth:below_min_48": 1,
+      "depth:below_min_43": 1,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 221,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 222,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4908,
+      "solver:timeout_or_unsolved_fast": 53,
+      "struct:near_solved_forbidden": 11,
+      "struct:clumped_colors": 27,
+      "depth:below_min_45": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 223,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4920,
+      "solver:timeout_or_unsolved_fast": 42,
+      "struct:clumped_colors": 23,
+      "struct:near_solved_forbidden": 12,
+      "struct:top_color_clash": 2,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 224,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 225,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4891,
+      "solver:timeout_or_unsolved_fast": 57,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 20,
+      "depth:below_min_50": 2,
+      "depth:below_min_45": 1,
+      "depth:below_min_40": 2,
+      "depth:below_min_35": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 226,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4942,
+      "struct:clumped_colors": 27,
+      "solver:timeout_or_unsolved_fast": 20,
+      "depth:below_min_50": 1,
+      "struct:near_solved_forbidden": 8,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 227,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 228,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "DECOY",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4900,
+      "solver:timeout_or_unsolved_fast": 46,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 29,
+      "struct:duplicate_stack_layout": 1,
+      "depth:below_min_45": 2,
+      "depth:below_min_35": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 229,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "SPRINT",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "struct:clumped_colors": 26,
+      "solver:timeout_or_unsolved_fast": 22,
+      "struct:near_solved_forbidden": 16,
+      "depth:below_min_45": 2,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 230,
+    "band": 23,
+    "complexity_label": "supreme",
+    "profile": "BOTTLENECK",
+    "target_depth": 50,
+    "final_relaxed_depth": 35,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 231,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4898,
+      "solver:timeout_or_unsolved_fast": 55,
+      "struct:clumped_colors": 26,
+      "struct:near_solved_forbidden": 16,
+      "struct:top_color_clash": 2,
+      "depth:below_min_36": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 232,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4927,
+      "struct:clumped_colors": 32,
+      "solver:timeout_or_unsolved_fast": 30,
+      "depth:below_min_52": 1,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 233,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 234,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4899,
+      "struct:near_solved_forbidden": 21,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:clumped_colors": 24,
+      "struct:top_color_clash": 3,
+      "depth:below_min_46": 1,
+      "depth:below_min_36": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 235,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4926,
+      "solver:timeout_or_unsolved_fast": 34,
+      "depth:below_min_52": 1,
+      "struct:clumped_colors": 30,
+      "struct:near_solved_forbidden": 9
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 236,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 237,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4901,
+      "struct:near_solved_forbidden": 20,
+      "struct:clumped_colors": 15,
+      "depth:below_min_52": 2,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:top_color_clash": 3,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 238,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "SPRINT",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "solver:timeout_or_unsolved_fast": 30,
+      "struct:clumped_colors": 32,
+      "struct:near_solved_forbidden": 11,
+      "depth:below_min_46": 1,
+      "depth:below_min_41": 1,
+      "struct:top_color_clash": 1,
+      "depth:below_min_36": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 239,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 240,
+    "band": 24,
+    "complexity_label": "supreme_high",
+    "profile": "DECOY",
+    "target_depth": 52,
+    "final_relaxed_depth": 36,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4897,
+      "solver:timeout_or_unsolved_fast": 58,
+      "struct:near_solved_forbidden": 14,
+      "struct:clumped_colors": 29,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 241,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "solver:timeout_or_unsolved_fast": 30,
+      "struct:near_solved_forbidden": 14,
+      "struct:clumped_colors": 31,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 242,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 243,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4912,
+      "solver:timeout_or_unsolved_fast": 50,
+      "struct:top_color_clash": 2,
+      "struct:clumped_colors": 18,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_54": 1,
+      "depth:below_min_37": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 244,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4923,
+      "struct:clumped_colors": 23,
+      "struct:near_solved_forbidden": 14,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 245,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 246,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4918,
+      "solver:timeout_or_unsolved_fast": 49,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 7,
+      "depth:below_min_54": 2,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 247,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4931,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:clumped_colors": 19,
+      "depth:below_min_54": 1,
+      "struct:near_solved_forbidden": 8,
+      "struct:top_color_clash": 1,
+      "depth:below_min_48": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 248,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 249,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "DECOY",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4885,
+      "struct:clumped_colors": 22,
+      "solver:timeout_or_unsolved_fast": 72,
+      "struct:near_solved_forbidden": 16,
+      "struct:top_color_clash": 4,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 250,
+    "band": 25,
+    "complexity_label": "supreme_complex",
+    "profile": "SPRINT",
+    "target_depth": 54,
+    "final_relaxed_depth": 37,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:clumped_colors": 30,
+      "struct:near_solved_forbidden": 15,
+      "solver:timeout_or_unsolved_fast": 27,
+      "depth:below_min_54": 1,
+      "depth:below_min_43": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 251,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 252,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4926,
+      "solver:timeout_or_unsolved_fast": 32,
+      "struct:near_solved_forbidden": 19,
+      "struct:clumped_colors": 21,
+      "depth:below_min_50": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 253,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4955,
+      "struct:duplicate_stack_layout": 1,
+      "struct:clumped_colors": 23,
+      "struct:top_color_clash": 2,
+      "solver:timeout_or_unsolved_fast": 11,
+      "struct:near_solved_forbidden": 8
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 254,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 255,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4911,
+      "solver:timeout_or_unsolved_fast": 44,
+      "struct:clumped_colors": 35,
+      "struct:near_solved_forbidden": 9,
+      "depth:below_min_44": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 256,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4946,
+      "struct:clumped_colors": 24,
+      "solver:timeout_or_unsolved_fast": 20,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 257,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 258,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "DECOY",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4920,
+      "solver:timeout_or_unsolved_fast": 41,
+      "struct:near_solved_forbidden": 11,
+      "struct:clumped_colors": 28
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 259,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "SPRINT",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "solver:timeout_or_unsolved_fast": 16,
+      "struct:clumped_colors": 35,
+      "struct:near_solved_forbidden": 14,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 260,
+    "band": 26,
+    "complexity_label": "grandmaster_entry",
+    "profile": "BOTTLENECK",
+    "target_depth": 56,
+    "final_relaxed_depth": 39,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 261,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4907,
+      "solver:timeout_or_unsolved_fast": 48,
+      "struct:clumped_colors": 30,
+      "struct:near_solved_forbidden": 13,
+      "depth:below_min_58": 1,
+      "depth:below_min_52": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 262,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4953,
+      "struct:clumped_colors": 25,
+      "solver:timeout_or_unsolved_fast": 16,
+      "struct:near_solved_forbidden": 6
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 263,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 264,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4917,
+      "struct:clumped_colors": 27,
+      "solver:timeout_or_unsolved_fast": 47,
+      "depth:below_min_58": 1,
+      "struct:near_solved_forbidden": 5,
+      "struct:top_color_clash": 2,
+      "struct:duplicate_stack_layout": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 265,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4947,
+      "struct:clumped_colors": 23,
+      "struct:near_solved_forbidden": 12,
+      "struct:top_color_clash": 3,
+      "solver:timeout_or_unsolved_fast": 15
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 266,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 267,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4924,
+      "solver:timeout_or_unsolved_fast": 43,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 10,
+      "struct:clumped_colors": 18,
+      "depth:below_min_40": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 268,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "SPRINT",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4937,
+      "solver:timeout_or_unsolved_fast": 21,
+      "struct:clumped_colors": 32,
+      "struct:near_solved_forbidden": 8,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 269,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "BOTTLENECK",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 270,
+    "band": 27,
+    "complexity_label": "grandmaster",
+    "profile": "DECOY",
+    "target_depth": 58,
+    "final_relaxed_depth": 40,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4914,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 21,
+      "solver:timeout_or_unsolved_fast": 42,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 271,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4941,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:clumped_colors": 25,
+      "struct:top_color_clash": 1,
+      "struct:near_solved_forbidden": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 272,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 273,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4932,
+      "solver:timeout_or_unsolved_fast": 31,
+      "struct:near_solved_forbidden": 8,
+      "depth:below_min_60": 1,
+      "struct:clumped_colors": 26,
+      "depth:below_min_54": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 274,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4929,
+      "struct:near_solved_forbidden": 12,
+      "solver:timeout_or_unsolved_fast": 34,
+      "struct:clumped_colors": 25
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 275,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 276,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4916,
+      "struct:top_color_clash": 3,
+      "struct:near_solved_forbidden": 9,
+      "struct:clumped_colors": 26,
+      "solver:timeout_or_unsolved_fast": 45,
+      "depth:below_min_54": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 277,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "struct:clumped_colors": 20,
+      "struct:top_color_clash": 3,
+      "solver:timeout_or_unsolved_fast": 25,
+      "struct:near_solved_forbidden": 13
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 278,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "BOTTLENECK",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 279,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "DECOY",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4909,
+      "solver:timeout_or_unsolved_fast": 45,
+      "struct:clumped_colors": 29,
+      "struct:near_solved_forbidden": 15,
+      "depth:below_min_60": 1,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 280,
+    "band": 28,
+    "complexity_label": "grandmaster_high",
+    "profile": "SPRINT",
+    "target_depth": 60,
+    "final_relaxed_depth": 42,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4938,
+      "struct:near_solved_forbidden": 9,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:clumped_colors": 20,
+      "depth:below_min_60": 2,
+      "struct:top_color_clash": 2
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 281,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 282,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4949,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:near_solved_forbidden": 5,
+      "struct:clumped_colors": 13,
+      "struct:top_color_clash": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 283,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4948,
+      "solver:timeout_or_unsolved_fast": 18,
+      "struct:clumped_colors": 28,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 284,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 285,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4933,
+      "solver:timeout_or_unsolved_fast": 29,
+      "struct:clumped_colors": 25,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 4
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 286,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4952,
+      "struct:clumped_colors": 16,
+      "solver:timeout_or_unsolved_fast": 20,
+      "struct:top_color_clash": 2,
+      "struct:near_solved_forbidden": 10
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 287,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 288,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "DECOY",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4939,
+      "solver:timeout_or_unsolved_fast": 34,
+      "struct:clumped_colors": 19,
+      "depth:below_min_62": 1,
+      "struct:near_solved_forbidden": 6,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 289,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "SPRINT",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4953,
+      "struct:clumped_colors": 25,
+      "solver:timeout_or_unsolved_fast": 13,
+      "struct:near_solved_forbidden": 9
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 290,
+    "band": 29,
+    "complexity_label": "grandmaster_complex",
+    "profile": "BOTTLENECK",
+    "target_depth": 62,
+    "final_relaxed_depth": 43,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 291,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4930,
+      "struct:clumped_colors": 23,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:near_solved_forbidden": 10,
+      "depth:below_min_57": 1,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 292,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4953,
+      "solver:timeout_or_unsolved_fast": 20,
+      "struct:clumped_colors": 16,
+      "struct:near_solved_forbidden": 11
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 293,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 294,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4925,
+      "struct:clumped_colors": 21,
+      "struct:near_solved_forbidden": 16,
+      "solver:timeout_or_unsolved_fast": 33,
+      "struct:duplicate_stack_layout": 2,
+      "struct:top_color_clash": 3
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 295,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4951,
+      "struct:clumped_colors": 25,
+      "solver:timeout_or_unsolved_fast": 14,
+      "struct:near_solved_forbidden": 9,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 296,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 297,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4934,
+      "solver:timeout_or_unsolved_fast": 39,
+      "struct:clumped_colors": 19,
+      "struct:near_solved_forbidden": 7,
+      "struct:top_color_clash": 1
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 298,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "SPRINT",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4956,
+      "solver:timeout_or_unsolved_fast": 12,
+      "struct:clumped_colors": 24,
+      "struct:near_solved_forbidden": 8
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 299,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "BOTTLENECK",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 5000
+    }
+  },
+  {
+    "world": "classic_journey",
+    "level": 300,
+    "band": 30,
+    "complexity_label": "final_brutal",
+    "profile": "DECOY",
+    "target_depth": 64,
+    "final_relaxed_depth": 44,
+    "attempts": 5000,
+    "reject_counts": {
+      "struct:empty_tube_mismatch": 4947,
+      "solver:timeout_or_unsolved_fast": 31,
+      "struct:clumped_colors": 12,
+      "struct:near_solved_forbidden": 10
+    }
+  }
+]
